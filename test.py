@@ -22,5 +22,5 @@ if __name__ == '__main__':
     result = '\n'.join(result)
     result = str(base64.b64encode(result.encode('utf-8')),"utf-8")
     filename = time.strftime("%Y-%m-%d", time.localtime())
-    with open('otw/'+filename + '.txt', 'w') as f:
+    with open(filename + '.txt', 'w') as f:
       f.write(result)
