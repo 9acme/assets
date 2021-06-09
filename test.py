@@ -24,3 +24,4 @@ if __name__ == '__main__':
     filename = time.strftime("%Y-%m-%d", time.localtime())
     with open(filename + '.txt', 'w') as f:
       f.write(result)
+    print('文件生成成功')
