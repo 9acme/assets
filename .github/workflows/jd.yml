@@ -3,7 +3,7 @@ name: updateJd
 on:
   push:
   schedule:
-    - cron: '00 20 * * *'  # 每天晚上八点
+    - cron: '10 14 * * *'  # 每天晚上八点
     
 jobs:
   commitJd:
