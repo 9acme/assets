@@ -25,8 +25,8 @@ jobs:
         python test.py
     - name: Commit files
       run: |
-        git config --global user.email '3451785715@qq.com'
-        git config --global user.name 'fengqing'
+        git config --global user.email ${{ secrets.GIT_EMAIL }}
+        git config --global user.name ${{ secrets.GIT_USERNAME }}
         git add .
         git commit -m "update" -a || exit 0
     - name: Push changes
