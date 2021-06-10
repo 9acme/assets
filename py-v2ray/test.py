@@ -24,4 +24,11 @@ if __name__ == '__main__':
     filename = time.strftime("%Y-%m-%d", time.localtime())
     with open('otw/'+filename + '.js', 'w') as f:
       f.write(result)
-    print('文件生成成功')
+
+    s = requests.session()
+    s.keep_alive = False
+
+    # 刷新CDN
+    cdnLink = 'https://purge.jsdelivr.net/gh/annarheimur/assets/otw/'+filename+'.js'
+    cdnResp = requests.get(cdnLink)
+    print('文件生成成功',cdnLink, cdnResp.text)
