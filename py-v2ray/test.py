@@ -5,18 +5,26 @@ import base64
 import time
 from bs4 import BeautifulSoup
 
+def getNoteInfo( link ):
+    # 获取jd信息
+    print(link)
+    content = requests.get(url=link)
+    pattern = r'([vmess|ss]{2,5}:\/\/[^<]{10,})'
+    result = re.findall(pattern, content.text, re.M)
+    return result
+
 if __name__ == '__main__':
     # 获取详情页链接
     target = 'https://www.mattkaydiary.com/'
     req = requests.get(url=target)
     soup = BeautifulSoup(req.text, "html5lib").select('.post-title > a')
-    link = soup[0].get('href')
-    print(link)
+    result = []
 
-    # 获取jd信息
-    content = requests.get(url=link)
-    pattern = r'([vmess|ss]{2,5}:\/\/[^<]{10,})'
-    result = re.findall(pattern, content.text, re.M)
+    for link in soup:
+      if(len(result) == 0):
+        result = getNoteInfo(link.get('href'))
+      else:
+        break
 
     # 写入文件
     result = '\n'.join(result)
