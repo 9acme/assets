@@ -30,6 +30,6 @@ jobs:
         git add .
         git commit -m "update" -a || exit 0
     - name: Push changes
-      uses: ad-m/github-push-action@master
+      uses: ad-m/github-push-action@note
       with:
         github_token: ${{ secrets.TOKEN }}
