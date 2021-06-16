@@ -5,7 +5,7 @@ on:
     branches:
       - note 
   schedule:
-    - cron: '40 01 * * *'  # 每天晚上八点
+    - cron: '55 03 * * *'  # 每天晚上八点
     
 jobs:
   commitJd:
