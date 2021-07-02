@@ -9,7 +9,7 @@ def getNoteInfo( link ):
     # 获取jd信息
     print(link)
     content = requests.get(url=link)
-    pattern = r'([vmess|ss]{2,5}:\/\/[^<]{10,})'
+    pattern = r'([vmes]{2,5}:\/\/[^<]{10,})'
     result = re.findall(pattern, content.text, re.M)
     return result
 
