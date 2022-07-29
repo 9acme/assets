@@ -1,0 +1,38 @@
+name: rss
+
+on:
+  push:
+    branches:
+      - note 
+  schedule:
+    - cron: '40 12 * * *'  # 每天晚上八点
+    
+jobs:
+  commitJd:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: clone code
+      uses: actions/checkout@v2
+    - name: Set up Python 3.9.5
+      uses: actions/setup-python@v2
+      with: 
+        python-version: 3.9.5
+    - name: Install dependencies
+      run: |
+            python -m pip install --upgrade pip
+            pip install -r rssParse/requiments.txt
+    - name: run script
+      run: |
+        python rssParse/parseRss.py
+    - name: Commit files
+      run: |
+        git config --global user.email ${{ secrets.GIT_EMAIL }}
+        git config --global user.name ${{ secrets.GIT_USERNAME }}
+        git add .
+        git commit -m "update" -a || exit 0
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.TOKEN }}
+        branch: ${{ github.ref }}
