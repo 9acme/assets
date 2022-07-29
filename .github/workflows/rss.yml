@@ -1,4 +1,4 @@
-name: updateJd
+name: rss
 
 on:
   push:
@@ -21,10 +21,10 @@ jobs:
     - name: Install dependencies
       run: |
             python -m pip install --upgrade pip
-            pip install -r py-v2ray/requiments.txt
+            pip install -r rssParse/requiments.txt
     - name: run script
       run: |
-        python py-v2ray/test.py
+        python rssParse/parseRss.py
     - name: Commit files
       run: |
         git config --global user.email ${{ secrets.GIT_EMAIL }}
