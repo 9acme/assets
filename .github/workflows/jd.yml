@@ -15,8 +15,7 @@ jobs:
     - name: clone code
       uses: actions/checkout@v2
       with:
-         persist-credentials: false
-         fetch-depth: 0
+         ref: ${{ github.event.pull_request.head.ref }}
     - name: Set up Python 3.9.5
       uses: actions/setup-python@v2
       with: 
