@@ -1,2 +1,2300 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Tue, 09 Aug 2022 22:46:02 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs></channel></rss>
+<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Wed, 10 Aug 2022 22:45:21 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cypress + Siri 实现语音召唤 B 栈视频</title><link>https://juejin.cn/post/7125573371579858957</link><description>&lt;hr /&gt;
+&lt;img alt="" src="https://juejin.cn/post/---" width="50%" /&gt;
+theme: smartblue
+highlight: a11y-dark
+---
+&lt;p&gt;我正在参加「创意开发 投稿大赛」详情请看：&lt;a href="https://juejin.cn/post/7120441631530549284" title="https://juejin.cn/post/7120441631530549284"&gt;掘金创意开发大赛来了！&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;程序员的世界就是简单而快乐。&lt;/p&gt;
+&lt;p&gt;最近在编写，我的工程化体系课程实在太枯燥了。在编写E2E测试案例时候，无意间想到 E2E 框架可以操纵网页，是不是可以实现一键登录B栈【舞蹈区】选择行榜一小姐姐跳舞呀。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/61df981d00d94beeb11e5bac6b8be2f3~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h1&gt;什么是E2E测试&lt;/h1&gt;
+&lt;p&gt;首先先介绍一下，E2E测试框架是什么。简单来说，就是模拟真实用户使用场景进行测试，预期应用能够正常响应用户的操作，其关键点在于模拟用户使用环境，模拟用户操作。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/74ff6c615e0644428dc3d7eb5543be0f~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;Cypress这种成熟的E2E测试框架都会提供成熟的，模拟用户操作的API。
+比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;访问网站&lt;/li&gt;
+&lt;li&gt;选择页面元素&lt;/li&gt;
+&lt;li&gt;模拟点击&lt;/li&gt;
+&lt;li&gt;模拟键盘输出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;// 访问网站
+cy.visit("http://127.0.0.1:8080/");
+
+// 输入信息
+cy.get("input").type(" Cypress");
+
+// 点击按钮
+cy.get("button").click();
+
+// 获取信息并断言
+cy.get("input").should("have.value", "Hello Cypress")
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1&gt;访问B栈【舞蹈区】榜一小姐姐&lt;/h1&gt;
+&lt;p&gt;既然框架中已经包含了这些API，可以模拟浏览器中的各种行为。
+当然也可以通过他们编写程序自动访问 BiliBili 舞蹈区，并且选择一个视频页进行播放了。&lt;/p&gt;
+&lt;p&gt;首先安装 Cypress 框架。Cypress需要通过Npm包管理器安装。&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm i cypress -D
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装后启动 Cypress&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx cypress open
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;cypress的默认启动方式是通过界面形式。可以方便的使用UI界面添加测试用例。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e65b702c3df54871838c477f8427d640~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;Cypress 目前支持E2E测试和组件测试。这里面需要选择，E2E测试。
+&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6178d2e29d2a4aee907275fca2f79dc1~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;对于E2E测试的运行时环境也有两种选择，一种是Chrome浏览器，另外一一种是Electron。既然要播放B栈，那么应该选择Chrome浏览器。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fe637c59a7d644f488660116e71b89d0~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;选择后会自动打开一个Chrome，与以往的Chrome浏览器不同的是。这个浏览器是带有特别的调试参数启动的。上面有一个黑色的框表示这个Chrome是接收自动测试软件控制的。也就是说Chrome的行为可以被Cypress所控制。这也正是我们需要的效果。因为我们需要Cypress发送指令浏览B站上的指定内容。&lt;/p&gt;
+&lt;p&gt;点击 【New Spec】 创建新的用例&lt;/p&gt;
+&lt;p&gt;然后编写代码&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;首先创建一个测试单元&lt;/li&gt;
+&lt;li&gt;使用 cy.visit 访问B栈舞蹈区&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;describe("B栈摸鱼", () =&amp;gt; {
+  it("找到榜一小姐姐", () =&amp;gt; {
+    // 登录舞蹈区
+    cy.visit("https://www.bilibili.com/v/dance/");
+
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;点击运行用例&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1a84379432e8486f9e1e457a560ff6c3~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;这个时候可以看到，Chrome的界面右侧显示部分，打开了一个Iframe。iframe直接访问的B栈的舞蹈区。也就说所在这里Cypress成功的访问了B站。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ffd4bc9841074f33bf9ee0b1b57f82c0~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;下面实现自动访问榜一功能。
+其实这个功能就要做两件事&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选取视频列表中的第一个链接&lt;/li&gt;
+&lt;li&gt;模拟点击第一个链接&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;首先是选取视频列表元素，可以使用 cy.get。
+get中实际是Query Selector表达式。通俗的说就是Jquery选择器。
+这个语法就不过多介绍了。不会的自行百度。
+通过 Chrome 审查元素查看视频便签，确定选择器。
+&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e7f6bc6a24684958b9c54effe9534392~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;然后使用 cy,click() 就可以模拟点击了。&lt;/p&gt;
+&lt;p&gt;最后为了让我们能观看一段时间，可以使用 cy.wait()。
+不然的话页面会自动关闭。&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;describe("B栈摸鱼", () =&amp;gt; {
+  it("找到榜一小姐姐", () =&amp;gt; {
+    // 登录舞蹈区
+    cy.visit("https://www.bilibili.com/v/dance/");
+    // 选择榜一小姐姐
+    cy.get(".bili-video-card__info--tit a").first().click();
+    // 摸鱼时间
+    cy.wait(10 * 1000);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;好实验一下效果。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/47d5ce51abc242b4951fb4e4909c763b~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h1&gt;实现Siri语音召唤&lt;/h1&gt;
+&lt;p&gt;使用命令行召唤还是太累了。
+最好是懒洋洋的喊一句，Hey Siri就可以自动召唤小姐姐。&lt;/p&gt;
+&lt;p&gt;其实现在Mac可以使用通过快捷指令自定义Siri。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7b275029b8ef4c6b8c8e31a0ed2f91c5~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;实际上Cypress可以通过Shell调用。而快捷指令可以运行Shell。这样只需要编写一个名字叫做【放松一下】的快捷指令。就可以实现Siri的语音唤醒了。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9632bc069b1c4902aaf344eff07a84c3~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dfaff421bf754c528d73c70ed10ba98f~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;这样就可以轻松实现语音唤醒功能了。&lt;/p&gt;
+&lt;p&gt;这时候只需要说 【Hey， Siri， 放松一下】&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7904ebc0bdc14d5d852eaf555e052721~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;需要源代码可以关注公众号【前端大班车】回复【xiaojiejie】&lt;/p&gt;
+&lt;h1&gt;别忘了给然叔点赞&lt;/h1&gt;
+&lt;h1&gt;别忘了给然叔点赞&lt;/h1&gt;
+&lt;h1&gt;别忘了给然叔点赞&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7123012186884014116"&gt;41岁的程序员的”毕业“走向自由职业&lt;/a&gt; 🔥 助力然叔&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7038627294197317662" title="彻底搞懂HTTP协议 - 天天造轮子"&gt;彻底搞懂HTTP协议 - 天天造轮子&lt;/a&gt; -🔥月冠军&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6961961165656326152"&gt;做了一夜动画，让大家十分钟搞懂Webpack&lt;/a&gt; -  👍🏻1471赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6911897255087702030"&gt;【Vue官方教程笔记】- 尤雨溪手写mini-vue&lt;/a&gt;  👍🏻1643赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6909247394904702984"&gt;【Vue3官方教程】🎄万字笔记 | 同步导学视频&lt;/a&gt;  - 👍🏻1536赞&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我正在参与掘金技术社区创作者签约计划招募活动，&lt;a href="https://juejin.cn/post/7112770927082864653" title="https://juejin.cn/post/7112770927082864653"&gt;点击链接报名投稿&lt;/a&gt;。&lt;/p&gt;</description><author>全栈然叔</author><pubDate>Thu, 28 Jul 2022 15:44:42 GMT</pubDate></item><item><title>尤雨溪对未来前端趋势分享: 笔记</title><link>https://juejin.cn/post/7123178292865155102</link><description>&lt;hr /&gt;
+&lt;h2&gt;theme: smartblue&lt;/h2&gt;
+&lt;p&gt;早上参加稀土掘金大会随手记下的。能力有限，欢迎勘误。&lt;/p&gt;
+&lt;p&gt;🔥 大家好我是然叔一个41岁的程序员老兵，&lt;/p&gt;
+&lt;p&gt;我会不断分享我学习的心得&lt;/p&gt;
+&lt;p&gt;内附然叔优秀作品汇总链接&lt;/p&gt;
+&lt;p&gt;建议收藏&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b76d1e0aea8c43be8df69435a1cf120a~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;链接在此 建议点赞赞收藏
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓&lt;/p&gt;
+&lt;h1&gt;&lt;a href="https://juejin.cn/post/7123012186884014116"&gt;41岁的程序员的”毕业“走向自由职业&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="Snip20220722_43.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4f77af032feb416eb7a4511304312f51~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h1&gt;一、 开发范式&amp;amp;底层框架&lt;/h1&gt;
+&lt;h2&gt;1、React Hooks 带来的开发范式的变革&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="Snip20220722_64.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/082693c637f7422a940a298fb96cde98~tplv-k3u1fbpfcp-watermark.image" /&gt;
+&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/56f393fed6f745258061439d60860caa~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;React Hooks 取代 Class Components&lt;/li&gt;
+&lt;li&gt;启发组件逻辑表达和逻辑复用的新范式
+&lt;ul&gt;
+&lt;li&gt;Vue3: Composition API&lt;/li&gt;
+&lt;li&gt;Svelte3: 编译后逻辑受到了React Hooks启发&lt;/li&gt;
+&lt;li&gt;SolidJS: Hooks语法相似 + 实现与CompositionAPI相似的写法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3dce19d601f34344a730a07a013b35cf~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h3&gt;React Hooks的开发体验被逐渐正视&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Hooks 执行原理和原生JS心智模型的差异&lt;/li&gt;
+&lt;li&gt;不能条件式调用&lt;/li&gt;
+&lt;li&gt;Stale Closure（过期闭包）的心智负担&lt;/li&gt;
+&lt;li&gt;必须手动声明 useEffect 依赖&lt;/li&gt;
+&lt;li&gt;如何”正确“使用 useEffect 是个复杂的问题&lt;/li&gt;
+&lt;li&gt;需要 useMemo / useCallback 等手动优化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c352b52059e3403d82956544ab5dbf06~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h3&gt;React 团队对改善开发体验的努力&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;useEventRFC 改善useCallback的问题&lt;/li&gt;
+&lt;li&gt;Dan Abranmov 话单量时间改进新版 useEffect 文档&lt;/li&gt;
+&lt;li&gt;黄玄正在开发中的 React Forget 已在避免需要手动声明依赖&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c8bf91faac2f4964959c5bb04329160e~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h3&gt;基于依赖追踪的范式重新得到重视&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;SolidJS 符合直觉无需声明依赖&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cb99f1233de0499e9d7caa9b64ae70bd~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vue Composition API ref追踪依赖&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/191808623111446b87790e149b8f3b44~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ember Starbeam Cell追踪依赖
+&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/58ec267c68be45d6a86af201885ab3df~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;基于依赖追踪的范式 - 共同点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一次调用，符合原生JS直觉&lt;/li&gt;
+&lt;li&gt;自动追踪依赖，无需手动声明&lt;/li&gt;
+&lt;li&gt;引用稳定，无需useCallback&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;3. 基于编译的响应式系统&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;基于编译时优化改善开发体验&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Sevlte  【$】副作用黑魔法
+&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/736991e3a7e348cfbd18127b06632b14~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;简洁代码带来的限制&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3d47d8e32a6b489a8d0536ec97fc32a6~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;只能在Svelet组件内使用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;组件外需要不同的API&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;只能在顶层作用域使用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Vue Reactivity Transform  响应式转换&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;编译时宏 $ref&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f5b825cf9d504b33b9150c944657b48d~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;solid labels&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;类似于 Vue Reactivity Transform&lt;br /&gt;
+&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a7e5decfaba3423680335b430fb4c6c1~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;统一模型的优势和代价&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;✅  利于长期的重构和复用&lt;/li&gt;
+&lt;li&gt;😭 底层实现的抽象泄漏&lt;/li&gt;
+&lt;li&gt;😭 初期学习成本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;4. 基于编译的运行时优化&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9b8096261c714f9cb1320a9fd705d6b1~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Svelte - 通过命令节点拼接JS代码&lt;/li&gt;
+&lt;li&gt;Solid - 基本HTML字符串 -&amp;gt; Dom节点绑定&lt;/li&gt;
+&lt;li&gt;Vue Vapor Mode - 与 Solid&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Vue Vapor Mode&lt;/h3&gt;
+&lt;p&gt;SFC单文件输出&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8f5603ed6a754a04b08a126492e881de~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;类 Solid 输出&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7c1d07905e614c21a7d03e1644292789~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一次性生成静态节点&lt;/li&gt;
+&lt;li&gt;找到动态节点进行状态绑定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;二、工具链&lt;/h1&gt;
+&lt;h2&gt;1. 原生语言在前端工具链中的使用&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0e83e975cbc24953bc0abc73976dafc9~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;工具链原生语言参与比例提高&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;esbuild （Go）&lt;/li&gt;
+&lt;li&gt;SWC (Rust)&lt;/li&gt;
+&lt;li&gt;Vite (JS / GoHybrid Via ESBuild)&lt;/li&gt;
+&lt;li&gt;napi-rs (Rust)&lt;/li&gt;
+&lt;li&gt;Parcel2 (JS/Rust hybird)&lt;/li&gt;
+&lt;li&gt;Bun (Zig)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;趋势分析&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/23cc4cf64d384e68babacc59c5403169~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;JS 与 原生语言混合成为趋势&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;2. 工具链的抽象层次&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;browserfy/webpack/rollup  - 专注打包、抽象层次低&lt;/li&gt;
+&lt;li&gt;Parcel/Vue-CLI/CRA - 专注抽象层次&lt;/li&gt;
+&lt;li&gt;Vite - CLI专注于应用、API专注于支持上层框架、抽象层次高&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;3、 基于Vite的上层框架&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b085f23d6c0645f88e8780687bd2a2fc~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h1&gt;四、上层框架Meta Framworks&lt;/h1&gt;
+&lt;h2&gt;1. JS全栈的意义&lt;/h2&gt;
+&lt;p&gt;常用的全栈框架&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;BFF 一个语言打通前后端&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;2. 数据打通&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/59ccccc2ac0f4d79a2bfa8be0667e6d5~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;3. 类型打通&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c710d9730e4e4f7c927bc56fb5a33ce1~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过显示引入共享类型&lt;/li&gt;
+&lt;li&gt;基于DB schema 生成类型&lt;/li&gt;
+&lt;li&gt;Nuxt3 自动基于文件布局生成API/路由类型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;4. JS全栈的代价&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;虽然数据已经渲染出了HTML 但还需要额外发送一份Hydrate&lt;/li&gt;
+&lt;li&gt;及时客户端没有交互组件依然会被打包发送至客户端&lt;/li&gt;
+&lt;li&gt;Hydrate 影响页面交互指标（TTI）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;5. 社区的探索&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Server-only Components (Next/Nuxt)&lt;/li&gt;
+&lt;li&gt;Partial hydration / Island&lt;/li&gt;
+&lt;li&gt;Fine-grained+ resumable hydration  (Qwik)&lt;/li&gt;
+&lt;li&gt;Shell + hydration (VitePress)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;早上参加稀土掘金大会随手记下的。能力有限，欢迎勘误。&lt;/p&gt;
+&lt;p&gt;早上参加稀土掘金大会随手记下的。能力有限，欢迎勘误。&lt;/p&gt;
+&lt;p&gt;早上参加稀土掘金大会随手记下的。能力有限，欢迎勘误。&lt;/p&gt;
+&lt;h1&gt;往年优秀文章汇总&lt;/h1&gt;
+&lt;h2&gt;征文获奖 &amp;amp; 千赞文章&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7038627294197317662" title="https://juejin.cn/post/7038627294197317662"&gt;彻底搞懂HTTP协议 - 天天造轮子&lt;/a&gt; -🔥月冠军&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6961961165656326152" title="https://juejin.cn/post/6961961165656326152"&gt;做了一夜动画，让大家十分钟搞懂Webpack&lt;/a&gt; - 👍🏻1471赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6911897255087702030" title="https://juejin.cn/post/6911897255087702030"&gt;【Vue官方教程笔记】- 尤雨溪手写mini-vue&lt;/a&gt; 👍🏻1643赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6909247394904702984" title="https://juejin.cn/post/6909247394904702984"&gt;【Vue3官方教程】🎄万字笔记 | 同步导学视频&lt;/a&gt; - 👍🏻1536赞&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Vue学习系列&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6899334776860180494" title="https://juejin.cn/post/6899334776860180494"&gt;Element3开发内幕 - Vue CLI插件开发&lt;/a&gt; 192赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6891885484524437518" title="https://juejin.cn/post/6891885484524437518"&gt;忙了一夜用CompositionAPI征服产品妹子花里胡哨的需求&lt;/a&gt; 129赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6875236411349008398" title="https://juejin.cn/post/6875236411349008398"&gt;Vue3.0全球发布会干货总结&lt;/a&gt; 286赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6867865667089989639" title="https://juejin.cn/post/6867865667089989639"&gt;Element3.0升级日记 - TimeLine组件&lt;/a&gt; 70赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6864462363039531022" title="https://juejin.cn/post/6864462363039531022"&gt;跟我一起编写Vue3版ElementUI&lt;/a&gt; 156赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6850037267466190856" title="https://juejin.cn/post/6850037267466190856"&gt;渐进式手敲Vue3.0框架 - 2万字以上 - 持续更新&lt;/a&gt; 93赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6844904191744278542" title="https://juejin.cn/post/6844904191744278542"&gt;如何参加开源项目-如何给Vue3.0提PR&lt;/a&gt; 85赞&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;硬核面试题&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7048191028280426526" title="https://juejin.cn/post/7048191028280426526"&gt;Day01 JS整数是怎么表示的 | 面试打卡365&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7048554678858022925" title="https://juejin.cn/post/7048554678858022925"&gt;Day02 - 0.1 + 0.2 === 0.3嘛 | 面试打卡365&lt;/a&gt;&lt;a href="https://juejin.cn/post/7048554678858022925" title="https://juejin.cn/post/7048554678858022925"&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7048998409067298830" title="https://juejin.cn/post/7048998409067298830"&gt;Day03 - 数字超过最大限制的如何处理? | 面试打卡365&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7049383966700208165" title="https://juejin.cn/post/7049383966700208165"&gt;Day04 - 判断数据类型的方式有哪些？| 面试365&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7049731312801808420" title="https://juejin.cn/post/7049731312801808420"&gt;Day05 - new 一个函数发生了什么？| 面试365&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7050087767962976287" title="https://juejin.cn/post/7050087767962976287"&gt;Day06 - 构造函数的返回值与new实例关系 | 面试365&lt;/a&gt;&lt;a href="https://juejin.cn/post/7050087767962976287" title="https://juejin.cn/post/7050087767962976287"&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7050476297318825992" title="https://juejin.cn/post/7050476297318825992"&gt;Day07 - 为什么箭头函数不能当构造函数 | 面试365&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7050861660000976904" title="https://juejin.cn/post/7050861660000976904"&gt;Day08 - 什么是闭包？如何制造闭包？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7051233635608821797" title="https://juejin.cn/post/7051233635608821797"&gt;Day09 - 闭包应用1 - 制造惰性函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7051547767855906852" title="https://juejin.cn/post/7051547767855906852"&gt;Day10-闭包应用-偏应用函数与柯里化&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7051968010512236574" title="https://juejin.cn/post/7051968010512236574"&gt;Day11-闭包应用 - 立即执行函数IIFE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7052238635671748616" title="https://juejin.cn/post/7052238635671748616"&gt;Day12 - 闭包应用4 - 类库封装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7052658786477015054" title="https://juejin.cn/post/7052658786477015054"&gt;Day13 - 闭包应用6 - 构建器打包webpack&lt;/a&gt;&lt;a href="https://juejin.cn/post/7052658786477015054" title="https://juejin.cn/post/7052658786477015054"&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7053087344827744292" title="https://juejin.cn/post/7053087344827744292"&gt;Day14 - 词法作用域、块级作用域、作用域链、静态动态作用域&lt;/a&gt;&lt;a href="https://juejin.cn/post/7053087344827744292" title="https://juejin.cn/post/7053087344827744292"&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7053475694730280997" title="https://juejin.cn/post/7053475694730280997"&gt;Day15 - let为什么可以解决循环陷阱&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7053826986812112909" title="https://juejin.cn/post/7053826986812112909"&gt;Day16 - 为什么一定要有块级作用域&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7054194651380580389" title="https://juejin.cn/post/7054194651380580389"&gt;Day17 - let是否会造成变量提升&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7054525103098298404" title="https://juejin.cn/post/7054525103098298404"&gt;Day18 - this指向的多种形式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7054949116295512077" title="https://juejin.cn/post/7054949116295512077"&gt;Day19 - React与this指向&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7055224075324489764" title="https://juejin.cn/post/7055224075324489764"&gt;Day20 - 如何实现call和apply、bind&lt;/a&gt;&lt;a href="https://juejin.cn/post/7055224075324489764" title="https://juejin.cn/post/7055224075324489764"&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7056045978855571493" title="https://juejin.cn/post/7056045978855571493"&gt;Day21 - innerText、 nodeValue与 textContent的区别&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7056047002903134244" title="https://juejin.cn/post/7056047002903134244"&gt;Day22 - 语义化标签搭建wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7056677173561655326" title="https://juejin.cn/post/7056677173561655326"&gt;Day23 - document以外的常用对象&lt;/a&gt;&lt;a href="https://juejin.cn/post/7056677173561655326" title="https://juejin.cn/post/7056677173561655326"&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7056794350361477134" title="https://juejin.cn/post/7056794350361477134"&gt;Day24 - 图片懒加载的原理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7056997859677175821" title="https://juejin.cn/post/7056997859677175821"&gt;Day25 - HTML5新特性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7057410984914190350" title="https://juejin.cn/post/7057410984914190350"&gt;Day26 - Canvas 与 SVG的区别&lt;/a&gt;&lt;a href="https://juejin.cn/post/7057410984914190350" title="https://juejin.cn/post/7057410984914190350"&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;天天造轮子&lt;/h2&gt;
+&lt;p&gt;-&lt;a href="https://juejin.cn/post/6884138429181870093" title="https://juejin.cn/post/6884138429181870093"&gt;坚持造轮子第一天 - 模板引擎&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6885250789825052679" title="https://juejin.cn/post/6885250789825052679"&gt;坚持造轮子第二天 - 防抖与节流&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6885546581438201869" title="https://juejin.cn/post/6885546581438201869"&gt;坚持造轮子第三天 - 数据响应式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6886002492577234952" title="https://juejin.cn/post/6886002492577234952"&gt;坚持造轮子第四天 - 统一状态管理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6887844088335302670" title="https://juejin.cn/post/6887844088335302670"&gt;坚持造轮子第五天 - 时间旅行&lt;/a&gt;&lt;a href="https://juejin.cn/post/6887844088335302670" title="https://juejin.cn/post/6887844088335302670"&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6891935359651807239" title="https://juejin.cn/post/6891935359651807239"&gt;坚持造轮子第六天 - Mixin -装备合成路径&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6893338774088974343" title="https://juejin.cn/post/6893338774088974343"&gt;天天造轮子第七天 - 中间件实现 - Compose 的 N 种姿势&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6897911460656070669" title="https://juejin.cn/post/6897911460656070669"&gt;天天造轮子第八天 - Promise - 网友来稿&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6961961165656326152" title="https://juejin.cn/post/6961961165656326152"&gt;做了一夜动画，让大家十分钟搞懂Webpack&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;欢迎关注然叔&lt;/h1&gt;
+&lt;h2&gt;公众号： 前端大班车&lt;/h2&gt;
+&lt;h2&gt;B站： 全栈然叔&lt;/h2&gt;
+&lt;p&gt;🔥 这是然叔最近推出的前端工程化体系课程。&lt;/p&gt;
+&lt;p&gt;40h + 视频讲解。&lt;/p&gt;
+&lt;p&gt;三个实战带你无死角打通前端工程化&lt;/p&gt;
+&lt;p&gt;欢迎联系然叔(微信： xiaran310574 )， 也欢迎留下宝贵意见。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0231b01c009b4528b79b4e54ec3aa553~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我正在参与掘金技术社区创作者签约计划招募活动，&lt;a href="https://juejin.cn/post/7112770927082864653" title="https://juejin.cn/post/7112770927082864653"&gt;点击链接报名投稿&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;</description><author>全栈然叔</author><pubDate>Fri, 22 Jul 2022 04:51:54 GMT</pubDate></item><item><title>41岁的程序员的”毕业“走向自由职业 | 2022年中总结征文大赛</title><link>https://juejin.cn/post/7123012186884014116</link><description>&lt;hr /&gt;
+&lt;h2&gt;theme: cyanosis&lt;/h2&gt;
+&lt;p&gt;「时光不负，创作不停，本文正在参加&lt;a href="https://juejin.cn/post/7108989863126368286" title="https://juejin.cn/post/7108989863126368286"&gt;2022年中总结征文大赛&lt;/a&gt;」&lt;/p&gt;
+&lt;h1&gt;自我介绍&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;北京土著&lt;/li&gt;
+&lt;li&gt;房车两孩 (无房贷压力)&lt;/li&gt;
+&lt;li&gt;41岁生日刚过， 远超江湖传说的30岁程序员退休年龄&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2022年6月20日，然叔在严峻的经济形势下毕业。毕业后七天后过了41岁生日,正式进入“奔五”时代。&lt;/p&gt;
+&lt;h1&gt;回顾”求学“之路&lt;/h1&gt;
+&lt;h2&gt;富爸爸带来的讲师的冲动&lt;/h2&gt;
+&lt;p&gt;然叔35岁前一直搞技术工作，参与过 711电子商务、日本野村证券(日本第一)、瑞穗银行（日本三大银行之一）等大型商业项目，也曾有过海外工作经验，并且还带领团队负责整个创业公司的技术工作，可以说是一个经历丰富的程序届老兵。
+希望详细了解然叔经历的可以看我2年前的年终总结。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/6903701243361755149"&gt;39岁的夺路狂奔| 掘金年度征文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这次求学之路，开始于 2019年底，主要动机是看好“技术类内容分享”。嗯，不是因为年龄大了卷不动了吗？ 这个我确定不是，只是希望不再单纯靠体力挣钱，希望挣更多的钱而已。 看完《穷爸爸富爸爸》这本书，印象最深的是中文翻译者的一段经历。他说，在翻译完《穷爸爸富爸爸》后，对他的人生有了新的一层理解，他觉得人应该做有放大性的事情，不能单纯靠体力挣钱，所以他立即辞掉了自己的工作，开始了全国的讲座活动。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f78ebea13c384c00afca9226211e0f19~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;当然，他的行动也给我带来了极大的反思，这就犹如一个贫困潦倒的村汉看到了村口的致富标语。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="a6e66ed048372b36776ac561e9600741.jpeg" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b10243ddcac145b79fc69b8f33206d26~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;的确，作为一个技术人，只是被别人雇佣挣工资写程序，你也不是自己开公司或者做 App 自己卖。它的极限就是你的体力，很难有更大的突破。企业老板也不会通过你的贡献给你发工资，而是通过你职位的稀缺程度发给你工资。也就是说，即使你的软件给公司带来数亿元的收入，企业老板也只会根据职位在人才市场的定价给你发工资。&lt;/p&gt;
+&lt;p&gt;想到这，我决定我也要做课程，做有放大性的事。&lt;/p&gt;
+&lt;h2&gt;现实打脸 =&amp;gt; 借鸡生蛋&lt;/h2&gt;
+&lt;p&gt;想到了就马上行动 Just Do IT，拖延症不能有。
+那段时间决定尝试一下自己录课，其实我一直觉得自己口才还不错，有长期的项目经理工作中经常内部分享 + 外部讲解方案的经历。但是，我发现这和录课---那种关在一个密闭的空间 + 对着无言的屏幕说话的场景根本就是两回事。十分钟的内容录了十遍，都还是与自己满意的标准相差甚远。&lt;/p&gt;
+&lt;p&gt;看来讲师也不太好当啊，强行渡劫看来不太行。教学经验的积累需要一个过程，这时候正好一家教育机构给然叔抛来了橄榄枝，我觉得这样平滑过渡应该是一个好的方案。&lt;/p&gt;
+&lt;h2&gt;从”菜鸡“ =&amp;gt; "受人欢迎"&lt;/h2&gt;
+&lt;p&gt;其实一开始的教学并不太顺利，无论是课程的内容或是讲课水平。我记得那个时候课程有一个评分系统，一般 92分可以拿到额外的奖金。其实对于教学来讲，92分应该是个及格线，因为如果学生觉得老师不值得佩服基本没啥教学效果。我一开始非常尴尬，只得到 82 分，也就是说很多人不满意。我记得那个时候我会回访所以给我负面评价的学员，并且有一个 Excel 把所有的负面评价都记录下来。我的课程经过了数次迭代，最终在一年后最高得分得到了 99.5 分。&lt;/p&gt;
+&lt;h2&gt;做”非主流实战派“讲师&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7e940af7ce484a1192cc6800a58b2bcf~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;来到讲课行业才发现，怎么讲师届和相声届也差不多呢。很多德艺双馨的艺术家，居然没啥实战经验，就靠别人写好的旧剧本改来改去。我想，我坚决不能融入这种圈子，自己没弄过还拿着别人的教案硬讲，这不成了只看球不踢球的中国球迷了吗？&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e861e2839b8c4e08a27b75385c30a06e~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;我认为应该把讲课当做一个自我完善的过程，应该是自我学习经验的分享和传授。
+实际上，讲课是自己能力提高的机会，根据学习吸收金字塔，转述他人是吸收的最高形态。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1a3dc641dac8422b9268ec718598e93e~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;为了达到这个目标，在教学的同时我并没有放弃自身的提高。
+比如课程中需要讲解Vue3源码，我就会尝试给Vue3项目提交贡献，最终成为 Vue3 的代码贡献者，遇到组件库实战，我们也会建自己的开源组件库。&lt;/p&gt;
+&lt;h1&gt;开启自由职业之路&lt;/h1&gt;
+&lt;p&gt;毕业之后，我决定正式开启我的自由职业之路。&lt;/p&gt;
+&lt;p&gt;主要收益：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;收费视频课程&lt;/li&gt;
+&lt;li&gt;广告收入&lt;/li&gt;
+&lt;li&gt;开源赞助&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;短期收入来源以收费视频内容为主，目前在搞的是一套完整的工程化实战课程。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9a815ca2496e411294e562db28ad2079~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;长期来讲，我希望能达到Soho研发与讲课的平衡发展。因为我不想成为主流讲师，需要不断的开发积累。我希望能成为流行开源项目的核心贡献者，或者长期维护一个流行的开源项目。&lt;/p&gt;
+&lt;p&gt;另外，我还在正在写一本小册力争八月份发表，到时大家一定要多多支持然叔呀。&lt;/p&gt;
+&lt;h1&gt;下半年规划&lt;/h1&gt;
+&lt;p&gt;发布一个小册 - 希望大家支持；&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;英语学习 - 为了学习先进国家的科学技术；&lt;/li&gt;
+&lt;li&gt;Github  - 1k+ star 非资料型项目；&lt;/li&gt;
+&lt;li&gt;深度参与开源项目 - 初步确定是Vite生态；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;往年优秀文章汇总&lt;/h1&gt;
+&lt;h2&gt;征文获奖 &amp;amp; 千赞文章&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7038627294197317662" title="彻底搞懂HTTP协议 - 天天造轮子"&gt;彻底搞懂HTTP协议 - 天天造轮子&lt;/a&gt; -🔥月冠军&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6961961165656326152"&gt;做了一夜动画，让大家十分钟搞懂Webpack&lt;/a&gt; -  👍🏻1471赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6911897255087702030"&gt;【Vue官方教程笔记】- 尤雨溪手写mini-vue&lt;/a&gt;  👍🏻1643赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6909247394904702984"&gt;【Vue3官方教程】🎄万字笔记 | 同步导学视频&lt;/a&gt;  - 👍🏻1536赞&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Vue学习系列&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6899334776860180494"&gt;Element3开发内幕 - Vue CLI插件开发&lt;/a&gt; 192赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6891885484524437518"&gt;忙了一夜用CompositionAPI征服产品妹子花里胡哨的需求&lt;/a&gt;  129赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6875236411349008398"&gt;Vue3.0全球发布会干货总结&lt;/a&gt; 286赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6867865667089989639"&gt;Element3.0升级日记 - TimeLine组件&lt;/a&gt; 70赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6864462363039531022"&gt;跟我一起编写Vue3版ElementUI&lt;/a&gt; 156赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6850037267466190856"&gt;渐进式手敲Vue3.0框架 - 2万字以上 - 持续更新&lt;/a&gt; 93赞&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6844904191744278542"&gt;如何参加开源项目-如何给Vue3.0提PR&lt;/a&gt; 85赞&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;硬核面试题&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7048191028280426526" title="Day01 JS整数是怎么表示的 | 面试打卡365"&gt;Day01 JS整数是怎么表示的 | 面试打卡365&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7048554678858022925" title="Day02 - 0.1 + 0.2 === 0.3嘛 | 面试打卡365"&gt;Day02 - 0.1 + 0.2 === 0.3嘛 | 面试打卡365&lt;/a&gt;
+&lt;a href="https://juejin.cn/post/7048554678858022925"&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7048998409067298830" title="Day03 - 数字超过最大限制的如何处理? | 面试打卡365"&gt;Day03 - 数字超过最大限制的如何处理? | 面试打卡365&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7049383966700208165" title="Day04 - 判断数据类型的方式有哪些？| 面试365"&gt;Day04 - 判断数据类型的方式有哪些？| 面试365&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7049731312801808420" title=" Day05 - new 一个函数发生了什么？| 面试365"&gt;Day05 - new 一个函数发生了什么？| 面试365&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7050087767962976287" title="Day06 - 构造函数的返回值与new实例关系 | 面试365"&gt;Day06 - 构造函数的返回值与new实例关系 | 面试365&lt;/a&gt;&lt;a href="https://juejin.cn/post/7050087767962976287"&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7050476297318825992" title="Day07 - 为什么箭头函数不能当构造函数 | 面试365"&gt;Day07 - 为什么箭头函数不能当构造函数 | 面试365&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7050861660000976904" title="Day08 - 什么是闭包？如何制造闭包？"&gt;Day08 - 什么是闭包？如何制造闭包？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7051233635608821797" title="Day09 - 闭包应用1 - 制造惰性函数"&gt;Day09 - 闭包应用1 - 制造惰性函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7051547767855906852" title="Day10-闭包应用-偏应用函数与柯里化"&gt;Day10-闭包应用-偏应用函数与柯里化&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7051968010512236574" title="Day11-闭包应用 - 立即执行函数IIFE"&gt;Day11-闭包应用 - 立即执行函数IIFE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7052238635671748616" title="Day12 - 闭包应用4 - 类库封装"&gt;Day12 - 闭包应用4 - 类库封装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7052658786477015054" title="Day13 - 闭包应用6 - 构建器打包webpack"&gt;Day13 - 闭包应用6 - 构建器打包webpack&lt;/a&gt;
+&lt;a href="https://juejin.cn/post/7052658786477015054"&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7053087344827744292" title="Day14 - 词法作用域、块级作用域、作用域链、静态动态作用域"&gt;Day14 - 词法作用域、块级作用域、作用域链、静态动态作用域&lt;/a&gt;
+&lt;a href="https://juejin.cn/post/7053087344827744292"&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7053475694730280997" title="Day15 - let为什么可以解决循环陷阱"&gt;Day15 - let为什么可以解决循环陷阱&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7053826986812112909" title="Day16 - 为什么一定要有块级作用域"&gt;Day16 - 为什么一定要有块级作用域&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7054194651380580389" title="Day17 - let是否会造成变量提升"&gt;Day17 - let是否会造成变量提升&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7054525103098298404" title="Day18 - this指向的多种形式"&gt;Day18 - this指向的多种形式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7054949116295512077" title="Day19 - React与this指向"&gt;Day19 - React与this指向&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7055224075324489764" title="Day20 - 如何实现call和apply、bind"&gt;Day20 - 如何实现call和apply、bind&lt;/a&gt;
+&lt;a href="https://juejin.cn/post/7055224075324489764"&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7056045978855571493" title="Day21 - innerText、 nodeValue与 textContent的区别"&gt;Day21 - innerText、 nodeValue与 textContent的区别&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7056047002903134244" title="Day22 - 语义化标签搭建wiki"&gt;Day22 - 语义化标签搭建wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7056677173561655326" title="Day23 - document以外的常用对象"&gt;Day23 - document以外的常用对象&lt;/a&gt;
+&lt;a href="https://juejin.cn/post/7056677173561655326"&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7056794350361477134" title="Day24 - 图片懒加载的原理"&gt;Day24 - 图片懒加载的原理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7056997859677175821" title="Day25 - HTML5新特性"&gt;Day25 - HTML5新特性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7057410984914190350" title="Day26 - Canvas 与 SVG的区别"&gt;Day26 - Canvas 与 SVG的区别&lt;/a&gt;&lt;a href="https://juejin.cn/post/7057410984914190350"&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;天天造轮子&lt;/h2&gt;
+&lt;p&gt;-&lt;a href="https://juejin.cn/post/6884138429181870093" title="坚持造轮子第一天 - 模板引擎"&gt;坚持造轮子第一天 - 模板引擎&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6885250789825052679" title="坚持造轮子第二天 - 防抖与节流"&gt;坚持造轮子第二天 - 防抖与节流&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6885546581438201869" title="坚持造轮子第三天 - 数据响应式"&gt;坚持造轮子第三天 - 数据响应式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6886002492577234952" title="坚持造轮子第四天 - 统一状态管理"&gt;坚持造轮子第四天 - 统一状态管理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6887844088335302670" title="坚持造轮子第五天 - 时间旅行"&gt;坚持造轮子第五天 - 时间旅行&lt;/a&gt;
+&lt;a href="https://juejin.cn/post/6887844088335302670"&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6891935359651807239" title="坚持造轮子第六天 - Mixin -装备合成路径"&gt;坚持造轮子第六天 - Mixin -装备合成路径&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6893338774088974343" title="天天造轮子第七天 - 中间件实现 - Compose 的 N 种姿势"&gt;天天造轮子第七天 - 中间件实现 - Compose 的 N 种姿势&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6897911460656070669" title="天天造轮子第八天 - Promise  - 网友来稿"&gt;天天造轮子第八天 - Promise - 网友来稿&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6961961165656326152" title="做了一夜动画，让大家十分钟搞懂Webpack"&gt;做了一夜动画，让大家十分钟搞懂Webpack&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;为然叔💪🏻 打Call  ！！！&lt;/h1&gt;
+&lt;h1&gt;为然叔💪🏻 打Call  ！！！&lt;/h1&gt;
+&lt;h1&gt;为然叔💪🏻 打Call  ！！！&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;我正在参与掘金技术社区创作者签约计划招募活动，&lt;a href="https://juejin.cn/post/7112770927082864653" title="https://juejin.cn/post/7112770927082864653"&gt;点击链接报名投稿&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;</description><author>全栈然叔</author><pubDate>Thu, 21 Jul 2022 18:05:22 GMT</pubDate></item><item><title>Day26 - Canvas 与 SVG的区别</title><link>https://juejin.cn/post/7057410984914190350</link><description>&lt;p&gt;「这是我参与2022首次更文挑战的第8天，活动详情查看：&lt;a href="https://juejin.cn/post/7052884569032392740" title="https://juejin.cn/post/7052884569032392740"&gt;2022首次更文挑战&lt;/a&gt;」&lt;/p&gt;
+&lt;h2&gt;SVG&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SVG 指可伸缩矢量图形 (Scalable Vector Graphics)。
+SVG 是使用 XML 来描述二维图形和绘图程序的语言&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;svg width="400" height="110"&amp;gt;
+  &amp;lt;rect
+    width="150"
+    height="75"
+    style="fill: rgb(0, 0, 255); stroke-width: 3; stroke: rgb(0, 0, 0)"
+  /&amp;gt;
+&amp;lt;/svg&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Canvas&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;HTML [canvas] 标签用于通过脚本（通常是 JavaScript）动态绘制图形。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;canvas id="myCanvas" width="200" height="100"&amp;gt;&amp;lt;/canvas&amp;gt;
+&amp;lt;script type="text/javascript"&amp;gt;
+  var c = document.getElementById("myCanvas");
+  var cxt = c.getContext("2d");
+  cxt.fillStyle = "#FF0000";
+  cxt.fillRect(0, 0, 150, 75);
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Canvas优势&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;绘制出来的图形是位图具有很好的渲染性能&lt;/li&gt;
+&lt;li&gt;适合数据量比较大（&amp;gt;1000）&lt;/li&gt;
+&lt;li&gt;大量图形高频率交互&lt;/li&gt;
+&lt;li&gt;适合游戏&lt;/li&gt;
+&lt;li&gt;可以导出jpg/png图片&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Echarts中的热力图&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/28cd8e2e6b2c48db84557b10584aef63~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h3&gt;Echarts中的炫光拖尾&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f7b19e2067b740b69b96238d1f0b3238~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;SVG优势&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;矢量图放大不失真&lt;/li&gt;
+&lt;li&gt;支持事件处理器&lt;/li&gt;
+&lt;li&gt;文字独立、可编辑可搜索&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;案例选择了一个Vue3中的一个demo，通过响应式数据直接渲染svg，非常的精彩。&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;g&amp;gt;
+  &amp;lt;polygon :points="points"&amp;gt;&amp;lt;/polygon&amp;gt;
+  &amp;lt;circle cx="100" cy="100" r="80"&amp;gt;&amp;lt;/circle&amp;gt;
+  &amp;lt;axis-label
+              v-for="(stat, index) in stats"
+              :stat="stat"
+              :index="index"
+              :total="stats.length"&amp;gt;
+  &amp;lt;/axis-label&amp;gt;
+&amp;lt;/g&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;function valueToPoint (value, index, total) {
+  var x     = 0
+  var y     = -value * 0.8
+  var angle = Math.PI * 2 / total * index
+  var cos   = Math.cos(angle)
+  var sin   = Math.sin(angle)
+  var tx    = x * cos - y * sin + 100
+  var ty    = x * sin + y * cos + 100
+  return {
+    x: tx,
+    y: ty
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;对比表格&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Canvas&lt;/th&gt;
+&lt;th&gt;SVG&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;大数据量&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;高交互场景&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;可导出图片&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;放大不失真&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;支持事件处理&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;文字可编辑&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description><author>全栈然叔</author><pubDate>Tue, 25 Jan 2022 23:20:03 GMT</pubDate></item><item><title>Day25 - HTML5新特性</title><link>https://juejin.cn/post/7056997859677175821</link><description>&lt;p&gt;「这是我参与2022首次更文挑战的第8天，活动详情查看：&lt;a href="https://juejin.cn/post/7052884569032392740" title="https://juejin.cn/post/7052884569032392740"&gt;2022首次更文挑战&lt;/a&gt;」&lt;/p&gt;
+&lt;h3&gt;HTML5的重要性&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;产生于1990年&lt;/li&gt;
+&lt;li&gt;1997年HTML4出现并且维持了10年时间&lt;/li&gt;
+&lt;li&gt;2008年 HTML5出现，2012年趋于稳定 （移动互联的红利期）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image-20220125123233101" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/37d465b9af7542e48e542f2da9ad030e~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;HTML5新特性&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;https://www.w3school.com.cn/html/&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;语义化标签&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="image-20220125115939776" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2d5ec17896d648fa911221cb2a9c8f21~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;div class="header"&amp;gt;Header&amp;lt;/div&amp;gt;
+  &amp;lt;div class="nav"&amp;gt;Nav&amp;lt;/div&amp;gt;
+  &amp;lt;div class="body"&amp;gt;
+    &amp;lt;div class="article"&amp;gt;
+      Article
+      &amp;lt;div class="section"&amp;gt;
+        Section
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class="aside"&amp;gt;
+      Aside
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;div class="footer"&amp;gt;Footer&amp;lt;/div&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;header&amp;gt;Header&amp;lt;/header&amp;gt;
+  &amp;lt;nav&amp;gt;Nav&amp;lt;/nav&amp;gt;
+  &amp;lt;div class="body"&amp;gt;
+    &amp;lt;article&amp;gt;
+      Article
+      &amp;lt;section&amp;gt;Section&amp;lt;/section&amp;gt;
+    &amp;lt;/article&amp;gt;
+    &amp;lt;aside&amp;gt;Aside&amp;lt;/aside&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;footer&amp;gt;Footer&amp;lt;/footer&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;清晰易读&lt;/li&gt;
+&lt;li&gt;有利于SEO，方便搜索引擎识别页面结构&lt;/li&gt;
+&lt;li&gt;方便设备解析、比如盲人阅读&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;表单功能增强&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt; &amp;lt;form action="" method="get"&amp;gt;
+    &amp;lt;p&amp;gt;邮箱标签: &amp;lt;input type="email"&amp;gt;&amp;lt;/p&amp;gt;
+    &amp;lt;p&amp;gt;数字标签: &amp;lt;input type="number"&amp;gt;&amp;lt;/p&amp;gt;
+    &amp;lt;p&amp;gt;滑动条标签: &amp;lt;input type="range"&amp;gt;&amp;lt;/p&amp;gt;
+    &amp;lt;p&amp;gt;搜索框标签: &amp;lt;input type="search"&amp;gt;&amp;lt;/p&amp;gt;
+    &amp;lt;p&amp;gt;日期框: &amp;lt;input type="date"&amp;gt;&amp;lt;/p&amp;gt;
+    &amp;lt;p&amp;gt;星期框: &amp;lt;input type="week"&amp;gt;&amp;lt;/p&amp;gt;
+    &amp;lt;p&amp;gt;月份框: &amp;lt;input type="month"&amp;gt;&amp;lt;/p&amp;gt;
+    &amp;lt;p&amp;gt;颜色框: &amp;lt;input type="color"&amp;gt;&amp;lt;/p&amp;gt;
+    &amp;lt;p&amp;gt;网址框: &amp;lt;input type="url"&amp;gt;&amp;lt;/p&amp;gt;
+    &amp;lt;div&amp;gt;
+      &amp;lt;input type="submit"&amp;gt;
+      &amp;lt;input type="reset"&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;音视频标签&lt;/h3&gt;
+&lt;p&gt;在h5之前，网页中内嵌音视频普遍会采用flash实现。&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;&amp;lt;video width="320" height="240" controls="controls"&amp;gt;
+  &amp;lt;source src="movie.mp4" type="video/mp4" /&amp;gt;
+&amp;lt;/video&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;画布 - Canvas+ SVG&lt;/h3&gt;
+&lt;p&gt;HTML5 的 canvas 元素使用 JavaScript 在网页上绘制图像。&lt;/p&gt;
+&lt;p&gt;画布是一个矩形区域，您可以控制其每一像素。&lt;/p&gt;
+&lt;p&gt;canvas 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。&lt;/p&gt;
+&lt;p&gt;这个后面会专门出一期和svg的对比。&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;canvas id="myCanvas" width="200" height="100"&amp;gt;&amp;lt;/canvas&amp;gt;
+&amp;lt;script type="text/javascript"&amp;gt;
+var c=document.getElementById("myCanvas");
+var cxt=c.getContext("2d");
+cxt.fillStyle="#FF0000";
+cxt.fillRect(0,0,150,75);
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;拖放&lt;/h3&gt;
+&lt;p&gt;拖放（Drag 和 Drop）是很常见的特性。它指的是您抓取某物并拖入不同的位置。拖放是 HTML5 标准的组成部分：任何元素都是可拖放的。&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;style type="text/css"&amp;gt;
+      #div1 {
+        width: 120px;
+        height: 120px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+      }
+    &amp;lt;/style&amp;gt;
+    &amp;lt;script type="text/javascript"&amp;gt;
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+
+      function drag(ev) {
+        ev.dataTransfer.setData("Text", ev.target.id);
+      }
+
+      function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+      }
+    &amp;lt;/script&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;p&amp;gt;请把图片拖放到矩形中：&amp;lt;/p&amp;gt;
+
+    &amp;lt;div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;br /&amp;gt;
+    &amp;lt;img
+      id="drag1"
+      src="img.png"
+      draggable="true"
+      ondragstart="drag(event)"
+    /&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;本地存储&lt;/h3&gt;
+&lt;p&gt;通过本地存储（Local Storage），web 应用程序能够在用户浏览器中对数据进行本地的存储。&lt;/p&gt;
+&lt;p&gt;在 HTML5 之前，应用程序数据只能存储在 cookie 中，包括每个服务器请求。本地存储则更安全，并且可在不影响网站性能的前提下将大量数据存储于本地。&lt;/p&gt;
+&lt;p&gt;与 cookie 不同，存储限制要大得多（至少5MB），并且信息不会被传输到服务器。&lt;/p&gt;
+&lt;p&gt;本地存储经由起源地（origin）（经由域和协议）。所有页面，从起源地，能够存储和访问相同的数据。&lt;/p&gt;
+&lt;h3&gt;Web Worker&lt;/h3&gt;
+&lt;p&gt;当在 HTML 页面中执行脚本时，页面是不可响应的，直到脚本已完成。&lt;/p&gt;
+&lt;p&gt;Web worker 是运行在后台的 JavaScript，独立于其他脚本，不会影响页面的性能。您可以继续做任何愿意做的事情：点击、选取内容等等，而此时 web worker 运行在后台。&lt;/p&gt;
+&lt;h4&gt;地理定位&lt;/h4&gt;
+&lt;p&gt;HTML5 Geolocation API 用于获得用户的地理位置。&lt;/p&gt;
+&lt;p&gt;鉴于该特性可能侵犯用户的隐私，除非用户同意，否则用户位置信息是不可用的。&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;&amp;lt;script&amp;gt;
+var x=document.getElementById("demo");
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position)
+  {
+  x.innerHTML="Latitude: " + position.coords.latitude +
+  "&amp;lt;br /&amp;gt;Longitude: " + position.coords.longitude;
+  }
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;datalist&lt;/h4&gt;
+&lt;p&gt;只不过我们经常使用别人已经封装好的 UI 组件，所以就没怎么用过，此标签就是 HTML5 封装的 Select API。&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;input id="fruits" list="list" /&amp;gt;
+&amp;lt;datalist id="list"&amp;gt;
+  &amp;lt;option value="苹果"&amp;gt;&amp;lt;/option&amp;gt;
+  &amp;lt;option value="香蕉"&amp;gt;&amp;lt;/option&amp;gt;
+  &amp;lt;option value="山楂"&amp;gt;&amp;lt;/option&amp;gt;
+&amp;lt;/datalist&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img alt="image-20220125122459777" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0551b720a2104d1ab07a42696a096f13~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h4&gt;可编辑内容&lt;/h4&gt;
+&lt;p&gt;它被广泛的应用，比如很多网页编辑器，内容切换编辑状态等等，都可以通过这个属性来实现。&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;&amp;lt;div class="edit" contenteditable='true'&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img alt="123" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7585b7ca63e24f1db53a375e15665d9f~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;面试攻略&lt;/h2&gt;
+&lt;p&gt;HTML5是十年前的新技术。有些应用已经非常普遍了。但是还有很多技术还在摸索阶段，大家有机会可以看看Vite中的HMR技术使用了什么样的H5新特性。&lt;/p&gt;</description><author>全栈然叔</author><pubDate>Mon, 24 Jan 2022 20:37:57 GMT</pubDate></item><item><title>Day24 - 图片懒加载的原理</title><link>https://juejin.cn/post/7056794350361477134</link><description>&lt;p&gt;「这是我参与2022首次更文挑战的第7天，活动详情查看：&lt;a href="https://juejin.cn/post/7052884569032392740" title="https://juejin.cn/post/7052884569032392740"&gt;2022首次更文挑战&lt;/a&gt;」&lt;/p&gt;
+&lt;h2&gt;知识讲解&lt;/h2&gt;
+&lt;h3&gt;Why&lt;/h3&gt;
+&lt;p&gt;懒加载是一种延迟加载技术，在一个长网页中存在大量图片影响加载速度和用户体验。懒加载是一种优化网页性能的方式。大量用在电商场景中。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image-20220124221805647" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5de3505f236a427fb12064edb22d8d50~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;例如京东的首页，只需要第一时间完成首屏展示的任务就可以了，其他图片可以随着页面的滚动下载就可以了。&lt;/p&gt;
+&lt;h3&gt;What&lt;/h3&gt;
+&lt;p&gt;懒加载原理就是将一次性下载全部通篇改为根据判断可视区域下载。也就是说看到哪下载到哪。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;图片的src不设置真实的路径&lt;/li&gt;
+&lt;li&gt;图片的真实路径设置在其他属性中比如： data-original&lt;/li&gt;
+&lt;li&gt;通过js判断图片是否进入可视区域。&lt;/li&gt;
+&lt;li&gt;如果图片进入可视区域将图片src换成真实路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;HOW&lt;/h3&gt;
+&lt;p&gt;Step01: 图片的src不设置真实的路径，真实路径设置data-original&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; &amp;nbsp; &amp;nbsp;&amp;lt;img
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;src=""
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;class="image-item"
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;lazyload="true"
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;data-original="https://gitee.com/josephxia/picgo/raw/master/juejin/image-20220124221805647.png?a=1"
+ &amp;nbsp; &amp;nbsp;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Step02:通过js判断图片是否进入可视区域,如果图片进入可视区域将图片src换成真实路径&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var viewHeight = document.body.clientHeight;
+//获取可视区高度
+function lazyload() {
+ &amp;nbsp;console.log('load')
+ &amp;nbsp;var list = document.querySelectorAll("img[data-original][lazyload]");
+ &amp;nbsp;list.forEach((item) =&amp;gt; {
+ &amp;nbsp; &amp;nbsp;if (item.dataset.original === "") return;
+ &amp;nbsp; &amp;nbsp;var rect = item.getBoundingClientRect();
+ &amp;nbsp; &amp;nbsp;console.log('图片相对位置top',rect.top)
+ &amp;nbsp; &amp;nbsp;// 获得图片相对浏览器视窗的位置
+ &amp;nbsp; &amp;nbsp;if (rect.bottom &amp;gt;= 0 &amp;amp;&amp;amp; rect.top &amp;lt; viewHeight) {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;var img = new Image();
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;img.src = item.dataset.original;
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;img.onload = function () {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;item.src = img.src;
+ &amp;nbsp; &amp;nbsp;  };
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;item.removeAttribute("data-original");
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;//移除属性，下次不再遍历
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;item.removeAttribute("lazyload");
+ &amp;nbsp;  }
+  });
+}
+lazyload(); //刚开始还没滚动屏幕时，要先触发一次函数，初始化首页的页面图片
+document.addEventListener("scroll", lazyload);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;面试攻略&lt;/h2&gt;
+&lt;p&gt;懒加载技术大量应用在电商首页的长页面中，大家一定要明白原理并且亲自动手试试这段代码。&lt;/p&gt;
+&lt;p&gt;\&lt;/p&gt;</description><author>全栈然叔</author><pubDate>Mon, 24 Jan 2022 07:26:39 GMT</pubDate></item><item><title>Day23 - document以外的常用对象</title><link>https://juejin.cn/post/7056677173561655326</link><description>&lt;h1&gt;Day23 - document以外的常用对象&lt;/h1&gt;
+&lt;p&gt;「这是我参与2022首次更文挑战的第6天，活动详情查看：&lt;a href="https://juejin.cn/post/7052884569032392740" title="https://juejin.cn/post/7052884569032392740"&gt;2022首次更文挑战&lt;/a&gt;」&lt;/p&gt;
+&lt;h2&gt;知识讲解&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="image-20220124154025948" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c9e73519c4c475e9bcf6770c235c502~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;window对象以外的常用对象可以大体上分为两类，一类是BOM模型中的对象。&lt;/p&gt;
+&lt;h3&gt;BOM模型&lt;/h3&gt;
+&lt;h4&gt;location对象&lt;/h4&gt;
+&lt;p&gt;Location 对象包含有关当前 URL 的信息。&lt;/p&gt;
+&lt;p&gt;属性。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;location.hostname; // 返回 web 主机的域名
+location.port; &amp;nbsp; &amp;nbsp; // 返回 web 主机的端口 （80 或 443）
+location.protocol; // 返回所使用的 web 协议（http:// 或 https://）
+location.href; &amp;nbsp; &amp;nbsp; // 返回当前页面的url地址
+location.host; &amp;nbsp; &amp;nbsp; // 返回当前页面url的主机ip
+location.pathname; // 返回当前页面的路径和文件名
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;方法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;location.assign('about:/blank') // 载入一个新文档
+location.reload() // 重新载入文档
+location.replace('http://www.baidu.com') // 替换
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;navigator对象&lt;/h4&gt;
+&lt;p&gt;Navigator 对象包含有关浏览器的信息&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;navigator.appCodeName; //浏览器代码名
+navigator.appName; &amp;nbsp; &amp;nbsp; //浏览器步伐名
+navigator.language; &amp;nbsp; &amp;nbsp;//浏览器当前语言
+navigator.platform; &amp;nbsp; &amp;nbsp;//操作体系类型win32
+navigator.plugins;
+navigator.appVersion; &amp;nbsp; &amp;nbsp; //浏览器版本(包括 体系版本)
+navigator.userAgent; &amp;nbsp; &amp;nbsp; &amp;nbsp;//用户代理头的字符串表示
+navigator.onLine; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; //用户否在线
+navigator.cookieEnabled; &amp;nbsp;//浏览器是否撑持cookie
+navigator.mimeTypes;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;screen对象&lt;/h4&gt;
+&lt;p&gt;它包含客户端显示器的信息，比如像素宽度和像素高度。 history对象： 表示当前窗口首次使用以来用户的导航历史记录。每个 window 都有自己的 history 对象。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;screen.availWidth; &amp;nbsp; &amp;nbsp;// 返回浏览器可用宽度 像素为单位 1366
+screen.availHeight; &amp;nbsp; // 728 &amp;nbsp;
+screen.availTop; &amp;nbsp; &amp;nbsp; &amp;nbsp;// 0
+screen.availLeft; &amp;nbsp; &amp;nbsp; // 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;WebAPI&lt;/h3&gt;
+&lt;p&gt;webapi家族其实有很多的成员具体可以看看下面的文档。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://developer.mozilla.org/zh-CN/docs/Web/API"&gt;https://developer.mozilla.org/zh-CN/docs/Web/API&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;storage对象&lt;/h4&gt;
+&lt;p&gt;本地存储，有临时存储sessionStorage，永久存储localStorag&lt;/p&gt;
+&lt;h4&gt;fetch&lt;/h4&gt;
+&lt;p&gt;Fetch本质上是一种标准，该标准定义了请求、响应和绑定的流程。 Fetch标准还定义了Fetch () JavaScript API&lt;/p&gt;
+&lt;h4&gt;console&lt;/h4&gt;
+&lt;p&gt;Console API提供了允许开发人员执行调试任务的功能，例如在代码中的某个位置记录消息或变量值，或者计算任务完成所需的时间。&lt;/p&gt;
+&lt;h4&gt;IndexDB&lt;/h4&gt;
+&lt;p&gt;IndexDB 是一个运行在浏览器上的&lt;strong&gt;非关系型数据库&lt;/strong&gt;。既然是数据库了，那就不是 5M、10M 这样小打小闹级别了。理论上来说，IndexDB 理论上是没有存储上限的一般来说不会小于 250M）。它不仅可以存储字符串，还可以存储二进制数据。&lt;/p&gt;
+&lt;h4&gt;WebSQL&lt;/h4&gt;
+&lt;p&gt;WebSQL 是浏览器端的关系行数据库，引入了一组使用 SQL 操作客户端数据库的 API。&lt;/p&gt;
+&lt;h4&gt;Application Cache&lt;/h4&gt;
+&lt;p&gt;WebSQL Application Cache 是 HTML5 中定义的一种离线存储技术标准。这种技术可以让开发者明确地指定页面中哪些静态资源可以在第一次访问网页的同时缓存到本地，并且在下次访问该网页时向服务器询问本地缓存的资源是否需要更新&lt;/p&gt;
+&lt;h2&gt;面试攻略&lt;/h2&gt;
+&lt;p&gt;这道题主要就是一个概念题，攻略就是要回答整体架构。&lt;/p&gt;
+&lt;p&gt;\&lt;/p&gt;</description><author>全栈然叔</author><pubDate>Sun, 23 Jan 2022 23:51:57 GMT</pubDate></item><item><title>Day22 - 语义化标签搭建wiki</title><link>https://juejin.cn/post/7056047002903134244</link><description>&lt;p&gt;「这是我参与2022首次更文挑战的第5天，活动详情查看：&lt;a href="https://juejin.cn/post/7052884569032392740" title="https://juejin.cn/post/7052884569032392740"&gt;2022首次更文挑战&lt;/a&gt;」&lt;/p&gt;
+&lt;h2&gt;知识讲解&lt;/h2&gt;
+&lt;h3&gt;什么是语义标签&lt;/h3&gt;
+&lt;p&gt;语义化标签其实就是可以让标签有自己的含义。&lt;/p&gt;
+&lt;p&gt;对比下面两个html的区别&lt;/p&gt;
+&lt;p&gt;传统标签&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;div class="header"&amp;gt;
+  &amp;lt;h1&amp;gt;html5语义化标签&amp;lt;/h1&amp;gt;
+  &amp;lt;div class="nav"&amp;gt;
+    &amp;lt;h2&amp;gt;导航&amp;lt;/h2&amp;gt;
+    &amp;lt;ul&amp;gt;
+      &amp;lt;li&amp;gt;章节标签&amp;lt;/li&amp;gt;
+      &amp;lt;li&amp;gt;标题标签&amp;lt;/li&amp;gt;
+    &amp;lt;/ul&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;语义化&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;header&amp;gt;
+  &amp;lt;h1&amp;gt;html5语义化标签&amp;lt;/h1&amp;gt;
+  &amp;lt;nav&amp;gt;
+    &amp;lt;h1&amp;gt;导航&amp;lt;/h1&amp;gt;
+  &amp;lt;ul&amp;gt;
+    &amp;lt;li&amp;gt;章节标签&amp;lt;/li&amp;gt;
+  &amp;lt;li&amp;gt;标题标签&amp;lt;/li&amp;gt;
+  &amp;lt;/ul&amp;gt;
+  &amp;lt;/nav&amp;gt;
+&amp;lt;/header&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以很清楚的看到都是头部的描述，但是语义化标签可以清楚内容的含义。&lt;/p&gt;
+&lt;h3&gt;语义化标签的优势&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;代码结构清晰，方便阅读，有利于团队合作开发。&lt;/li&gt;
+&lt;li&gt;方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）以语义的方式来渲染网页。&lt;/li&gt;
+&lt;li&gt;有利于搜索引擎优化（SEO）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;常见的语义化标签&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;w3c的标签说明： https://html.spec.whatwg.org/&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;title&amp;gt;：页面主题内容。
+&amp;lt;hn&amp;gt;：h1~h6，分级标题，&amp;lt;h1&amp;gt; 与 &amp;lt;title&amp;gt; 协调有利于搜索引擎优化。
+&amp;lt;ul&amp;gt;：无序列表。
+&amp;lt;li&amp;gt;：有序列表。
+&amp;lt;header&amp;gt;：页眉通常包括网站标志、主导航、全站链接以及搜索框。
+&amp;lt;nav&amp;gt;：标记导航，仅对文档中重要的链接群使用。
+&amp;lt;main&amp;gt;：页面主要内容，一个页面只能使用一次。如果是web应用，则包围其主要功能。
+&amp;lt;article&amp;gt;：定义外部的内容，其中的内容独立于文档的其余部分。
+&amp;lt;section&amp;gt;：定义文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分。
+&amp;lt;aside&amp;gt;：定义其所处内容之外的内容。如侧栏、文章的一组链接、广告、友情链接、相关产品列表等。
+&amp;lt;footer&amp;gt;：页脚，只有当父级是body时，才是整个页面的页脚。
+&amp;lt;small&amp;gt;：呈现小号字体效果，指定细则，输入免责声明、注解、署名、版权。
+&amp;lt;strong&amp;gt;：和 em 标签一样，用于强调文本，但它强调的程度更强一些。
+&amp;lt;em&amp;gt;：将其中的文本表示为强调的内容，表现为斜体。
+&amp;lt;mark&amp;gt;：使用黄色突出显示部分文本。
+&amp;lt;figure&amp;gt;：规定独立的流内容（图像、图表、照片、代码等等）（默认有40px左右margin）。
+&amp;lt;figcaption&amp;gt;：定义 figure 元素的标题，应该被置于 figure 元素的第一个或最后一个子元素的位置。
+&amp;lt;cite&amp;gt;：表示所包含的文本对某个参考文献的引用，比如书籍或者杂志的标题。
+&amp;lt;blockquoto&amp;gt;：定义块引用，块引用拥有它们自己的空间。
+&amp;lt;q&amp;gt;：短的引述（跨浏览器问题，尽量避免使用）。
+&amp;lt;time&amp;gt;：datetime属性遵循特定格式，如果忽略此属性，文本内容必须是合法的日期或者时间格式。
+&amp;lt;abbr&amp;gt;：简称或缩写。
+&amp;lt;dfn&amp;gt;：定义术语元素，与定义必须紧挨着，可以在描述列表dl元素中使用。
+&amp;lt;address&amp;gt;：作者、相关人士或组织的联系信息（电子邮件地址、指向联系信息页的链接）。
+&amp;lt;del&amp;gt;：移除的内容。
+&amp;lt;ins&amp;gt;：添加的内容。
+&amp;lt;code&amp;gt;：标记代码。
+&amp;lt;meter&amp;gt;：定义已知范围或分数值内的标量测量。（Internet Explorer 不支持 meter 标签）
+&amp;lt;progress&amp;gt;：定义运行中的进度（进程）。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;主体部分&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;html&amp;gt;
+    &amp;lt;head&amp;gt;
+        &amp;lt;title&amp;gt;HTML&amp;lt;/title&amp;gt;
+    &amp;lt;/head&amp;gt;
+    &amp;lt;body&amp;gt;
+        &amp;lt;aside&amp;gt;&amp;lt;/aside&amp;gt;  
+        &amp;lt;header&amp;gt;&amp;lt;/header&amp;gt;
+        &amp;lt;main&amp;gt;&amp;lt;/main&amp;gt;
+      &amp;lt;footer&amp;gt;&amp;lt;/footer&amp;gt;
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;aside : 侧栏、文章的一组链接、广告、友情链接、相关产品列表等&lt;/li&gt;
+&lt;li&gt;header：页眉通常包括网站标志、主导航、全站链接以及搜索框。&lt;/li&gt;
+&lt;li&gt;main：页面主要内容，一个页面只能使用一次。如果是web应用，则包围其主要功能。&lt;/li&gt;
+&lt;li&gt;footer： 页脚，只有当父级是body时，才是整个页面的页脚。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;导航栏&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;nav&amp;gt;
+  &amp;lt;h2&amp;gt;导航栏&amp;lt;/h2&amp;gt;
+  &amp;lt;ol&amp;gt;
+    &amp;lt;li&amp;gt;历史&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;标记&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;语义化HTML&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;分发&amp;lt;/li&amp;gt;
+  &amp;lt;/ol&amp;gt;
+&amp;lt;/nav&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img alt="image-20220122212501349" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4dda0ebea02c43e9b8e0601fcf53cc4f~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;nav: 标记导航，仅对文档中重要的链接群使用&lt;/li&gt;
+&lt;li&gt;ol： 有序列表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;段落&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;article&amp;gt;
+    &amp;lt;h1&amp;gt;一、大标题&amp;lt;/h1&amp;gt;
+    &amp;lt;section&amp;gt;
+        &amp;lt;h1&amp;gt;1. 小标题&amp;lt;/h1&amp;gt;
+        &amp;lt;section&amp;gt;
+            &amp;lt;h1&amp;gt;1.1 小标题&amp;lt;/h1&amp;gt;
+        &amp;lt;/section&amp;gt;
+    &amp;lt;/section&amp;gt;
+&amp;lt;/article&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img alt="image-20220122212752795" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d8317b5d41244d5b8cc356e5e020a5c1~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;可以看到使用section标记+h1就可以非常简单的完成标题分级。&lt;/p&gt;
+&lt;h3&gt;内容&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;    正文&amp;lt;q&amp;gt;引述2&amp;lt;/q&amp;gt;
+    &amp;lt;del&amp;gt;删除的内容&amp;lt;/del&amp;gt;
+    &amp;lt;ins&amp;gt;添加的内容&amp;lt;/ins&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;正文中常用的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;del： 删除内容&lt;/li&gt;
+&lt;li&gt;ins： 添加内容&lt;/li&gt;
+&lt;li&gt;q： 引用内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image-20220122212932695" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0e39da11566842d1835c9e2e59ae0556~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h3&gt;图片引用&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;    &amp;lt;figure&amp;gt;
+        &amp;lt;img src="//upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/200px-HTML5_logo_and_wordmark.svg.png" alt=""&amp;gt;
+        &amp;lt;figcaption&amp;gt;HTML5Logo&amp;lt;/figcaption&amp;gt;
+    &amp;lt;/figure&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;figure:规定独立的流内容（图像、图表、照片、代码等等）（默认有40px左右margin）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;figcaption: 内容标题&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;代码和运行结果&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;pre&amp;gt;&amp;lt;!-- 预格式化文本 保留空格和换行符--&amp;gt;
+    &amp;lt;code&amp;gt;
+        exports.call = function (context, ...args) {
+            // this 为调用方法 例:f.call this = f
+            context.fn = this;
+            const result = context.fn(...args);
+            delete context.fn;
+            return result;
+            };
+                            &amp;lt;/code&amp;gt;
+        ✅ 运行结果:
+                            &amp;lt;samp&amp;gt;&amp;lt;!-- 一个短语标签，用来格式化文档中的文本为计算机输出 --&amp;gt;
+        (base) ➜  call-apply-bind git:(master) ✗ jest ../call-apply-bind
+        PASS  __tests__/index.spec.js
+            实现call 、apply、 bind函数
+            ✓ 测试call方法 (7 ms)
+            ✓ 测试apply方法 (1 ms)
+            ✓ 测试bind方法 (1 ms)
+        
+        Test Suites: 1 passed, 1 total
+        Tests:       3 passed, 3 total
+        Snapshots:   0 total
+        Time:        1.657 s
+        Ran all test suites matching /..\/call-apply-bind/i.
+        (base) ➜  call-apply-bind git:(master) ✗
+    &amp;lt;/samp&amp;gt;
+&amp;lt;/pre&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;pre: &lt;em&gt;预格式化文本 保留空格和换行符&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;samp: 标签表示一段用户应该对其没有什么其他解释的文本字符。要从正常的上下文抽取这些字符时，通常要用到这个标签。&lt;/li&gt;
+&lt;li&gt;code: 用于引用计算机代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image-20220122213458408" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ccc7f337e6ad4597ab62e97f72ff3ec6~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;面试攻略&lt;/h2&gt;
+&lt;p&gt;HTML5的一个重大更新就是增加了一系列的语义化标签。希望大家含义说清+ 描述系统。&lt;/p&gt;</description><author>全栈然叔</author><pubDate>Sat, 22 Jan 2022 07:06:44 GMT</pubDate></item><item><title>Day21 - innerText、 nodeValue与 textContent的区别</title><link>https://juejin.cn/post/7056045978855571493</link><description>&lt;p&gt;「这是我参与2022首次更文挑战的第4天，活动详情查看：&lt;a href="https://juejin.cn/post/7052884569032392740" title="https://juejin.cn/post/7052884569032392740"&gt;2022首次更文挑战&lt;/a&gt;」&lt;/p&gt;
+&lt;h1&gt;知识讲解&lt;/h1&gt;
+&lt;h3&gt;什么是Dom&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DOM=DocumentObjectModel，文档对象模型，DOM可以以一种独立于平台和语言的方式访问和修改一个文档的内容和结构&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;你可以认为就是浏览器会把HTML文档解析为一个对象。&lt;/p&gt;
+&lt;p&gt;就像一个树一样。比如下面会有和然后其他标签都是这棵树上的数值和树叶。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image-20220121235611713" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2ed3d8b1d1264c10aca15f20e6206e16~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;h3&gt;节点种类&lt;/h3&gt;
+&lt;p&gt;节点种类一共分为九类&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;元素节点 　　Node.ELEMENT_NODE(1) 属性节点 　　Node.ATTRIBUTE_NODE(2) 文本节点 　　Node.TEXT_NODE(3) CDATA节点 Node.CDATA_SECTION_NODE(4) 实体引用名称节点 　　 Node.ENTRY_REFERENCE_NODE(5) 实体名称节点 　　Node.ENTITY_NODE(6) 处理指令节点 　　Node.PROCESSING_INSTRUCTION_NODE(7) 注释节点 　 Node.COMMENT_NODE(8) 文档节点 　 Node.DOCUMENT_NODE(9) 文档类型节点 　　Node.DOCUMENT_TYPE_NODE(10) 文档片段节点 　　Node.DOCUMENT_FRAGMENT_NODE(11) DTD声明节点 Node.NOTATION_NODE(12)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;节点遍历&lt;/h3&gt;
+&lt;p&gt;树起始于文档节点，并由此继续伸出枝条，直到处于这棵树最低级别的所有文本节点为止。&lt;/p&gt;
+&lt;h3&gt;三者区别&lt;/h3&gt;
+&lt;p&gt;innerText、 nodeValue与 textContent这三个api都是取某一个文本内容。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div id="app"&amp;gt;
+ &amp;nbsp;  水果
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;!-- 注释 --&amp;gt;
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;p&amp;gt;
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  西瓜
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;div style="display: none;"&amp;gt;
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  瓜子
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;/div&amp;gt;
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;/p&amp;gt;
+ &amp;nbsp; &amp;nbsp;&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;nodeValue&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;nodeValue只能取文本节点的内容。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const app = document.getElementById('app')
+console.log(app.nodeValue) // null
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其实【水果】这个是div下的一个文本节点。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const app = document.getElementById('app')
+console.log(app.childNodes[0].nodeValue) // null
+console.log(app.childNodes[1].nodeValue) // null
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;实际上只对CDATA片段，注释comment，Processing Instruction节点或text节点有效。&lt;/p&gt;
+&lt;h4&gt;innerHTML与innerText&lt;/h4&gt;
+&lt;p&gt;这两个api的区别功能是从起始位置到终止位置的内容, 区别在于是否去除Html标签 。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const app = document.getElementById('app')
+console.log(app.innerHTML) // null
+console.log(app.innerText) // null
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;textContent&lt;/h4&gt;
+&lt;p&gt;这个是一个比较新的api ie8以前的浏览器可能会产生不兼容问题。&lt;/p&gt;
+&lt;p&gt;功能是textContent 属性设置或返回指定节点的文本内容，以及它的所有后代。&lt;/p&gt;
+&lt;p&gt;与innerText的区别&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;会获取style=“display:none”中的文本&lt;/li&gt;
+&lt;li&gt;会获取style标签中的文本&lt;/li&gt;
+&lt;li&gt;不解析html更快捷性能好&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;面试攻略&lt;/h2&gt;
+&lt;p&gt;这道题其实我也不太会，确实比较惭愧。但是学习了这道题给我的感觉就是了解这些基础api对了解框架源码有很多好处，就比如十二种节点类型。&lt;/p&gt;</description><author>全栈然叔</author><pubDate>Sat, 22 Jan 2022 07:04:30 GMT</pubDate></item><item><title>Day20 - 如何实现call和apply、bind</title><link>https://juejin.cn/post/7055224075324489764</link><description>&lt;p&gt;「这是我参与2022首次更文挑战的第3天，活动详情查看：&lt;a href="https://juejin.cn/post/7052884569032392740" title="https://juejin.cn/post/7052884569032392740"&gt;2022首次更文挑战&lt;/a&gt;」&lt;/p&gt;
+&lt;h3&gt;知识讲解&lt;/h3&gt;
+&lt;p&gt;call、apply、bind的功能就是改变this的指向、只是三个函数的参数风格不太一样。&lt;/p&gt;
+&lt;h3&gt;call函数实现&lt;/h3&gt;
+&lt;p&gt;[function].call([this], [param]...)，一句话概括：&lt;code&gt;call()&lt;/code&gt; 将函数的 &lt;code&gt;this&lt;/code&gt; 指定到 &lt;code&gt;call()&lt;/code&gt; 的第一个参数值同时将剩余参数指定的情况下调用某个函数或方法。&lt;/p&gt;
+&lt;p&gt;用测试用例描述&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; &amp;nbsp;it("测试call方法", () =&amp;gt; {
+ &amp;nbsp; &amp;nbsp;const { call } = require("../index");
+ &amp;nbsp; &amp;nbsp;Function.prototype.myCall = call;
+ &amp;nbsp; &amp;nbsp;const obj = { a: 1 };
+ &amp;nbsp; &amp;nbsp;const f = function (...args) {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;return { context: this, args };
+ &amp;nbsp;  };
+ &amp;nbsp; &amp;nbsp;expect(f.myCall(obj, 1, 2)).toEqual({ context: { a: 1 }, args: [1, 2] });
+  });
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;代码实现&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;exports.call = function (context, ...args) {
+ &amp;nbsp;// this 为调用方法 例:f.call this = f
+ &amp;nbsp;context.fn = this;
+ &amp;nbsp;const result = context.fn(...args);
+ &amp;nbsp;delete context.fn;
+ &amp;nbsp;return result;
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;讲解&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;f.myCall函数调用时，this上下文其实是f函数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!----&gt;
+&lt;ul&gt;
+&lt;li&gt;需要的绑定的上下文用参数context传入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!----&gt;
+&lt;ul&gt;
+&lt;li&gt;其余参数使用展开语法表示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!----&gt;
+&lt;ul&gt;
+&lt;li&gt;首先将函数绑定到上下文对象中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!----&gt;
+&lt;ul&gt;
+&lt;li&gt;删除context上线文中的fn方法清理现场&lt;/li&gt;
+&lt;li&gt;返回执行结果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;apply的实现&lt;/h3&gt;
+&lt;p&gt;call方法和apply方法类似，两者唯一不同的是，执行参数是是一个数组而不是多个参数&lt;/p&gt;
+&lt;p&gt;测试用例表示&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;it("测试apply方法", () =&amp;gt; {
+ &amp;nbsp; &amp;nbsp;const { apply } = require("../index");
+ &amp;nbsp; &amp;nbsp;Function.prototype.myApply = apply;
+ &amp;nbsp; &amp;nbsp;const obj = { a: 1 };
+​
+ &amp;nbsp; &amp;nbsp;const f = function (...args) {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;return { context: this, args };
+ &amp;nbsp;  };
+ &amp;nbsp; &amp;nbsp;expect(f.myApply(obj, [1, 2])).toEqual({ context: { a: 1 }, args: [1, 2] });
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;代码实现&lt;/p&gt;
+&lt;p&gt;由于变动非常小甚至可以直接调用call函数完成&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;exports.apply = function (context, args) {
+ &amp;nbsp; &amp;nbsp;return this.call(context,...args)
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;正经代码是这样&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;exports.apply = function (context, args) { // 只需要变动一行 ...args =&amp;gt; args
+ &amp;nbsp;// this 为调用方法 例:f.call this = f
+ &amp;nbsp;context.fn = this;
+ &amp;nbsp;const result = context.fn(...args);
+ &amp;nbsp;delete context.fn;
+ &amp;nbsp;return result;
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;bind函数&lt;/h3&gt;
+&lt;p&gt;bind返回fun的拷贝，并指定了fun的this指向，保存了fun的参数。&lt;/p&gt;
+&lt;p&gt;测试用例表示&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;it("测试bind方法", () =&amp;gt; {
+ &amp;nbsp; &amp;nbsp;const { bind } = require("../index");
+ &amp;nbsp; &amp;nbsp;Function.prototype.myBind = bind;
+ &amp;nbsp; &amp;nbsp;const obj = { a: 1 };
+​
+ &amp;nbsp; &amp;nbsp;const f = function (...args) {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;return { context: this, args };
+ &amp;nbsp;  };
+ &amp;nbsp; &amp;nbsp;expect(f.bind(obj, 1, 2)(3, 4)).toEqual({
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;context: { a: 1 },
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;args: [1, 2, 3, 4],
+ &amp;nbsp;  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;代码实现&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;exports.bind = function (context, ...args) {
+ &amp;nbsp;// this 为调用方法 例:f.call this = f
+ &amp;nbsp;const f = this;
+ &amp;nbsp;return function F() {
+ &amp;nbsp; &amp;nbsp;return f.apply(context, [...args, ...arguments]);
+  };
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;实现一个工厂函数&lt;/li&gt;
+&lt;li&gt;使用apply指向函数&lt;/li&gt;
+&lt;li&gt;使用传入的context作为上下文&lt;/li&gt;
+&lt;li&gt;将bind传入的执行参数与执行F()时传入的参数合并作为执行参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image-20220120174836487" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cc664054e630483bad0d6a4650498488~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;面试攻略&lt;/h2&gt;
+&lt;p&gt;这个就是一道经典的手写代码题。&lt;/p&gt;
+&lt;h1&gt;🔥2022然叔坚持打卡365天&lt;/h1&gt;
+&lt;h1&gt;大家一波一键三连和然叔一起呀&lt;/h1&gt;
+&lt;p&gt;Day1 - JS 整数是怎么表示的？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=1"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7048191028280426526"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/3"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day2 - 0.1 + 0.2 === 0.3 嘛？为什么？怎么解决？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=2"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7048554678858022925"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/2"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day3 - Number() 的存储空间是多大？如果后台发送了一个超过最大限制的数字怎么办?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=3"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7048998409067298830"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/4"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day4 - 判断数据类型的方式有哪些？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=4"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7049383966700208165"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/5"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day5 - new 一个函数发生了什么？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=5"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7049731312801808420"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/6"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day6 - new 一个构造函数，如果函数返回 &lt;code&gt;return {}&lt;/code&gt; 、 &lt;code&gt;return null&lt;/code&gt; ， &lt;code&gt;return 1&lt;/code&gt; ， &lt;code&gt;return true&lt;/code&gt; 会发生什么情况？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=6"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7050087767962976287"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/7"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day7 - 分析一下箭头语法为什么不能当做构造函数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=7"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7050476297318825992"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/25"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day8 - 什么是闭包？如何产生闭包&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=8"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7050861660000976904"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/20"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day9 - 如何用闭包制造惰性函数?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=9"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7051233635608821797/"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/23"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day14 - 词法作用域、块级作用域、作用域链、静态动态作用域&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=14"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7053087344827744292"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/21"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day10 - 闭包与科里化、偏应用函数的关系&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=10"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7051547767855906852"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/54"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day11 - 谈谈闭包与即时函数的应用&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=11"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7051968010512236574"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/55"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day12 - 如何利用闭包完成类库封装&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=12"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7052238635671748616"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/56"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day13 - 如何用闭包完成模块化(Webpack原理)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=13"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7052658786477015054"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/57"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day15 - let为什么能够解决循环陷阱&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=15"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7053475694730280997"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/58"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day16 - 为什么一定要有块级作用域？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=16"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7053826986812112909"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/59"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day17 - let是否会造成变量提升&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=17"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7054194651380580389"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/60"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day18 - 介绍一下this指向4种形式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=18"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7054525103098298404"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/61"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Day19 - React中的事件绑定与箭头函数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1gr4y1U7pY?p=19"&gt;B栈视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7054949116295512077"&gt;掘金文章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/su37josephxia/frontend-interview/issues/71"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;===============&lt;/p&gt;</description><author>全栈然叔</author><pubDate>Thu, 20 Jan 2022 01:53:22 GMT</pubDate></item><item><title>5年18k,5年35K的两位前端他们这些年经历了什么</title><link>https://juejin.cn/post/7123119921269047309</link><description>&lt;hr /&gt;
+&lt;h2&gt;theme: fancy&lt;/h2&gt;
+&lt;h2&gt;这是一个沉重的话题&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;相同学历下，5年15k,5年35K的前端同学为什么薪资水平上差距这么大，这是两位同学的真实写照，在同一个城市，今天我们来聊一聊他们两各自是怎么发展的，这两位同学我们暂且叫他们小A，和小B&lt;/li&gt;
+&lt;li&gt;化名一下，A同学普通本科学历，目前在外包工作，月薪18k,一个月的年终奖；B同学在某中型厂工作，月薪35K,两个月年终，带几个人的小团队的leader。&lt;/li&gt;
+&lt;li&gt;跳槽情况：小A跳槽了1次，小B跳槽了3次，刚毕业的薪资，小A拿了7.5，小B拿了9K,这样一看，他们刚毕业的时候薪资收入是差距不大的，但是5年后，差距巨大，思考下：涨薪还是得靠跳槽&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;小A的经历&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;按照他自己的话说，在外包舒服，做项目基本上不是太难，在网上查一查项目都能写出来，而且不怎么加班，自己就没想过跳槽，以及个人提升，所以这五年以来基本上是躺过来的，中途跳槽一次，还是因为项目做完了，转场，就打算换了，跳槽之前是13K，跳槽之后是15k,然后在现在这家公司，每年涨了1500块钱，然后就到了18K了&lt;/li&gt;
+&lt;li&gt;我们提炼下关键词：‘外包舒服’，‘不加班’，‘没有思考过个人提升’，最终的原因就是舒服，其他的提升也好，跳槽也罢，都很累。觉得自己在现在工作还是蛮爽的。&lt;/li&gt;
+&lt;li&gt;今年的业务变动，被裁员了，在外包的同学应该都知道，合同是避税的，然后公司还算有一点点良心，给他赔了一个月的工资，N+1,对于外包的同学来说基本上是奢望！这个是现实。&lt;/li&gt;
+&lt;li&gt;然后出来面试，发现市场贼冷，面试邀约没多少，大部分都是外包来找的，自己也没有刷题，面了好多家，基本上没有下文，内心也是比较焦虑和沮丧，感觉未来无望&lt;/li&gt;
+&lt;li&gt;我看了下他的简历，基本上就是标准流水账的简历，可以说是豪无亮点，而且两段工作经历都是外包，虽然只跳槽过一次，但是简历依旧被毁的死死的，得重新写，大改动。&lt;/li&gt;
+&lt;li&gt;然后我就说了一句，你之前躺的越平，你现在越焦虑，你要想找到正常符合你年限的工资，得把之前欠的都得补回来，而且是在短时间内，因为空窗期太久肯定影响下一份工作了，所以可以遇见的辛苦&lt;/li&gt;
+&lt;li&gt;按他自己的话说，真的后悔，世事难料，没想到现在招聘市场这么卷，自己平时也没有太多关注，也导致自己的薪资水平严重低于市场。而且没想到外包这么毁简历，自己投大厂一点回声都没有，有一种欲哭无泪无泪的感觉，毕竟路是自己一步一步走偏的，而且要生活，还得要一份工作来养活自己一家，所以这么时候必须要振作起来，疯狂的刷题，事已至此，只能这样的。&lt;/li&gt;
+&lt;li&gt;有些时候你会发现，不是大家愿意卷，是这个市场导致的，一个好一点的岗位几十份或者上百份的简历，这个竞争力度太强了，你要想拿到这个offer，那只能把别人卷翻掉，真的没的其他的好办法！&lt;/li&gt;
+&lt;li&gt;你想躺平，那你就得接受，不一定能找到一份好的工作的结果，不过这都不是确定的，万一你的运气非常好呢，这也说不定，但是大部分同学获得的结果是另他们自己不太满意的！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;小B的经历&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;第一家公司去了一个中厂，因为在大学的时候就在准备算法，所以直接走了校招。在这家公司，第一年没有涨薪，气愤跳槽，涨幅快double,拿到了base: 18K，3个月年终&lt;/li&gt;
+&lt;li&gt;然后在公司表现比较不错，第一年涨薪到20K，此时他已经有2年多工作经验了，因为跳槽尝到了甜头，所以在业余时间，也是经常的刷网上的课程，文章，算法，所以在这家公司两年多的时候，工资涨到了22K,然后跳槽到一家中厂，拿到了27K,同时带了3个人，成为一个小组长，此时他的工作经验已经4年了&lt;/li&gt;
+&lt;li&gt;他说喜欢逛论坛，认识了很多前端大佬，觉得自己4年拿到这个工资还算可以，但是不算很好，自己需要在技术深度，上技术发力，刷题是必备操作，问你八股文这个真的没在难为你，因为这些都是基础，而且最容易准备，怕的是那种上个给你两道算法题，干的你一脸懵。还有一些奇葩场景题。&lt;/li&gt;
+&lt;li&gt;于是呼在这家公司一年多，又跳槽了，这次跳槽，拿到了好几个offer，最后去了一家还不错的公司，开到了35K的base&lt;/li&gt;
+&lt;li&gt;按他自己的话说，胆子要大，题目狂刷，算法就刷了500多道，然后撸一撸源码，虽然面试的时候问的也很浅，但是能吹很多，很大程度上面试官要不怎么深入，基本就能唬住了，面试基本上很顺畅，因为准备的很充分，虽然很累但是收获的结果是比较好的，不然能怎么办，学历不是很好&lt;/li&gt;
+&lt;li&gt;他也给自己定了下次的目标，先稳一稳履历，然后跳槽到大厂&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;看看他们两个的经历&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;我就不多说了，大家自己思考下&lt;/strong&gt;，好好想一想自己之后的，关键词：跳槽、持续努力、卷vs躺平&lt;/li&gt;
+&lt;li&gt;结尾依旧：&lt;strong&gt;长风破浪会有时，直挂云帆济沧海！&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;在线整理的确实很好，对掘金的文章进行了一个汇总整理，&lt;strong&gt;在线刷题指南，拿走不谢，要学会站在别人的肩膀上提升自己点击这里--&amp;gt;&lt;/strong&gt; &amp;nbsp;&lt;a href="https://link.juejin.cn/?target=https%3A%2F%2Fwww.processon.com%2Fview%2Flink%2F61c53fb31efad45a2b42afd9%23map" title="https://www.processon.com/view/link/61c53fb31efad45a2b42afd9#map"&gt;前端进阶指南&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ec1cadc98d34913a77bd00c6901e504~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;传送门&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7036689189567463432"&gt;卷王的2021总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7007243669921071117"&gt;我为什么喜欢手抄代码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7016189093851693069"&gt;前端三年：小白变成老油条&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7008027646898487326"&gt;今年面试了100+的前端同学我的总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7000659708948250660#comment"&gt;我为什么坚持六点起床&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7004611718009585678"&gt;我读技术书很焦虑，读不下去书怎么办？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7002030597581307941"&gt;勤奋努力 === "卷" ？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6991728251034959885"&gt;vite + react + ts 手摸手做项目系列一 （项目配置篇）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6997560918418653198"&gt;vite + react + ts 手摸手做项目系列二 （实战篇）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><author>前端要努力</author><pubDate>Fri, 22 Jul 2022 01:03:24 GMT</pubDate></item><item><title>28万的天价IT培训你见过吗？而且还是坑学生的！</title><link>https://juejin.cn/post/7122036150331506718</link><description>&lt;hr /&gt;
+&lt;h2&gt;theme: fancy&lt;/h2&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;最近有几个粉丝向我说，自己悲惨的培训经历，说来也巧，连续同学找到了我聊了下，有的培训前端，或者后端，收费10W,有的是15W,有的事28W,你们没有看错，后缀是W，可谓是天价培费，坑的人是不要不要的，而且，15W,和28W的培训，主要针对学生的，这完全不能忍！！！这简直是丧心病狂，人血馒头啊！培训学个IT,要这么多钱吗？几十万，我的天，颠覆了我的三观！还没有毕业就背了一身的债！&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;虽然月哥是个小技术号的博主，粉丝不多，不知道能够影响到多大的范围，但是必须要曝光！希望看到这篇文章的同学，能够帮忙转发，让更多的人看到，希望看到这篇文章的号主，也转发让更多的人看到！不需要关注我的公众号，只是不想让这群披着人皮的老师再继续坑害学生了，学习IT,真不用花这么多钱，自学完全可以&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;今天聊大米时代&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;其他几家，粉丝都在收集一个证据，然后我们一个一个曝光，光看合同就觉得丧心病狂了，有一说一，身为一名程序员，&lt;strong&gt;我们要讲事实摆依据，针对合同里面的内容进行质疑&lt;/strong&gt;，有懂法律的同学，或者是律师，看看这个合同有没有违法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2251f88e4c5e49ef977877e1875e55d7~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;优惠政策，就很可笑，交钱交钱，拿你的钱然后再给你优惠，我收费一个亿，预交1W,优惠9999w,是不是这个道理！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;恶心的点是要借款
+&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/87792a7e11844df5b8d821eee0b5c1db~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;这个老师的名字是米新江，下面我会单独聊到他，这个人真的配当老师吗？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;刚毕业就能够当架构师？高级工程师？项目经理？我想知道你是怎么造假做到的，你的毕业证难道也是假的？笑掉大牙，骗学生，骗学生家长，在职的程序员一看都被吓尿了！这么牛批的吗！合同里pua的话术我就不说了，在给这些涉世未深的学生洗脑！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;校招生钱可能倒挂，高一点拿到50W也很正常，但是级别肯定不是架构师，&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;每年7万！有10W奖学金，从你学费里面扣！忍不住了，要爆粗口了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;没钱可以，借钱，借钱，这是一个老师能干出来的事？？？？
+&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e9e759219bce45d7b5e5db8f187ad208~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;来看看霸王条款！&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有问题被开除，不退还已经交的学费，还要补齐剩余学费？我的天呢&lt;/li&gt;
+&lt;li&gt;不得退学！要是退学，交齐学费，和欠款&lt;/li&gt;
+&lt;li&gt;反正就一句话：&lt;strong&gt;你只要进来了，你想退费，门都没有！&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;还甲方承诺，学完找到12000的工资，我去，我花了28w,你就包我12000的工资？搞笑的是还努力工作两年后，年薪超过18W,我艹，你是不是脱离市场太久了，你保证还保证这么低，还努力工作，我努力工作我要你干啥&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;找不到工作承诺跟随甲方工作，签订10年合同？我想问这是卖身契吗？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;这里我有一个疑问，这个是不是涉嫌诈骗了？有没有大佬出来解释下，承诺5年之后的事情，简直了！&lt;/li&gt;
+&lt;li&gt;这就是典型的洗脑，告诉你，你学的差也没关系，我们兜底！&lt;/li&gt;
+&lt;li&gt;先把钱收了，以后怎么样，谁知到呢？如果真这么好，全国人民都去了，交28W,反正学不好有兜底，一个月1万多，不亏呢！
+&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/676cc0c751924b3a9042d534757d2336~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;每月工资的1%要上交，直到退休，我培训一下，这辈子搭进去了！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;合同里面说到有问题去哪里起诉都写在合同里了，这是有恃无恐吗？我在这里读到了恐吓的意识，学生们很多涉事未深，看到这样可能就被吓住了，出了问题不敢维权！&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/873122f7713e451f8983d7a7a217ef10~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;这个操作骚啊，都不需要贷款机构了，你来找老师借钱，然后交学费，然后下面又有接收到学费的说明，我艹，第一次见啊，我借你的钱进你的口袋啊，等于说这个迷老师，一分钱没有借出去，然后挣了28W的学费，然后又签了合同，出了问题直接打官司，白纸黑字，弄不好这辈子就被套进去了！&lt;/li&gt;
+&lt;li&gt;换个钱这辈子搭进去了，每月工资的1%，直到退休，我的肾呢，吓的我心脏病都快出来了！
+&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/72a884c635154d03a74ba60b19f4576d~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/li&gt;
+&lt;li&gt;洗脑让家长做担保，一般家庭直接被套进去了，28W,而且没钱也不要紧，来找我借钱，然后报我的班，空手套白狼的好手段啊！真是天大的笑话！钱这么好挣的吗？而且这个已经搞了好多年了！&lt;/li&gt;
+&lt;li&gt;合同大家自己看吧！我就不过过多解读了，看完让人唏嘘！怎么会有这样的样，百度百科上这个还是&lt;strong&gt;廊坊师范学院的教授&lt;/strong&gt;，我觉得收这么多人学校也脱不了干系，建议有关部门，严查，有没有行贿受贿，利益交换的问题！学校也是推手，肯定脱不了干系！不然不会在学校里招这么多人的！&lt;/li&gt;
+&lt;li&gt;所签合同均对学员不利，希望学员能理性看待互联网技术培训，成本其实真的没有你想的那么高。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;这还不是最恶心的&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;你交了钱进来学习，来看看他们的学员怎么说的&lt;/li&gt;
+&lt;li&gt;不教课！培养自学能力，学长带学弟！资料是其他正规培训机构的课！&lt;/li&gt;
+&lt;li&gt;据我了解，在这4-5年，要义工给这个老师做很多项目，真会挣钱，多点开花！&lt;/li&gt;
+&lt;li&gt;艹，这钱真好挣
+&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/37b3bcd093c4464e89817b8dbc04d735~tplv-k3u1fbpfcp-zoom-1.image" /&gt;
+&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fe30d8bdeac04eeda9c6e87cefa9e659~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/36be4eae780044d78b059050cc01f221~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;要说他创造了传奇，那我不是传奇之上，我的天呢，这还是新闻报道，我看了好多，就是不说培训费28W,花钱买名声，说自己多么的伟大，我都吐了！然后和学生，和家长说，你看这个老师多厉害多厉害，忽悠学生家长，和刚上大学的学生不知道市场行情，赚信息差的钱，而且这么黑！&lt;/li&gt;
+&lt;li&gt;我们思考下，这种行为为什么不到985，211院校整，只在普通的学校整，因为借助学校的帮助，宣讲，洗脑，而且学长学姐没有很多去了大厂的，985，211的同学就比较多去大厂，而且都是自学的，而且了解校招的行情，如何准备，怎么准备才能够拿到比较好的offer，很多学长都愿意传帮带。但是很多一般的院校的信息就没那么多，这群人，真的是无耻，我可以这样说，他们不敢去一些好一点的学校做这种事，只能骗一般学历的同学，利用信息差，说自己多厉害，多厉害，然而背后全靠自己，自己背一生的债&lt;/li&gt;
+&lt;li&gt;28w,你得挣多久才能够还清，合同里面12000一个月，我们就算他们能够找到12000一个月，一个月扣完税到手9600，不含公积金，
+&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ceac15562f694f1ba2be6dfd3ff85ec6~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/li&gt;
+&lt;li&gt;然后你每个月房租开销，基本省一点一个月全部花个3600多，然后每个月存6000块，你一年就是7.2w的存款，（他的合同里每年涨薪5%，可以忽略不计了）要还完28w的钱有的借钱还有高额的利息，基本上你3年+就要搭进去了，你想一想你的职业生涯能有几年！这个时候你买房买车都要花钱，但是你都是为这个无良老师在打工&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;学习IT不需要这么多钱&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;市面上主流的培训机构，一般收费1-2.5w之间，基本上就完全可以入门IT了，&lt;/li&gt;
+&lt;li&gt;而且你还是学生，很多还是科班的学生，你不需要花这么钱去做培训，很多无良老师疯狂洗脑给学生给家长，用的课程都是培训班的课程，这些你在B站都能够找到，你花钱报名，来自学！&lt;/li&gt;
+&lt;li&gt;普通本科出来，努努力找个一线城市找1万多的工资比比皆是，非常努力的同学可以拿到大厂的白菜价offer，大概月薪在20-25K左右，sp,ssp offer，工资更高，大概能到30K左右，学历要求比较高，除非你技术特别优秀，我了解的到这些信息，人我全部都可以拉出来，给大家分享学习经验&lt;/li&gt;
+&lt;li&gt;知乎掘金b站学历路线都非常多，大家一定要擦亮眼睛，多看看！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;承诺的是你本该能做到的&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;这些机构可恨的点就是承诺这些你本应该能够自己做到的，然后利用信息差，说是他帮忙做到的，真是可恨，价格收费合理，也就很正常，但是天价的费用坑害学生就必要要曝光！&lt;/li&gt;
+&lt;li&gt;而且你来培训一下这辈子都搭进去了，千万不要参加这种天价培训班&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/896e756599134276ad418be93c6a4551~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a05b58fd17f74bc784d84ed7271b4370~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e08f7e78a80a4ce8b97c3d73dd8c4f3a~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;这是一件可怕的事情&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;粉丝说，这种培训在往石家庄的学校蔓延，我觉得太可怕了，得赶快曝光，新的一年的大学开学季又要来了，不能让更多的学生上当，花这么高的价格去做培训，而且培训用的还是别人的课程，简直了！&lt;/li&gt;
+&lt;li&gt;另一位粉丝爆料，河南的一个大学也是这样的，学费15W，他已经报名了，现在没办法退费，证据还在收集中，月哥会继续曝光这群无良的培训机构关键是坑学生啊，真的不能忍！&lt;/li&gt;
+&lt;li&gt;是非如何大家来评论，看了他们的经历，真的是，无力！愤怒！国粹爆出口！**********************************&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;再次感谢大家希望大家可以转发出去，让更多的学生看到，不要再让这群学生，还没有毕业就被狠狠的收割了，很多年不能翻身！&lt;/h2&gt;</description><author>前端要努力</author><pubDate>Tue, 19 Jul 2022 02:58:32 GMT</pubDate></item><item><title>前端鸡汤文学的魅力</title><link>https://juejin.cn/post/7120915096292818974</link><description>&lt;hr /&gt;
+&lt;h2&gt;theme: fancy&lt;/h2&gt;
+&lt;h2&gt;垃圾文章？&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;在技术平台上分享励志的经历，一直是被一些网友诟病，有甚者直接开喷，为什么要分享这种东西，垃圾，除了分享这种文章你还能干啥！太难听的我就不继续赘述了，之前写过一篇文章，说过，这东西自然有存在的道理！&lt;/li&gt;
+&lt;li&gt;现象就是，你的我不爽，我就要喷你，爱谁谁，怎么的，喷的就是你，侧面反应了很多网友在网络中暴躁的心态，反正你又找不到我，我喷你又能怎么样，建议大家放平心态，觉得有帮助就点赞，觉得没帮助就划走，文章可以发出来，基本上都是符合社区规范的，喷也没办法改变什么，只能导致你个人很生气，心情焦虑！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;技术文章已经多到麻木&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;现在你要感兴趣什么内容，直接来掘金，或者浏览器搜，基本上重复的都能整一大堆出来，深入的，不深入的，都有，就算找不到完全一致的答案，基本上很多文章也会给你思路，帮助你去解决问题&lt;/li&gt;
+&lt;li&gt;而且很多同学也说喷很多博主的文章写的太过简单，等等，其实我们大可不必这样，每个人写文章都会想写比较好的文章，一炮能打红的那种，但是很遗憾，每个人的技术水平不同，文笔不同，写出来的文章也是大不一样的，刚开始就能够写出很好的文章实属不多见，很多同学都在成长，大家可以多一些包容，给到他们，觉得哪里写的不好，评论区提出来，理性讨论技术，自然文章就会越来越高质量，而且这个东西要经常写，你不要在乎你写的多差，你要坚持，你的文章自然会在坚持的过程中慢慢的改进，潜移默化的进步，想写的非常好，着实有点难，但是能够持续坚持下去写技术文章的，必然以后的文章写的会很好，文章就是技术自己学习的一个过程，不用太在意别人的眼光，坚持写下去就好！&lt;/li&gt;
+&lt;li&gt;虽然技术文章多到麻木，重复的也非常多，但是要记住，别的写出来的文章是别人的，就算是抄书，这个也是别人学习的一个过程，大家还是要坚持输出自己的文章，写文章，写脑图把自己学习的过程记录下来，这是复盘的最好的方式，不然技术太多你学完就忘，书也是看完就忘掉，你不做好总结做好复盘，从长远看，你的学习效果是非常差的！因为你会忘掉！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;学习又累，又焦虑&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;大家都知道，我们前端的知识是非常分散的，要学习的东西非常多，我们绝大部分人的学习路线基本上一直，在前期，然后后期框架会分离方向。关键我们大多数人都是在边工作边学习，工作压力，学习压力，都是非常的大的，有的同学长期996，007，搞死个人，但是很多同学依旧没有放弃坚持学习，因为一旦不学习，很多同学就会感觉很焦虑，感觉就会被拉下了，非常难熬，怎么工作了还要学习这么多东西！我觉得这个就是做技术人的代价吧，我们得不停的学，才能够保持良好的职场竞争力，不然在面试的时候你会发现，我艹，怎么我都不会，然后又得拼命的学，恶补，你之前躺的越平，你之后补起来就会越痛苦，这个是很多同学的现实写照！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;所以这个时候鸡汤来了&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;不吹不黑，我自己就特别喜欢看鸡汤，基本每天都看，但是我不会贪杯，看一些就立马停了，因为本身学习强度就非常大，就非常需要鸡汤来给我补充能量，让我精神抖擞，充满向上的力量，然后我就回去，完成我的学习计划，当我完成一个又一个的学习计划的时候，我的内心焦虑自然就少多了，不焦虑是不可能的，我觉得每个人都会焦虑，当你变强之后你的焦虑才会减少很多，我发现了这样一个现象，越弱越焦虑！就和越躺平越焦虑一个道理，因为你有危机感，虽然你不说，但是这个是事实在在存在的，因为并不是所有人，都是富有的，你得面对现实，面对日常开销，以及预防一些特殊的事情！&lt;/li&gt;
+&lt;li&gt;鸡汤给我带来持续坚持下去的勇气，我看着别人的奋斗励志的经历，来鼓舞着自己学习，觉得很飒！&lt;/li&gt;
+&lt;li&gt;我也特别喜欢看很多大佬，学习经历的总结，又拿到了多大的offer，低学历的通过努力进了大厂等等，我觉得这些都是有存在的价值的，他激励着我们普通人燃起奋斗的希望，让我们相信，我们会通过自己的努力，能够完成一些看起来不能完成的任务，就像我在年中总结里面说的一样，&lt;a href="https://juejin.cn/post/7120119051090657317"&gt;前端做题家的｜2022 年中总结&lt;/a&gt;你觉得可能很简单的事情，对于某些人来说得拼尽全力！我能感受到他们背后的汗水，因为我自己是亲历者。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;立个小目标&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;看完我的文章你能去学习一个小时&lt;/strong&gt;，这个就是我写文章的最大的价值，你们写的文章可能带给大家技术，我的文章给到大家激励，去学习你们的文章，这就是我存在的价值&lt;/li&gt;
+&lt;li&gt;现在经常被粉丝催更，催直播：月哥来给我们打鸡血！慢慢的我的文章有了意义，慢慢的我成为了很多同学的精神食粮！我也会继续努力，给到大家更多的鸡汤，哈哈！&lt;/li&gt;
+&lt;li&gt;我们很多时候都在痛苦和煎熬中徘徊，学习苦，学习累，大环境又差，工作不好找，钱难赚，很多时候我们是没办法改变外界环境的，你自己改变自己的技术，心态，才能够让自己不那么焦虑，舒服一些，不然真会给你自己逼疯了，无论你什么履历，还是学历，努力学习，提升自己的技术，才是王道，在前端混口饭吃还是可以的，所以，觉得累就放低欲望值，焦虑自然就降低了！&lt;/li&gt;
+&lt;li&gt;好了今天激励就到这里，鸡汤文学就是，激励鼓励，奋斗和坚持！学习累了，可以看看我的文章！大家去学习吧，合理安排好时间，注意头发,感谢大家点赞关注！&lt;/li&gt;
+&lt;li&gt;我是&lt;a href="https://juejin.cn/user/1943592288395479/pins"&gt;月哥&lt;/a&gt;一个坚持写前端励志鸡汤文的家伙，希望我的经历能给到大家带来帮助！知足常乐！&lt;/li&gt;
+&lt;li&gt;结尾依旧：&lt;strong&gt;长风破浪会有时，直挂云帆济沧海！&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;在线整理的确实很好，对掘金的文章进行了一个汇总整理，&lt;strong&gt;在线刷题指南，拿走不谢，要学会站在别人的肩膀上提升自己点击这里--&amp;gt;&lt;/strong&gt; &amp;nbsp;&lt;a href="https://link.juejin.cn/?target=https%3A%2F%2Fwww.processon.com%2Fview%2Flink%2F61c53fb31efad45a2b42afd9%23map" title="https://www.processon.com/view/link/61c53fb31efad45a2b42afd9#map"&gt;前端进阶指南&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ec1cadc98d34913a77bd00c6901e504~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;传送门&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7036689189567463432"&gt;卷王的2021总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7007243669921071117"&gt;我为什么喜欢手抄代码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7016189093851693069"&gt;前端三年：小白变成老油条&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7008027646898487326"&gt;今年面试了100+的前端同学我的总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7000659708948250660#comment"&gt;我为什么坚持六点起床&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7004611718009585678"&gt;我读技术书很焦虑，读不下去书怎么办？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7002030597581307941"&gt;勤奋努力 === "卷" ？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6991728251034959885"&gt;vite + react + ts 手摸手做项目系列一 （项目配置篇）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6997560918418653198"&gt;vite + react + ts 手摸手做项目系列二 （实战篇）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><author>前端要努力</author><pubDate>Sat, 16 Jul 2022 02:30:31 GMT</pubDate></item><item><title>前端做题家的｜2022 年中总结</title><link>https://juejin.cn/post/7120119051090657317</link><description>&lt;hr /&gt;
+&lt;h2&gt;theme: fancy&lt;/h2&gt;
+&lt;p&gt;「时光不负，创作不停，本文正在参加&lt;a href="https://juejin.cn/post/7108989863126368286" title="https://juejin.cn/post/7108989863126368286"&gt;2022年中总结征文大赛&lt;/a&gt;」&lt;/p&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;时间贼快，今年已经过半，被封在家里3个月，淡淡的忧伤，来聊一聊这半年的感受&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;收获&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;收入：月收入应该吊打p8了，哈哈，开个玩笑&lt;/li&gt;
+&lt;li&gt;掘金5级了，必须前端要努力&lt;/li&gt;
+&lt;li&gt;公众号粉丝过万，也叫前端要努力，&lt;/li&gt;
+&lt;li&gt;b站粉丝2000多了，也叫前端要努力，&lt;/li&gt;
+&lt;li&gt;房子正在看：准备买上海的郊区，或者老破小，将就上车，上海的房子真尼玛贵啊！&lt;/li&gt;
+&lt;li&gt;外号：月老师，月哥，卷王，励志哥，水文专业户...&lt;/li&gt;
+&lt;li&gt;技术上，太多了，就不罗列了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;焦虑常在&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;大家最近应该很焦虑，包括我自己都会焦虑，大环境这么差，未来何去何从，什么阶段你都会焦虑，你要学会和自己和解，你要撑住，控制住，要控制住自己，能够坐的下来，安安静静地学习，成长了，自然就会控制住焦虑，你要相信，你的每一份努力都不会被辜负，你不要三天打鱼两天晒网，你要持续坚持下去，要不先坚持半年不完游戏，刷个半年的题，感受下，原来你真的可以做到，真的可以变的很牛批。算法你也可以刷个500道，源码原来也可以这么简单。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;你是缺资料吗？&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;想必大家的网盘里的资料都堆成了山，几辈子都学不完，收藏即学会，大家不缺资料，缺的是能够把这些资料吃下来的心&lt;/li&gt;
+&lt;li&gt;多看书，你看的不是技术，你缺的是能够安安静静读书的耐心，你拥有了耐心，你觉得源码，手写，算法，这不和呼吸一样简单吗？你回想下，你有多久没有安静的读一本书了，是书太难吗？还是你静不下来了，&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;充满争议&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;我的文章在掘金的风格偏励志为主，就是大家常常说的水文，没有营养，垃圾文章！对于很多同学确实看不起，不过也没关系，因为我的文章也激励了非常多的同学，大家也叫我月哥，月老师，真的很开心&lt;/li&gt;
+&lt;li&gt;包括之前的六点起床群，也帮助了很多人，但是能够持续坚持下来的，真的很少，万事开头难，坚持更难！但是现在更多的是大家喷我引流。但是大家要知道，做副业这玩意是不稳定的，不是所有人都愿意付费的，但是能看到的，能分享的东西，我还是尽量无偿的分享！但是个人时间是付费的，这应该没毛病吧！&lt;/li&gt;
+&lt;li&gt;因为做副业的缘故，经常被别人说割韭菜，被骂，也上过脉脉的热榜，毫无意外都是被喷，说我促使前端面试更加的卷，带乱了前端面试的风气，大家想一想我们的力量有那么大吗，无非是某些同行眼红，带了一波节奏，后来也知道是哪些人干的，不过也无所谓了！那句话怎么说：喷的越狠证明越红呀！因为疯狂刷题的缘故，收割了全国所有互联网大厂的offer，不吹不黑，就是这么刚！&lt;/li&gt;
+&lt;li&gt;我自己贼喜欢自嘲，因为本身早已练就厚脸皮，大心脏，百毒不侵，so what&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;小镇做题家&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;最近比较热的一个话题，对与我这种人来说，见怪不怪了，早都受够了谩骂，歧视，鄙夷，看不起，异样的眼光，太多了&lt;/li&gt;
+&lt;li&gt;我在高中的时候就拿国家的贫困生补助，上大学申请国开行的助学贷款，去年才还清，然后上了大学也是申请贫困生补助。然后中途去当兵，为什么去当兵，第一是当兵情节，但是更重要的是，不怕你笑话，真是因为钱，国家有政策，当兵4年大学学习每年最高补助6000，后来变成8000，然后有一次性退伍费，优待金，这些钱，所以那时候学校食堂征兵，思考了下，就报名了，然后等验上兵了，才和家人说。我记得那时候，我大一学费借了大爷的钱，大二学费借了大姑的钱，然后再加上助学贷款才交齐了大学学费，一个普通的农村家庭，两个大学生，是的很难！当了兵就可以不用借钱了，想法也是很简单。对很多人毫不费力的事，可能对当时的我要拼尽全力才能够做到，我还依稀的记得，那时候买鞋，想买一双好的鞋，那时候最常穿的是那种五颜六色的帆布鞋，因为便宜，20多块钱一双，手机上看了很多，但是很遗憾的是，什么耐克阿迪，全部买不起，最后看的是361，这个牌子当时觉得很好了，然后还有活动，买一送二，于是买了，然后我两双，我姐姐一双，虽然鞋子早都已经穿坏了，但是还是没丢，这是第一次在专卖店买正版鞋子！&lt;/li&gt;
+&lt;li&gt;所以艰苦奋斗已经成为了习惯，因为不得不成为习惯，所以我的文章基本上都是鸡汤文，励志文章，这些都和我的经历有关，从现在看以前，这些何尝不是美好的回忆，我觉得这些也有一定的存在的价值，激励了很多前端的同学，重拾信心，重拾努力！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;感谢大家的持续支持&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;我一直喜欢说自己做副业就是割韭菜，有的人说我很狂，敢说，连自己都喷，长期关注我的都知道，我还是比较有个性的，我问很多同学，你不怕我割你韭菜吗？他们说：“怕，但是更相信我”，让我很是感动！慢慢的发现，我给到大家传递的都是正能量的东西，他们在我这里很多时候学习不是知识，我感觉，更多的是态度，自信，重新认识了自己。看到我的经历，大家被我感染了，重新和自己对话，然后努力学习，我觉得这是最大的价值，让你们能够重拾继续向上的心&lt;/li&gt;
+&lt;li&gt;现在很多同学，都叫我月老师，我感觉很爽，很有成就感，因为我做的事情，让他们觉得有价值，能够在我这边，不说学到知识了，很负责的说我给你带来都是扎扎实实加薪，但是，随之而来的就是压力，因为我得更加的努力学，因为我希望能够给你们带来更多的价值，不能对不起你们一声声月老师的叫&lt;/li&gt;
+&lt;li&gt;我不做课，我把我这些面试套路做成课程的话，可以收割一大波钱，因为做课搞一次就行了，轻服务，但是不愿意这样干，因为我觉得每个人都需要定开，项目经历都不尽相同，需要得到的帮助也不一样，有可能你只需要我的一句认可！吃大锅饭的价值显得没有用，课程网上不要太多，大家不缺课程的，我做出来的课，感觉也不一定讲的很好，我还是会坚持1v1的辅导。让你们被割的心甘情愿，哈哈！&lt;/li&gt;
+&lt;li&gt;我挣点辛苦钱，自从做了面试辅导，快一年了，没有特殊情况的话，周末都在给同学面试辅导，所以非常累，但是我穷啊，我还能坚持！能挣一点是一点，一个从高中拿贫困生补助，上大学拿助学贷款，去个培训班学前端还借钱的人，通过自己的努力，马上要在上海买房了，你敢信！我经历过社会的毒打，我才明白努力的意义，我现在的一切，虽然也不咋地，但是真的非常满足了！千万别说努力学习没用，大概率是你没有真正的持续的努力！其他行业真的不敢说，但是前端技术这块，真的是硬上就能有很大提升！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;关于进大厂&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;虽然个人现在已经没有任何兴趣去大厂，但是对于普通前端来说进大厂，涨工资，镀金履历，是最好的去处，但是这玩意，一看努力程度，而看运气！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;大厂卷，pua也是出了名，有所得必有所失！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进大厂必备，卷八股，卷算法，卷项目，包装简历！学历高的无视这些，这些基本都是给学历低的设置的门槛，普本半年时间足够！社招年限3年+更有机会，2年以下能社招进去的概率太小，基本上都会被定义成为项目没有深度，简历直接刷掉！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我们有自己的猎头公司，内推了n份前端简历，学历，履历，年龄歧视比比皆是，但是我们很无奈，无法改变，于是诞生各种套路&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;专科学历很难去大厂，除非你简历特别出彩，不然进去基本为0。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;某些厂不卡学历，都是骗子，基本上你有机会面试，都是被hr刷了kpi,内推也好不了哪里去，专科同学太难了，他们招的不是能力强，是能力非常强的那种，比方说你github有几千个star的优质的开源项目，哈哈，一条卡死！是吧，对外说我们不卡学历，你看我们同事有些事高中，中专的！现在看来都可笑！能进去的，没有一个不是卷王！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;某些时候，你所谓的公平，在别人眼里，就是不想浪费时间在你身上，这里不过多赘述，大家都懂！很悲哀，很遗憾！无能为力，也很难改变！尽人事，听天命！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;前端做题家要想逆天改命，必须卷成新天地，或者说服自己！认命，不认命就得去反扑，不然焦虑的半死，我们大部分人都是普通人，活的开心点，也蛮好的！&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;很感谢前端&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;很多时候，学历不行，履历不行，你不努力刷题学习技术，你没办法和这些高学历的同学竞争的，你想要得到，必须要去坚持实践下去，坚持刷题，坚持刷题，成为一个前端做题家，其他问题很多时候都顺其自然的解决了！&lt;/li&gt;
+&lt;li&gt;我是月哥一个坚持写前端励志鸡汤文的家伙，希望我的经历能给到大家带来帮助！知足常乐！&lt;/li&gt;
+&lt;li&gt;结尾依旧：&lt;strong&gt;长风破浪会有时，直挂云帆济沧海！&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;在线整理的确实很好，对掘金的文章进行了一个汇总整理，&lt;strong&gt;在线刷题指南，拿走不谢，要学会站在别人的肩膀上提升自己点击这里--&amp;gt;&lt;/strong&gt; &amp;nbsp;&lt;a href="https://link.juejin.cn/?target=https%3A%2F%2Fwww.processon.com%2Fview%2Flink%2F61c53fb31efad45a2b42afd9%23map" title="https://www.processon.com/view/link/61c53fb31efad45a2b42afd9#map"&gt;前端进阶指南&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ec1cadc98d34913a77bd00c6901e504~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;传送门&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7036689189567463432"&gt;卷王的2021总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7007243669921071117"&gt;我为什么喜欢手抄代码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7016189093851693069"&gt;前端三年：小白变成老油条&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7008027646898487326"&gt;今年面试了100+的前端同学我的总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7000659708948250660#comment"&gt;我为什么坚持六点起床&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7004611718009585678"&gt;我读技术书很焦虑，读不下去书怎么办？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7002030597581307941"&gt;勤奋努力 === "卷" ？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6991728251034959885"&gt;vite + react + ts 手摸手做项目系列一 （项目配置篇）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6997560918418653198"&gt;vite + react + ts 手摸手做项目系列二 （实战篇）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><author>前端要努力</author><pubDate>Wed, 13 Jul 2022 22:58:44 GMT</pubDate></item><item><title>在掘金一定要写技术文章吗？</title><link>https://juejin.cn/post/7094141329600413704</link><description>&lt;h2&gt;侠义之士&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;最近写了一些文章，看到很多侠义之事在下面评论，掘金需要净化空气，掘金需要高质量的文章，掘金需要，还有很多人特意注册了小号来diss我！说白了就是眼红，碰到这种人，骂我！我肯定都会怼回去！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;总喜欢说我引流做培训&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;我艹，我做点副业咋啦；而且引流这个是，无非是我写一个大的学习脑图，写的非常好，很多人看，然后上面有一张公众号的二维码！你现在能看到我公众号发广告吗？不好意思不接广告！骗你钱了吗？现在只要别人一贴公众号，大家就受不了了，引流，垃圾，营销！咋地，你自己没有认知呀！&lt;/li&gt;
+&lt;li&gt;在掘金里面，有非常多的号主，写文章，然后引流到公众号里面，我觉得这个很正常吧，你只要方式得当，掘金也是允许你引流的；&lt;/li&gt;
+&lt;li&gt;在很多平台刚发展起来的时候，文章后面贴二维码，都无所谓，因为平台需要这些人入驻，帮助平台一起成长，你没有流量，没有文章，谁来看你的平台！只能等死呀！&lt;/li&gt;
+&lt;li&gt;请参考我的上一篇文章，别被割韭菜了，提高自己的认知！&lt;a href="https://juejin.cn/post/7091581510158909448"&gt;你为什么会被割韭菜，一茬又一茬&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;当你在评价他人的时候看看自己&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;点开一看，毛文章都没有，你最起码写几篇文章是吧，我还能给你点个赞对不对！&lt;/li&gt;
+&lt;li&gt;除了能在评论区，指点江山，你还能干啥！&lt;/li&gt;
+&lt;li&gt;你说别人之前，先看看自己为这个社区带来的价值是什么？我就可以说，我写了很多励志文，激励了很多人，努力学习！别瞧不起励志文，你要按照文章说的努力去做，你也不会在评论区里面，口吐芬芳了，我没看到一个大佬在我评论区里面骂人，对吧，首先你的格局就很差！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;你引流别人就愿意加你了吗？&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;你写的有价值别人才能被你吸引！你们觉得没有价值对吧，滑走不看，别整的当一个键盘侠就显得你自己很厉害，很多人被我怼的直接注销账号，不是因为你怼不过我，而是你说的事情站不住脚！但是对于很多人来说，我写的文章非常有价值，在绝望之中支撑他们学习的动力，以我为榜样！这不是我说的，这是粉丝对我说的，你们说我写的文章垃圾，骗子，营销！我就想反问一句，你写了啥？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;我的文章偏励志鸡血，我早都说过！&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;为什么要励志，我的名字就叫前端要努力，为啥，你这个年龄阶段，又想去大厂，又想多挣钱，还想躺平，极度不自律，极度懒，你别觉得别人努力的人，传递正能量是垃圾，你好好思考下，垃圾的是不是你自己，六点起床也好，短年限拿到看起来不错的offer也好，对吧，这都是非常努力才能够换来的，很多人因为我的激励，而去真真切切的努力学习，提高自己，拿到比较好的offer，我觉得这是我写文章的最大的意义&lt;/li&gt;
+&lt;li&gt;我一直在说，你学历不好，履历不好，你除了使劲的提高自己的技术，疯狂的学习，你还能怎么办，现在很多人都瞧不起努力的人！别说你对钱不感兴趣，极度的扯犊子！你要是工作不要公司，免费给老板干活，那你有资格，除此之外，你都没这个资格说这些话，除了掩盖你的不努力，菜，还能证明啥！！&lt;/li&gt;
+&lt;li&gt;你连一个小时都坐不下去，看书的人，还嘲笑别人花大力气抄书的人！几年之后，你除了羡慕别人，你自己呢？后悔自己以前不努力，然后抱怨外界对35岁的程序员不友好，你使劲找外因，使劲抱怨，但是你发现没有作用，你除了能够改变自己，你啥也做不了&lt;/li&gt;
+&lt;li&gt;我不抱怨，命中注定，抱怨解决不了问题的，你面试的时候，现实只会压弯你的腰，你不得不向现实低头！你不低头，你就找不到工作，就这么简单！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;掘金需要很多声音&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;入行前端之后，也是看掘金一步一步发展起来的，现在的内容很丰富，你对什么感兴趣，你自然能够找到合适你的信息，技术也好，别人的经历也好，垃圾文章也好，好的文章也好，一个平台肯定是要多方面，多维度，服务作者，读者&lt;/li&gt;
+&lt;li&gt;对于你自己来说，你喜欢什么样的文章，你就希望掘金多给你推这些文章，一旦给你推其他的文章，你就觉得掘金垃圾，写这个文章的人垃圾；但是你喜欢的东西，在别人眼里，可能就是垃圾，对吧，你不能只站在你自己的维度考虑问题！那别人也这样想，掘金还干不干了，没法发展了呀，你觉得我的文章垃圾，但是别人觉得好，你觉得不好，你就不看，滑走就行了，你觉得技术文章有问题，提出你自己的建议，我觉得作者应该能够去改正的吧！对不对，别上来一个垃圾，何必当一个键盘侠，把你自己的格局拉低！你以为别人会惯着你，肯定不会，要是我我肯定喷回去，就这么简单！&lt;/li&gt;
+&lt;li&gt;很多人都说，一个技术论坛，应该怎么样怎么样，那是你觉得，别人不一定这样觉得，一个平台的包容性很差的话，这个平台也不会走多远，好的，不好的声音都会有，你喜欢技术文章，别人喜欢看别人的励志经历，都是很正常的现象&lt;/li&gt;
+&lt;li&gt;平台发文章也是有规矩的，在平台的规则之内发文，我觉得就没问题！&lt;/li&gt;
+&lt;li&gt;我上篇被很多人质疑的文章，600多赞，我觉得在精神上能够帮助到很多人，这个就是价值！&lt;a href="https://juejin.cn/post/7086381206236823559"&gt; 铜三铁四下，拿到前端技术专家的offer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;你别酸，真的比你努力很多！&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;你以为做面试培训就很爽，你知道我们有多忙吗？现在没有完整的周末，你就是拿你自己的时间换钱，都是打工人，而且现在我们慢慢的放慢了速度，为啥，因为累啊，不想搞了，这么多人，在我朋友圈的同学，现在也很少能够看到我宣传offer收割机！也没有挣几个钱！而且这个只是我们的副业而已，我的重心还是在工作上的，我觉得还有很多可能，我要努力！能挣多少钱全凭运气！别以为这个钱好挣，你没有切实能够帮助到别人的东西，谁那么傻，会花钱给你！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;而且口口声声说我割韭菜，你花钱报课了吗？你要花钱报课，然后再说我割韭菜，说我搞的不行，那我认，论我们offer收割机的口碑来说的话，我觉得口碑是爆炸的！你花这么少的钱，进了大厂，工资翻了两倍，三倍，四倍！你偷笑去吧，别来找我，我是割韭菜的，你们对韭菜的定义都搞不清就在这里乱说！有意思！要有事实依据才行！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我现在重心都在做自己的内部的知识星球，带着大家学习，工作日每天晚上9点半到11点，周末下午3点到晚上10点，云自习室学习！别来加我，别被我割韭菜了，我和你说，只是告诉你，论努力，在坐的各位，真不一定有我努力！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我也加了非常多的大佬，p7,p8段位的，希望在他们身上能够学到能够让自己成长的东西，开阔自己的视野，只要能提高，我愿意花钱！问别人问题，红包开路，别人的时间不能白嫖，这是最基础的尊重，这是规矩！我的心态很好，就算花钱得不到自己想要的，但是这个吃亏的经历也是一个成长，我能够承担的起，我就愿意付出和这个代价！&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f699cd9c7e714b66b683b8509d3ae989~tplv-k3u1fbpfcp-watermark.image" /&gt;
+&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/091f845c274c4c2d92bc43853bc9f434~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我也不相信，我随便写一个文章，你就愿意付钱给我，这不是扯淡吗！要是可以，那也是我写文章牛批，这个你不应该学习下吗？&lt;/li&gt;
+&lt;li&gt;无论你怎么说，我也会一直写文章传递正能量，希望带动大家努力学习！我能做的越好，就证明我说的努力不是骗你的，是真的能够改变我们这种普通人的生活的！不然还能怎么办，我家里也没矿，我去培训班的钱都是借的！不努力学习，提高自己的技术，怎么能够涨薪！怎么能够多挣一点钱！我也不想写文章，我也想打游戏，但是我需要钱来生活呀！我又不清高，我只希望能够给家人带来更好的生活！&lt;/li&gt;
+&lt;li&gt;努力吧！都是打工人！觉得有帮助的就点个赞！我不会主动喷人，我看文章的目的是能够学习到能帮助到自己的东西，觉得不适合，滑走就好！&lt;/li&gt;
+&lt;li&gt;文末依旧是，整理的确实很好，绝大部分都是掘金的文章，觉得没帮助完全可以不去看，也不需要加我，别被我割韭菜了&lt;strong&gt;我整理在线刷题指南，拿走不谢，要学会站在别人的肩膀上提升自己点击这里--&amp;gt;&lt;/strong&gt; &lt;a href="https://www.processon.com/view/link/61c53fb31efad45a2b42afd9#map"&gt;前端进阶指南&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ec1cadc98d34913a77bd00c6901e504~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;传送门&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7036689189567463432"&gt;卷王的2021总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7007243669921071117"&gt;我为什么喜欢手抄代码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7016189093851693069"&gt;前端三年：小白变成老油条&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7008027646898487326"&gt;今年面试了100+的前端同学我的总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7000659708948250660#comment"&gt;我为什么坚持六点起床&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7004611718009585678"&gt;我读技术书很焦虑，读不下去书怎么办？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7002030597581307941"&gt;勤奋努力 === "卷" ？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6991728251034959885"&gt;vite + react + ts 手摸手做项目系列一 （项目配置篇）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6997560918418653198"&gt;vite + react + ts 手摸手做项目系列二 （实战篇）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><author>前端要努力</author><pubDate>Wed, 04 May 2022 22:51:42 GMT</pubDate></item><item><title>你为什么会被割韭菜，一茬又一茬</title><link>https://juejin.cn/post/7091581510158909448</link><description>&lt;hr /&gt;
+&lt;h2&gt;theme: awesome-green&lt;/h2&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;大家总说很多技术博主割韭菜，包括我自己在内，经常被喷割韭菜。&lt;/li&gt;
+&lt;li&gt;各行各业都有很多培训知识付费，有人在认真的做知识付费，有人却在明晃晃的收割。&lt;/li&gt;
+&lt;li&gt;今天来聊聊，哪些场景下，你被割了韭菜！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;韭菜的定义&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;被割了一茬又一茬&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;贪心？&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;有一种被割韭菜，是你自己欲望和贪心，你认为付了钱之后就能够直接赚到很多钱，这种现象在短视频，考证这些比较肆虐，冲着赚钱去，然后被狠狠的割韭菜了一波，天底下哪有这么好的事&lt;/li&gt;
+&lt;li&gt;教你赚钱，教你做副业，然后收你学费，这种坑太多，我在公众号文章里也说了很多这种，不要信别人带你赚钱，我一向反感这种事，因为极度不靠谱&lt;/li&gt;
+&lt;li&gt;这种事还有一些极端，有的人学了，然后赚了很多钱，有的人学了，毛都没有，为什么？相同的套路在某些人身上可以奏效，在某些人身上却不行，归根究底是人的问题，你自己不去思考，不去整合你很难做成事&lt;/li&gt;
+&lt;li&gt;对于程序员来说，要不断的学习，持续性的学习，增强自身的能力，提高自己的抵御风险的能力，同时也要提高自己的辨识度，不要贪心，你要贪心你被割韭菜这也是应该的，这就是让你成长的学费呀，但是很多人，被割了一茬又一茬，所以你自己好好想一想吧，&lt;/li&gt;
+&lt;li&gt;有些时候学习的趋利心太强，可能令你很失望，你只要能学到对你有帮助的东西，我觉得都是收获，谁年轻的时候没有当过韭菜，so what&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;知识付费就是割韭菜？&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;我是做前端的，我看到的知识付费有这些&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;小课，类似掘金的小册，和其他的视频课，收费几十块-上千元不等。&lt;/li&gt;
+&lt;li&gt;体系课几千元到几万元不等，&lt;/li&gt;
+&lt;li&gt;私教课，上万元不等。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;教你做副业这种 ===== 骗子，大家不要信&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;公众号广告：现在公众号基本没啥广告，靠广告吃饭今年是挺难的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;大几千上万的课大家要谨慎，这里是被割韭菜的重灾区，某学就爆雷了，课程垃圾，钱收的还贵，录播！简直了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;私教课一般是他们自己的私域流量，粉丝比较信任，然后觉得花钱能够得到帮助，具体能帮助到啥，未知，因为我没有报过&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;让你付费，带你做副业搞钱的，100%这种都是割韭菜的，我连0.0000000001的概率都不愿意给！&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;小课这种我觉得不存在割韭菜，无非是写的好与不好，出品人也是花了巨大的心思去做的，单价也不高，几十块，上百块，对于你月入过万以上，买来学习，无所谓的，这种知识付费OK的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;知识付费不都是割韭菜，你觉得你被割了，你觉得报了就能学到很牛批的技术，能力，但是导师的能力层次不齐，真的很难判断，但是有的人出课，出服务也是非常好的，但是有的人觉得也是不好，就觉得是在割韭菜，但是有的人觉得又很好，就觉得花的钱有价值，为什么会有这种现象呢？大家可以好好思考下！&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/45187bf34e7f4e4f89d6887899d72b15~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;不花钱就不会被割&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;提高自己的辨识能力，多观察，如果一个课程价格又高，销售天天找你要你买课，就要谨慎了，你一定要多方去打听别人对这个课的评价，&lt;strong&gt;付费用户的体验评价！&lt;/strong&gt; 不然销售说的天花乱坠，但是你花了大价钱，服务垃圾，课程垃圾，维权困难，搞的自己一肚子火，没得意思！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;虽然我经常被喷割别人韭菜，我也不需要辩解，我是1v1辅导，体力活，价格低走量，每到周末都会忙的飞起，你以为这个钱好挣的，重服务，辛苦钱，你要问辅导的效果怎么样，问就是垃圾！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果买了觉得不合适，立马退钱，维权！不然心里窝火！别想着一夜暴富，对于前端再来说，拿到大的offer，除了你要不断的努力学习提高自己的技术之外，还有那么点运气！所以保持一个好的心态，我觉得非常重要，平常心！平常心！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我自己本身就是励志的人设，我确实比较努力点，这一点你也不需要质疑，装个B，应该你没有我努力！现在晚上每天9点半-11点，周末下午3点到10点，组织大家云会议室自习，带大家学习，少逼逼，就是要努力，就这么刚！这个是付费的，&lt;strong&gt;别来找我，别被我割韭菜了！&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;所以，你被割了韭菜，原因是你花了钱！你不花钱就不会被割韭菜！买之前多长点心，不要花冤枉钱,&lt;strong&gt;别贪心！别轻易信人&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;传送门&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7086381206236823559"&gt;铜三铁四下，拿到前端技术专家的offer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7036689189567463432"&gt;卷王的2021总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/user/1943592288395479/pins"&gt;六点打卡交流群&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7007243669921071117"&gt;我为什么喜欢手抄代码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7016189093851693069"&gt;前端三年：小白变成老油条&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7008027646898487326"&gt;今年面试了100+的前端同学我的总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7000659708948250660#comment"&gt;我为什么坚持六点起床&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7004611718009585678"&gt;我读技术书很焦虑，读不下去书怎么办？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7002030597581307941"&gt;勤奋努力 === "卷" ？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6991728251034959885"&gt;vite + react + ts 手摸手做项目系列一 （项目配置篇）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6997560918418653198"&gt;vite + react + ts 手摸手做项目系列二 （实战篇）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><author>前端要努力</author><pubDate>Thu, 28 Apr 2022 01:18:10 GMT</pubDate></item><item><title>接了很多私活的感触</title><link>https://juejin.cn/post/7088538894891188238</link><description>&lt;hr /&gt;
+&lt;h2&gt;theme: awesome-green&lt;/h2&gt;
+&lt;h2&gt;接私活&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;今年搞了一个团队接私活，现在有20多人，我这边主要负责商务洽谈，合同签署，进度，风险把控，结果交付之类的活，不涉及到具体代码的编写，交付了好几个项目，今天来谈一谈私活的一些经历&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;私活的种类&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;总类就太多了，后台管理，跨境电商，股票交易，小程序，APP，等等&lt;/li&gt;
+&lt;li&gt;有总包或者单包一说，总包就是前后端，服务器都包，算总价；单包就是，你只做前端或者后端，对于你一个人的话，基本上是单包的比较多，总包的话，小项目可以，大项目你一个人就吃不住了，交付风险巨大&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;渠道&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;各种众包的网站，但是我看上面报价太低了，感觉很不靠谱，没有接过&lt;/li&gt;
+&lt;li&gt;主要是朋友，渠道介绍&lt;/li&gt;
+&lt;li&gt;还有的同学接国外的单，但是吃英语，英语不好没法沟通&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;如何谈价格&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;接过私活的同学都知道，你人在上海，和人在西安的人天价格都是不一样的，而且每个人的工资都是不一样的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;首先一点要求你的经验丰富些，你第一次不会，你可以找一些资深的技术帮你去做估时间，大概要多少人天，要按照你自己的水平做一个合理的排期，然后才好谈价格&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;比方你现在工资30000一个月然后30000/21.75 = 1379 ，一般接私活的价格是你的日薪水的1.5  倍，如果低于2000人天你是不划算的，还不如去公司加班，因为你做私活是面向结果交付的，没办法摸鱼！所以你要怎么能够达到你日薪2K的收入，这就很有讲究！你报价2k/人天，不用想你肯定会被pass的！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一般的价格500-1000/人天，太高了甲方一做对比就不会让你干了，货比三家吗，所以这个时候就很有讲究了，也就是套路来了，单价低，你就把时间干长，但是也不能太长，这时候就是沟通的艺术了，如何达到自己的目的，然后让甲方满意，你自己也满意，如果都不满意这个活也就没有继续干下去的必要了，&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;收入&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;收入多少看项目，有的小项目几K，有的几万，几十万，还有的同学能够接住几百万的项目，大家不用觉得吃惊，单价10万+的项目非常多，但是资源只掌握在少部分人的手里，你干一个大项目就够你吃好多年了，上个月一个朋友说他们团队接了一个总包近500W的大项目，说实话酸的很，为何不是我接的，接到手立马辞职，哈哈！透露一点，在某些领域，非常吃关系，有资源的同学，动动嘴钱就到手了，你看他啥也没干，6位数或者更高的收益就到手了，大家不要喷我，我是经历过，懂的都懂；&lt;/li&gt;
+&lt;li&gt;对于我个人，我不写代码，我负责管理，风险把控，我拿10%-25%，看项目的大小！目前接过最大的项目过6位数，所以我在这块收入也是不稳定的，随缘，这个月没接到项目一分没有，多了就不好说了！看运气！一般低于一万的项目我是不接的，直接转手给被人做，没的赚头！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;风险&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;交付风险：这个钱你能不能挣，能不能按期，按质量的交付，别钱没赚到，项目烂尾，还搞一肚子气&lt;/li&gt;
+&lt;li&gt;一手交钱，一手交代码，这是规矩，有的同学不懂，把代码给甲方，尾款就凉了，找谁说理去！&lt;/li&gt;
+&lt;li&gt;比方项目排期为5个迭代，加上定金和尾款应该就是7个迭代，按照迭代给钱，那钱的交付就是定金：20%-30%，尾款：这个控制的低一点，因为很多不靠谱的甲方会压你的尾款，大概10%，其他的就是迭代内平均分，每个迭代交付结束之后付钱&lt;/li&gt;
+&lt;li&gt;不要一起交付再给钱，小项目可以，大项目一定要分期结算，不然遇到不靠谱的人，不给你钱，你也很无奈！&lt;/li&gt;
+&lt;li&gt;有的时候别人会让你给发票之类的，你要是个人的，花点钱找别人搞，税点要不了多少钱！&lt;/li&gt;
+&lt;li&gt;做事情做重要的是诚信，对于一些不靠谱的甲方，直接pass掉，长痛不如短痛，接了之后钱挣不了多少，搞的一肚子火！&lt;/li&gt;
+&lt;li&gt;反正这个钱不好挣，会搞的你非常忙，你要是写业务，有些时候遇到不靠谱的会让你很难受&lt;/li&gt;
+&lt;li&gt;不要影响到你的本职工作！！！这个很重要，反正我在工作时间内不会去花时间搞这些玩意，主业还是要做好，私活是不稳定的！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;时间 === 金钱 vs 时间&amp;gt;&amp;gt;&amp;gt;金钱&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;思考下，你是把你的时间花在接私活上面，还是花在提升个人能力上面&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;据我了解，对大部分人来说做私活一个月能做到1w以上的人基本寥寥无几，你如果手握资源，那随意搞钱&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我虽然带了很多人接私活做，我只是整合资源，赚个提成；但是我还是不建议大家把宝押在接私活上面，因为我觉得这个本来就是不稳定的，一定要把绝大部分的时间压在提升个人能力上面，有人会说接私活写项目，不是也在提升自己的个人能力吗！我觉得不是的，你接私活做很多项目，只能说你写代码比较熟练，你是面向结果快速交付的，只要甲方觉得没问题，你不会去考虑项目性能，优化之类的，角度站高一点，你做的事情太杂，对于你个人成长的价值不是很大！凡事都有但是，哈哈，万一你有机会接到500w的项目呢！这时候不要想了，赶紧接下来，哈哈！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;大家加油！干啥都行，心里觉得平衡就可以，主要还是看你自己的抉择！但是一定要把主业工作干好，干漂亮！&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;传送门&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7086381206236823559"&gt;铜三铁四下，拿到前端技术专家的offer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7036689189567463432"&gt;卷王的2021总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/user/1943592288395479/pins"&gt;六点打卡交流群&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7007243669921071117"&gt;我为什么喜欢手抄代码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7016189093851693069"&gt;前端三年：小白变成老油条&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7008027646898487326"&gt;今年面试了100+的前端同学我的总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7000659708948250660#comment"&gt;我为什么坚持六点起床&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7004611718009585678"&gt;我读技术书很焦虑，读不下去书怎么办？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7002030597581307941"&gt;勤奋努力 === "卷" ？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6991728251034959885"&gt;vite + react + ts 手摸手做项目系列一 （项目配置篇）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6997560918418653198"&gt;vite + react + ts 手摸手做项目系列二 （实战篇）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><author>前端要努力</author><pubDate>Tue, 19 Apr 2022 20:31:58 GMT</pubDate></item><item><title>我从来不理解闭包，直到我要去面试</title><link>https://juejin.cn/post/7088216038063472670</link><description>&lt;hr /&gt;
+&lt;h2&gt;theme: awesome-green&lt;/h2&gt;
+&lt;h1&gt;闭包&lt;/h1&gt;
+&lt;h2&gt;怎么答&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;回答这一类的面试题的时候你觉得需要用到方法论吗？如何有理有据的论述你的答案，用简洁的话回答出面试官想要听到的重点，而不是长篇大论抓不住重点，希望大家看完这篇文章能够举一反三，形成自己的见解&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;有些时候，你回答一些问题的逻辑思维，在高段位的面试官那里就完全能够了解到你当前的水平了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在我们回答这些问题的时候可以按照这个逻辑去回答，理清楚你要回答的思路，把你的观点清晰的表达给面试官&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;讲概念&lt;/li&gt;
+&lt;li&gt;优缺点&lt;/li&gt;
+&lt;li&gt;说用途&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;拆解&lt;/h2&gt;
+&lt;h3&gt;&lt;strong&gt;讲概念&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;红宝书：&lt;strong&gt;闭包是指有权访问另一个函数作用域中变量的函数&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;MDN: &lt;strong&gt;闭包是指那些能够访问自由变量的函数，这里的自由变量是指外部作用域中的变量&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;涉及到哪些知识点
+&lt;ul&gt;
+&lt;li&gt;作用域
+&lt;ul&gt;
+&lt;li&gt;全局作用域&lt;/li&gt;
+&lt;li&gt;局部作用域（函数作用域）&lt;/li&gt;
+&lt;li&gt;词法作用域 ---》作用域链&lt;/li&gt;
+&lt;li&gt;执行上下文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;strong&gt;优缺点&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;优点：私有化数据，在私有化数据的基础上保持数据
+&lt;ul&gt;
+&lt;li&gt;红宝书：任何在函数中定义的变量，都可以认为是私有变量
+举个例子：防抖：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;   
+/**
+* 手写题也是一样，不要上来就写，先把注释写好，写出自己的思路见解，
+  有些时候写不出来，有自己的思路也是面试官比较看重的点
+* 概念
+* 思路
+* 编码
+*/
+function debounce(fn,delay) {
+   let time= null; // 私有化数据
+   return function (){
+       let context = this,args = arguments;
+       if(time) { // 下一次点击的时候获取到上一下的time，也就是保持数据。
+           clearTimeout(time)
+           // 思考题 这里要不要清空time
+           // time = null;
+       }
+       time = setTimeout(function (){
+           fn.apply(context,args);
+       },delay)
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;缺点：可能会导致内存泄漏，内部的变量不会被自动回收掉
+&lt;ul&gt;
+&lt;li&gt;垃圾回收机制
+&lt;ul&gt;
+&lt;li&gt;标记清除&lt;/li&gt;
+&lt;li&gt;引用计数&lt;/li&gt;
+&lt;li&gt;新生代，老生代&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;    
+/**
+ * 手写题也是一样，不要上来就写，先把注释写好，写出自己的思路见解，
+   有些时候写不出来，有自己的思路也是面试官比较看重的点
+ * 概念
+ * 思路
+ * 编码
+ */
+function assignHandler() {
+    var element = document.getElementById('root3');
+    element.onclick = function () {
+        alert(element.id)
+    }
+ // element = null  
+ // 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;以上代码创建了一个作为element元素事件处理程序的闭包，而这个闭包又创建了一个循环引用。由于匿名函数保存了一个对assignHandler() 的活动对象的引用，因此就会导致无法减少element的引用数，只要匿名函数存在，element 的引用数至少也是1，因此会占用内存久永远不会被回收&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;上面的例子和解析，都是红宝书的原题，我手抄下来的，大家一定要多看书，书上讲的很清晰易懂！&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;strong&gt;说用途&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;防抖，节流 ......&lt;/li&gt;
+&lt;li&gt;vue ：响应式原理&lt;/li&gt;
+&lt;li&gt;react ：fiber,hooks原理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;答题&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;闭包是指有权访问另一个函数作用域中变量的函数，优点是私有化数据，在私有化数据的基础上保持数据，缺点使用不恰当会导致内存泄漏，在不需要用到的时候及时把变量置为null&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;闭包的应用是非常广泛的，比方我们常见的节流，防抖，函数柯理化，在vue,react源码中也应用广泛&lt;/strong&gt;（&lt;code&gt;如果你们接的住vue,react源码中，具体的应用场景你就可以答&lt;/code&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;总结复盘&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;一道题的背后往往涉及到非常多的知识，就像套娃一样，你想一想你能不能接住面试官的三连问？就像闭包设计到了
+&lt;ul&gt;
+&lt;li&gt;作用域&amp;amp;作用域链&lt;/li&gt;
+&lt;li&gt;执行上下文 --》这里又会衍生到this相关的问题和手写代码题&lt;/li&gt;
+&lt;li&gt;缓存，内存&lt;/li&gt;
+&lt;li&gt;垃圾回收机制&lt;/li&gt;
+&lt;li&gt;以及对知识广度的探索，比方你举例的应用场景够不够有说服力&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;我们学习的记忆曲线是随着时间的流逝而慢慢流逝，你搞一遍，肯定会忘掉的，&lt;strong&gt;你要能一遍记住，你肯定不会在看我这篇文章，你是神！&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;所以我要要学会总结复盘，写文章记录，或者形成自己的脑图，没事的时候拿出来看看，对吧，&lt;strong&gt;不断的重复记忆，慢慢的你就变强了！&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;举个例子：比方我面试我就会总结复盘自己准备了哪些东西
+&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/97638d7d9ac04df8950ac6f42484c5fb~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/li&gt;
+&lt;li&gt;就像我们今天说的闭包，你就可以总结，慢慢的就会形成你自己的知识体系&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6f8f226e3dff4490b5e5d6b1d4c643d1~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;今天主要给大家分享一下我的答题和学习方式，感谢点赞！&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;我整理在线刷题指南，拿走不谢，要学会站在别人的肩膀上提升自己；点击这里--&amp;gt;&lt;a href="https://www.processon.com/view/link/61c53fb31efad45a2b42afd9#map"&gt;前端进阶指南&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ec1cadc98d34913a77bd00c6901e504~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;传送门&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7086381206236823559"&gt;铜三铁四下，拿到前端技术专家的offer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7036689189567463432"&gt;卷王的2021总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/user/1943592288395479/pins"&gt;六点打卡交流群&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7007243669921071117"&gt;我为什么喜欢手抄代码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7016189093851693069"&gt;前端三年：小白变成老油条&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7008027646898487326"&gt;今年面试了100+的前端同学我的总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7000659708948250660#comment"&gt;我为什么坚持六点起床&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7004611718009585678"&gt;我读技术书很焦虑，读不下去书怎么办？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7002030597581307941"&gt;勤奋努力 === "卷" ？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6991728251034959885"&gt;vite + react + ts 手摸手做项目系列一 （项目配置篇）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6997560918418653198"&gt;vite + react + ts 手摸手做项目系列二 （实战篇）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><author>前端要努力</author><pubDate>Mon, 18 Apr 2022 23:38:58 GMT</pubDate></item><item><title>铜三铁四下，拿到前端技术专家的offer</title><link>https://juejin.cn/post/7086381206236823559</link><description>&lt;hr /&gt;
+&lt;h2&gt;theme: fancy
+highlight: arta&lt;/h2&gt;
+&lt;h2&gt;大环境很差&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;这段时间把简历放出来了，看看行情怎么样，行情确实不怎么样，很多厂光看招聘的信息，但是就像死掉的一样，毫无生机&lt;/li&gt;
+&lt;li&gt;然后直接找熟悉的猎头同学，帮我推了一推&lt;strong&gt;链圈&lt;/strong&gt;的岗位，哈哈&lt;/li&gt;
+&lt;li&gt;链圈，币圈机会不少，钱也够多，&lt;strong&gt;但是挺危险的，大家谨慎&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;这次出来主要是看看行情，并不想跳槽，主要看看自己在市面上值多少钱&lt;/li&gt;
+&lt;li&gt;结果 拿到&lt;strong&gt;年包70W➕&lt;/strong&gt;的工资，没股票，给的技术专家的职级，带人，但是也就是对标阿里高P6+的职级，对标字节高的2-1的钱，要有股票的话，就是正常大厂技术专家的总包待遇了！&lt;/li&gt;
+&lt;li&gt;看起来很唬人，其实一两年拿到这个钱的人很多，但是他们的学历基本是985硕士，而我是一个垃圾三本，年限不到4年，哈哈！我很努力了！但是上限确实有限，再想往上走真的难，真的是尽力了，已经卷翻我自己了！我得再熬一熬年限，尽力的给你们探了一波路，大家点赞关注！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;我的简历的一角&lt;/h2&gt;
+&lt;h3&gt;技术介绍&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;承担团队技术选型工作，注重前端标准化，在部门内部推行Eslint  Commitlint 以及标准落地&lt;/li&gt;
+&lt;li&gt;深入理解 React，Vue ,并研究过其内部实现&lt;/li&gt;
+&lt;li&gt;深入理解Webpack，vite,能够编写Babel Loader,Plugin进行工程化能力输出。&lt;/li&gt;
+&lt;li&gt;有大型微前端 SaaS 平台经验，跨团队协同能力强，对前端对性能优化、前端安全等也有一定的应用与思考&lt;/li&gt;
+&lt;li&gt;喜欢分享，推动团队内部技术分享并担任导师；工作认真负责注重效率，***********&lt;/li&gt;
+&lt;li&gt;掘金2021年度人气作者第三名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;简历其他的就不说的，暴露了，哈哈&lt;/h3&gt;
+&lt;h2&gt;面试题准备&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;不好意思，我是offer收割机的导师，在坐的各位应该没有我八股文熟练吧，哈哈装个逼&lt;/li&gt;
+&lt;li&gt;常见手写全部准备，可手撕promise，白板的那种&lt;/li&gt;
+&lt;li&gt;学习的vue和react的源码&lt;/li&gt;
+&lt;li&gt;深入学习了工程化架构相关领域的知识&lt;/li&gt;
+&lt;li&gt;设计模式之类的吹牛必备系列&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;面试过程&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;技术面三面，有重复的题，然后我总结分两段介绍，技术，和项目&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;技术面汇总&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;没录音还有一些忘了！&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;0.1 + 0.2 != 0.3&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;hooks原理&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;http 2.0 与 1.1的区别&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DNS 解析 IP 地址的过程&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;浏览器缓存应用场景是什么&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;追问强缓存，协商缓存的具体流程以及实践&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;tree shacking 原理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;追问你配置的tree shacking生效了吗&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;vue模版编译阶段具体做了哪些事&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;追问源码细节&lt;/li&gt;
+&lt;li&gt;追问diff算法的细节&lt;/li&gt;
+&lt;li&gt;追问vue diff 和react diff的区别&lt;/li&gt;
+&lt;li&gt;追问react fiber&lt;/li&gt;
+&lt;li&gt;为什么觉得redux不好&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;esm 的原理&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;为什么使用vite&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;为什么用rollup做生产打包使用，vite打包到底会有什么问题&lt;/li&gt;
+&lt;li&gt;webpack和vite有什么区别&lt;/li&gt;
+&lt;li&gt;webpack的打包流程是什么样&lt;/li&gt;
+&lt;li&gt;热更新机制和vite有什么区别&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;发布订阅模式的应用场景&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;手写promise.race,手写深拷贝，实现lodash里面的方法，手写一个防抖用react自定义hooks的方式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;web 安全，监控是怎么做的&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;项目面汇总（项目问的比较多，这些只是其中一部分）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;你谈一谈低代码平台大数据量优化过程&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;你们低代码平台的业务场景是什么&lt;/li&gt;
+&lt;li&gt;antd组件的性能指标的原因是什么，怎么做的分析&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;为什么要自研高性能组件库&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;组件库的测试覆盖率多少&lt;/li&gt;
+&lt;li&gt;你是如何做性能分析的&lt;/li&gt;
+&lt;li&gt;为什么要做性能优化，收益是什么样的&lt;/li&gt;
+&lt;li&gt;遇到过什么难点，如何解决的&lt;/li&gt;
+&lt;li&gt;追问了里面一些组件库的细节&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;dva和redux满足不了你们的业务需求吗？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;为什么要使用自己写的状态管理库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;无限层级拖拽逻辑你们是什么业务场景，如何解决的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;项目国际化工作流是怎么做的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你觉得你身为leader的职责是什么&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果带人&lt;/li&gt;
+&lt;li&gt;如何管项目&lt;/li&gt;
+&lt;li&gt;落地的成果是什么样的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;为什么不用qiankun做微前端&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;追问遇到过技术难点吗&lt;/li&gt;
+&lt;li&gt;追问自组件都是独立发包的吗&lt;/li&gt;
+&lt;li&gt;沙箱隔离的原理是怎么做的&lt;/li&gt;
+&lt;li&gt;父子应用通信是怎么做的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你又是前端leader，又要兼任负责产品需求，你是如何分配时间的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下面人，不服管，你有遇到过吗&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;去年做了这么多技术分享收获是什么&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对个人，对团队&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对未来的规划&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;hr面&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;比较简单都是常规问法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;这家面试总结&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;技术上问的都比较常规，八股文问的不多，项目上挖的比较深，对于vue和react的深入回答，我不知道面试官会不会，一直 ：哦，哦，是的，，，有点尴尬，我就一直输出，手写题都是烂熟了，思路也相对清晰，&lt;/li&gt;
+&lt;li&gt;没问算法，我提前问的猎头，我没准备，要问算法我就不面了。&lt;/li&gt;
+&lt;li&gt;大领导很会聊，项目问了比较深，项目我准备的很多，我的很多业务场景确实难，落地的成果也还行，这一块加分比较大，聊了下管理相关的实践看法，聊的也比较开心，又介绍了他们的团队，以及业务场景和未来的发展。&lt;/li&gt;
+&lt;li&gt;我的年限，学历都是劣势，但是坚持努力学习，这是优势&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;努力准备&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;现在行情大家也知道，但是技术好的同学机会还是不少的，所以大家努力刷题，想有一个实质性的提高，必须要有实质性的努力，不然停在思想层面，面试一问三不知，那是很难拿到大的offer的&lt;/li&gt;
+&lt;li&gt;一定要做好总结复盘，形成自己的技术体系，因为这么多题，你刷一两遍是很难记住的，要不断的反复复习学习，才能够更加的深刻！&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;越说越像鸡汤，努力吧，不聊了，基本上拿到大offer的经历在某些层面上都一样！&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;你好奇我哪里有这么多时间&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;一旦你有了一种执念，你也会成为一个时间管理大师&lt;/li&gt;
+&lt;li&gt;别说没时间，我也经常996，提高效率，摸鱼的时候努力学习！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;年限低，想拿高工资你该怎么办&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;学习，努力且持续的学习，别抱怨，没用！还是乐观点！&lt;/li&gt;
+&lt;li&gt;其实我没有见过真正努力学习，用心学习前端的同学拿的工资很低！&lt;/li&gt;
+&lt;li&gt;努力刷题让自己的技术形成体系，形成闭环，以面试为抓手，赋能给面试官，打出一套组合拳，最后形成自己的沉淀，卷出好offer，走向新篇章！！艹，写不下去了，哈哈！&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;我整理在线刷题指南，拿走不谢，要学会站在别人的肩膀上提升自己点击这里--&amp;gt;&lt;/strong&gt; &lt;a href="https://www.processon.com/view/link/61c53fb31efad45a2b42afd9#map"&gt;前端进阶指南&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ec1cadc98d34913a77bd00c6901e504~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;传送门&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7036689189567463432"&gt;卷王的2021总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/user/1943592288395479/pins"&gt;六点打卡交流群&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7007243669921071117"&gt;我为什么喜欢手抄代码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7016189093851693069"&gt;前端三年：小白变成老油条&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7008027646898487326"&gt;今年面试了100+的前端同学我的总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7000659708948250660#comment"&gt;我为什么坚持六点起床&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7004611718009585678"&gt;我读技术书很焦虑，读不下去书怎么办？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7002030597581307941"&gt;勤奋努力 === "卷" ？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6991728251034959885"&gt;vite + react + ts 手摸手做项目系列一 （项目配置篇）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6997560918418653198"&gt;vite + react + ts 手摸手做项目系列二 （实战篇）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><author>前端要努力</author><pubDate>Thu, 14 Apr 2022 00:58:38 GMT</pubDate></item><item><title>要么对自己狠，要么忍</title><link>https://juejin.cn/post/7041848141913522206</link><description>&lt;h2&gt;狠&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;对自己狠，&lt;strong&gt;要么早，要么狠&lt;/strong&gt;，不狠的话没办法在学习上追赶别人。你只有比别人更狠，才能够去让自己更进一步。&lt;strong&gt;别人学一遍，你学三遍，别人读一本书，，你读三本书，看起来狠卷&lt;/strong&gt;
+的样子，但是对于自己的改变是巨大的，学不会，就硬抄，硬干。脑子比不上比体力，虽说狠low，但是效果确实好。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;坚持&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;万事开头难，&lt;strong&gt;坚持更难&lt;/strong&gt;，学习&lt;strong&gt;非常枯燥&lt;/strong&gt;，&lt;strong&gt;非常非常的枯燥&lt;/strong&gt;，&lt;strong&gt;累啊&lt;/strong&gt;，是&lt;strong&gt;真的累&lt;/strong&gt;，身体上，心理上。还有工作的压力。同时之前是学渣，并没有好的学习方法，都是踩坑踩出来总结&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;继续坚持&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;持续坚持是最难的，你要能做到，提升一个档次根本不是问题！&lt;strong&gt;问题就是你做不到！&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;认命&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;我很清楚的认识到，自己学历，履历都一般，这是现实&lt;/strong&gt;，很多同学抱怨外界因素影响，但是你改变不了，而且你抱怨影响的是你自己的情绪，让你无心学习，同时
+一大堆同学在努力的学习，非常努力的学习，你自然卷不过别人，无论是在技术上还是在其他方面，&lt;strong&gt;优秀的真的会干翻你一大截，你还说被人卷&lt;/strong&gt;，这个问题出在哪里。很自然
+出在你自己心里，&lt;strong&gt;你不想出力学，还怪别人努力学，关键你还瞧不起别人的努力&lt;/strong&gt;，这就狠可怕了。想要去大厂也好，涨工资也罢，首先肯定提升自己的技术。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我清晰的认识到自己的不足，只有我们自己才清楚自己的现状，下决心去&lt;strong&gt;做&lt;/strong&gt;才能改变，而&lt;strong&gt;不是只下决心&lt;/strong&gt;，道理都懂，就是不想干，我不想说对错，毕竟各有活法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;你不想认命，那就使劲加油，拼一把。能力提升到一定的高度，机会就自然会找到你。现实就是我不想认命，我也不想干！&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;直到学会&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;我刚开始学的时候，就硬学，硬着头皮上，没有好的方法，就是硬干，硬抄，硬背，没办法啊，记不住，学不会。但是到了一定的量级之后，会了，就突然通了！&lt;/li&gt;
+&lt;li&gt;什么学习路线，掘金里面一大推，整理下，按照学就好了。关键是学，告诉你千条路，你就是不走，那有啥子办法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;成年人的世界&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;要么狠，要么忍，心里压力不会那么大，活着会更舒服些！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你要不想忍，那你就得先干翻自己，不然你觉得怎么办？焦虑？抱怨？......有用吗，卵用没有，还不如打两把游戏。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你在社区经常可以看到，低学历的逆袭进大厂，等等一系列的励志故事，想要得到，就得做到，要去坚持的做才有机会，别人说他们是运气，你不要信，因为运气大概率
+不会落到你的头上。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你想有实质上的提高，不脱一层皮的话，还是比较难的！别抱怨，加油！&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;愿大家工资都翻倍！技术交流 内推 摸鱼 求助皆可 --- &lt;a href="https://juejin.cn/user/1943592288395479/pins"&gt;链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;传送门&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7036689189567463432"&gt;卷王的2021总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7007243669921071117"&gt;我为什么喜欢手抄代码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7016189093851693069"&gt;前端三年：小白变成老油条&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7008027646898487326"&gt;今年面试了100+的前端同学我的总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7000659708948250660#comment"&gt;我为什么坚持六点起床&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7004611718009585678"&gt;我读技术书很焦虑，读不下去书怎么办？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/7002030597581307941"&gt;勤奋努力 === "卷" ？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6991728251034959885"&gt;vite + react + ts 手摸手做项目系列一 （项目配置篇）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juejin.cn/post/6997560918418653198"&gt;vite + react + ts 手摸手做项目系列二 （实战篇）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><author>前端要努力</author><pubDate>Wed, 15 Dec 2021 00:47:21 GMT</pubDate></item></channel></rss>
