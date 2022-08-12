@@ -8,17 +8,12 @@ linkList = [
         'link': 'https://juejin.cn/',
         'description': '代码不止,掘金不停',
         'subchains': [
-            'https://rss.anydoor.cf/juejin/posts/1978776660216136',
-            'https://rss.anydoor.cf/juejin/posts/1943592288395479'
-        ]
-    },
-    {
-        'title': '掘金2',
-        'link': 'https://juejin.cn/',
-        'description': '代码不止,掘金不停',
-        'subchains': [
-            'https://rss.anydoor.cf/juejin/posts/1978776660216136',
-            'https://rss.anydoor.cf/juejin/posts/1943592288395479'
+            'https://rss.anydoor.cf/juejin/posts/3491704662669469',
+            'https://rss.anydoor.cf/juejin/posts/2348212569517645',
+            'https://rss.anydoor.cf/juejin/posts/3456520257288974',
+            'https://rss.anydoor.cf/juejin/posts/2330620350435501',
+            'https://rss.anydoor.cf/juejin/posts/764915822103079',
+            'https://rss.anydoor.cf/juejin/posts/1442202996186093'
         ]
     }
 ]
