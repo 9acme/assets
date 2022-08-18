@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Wed, 17 Aug 2022 22:47:08 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 48 期：ESLint 新配置系统、Vue3 中文文档正式上线、Astro 1.0、小程序新渲染引擎</title><link>https://juejin.cn/post/7131776058528890911</link><description>&lt;hr /&gt;
+<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Thu, 18 Aug 2022 22:46:18 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 48 期：ESLint 新配置系统、Vue3 中文文档正式上线、Astro 1.0、小程序新渲染引擎</title><link>https://juejin.cn/post/7131776058528890911</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: fancy
 highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
@@ -6007,7 +6007,301 @@ x == y; // false
 &lt;h2&gt;招贤纳士&lt;/h2&gt;
 &lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 60 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
 &lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 21 Jun 2022 16:07:27 GMT</pubDate></item><item><title>Vue3中defineEmits、defineProps 是怎么做到不用引入就能直接用的</title><link>https://juejin.cn/post/7132265712780836894</link><description>&lt;p&gt;新出了一个系列：&lt;a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI0NDQ0ODU3MA==&amp;amp;action=getalbum&amp;amp;album_id=2509459125236416515&amp;amp;from_itemidx=2&amp;amp;from_msgid=2247510879&amp;amp;scene=173&amp;amp;count=3&amp;amp;nolastread=1#wechat_redirect"&gt;Vue2与Vue3 技巧小册&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 21 Jun 2022 16:07:27 GMT</pubDate></item><item><title>Vue 状态管理未来样子</title><link>https://juejin.cn/post/7133008213301002253</link><description>&lt;blockquote&gt;
+&lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
+本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;随着Vue 3越来越受重视并成为默认版本，许多事情正在发生变化，生态系统逐渐完善中。直到最近，Vue3 的状态管理默认推荐的是使用 Pinia。这节课，我们根据项目的规模，探索不同的状态管理方式，并尝试预测 Vue 中状态管理的未来会是什么样子。&lt;/p&gt;
+&lt;h2&gt;响应式 API&lt;/h2&gt;
+&lt;p&gt;在options API中，我们可以使用 &lt;code&gt;data()&lt;/code&gt; 选项为一个组件声明响应式数据。在内部，返回的对象被包在响应式帮助器中。这个帮助器也可以作为一个公共API使用。&lt;/p&gt;
+&lt;p&gt;如果是多个数据被多个实例共享的状态，那么 可以使用 &lt;code&gt;reactive()&lt;/code&gt;来创建一个 &lt;strong&gt;reactive&lt;/strong&gt; 对象，然后从多个组件中导入它。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import { reactive } from "vue";
+
+export const store = {
+  state: reactive({
+    heroes: ['Aragorn', 'Legolas', 'Gimli', 'Gandalf']
+  }),
+  addHero(hero) {
+    this.state.heroes.push(hero);
+  }
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;通过这种方法，数据被集中起来，并可以在各个组件之间重复使用。这可能是一个简单的选择，对一个小的应用程序来说占用的空间最小。&lt;/p&gt;
+&lt;h2&gt;组合&lt;/h2&gt;
+&lt;p&gt;一个类似的概念，即&lt;strong&gt;composition API&lt;/strong&gt;带来的概念，是使用一个&lt;strong&gt;组合&lt;/strong&gt; 。这种模式在React 那么非常流行，结合Vue强大的响应性机制，可以编写一些优雅的、可重复使用的可组合，比如下面这些：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import { ref, computed } from "vue";
+import fakeApiCall from "../api";
+
+export default function useFellowship() {
+  const heroes = ref([]);
+  const loading = ref(false);
+
+  async function init() {
+    loading.value = true;
+    heroes.value = await fakeApiCall();
+    loading.value = false;
+  }
+  return {
+    heroes: computed(() =&amp;gt; heroes.value),
+    loading: computed(() =&amp;gt; loading.value),
+    init
+  };
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后，可以这样使用：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+  &amp;lt;p v-if="loading"&amp;gt;Loading...&amp;lt;/p&amp;gt;
+  &amp;lt;p v-else&amp;gt;Companions: {{ heroes.join(", ") }}&amp;lt;/p&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script&amp;gt;
+import useFellowship from "../composables/useFellowship";
+import { computed } from "vue";
+export default {
+  name: "MiddleEarth",
+  setup() {
+    const { heroes, loading, init } = useFellowship();
+    init();
+    return {
+      heroes: computed(() =&amp;gt; heroes.value),
+      loading,
+    };
+  },
+};
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;事例地址：https://codesandbox.io/s/composables-middle-earth-07yc6h?file=/src/composables/useFellowship.js&lt;/p&gt;
+&lt;p&gt;这种模式最初是为了取代 &lt;strong&gt;mixins&lt;/strong&gt; 而引入的，因为现在的组合比继承更受欢迎。但它也可以用来在组件之间共享状态。这也是许多为取代 Vuex 而出现的库背后的主要想法。&lt;/p&gt;
+&lt;h2&gt;Vuex 4&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f942f91a5b74423a9c2f362a39f8ea40~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Vuex是不会消失的&lt;/strong&gt;。它支持Vue 3，具有相同的API和最小的破坏性变化（这可能是其他库应该注意的）。唯一的变化是，安装必须发生在一个 Vue 实例上，而不是直接安装在 Vue 原型上。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import { createApp } from 'vue'
+import { store } from './store'
+import App from './App.vue'
+
+const app = createApp(App)
+
+app.use(store)
+
+app.mount('#app')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Vuex 4 仍在维护中。不过，不会再有很多新的功能被添加到它里面。如果你已经有一个使用&lt;strong&gt;Vuex 3&lt;/strong&gt;的项目，并想推迟迁移到其他东西上，这是一个不错的选择。&lt;/p&gt;
+&lt;h2&gt;Pinia&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ad9c48ee71a244f18acf836a756624d9~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;Pinia 开始是一个实验，但很快就成为 Vue 3 的主要选择。它提供了比 Vuex 更多的 API ，有更好的架构和更直观的语法，充分利用了组合API。&lt;/p&gt;
+&lt;p&gt;在开发工具的支持上（状态检查、带动作的时间线和时间旅行的能力），以及 Vuex 所提供的使用插件的扩展性，pinia 在设计上是类型安全和模块化的，这是使用Vuex时最大的两个痛点。&lt;/p&gt;
+&lt;p&gt;此外，定义 story 的语法与 Vuex 模块非常相似，这使得迁移的工作量非常小，而在使用该 store 时，用到的 API，接近于 Vue3 使用组合API的方式。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import { defineStore } from 'pinia'
+
+export const useFellowship = defineStore('fellowship', {
+  state: () =&amp;gt; {
+    return { heroes: ['Aragorn', 'Legolas', 'Gimli', 'Gandalf'] }
+  },
+  actions: {
+    addHero(hero) {
+      this.heroes.push(hero)
+    },
+  },
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+import { useFellowship } from '@/stores/fellowship'
+export default {
+  setup() {
+    const fellowship = useFellowship()
+    
+    // 对状态的访问 
+    //可以直接进行
+    console.log(fellowship.heroes)
+    
+    // Using an action
+    fellowship.addHero('Boromir')
+  },
+}
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;你可能已经注意到的，最大的区别是 &lt;strong&gt;mutations 完全消失了&lt;/strong&gt;。它们通常被认为是极其冗长的，而使用它们没有任何真正的好处。此外，也不再需要命名空间了。有了新的导入 store 的方式，所有的东西都被&lt;strong&gt;设计成了命名空间&lt;/strong&gt;。这意味着，在 Pinia 中，你没有一个带有多个模块的 store ，而是有多个按需导入和使用的 store 。&lt;/p&gt;
+&lt;h2&gt;Pinia Setup  Store&lt;/h2&gt;
+&lt;p&gt;Pinia支持另一种语法来定义 store。它使用一个定义响应式属性和方法的函数，并返回它们，与Vue Composition API的 setup 函数非常相似。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import { defineStore } from 'pinia'
+
+export const useFellowship = defineStore('fellowship', () =&amp;gt; {
+  const heroes = ref([]);
+  
+  function addHero(hero) {
+    heroes.value.push(hero)
+  }
+  return {
+    heroes,
+    addHero
+  };
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在 Setup Stores 中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ref()&lt;/code&gt; 成为 &lt;code&gt;state&lt;/code&gt; 属性&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;computed()&lt;/code&gt; 成为 &lt;code&gt;getters&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;function()&lt;/code&gt; 成为 &lt;code&gt;actions&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://pinia.vuejs.org/core-concepts/#setup-stores"&gt;Setup stores&lt;/a&gt; 比  &lt;a href="https://pinia.vuejs.org/core-concepts/#option-stores"&gt;Options Store&lt;/a&gt; 带来了更多的灵活性，因为可以在一个 store  内创建 watchers ，并自由使用任何可组合的。&lt;/p&gt;
+&lt;h2&gt;一个更实际的例子&lt;/h2&gt;
+&lt;p&gt;创建一个 fellowship store，它可以容纳一个 &lt;code&gt;heroes&lt;/code&gt; 列表，并能添加和删除对应的元素：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import { defineStore } from 'pinia'
+
+export const useFellowship = defineStore('fellowship', {
+  state: () =&amp;gt; ({
+    heroes: [],
+    filter: 'all',
+    // type will be automatically inferred to number
+    id: 1
+  }),
+  getters: {
+    aliveHeroes(state) {
+      return state.heroes.filter((hero) =&amp;gt; hero.isAlive)
+    },
+    deadHeroes(state) {
+      return state.heroes.filter((hero) =&amp;gt; !hero.isAlive)
+    },
+    filteredHeroes() {
+      switch (this.filter) {
+        case 'alive':
+          return this.aliveHeroes
+        case 'dead':
+          return this.deadHeroes
+        default:
+          return this.heroes
+      }
+    }
+  },
+  actions: {
+    addHero(name) {
+      if (!name) return
+      // Directly mutating the state!
+      this.heroes.push({ name, id: this.id++, isAlive: true })
+    },
+    killHero(name) {
+      this.heroes = this.heroes.map((hero) =&amp;gt; {
+        if (hero.name === name) {
+          hero.isAlive = false
+        }
+        return hero
+      })
+    },
+    setActiveFilter(filter) {
+      this.filter = filter
+    }
+  }
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果你熟悉Vuex，那么理解这段代码应该不是什么难事。&lt;/p&gt;
+&lt;p&gt;首先，每个 state 都需要一个作为命名空间的键。这里，我们使用 &lt;code&gt;fellowship&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;state&lt;/code&gt; 是一个函数，保存这个 store 的所有响应性数据，&lt;code&gt;getters&lt;/code&gt; 是访问 store 里面的数据。&lt;code&gt;state&lt;/code&gt; 和 &lt;code&gt;getters&lt;/code&gt; 都与Vuex相同。&lt;/p&gt;
+&lt;p&gt;但对于 actions 来说与 Vuex 差异比较大。上下文参数已经消失了，actions 可以直接通过 &lt;code&gt;this&lt;/code&gt; 访问 state  和 getters 。你可能已经注意到的，actions 直接操作 state，这在Vuex 中是被严格禁止的。&lt;/p&gt;
+&lt;p&gt;最后，由于状态操作现在是在 actions 进行的，所以 mutations  被完全删除。&lt;/p&gt;
+&lt;p&gt;使用 pinia store  很简单:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+import { useFellowship } from '../store/fellowship'
+import HeroFilters from './HeroFilters'
+export default {
+  name: 'MiddleEarth',
+  components: {
+    HeroFilters
+  },
+  setup() {
+    const fellowship = useFellowship()
+    return {
+      fellowship
+    }
+  }
+}
+&amp;lt;/script&amp;gt;
+
+&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;template v-if="fellowship.heroes.length"&amp;gt;
+      &amp;lt;HeroFilters /&amp;gt;
+      &amp;lt;ol&amp;gt;
+        &amp;lt;li v-for="hero in fellowship.filteredHeroes" :key="hero.id"&amp;gt;
+          {{ hero.name }} - {{ hero.isAlive ? 'Alive' : 'Dead' }}
+          &amp;lt;button v-if="hero.isAlive" @click="fellowship.killHero(hero.name)"&amp;gt;Kill&amp;lt;/button&amp;gt;
+        &amp;lt;/li&amp;gt;
+      &amp;lt;/ol&amp;gt;
+    &amp;lt;/template&amp;gt;
+    &amp;lt;p v-else&amp;gt;Your fellowship is empty&amp;lt;/p&amp;gt;
+    &amp;lt;div&amp;gt;
+      &amp;lt;input type="text" ref="heroName" /&amp;gt;
+      &amp;lt;input type="button" value="Add new hero" @click="fellowship.addHero($refs.heroName.value)" /&amp;gt;
+      &amp;lt;p&amp;gt;
+        Sugestions:
+        &amp;lt;button
+          v-for="suggestion in ['Aragorn', 'Legolas', 'Gimli']"
+          :key="suggestion"
+          @click="fellowship.addHero(suggestion)"
+        &amp;gt;
+          {{ suggestion }}
+        &amp;lt;/button&amp;gt;
+      &amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;所有的逻辑都发生在 &lt;code&gt;setup&lt;/code&gt; 函数中。导入的 &lt;code&gt;useFellowship&lt;/code&gt; 钩子被执行并返回。这样在 template 就可以直接。&lt;/p&gt;
+&lt;p&gt;当然，这个组件应该被分解成更小的可重复使用的组件，但为了演示的目的，就先这样吧。&lt;/p&gt;
+&lt;p&gt;如果一个不同的组件需要访问相同的 state，可以用类似的方式来完成。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+import { useFellowship } from '../store/fellowship'
+export default {
+  name: 'HeroFilters',
+  setup() {
+    const fellowship = useFellowship()
+    return {
+      fellowship
+    }
+  }
+}
+&amp;lt;/script&amp;gt;
+
+&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+    Filter:
+    &amp;lt;div v-for="filter in ['all', 'dead', 'alive']" :key="filter"&amp;gt;
+      &amp;lt;input
+        type="radio"
+        :value="filter"
+        :id="filter"
+        @click="fellowship.setActiveFilter(filter)"
+        v-model="fellowship.filter"
+      /&amp;gt;
+      &amp;lt;label :for="filter"&amp;gt;{{ filter }}&amp;lt;/label&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;事例地址：https://codesandbox.io/s/pinia-playground-brgy58?file=/src/components/MiddleEarth.vue&lt;/p&gt;
+&lt;h2&gt;从 Vuex 迁移到 Pinia&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://pinia.vuejs.org/cookbook/migration-vuex.html"&gt;Pinia的文档很乐观&lt;/a&gt;，认为代码可以在库之间重复使用，但事实是，架构非常不同，肯定需要重构。首先，在Vuex中，我们有一个带有多个模块的 store ，而 Pinia 是围绕着多个 store  的概念建立的。将这一概念过渡到Pinia 中的最简单方法是，以前使用的每个模块现在都是一个 store 。&lt;/p&gt;
+&lt;p&gt;此外，&lt;code&gt;mutations&lt;/code&gt;  不再存在。相反，这些应该转换为直接访问和改变状态的操作。&lt;/p&gt;
+&lt;p&gt;Actions  不再接受上下文作为其第一个参数。它们应该被更新以直接访问状态或任何其他上下文属性。这同样适用于 &lt;code&gt;rootState&lt;/code&gt;、&lt;code&gt;rootGetters&lt;/code&gt;等，因为单一全局存储的概念并不存在。如果你想使用另一个 store，需要明确地导入它。&lt;/p&gt;
+&lt;p&gt;很明显，对于大型项目来说，迁移将是复杂和耗时的，但希望大量的模板代码将被消除，store 将遵循一个更干净和模块化的架构。改造可以逐个模块进行，而不是一次性改造所有内容。实际上，在迁移过程中，可以将 Pinea 和Vuex混合在一起，这种方法对于复杂的项目来说也是不错的选择。&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/68444c05cd3645fba267226da322c299~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;预测未来并不容易，但就目前而言，Pinea 是最安全的赌注。它提供了一个模块化的架构，通过设计实现类型安全，并消除了模板代码。如果你要用Vue 3开始一个新的项目，Pinia 是值得推荐的选择。&lt;/p&gt;
+&lt;p&gt;如果你已经在使用Vuex，你可以在迁移到Pinia之前升级到第4版，因为这个过程看起来很简单，但需要大量的时间。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;作者：Fotis Adamakis  译者：前端小智 来源：mediun&lt;/p&gt;
+&lt;p&gt;原文：
+https://fadamakis.medium.com/the-future-of-state-management-in-vue-js-fa3f94865d1f&lt;/p&gt;
+&lt;h3&gt;交流&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
+&lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
+&lt;/blockquote&gt;</description><author>前端小智</author><pubDate>Wed, 17 Aug 2022 16:36:01 GMT</pubDate></item><item><title>Vue3中defineEmits、defineProps 是怎么做到不用引入就能直接用的</title><link>https://juejin.cn/post/7132265712780836894</link><description>&lt;p&gt;新出了一个系列：&lt;a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI0NDQ0ODU3MA==&amp;amp;action=getalbum&amp;amp;album_id=2509459125236416515&amp;amp;from_itemidx=2&amp;amp;from_msgid=2247510879&amp;amp;scene=173&amp;amp;count=3&amp;amp;nolastread=1#wechat_redirect"&gt;Vue2与Vue3 技巧小册&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
 本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
@@ -8319,186 +8613,7 @@ export default {
 &lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
 &lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="" src="https://juejin.cn/img/remote/1460000020353567?w=800&amp;amp;h=400" /&gt;&lt;/p&gt;</description><author>前端小智</author><pubDate>Tue, 05 Jul 2022 16:37:32 GMT</pubDate></item><item><title>JavaScript框架的四个时代</title><link>https://juejin.cn/post/7114081840922624036</link><description>&lt;blockquote&gt;
-&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
-&lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;本文为译文，原作者是 &lt;strong&gt;Chris&lt;/strong&gt; ,它是Bitski的首席前端工程师，Ember.js核心团队成员，曾任LinkedIn、Addepar、Ticketfly（现为EventBrite）的前端工程师，反正是个厉害大佬就是了，本文的第一人称都指是的该大佬。&lt;/p&gt;
-&lt;p&gt;早在2012年，我开始主要用JavaScript进行编码。我曾为一家本地企业从头到尾做了一个PHP应用，一个基本的CMS和网站，公司决定要重写它并增加一些功能。&lt;/p&gt;
-&lt;p&gt;项目经理希望我使用.NET，部分原因是这是他所知道的，但也因为他希望这个应用感觉像一个本地应用程序--没有页面刷新或操作动作长时间等待。经过一番研究和原型设计，我说服了经理，可以使用当时刚开始出现的全新JS框架，它能做到这些事项。&lt;/p&gt;
-&lt;p&gt;我选择的第一个框架实际上是 Angular 1。在我遇到路由器的一些问题之前，已经建立了一个相当大的应用程序，并使用FuelPHP的后端--每当重新渲染子路由/出口时，它就会闪烁，而且真的感觉它在设计时没有考虑到这种场景。&lt;/p&gt;
-&lt;p&gt;后面，有人向我推荐了Ruby on Rails + Ember，在试过之后，觉得效果很好。我也喜欢这两个框架的理念，喜欢这些社区生态，而且与当时的替代方案相比，总的来说，它非常有成效。&lt;/p&gt;
-&lt;p&gt;从那时起，很多事情都发生了变化--框架层出不穷，并且有了很大的发展。去无可以在浏览器中用JavaScript构建应用程序的想法，从某种程度上的边缘变成了一种标准做法。我们构建的基础设施已经完全改变，实现了一系列新的可能性。&lt;/p&gt;
-&lt;p&gt;在这段时间里，各种想法之间也有相当多的竞争和冲突。使用哪种JavaScript框架，如何编写CSS，函数式编程与面向对象编程，如何最好地管理状态，哪种构建系统或工具最灵活、最快速，等等。回顾过去，这些觉得很有趣，我们经常争论的是错误的事情，而忽略了一些前瞻性，当然，这也是事后诸葛亮。&lt;/p&gt;
-&lt;p&gt;所以我想做一个回顾，回顾过去几十年的JavaScript开发，看看我们已经走了多远。我们可以把它大致分为四个主要时代。：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;原始年代&lt;/li&gt;
-&lt;li&gt;第一个框架&lt;/li&gt;
-&lt;li&gt;以组件为中心的视图层&lt;/li&gt;
-&lt;li&gt;全栈式框架&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;每一个时代都有自己的主题和核心矛盾，同时也都想到吸取关键教训，并稳步前进。&lt;/p&gt;
-&lt;p&gt;今天，争论仍在继续。web 是否变得过于臃肿？一般的网站真的需要用React编写吗？我们甚至应该使用JavaScript吗？当然，当前也不能代表未来，未来现有框架很大可能也会被替换，但是，也是从现有的一些观点出来，帮助我们向前迈进。&lt;/p&gt;
-&lt;h3&gt;原始年代&lt;/h3&gt;
-&lt;p&gt;JavaScript是在1995年首次发布的。就像我上面提到的，我是在2012年开始写JS的，差不多20年后，接近我称之为第一框架的时代的开始。你可以认为，我在这里可能会掩盖很多历史，而且这个时代可能会被分解成许多子时代，每个时代都有自己的模式、库和构建工具等等。&lt;/p&gt;
-&lt;p&gt;也就是说，我不能写我没有经历过的事情。当我开始编写前端应用程序时，新一代的框架刚刚开始走向成熟。Angular.js、Ember.js、Backbone，等等。&lt;/p&gt;
-&lt;p&gt;在这之前，最先进的技术是jQuery和MooTools等库。这些库在它们的时代非常重要--它们帮助平滑了浏览器实现JavaScript的方式之间的差异，这些差异是非常重要的。&lt;/p&gt;
-&lt;p&gt;例如，IE 实现事件的方式与Netscape完全不同--冒泡事件与捕获事件。这就是为什么我们今天的标准最终实现了这两种方式，但在这之前，我们需要使用库来编写能在两种浏览器上使用的代码。&lt;/p&gt;
-&lt;p&gt;这些库主要用于制作小型的、独立的用户界面组件。大多数应用程序的业务逻辑仍然是通过表单和标准的HTTP请求进行的--在服务器上渲染HTML并将其提供给客户端。&lt;/p&gt;
-&lt;p&gt;在这个时代也没有什么构建工具可言，至少我知道的是。当时的JavaScript还没有模块（至少没有标准的模块），所以没有任何办法导入代码。所有的东西都是全局性的，要组织好这些东西是非常困难的。&lt;/p&gt;
-&lt;p&gt;在这种环境下，可以理解的是，JS通常被视为一种玩具语言，而不是你用它来写一个完整的应用程序。那时我们最常做的事情是加入 jQuery，为一些UI小部件编写一些脚本，然后就可以了。&lt;/p&gt;
-&lt;p&gt;随着时间的推移和XHR的引入和普及，人们开始把他们的UI流程的一部分放到一个页面中，特别是对于需要在客户端和服务器之间进行多次来回交互的复杂流程，但应用程序的大部分内容还是留在服务器上。&lt;/p&gt;
-&lt;p&gt;这与移动应用开始出现时的情况形成了鲜明的对比。从一开始，iOS和Android上的移动应用就是用Objective C和Java等严肃语言™编写的完整应用。此外，它们是完全由API驱动的--所有的UI逻辑都在设备上，与服务器的通信纯粹是数据格式的。这导致了更好的用户体验和移动应用的爆炸性增长，直接导致了我们今天关于移动和 web 哪个更好的争论。&lt;/p&gt;
-&lt;p&gt;用JavaScript做这一切，起初被认为是可笑的。但随着时间的推移，应用程序开始变得更加雄心勃勃。社交网络增加了聊天、DM和其他实时功能，Gmail和Google Docs表明可以在浏览器中编写相当于桌面应用，越来越多的公司转向编写 web应用，因为 web  在任何地方都可以工作，而且更容易长期维护。这推动了整个行业的发展--现在很明显，JS可以用来编写非简单的应用程序。&lt;/p&gt;
-&lt;p&gt;当时的JavaScript还没有今天的所有功能，所有的东西都是全局的，通常需要手动下载并将每个外部库添加到静态文件夹中。当时还没有NPM，模块也不存在，JS也没有今天一半的功能。&lt;/p&gt;
-&lt;p&gt;在大多数情况下，每个应用程序都是定制的，每个页面都有不同的插件设置，每个插件都有不同的系统来管理状态和渲染更新。为了解决这些问题，最早的JavaScript框架开始出现了。&lt;/p&gt;
-&lt;h2&gt;第一个框架&lt;/h2&gt;
-&lt;p&gt;大约在2000年代末和2010年代初，第一批专门用于编写完整客户端应用程序的JS框架开始出现。这个时代的几个有名的框架：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Backbone.js&lt;/li&gt;
-&lt;li&gt;Angular 1&lt;/li&gt;
-&lt;li&gt;Knockout.js&lt;/li&gt;
-&lt;li&gt;SproutCore&lt;/li&gt;
-&lt;li&gt;Ember.js&lt;/li&gt;
-&lt;li&gt;Meteor.js&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;当然，还有很多其他的，可能还有一些在某些圈子里更大的。这些是我记得的，主要是因为小明用它们来编码，而且它们比较受欢迎。&lt;/p&gt;
-&lt;p&gt;这是一代框架，正在进入未知的领域。一方面，他们试图做的事情是非常雄心勃勃的，而且很多人认为它永远不会真正成功。&lt;/p&gt;
-&lt;p&gt;有许多反对者认为单页JS应用程序（SPA）从根本上来说更糟糕，而且在很多方面他们是对的--客户端渲染意味着机器人不能轻易抓取这些页面，而且用户甚至需要等待几秒钟才能开始绘制应用程序。很多这些应用程序都是无障碍的噩梦，如果关闭了JavaScript，它们就根本无法工作。&lt;/p&gt;
-&lt;p&gt;另一方面，我们没有在JS中构建完整应用程序的经验，因此有大量关于最佳方法的竞争性想法。大多数框架都试图模仿其他平台上的流行做法，所以几乎所有的框架最后都是&lt;code&gt;Model-View-*&lt;/code&gt;的某种迭代。&lt;code&gt;Model-View-Controller&lt;/code&gt;，&lt;code&gt;Model-View-Producer&lt;/code&gt;，&lt;code&gt;Model-View-ViewModel&lt;/code&gt;等等。但从长远来看，这些都不是真正意义上的成功--它们并不特别直观，而且很快就变得非常复杂。&lt;/p&gt;
-&lt;p&gt;这也是一个我们真正开始尝试如何编译JavaScript应用程序的时代。Node.js在2009年发布，NPM在2010年紧随其后，为（服务器端的）JavaScript引入了包。&lt;/p&gt;
-&lt;p&gt;CommonJS和AMD争夺如何最好地定义JS模块，而像Grunt、Gulp和Broccoli这样的构建工具则争夺如何将这些模块组合成一个可交付的最终产品。&lt;/p&gt;
-&lt;p&gt;在大多数情况下，这些都是非常通用的任务运行器式的工具，它们真的可以构建任何东西，只是碰巧要构建JavaScript--还有HTML、CSS/SASS/LESS，以及其他许多进入web应用的东西。&lt;/p&gt;
-&lt;p&gt;然而，我们从这个时代学到了很多东西:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;基于URL的路由是基础。没有这种路由的应用程序会破坏 web，因此需要在框架中从一开始就考虑到这一点。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;通过模板化语言扩展HTML是一个强大的抽象层。即使它有时会有点笨拙，但它使用户界面与状态保持同步变得更加容易。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;SPA的性能很差，而且web有许多原生应用所没有的额外限制。我们需要通过 web 发布所有的代码，让它JIT，然后运行来启动我们的应用程序，而本地应用程序已经下载和编译，这是一项艰巨的任务。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;作为一种语言，JavaScript有很多问题，它确实需要被改进，以使事情变得更好--框架无法单独做到这一点。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;我们绝对需要更好的构建工具、模块和包装，以便大规模地编写应用程序。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;总的来说，这个时代是富有成效的。尽管有缺点，但随着应用程序的复杂性增加，将客户端与API分离的好处是巨大的，而且在许多情况下，所产生的用户体验是惊人的。如无特殊情况，这个时代可能会继续下去，我们到现在还在迭代&lt;code&gt;MV*&lt;/code&gt;风格的想法。&lt;/p&gt;
-&lt;p&gt;但后来一颗小行星突然出现，把现有的范式砸得四分五裂，造成了一次小规模的灭绝事件，把我们推进了下一个时代--这颗小行星名叫&lt;strong&gt;React&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2&gt;以组件为中心的视图层&lt;/h2&gt;
-&lt;p&gt;我不认为React发明了组件，但说实话，我也不太清楚它们最早来自哪里。但至少可以追溯到.NET中的XAML，而 web 组件也在那时开始作为一种规范发展。最终它并不重要——一旦这个想法出现了，每个主要的框架都很快地采用了它。&lt;/p&gt;
-&lt;p&gt;事后看来，这完全是有道理的--扩展HTML，减少长期存在的状态，将JS业务逻辑直接与模板绑定（无论是JSX还是Handlebars还是Directives）。&lt;/p&gt;
-&lt;p&gt;基于组件的应用程序消除了完成工作所需的大部分抽象概念，并且明显地简化了代码的生命周期--一切都与组件的生命周期而不是应用程序的生命周期联系在一起，这意味着作为一个开发人员，你要考虑的事情要少得多。&lt;/p&gt;
-&lt;p&gt;然而，当时还有一个转变：框架开始把自己吹嘘成 "视图层"，而不是成熟的框架。他们不再解决前端应用所需的所有问题，而是专注于解决渲染问题。&lt;/p&gt;
-&lt;p&gt;其他问题，如路由、API通信和状态管理，则由用户自己决定。这个时代著名的框架有：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;React.js&lt;/li&gt;
-&lt;li&gt;Vue.js&lt;/li&gt;
-&lt;li&gt;Svelte&lt;/li&gt;
-&lt;li&gt;Polymer.js&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;还有很多其他的。现在回过头来看，我认为这是第二代框架的一个流行框架，因为它确实做了两件主要的事情。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;它极大地缩小了范围。该框架的核心不是试图在前期解决所有这些问题，而是专注于渲染，许多不同的想法和方向可以在更广泛的生态系统中探索其他功能。有很多糟糕的解决方案，但也有很好的解决方案，为下一代从精华中挑选最好的想法铺平了道路。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;这让我们更容易接受它们。采用一个完整的框架来接管你的整个网页意味着重写你的大部分应用程序，这对于现有的服务器端巨石来说是不可能的。使用像React和Vue这样的框架，你可以一次一个小部件或组件地将它们的一小部分放入现有的应用程序中，允许开发人员增量地迁移他们现有的代码。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;这两个因素导致第二代框架迅速发展，使第一代框架黯然失色，从远处看，这一切似乎很有意义，是一种合理的演变。但在当时身处其中，是相当令人沮丧的经历。&lt;/p&gt;
-&lt;p&gt;首先，当我们在工作中争论使用哪种框架，或者是否应该重写我们的应用程序时，并不经常遇到这样的框架。相反，很多时候是 "它更快！"或 "它更小！"或 "它是你所需要的一切！"。&lt;/p&gt;
-&lt;p&gt;还有关于函数式编程和面向对象编程的辩论，很多人把FP作为我们所有问题的解决方案。公平地说，这些事情都是真的。仅有视图层的框架更小（起初）、更快（起初），而且是你所需要的全部（如果你自己建立或缝合了很多东西）。&lt;/p&gt;
-&lt;p&gt;当然，函数式编程模式解决了大量困扰JavaScript的问题，我认为平均而言，JS因为它们而变得更好。&lt;/p&gt;
-&lt;p&gt;然而，现实是根本就没有什么灵丹妙药。应用程序仍然庞大、臃肿和复杂，状态仍然难以管理，路由和SSR等基本问题仍然需要解决。&lt;/p&gt;
-&lt;p&gt;对于我们中的很多人来说，人们想要的似乎是放弃试图解决所有这些问题的解决方案，而换成一个让读者自己去解决的解决方案。&lt;/p&gt;
-&lt;p&gt;根据我的经验，这也是工程小组的普遍做法，他们会很高兴地接受这种改变，以便交付一个新的产品或功能，然后又不资助完全开发所有这些额外功能所需的时间。&lt;/p&gt;
-&lt;p&gt;其结果是围绕这些视图层建立的自制框架，而这些框架本身是臃肿的、复杂的，而且非常难以操作。&lt;/p&gt;
-&lt;p&gt;我认为人们在使用SPA时遇到的许多问题都来自于这种分散的生态系统，而这种生态系统恰恰是在SPA使用爆炸性增长的时候出现的。我仍然经常遇到一个新的网站，它不能正确地做路由或很好地处理其他小细节，这绝对是令人沮丧的。&lt;/p&gt;
-&lt;p&gt;但另一方面，现有的第一代全服务框架在解决这些问题方面也做得不是很好。部分原因是由于大量的技术债务包袱。第一代框架是在ES6之前，在模块之前，在Babel和Webpack之前，在我们弄清楚许多事情之前建立的。&lt;/p&gt;
-&lt;p&gt;迭代进化是非常困难的，而且完全重写它们，就像Angular对Angular 2所做的那样，扼杀了他们社区的发展势头。&lt;/p&gt;
-&lt;p&gt;因此，当涉及到JavaScript框架时，开发人员处于两难境地--要么选择一个开始显示其年龄的一体化解决方案，要么跳入自由竞争中，DIY一半的框架，希望得到最好的结果。&lt;/p&gt;
-&lt;p&gt;当时这让人非常沮丧，但最后还是产生了大量的创新。随着这些框架找出它们的最佳实践，JavaScript生态系统的发展非常迅速，还发生了一些其他的关键变化。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;像 Babel 这样的转译器成为常态，并有助于使语言现代化。与其等待多年的功能标准化，不如今天就能使用，而语言本身也开始以更快、更迭代的速度增加功能。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ES模块被标准化，使我们最终开始围绕它们构建现代构建工具，如Rollup、Webpack和Parcel。基于导入的 bundling 慢慢成为规范，即使是样式和图片等非JS资源也是如此，这极大地简化了构建工具的配置，使它们变得更精简、更快速、更全面。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;随着越来越多的API被标准化，Node和 web 标准之间的差距也在缓慢但稳步地缩小。SSR开始成为一种真正的可能性，然后是每个严肃的应用程序都在做的事情，但每次都是一种定制的设置。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;释放了Edge Computing，为基于JavaScript的服务器应用程序提供了SPA在分布/响应时间方面的好处（Spas以前由于在CDN上是静态文件，因此通常可以更快地开始加载加载，即使它们花了更长的时间才能完全加载并在结束）。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;在这个时代结束的时候，一些问题仍然存在。状态管理和响应性仍然是（现在也是）棘手的问题，尽管我们有比以前更好的模式。&lt;/p&gt;
-&lt;p&gt;性能仍然是一个困难的问题，尽管情况正在改善，但仍然有很多很多臃肿的SPA在那里。&lt;/p&gt;
-&lt;p&gt;可访问性的情况也有所改善，但对于许多工程机构来说，它仍然经常是一个事后的想法。但这些变化为下一代框架铺平了道路，我想说的是，我们现在正在进入下一代框架。&lt;/p&gt;
-&lt;h2&gt;全栈式框架&lt;/h2&gt;
-&lt;p&gt;就我个人而言，上一个框架时代真的悄悄来临了。我想这是因为我在过去4年左右的时间里深入到Ember渲染层的内部，试图解决前面提到的影响它作为第一代框架的技术债务（仍然）。但这也是因为它更加微妙，因为所有这些第三代框架都是围绕上一代的视图层框架建立的。这些框架包括：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Next.js (React)&lt;/li&gt;
-&lt;li&gt;Nuxt.js (Vue)&lt;/li&gt;
-&lt;li&gt;Remix (React)&lt;/li&gt;
-&lt;li&gt;SvelteKit (Svelte)&lt;/li&gt;
-&lt;li&gt;Gatsby (React)&lt;/li&gt;
-&lt;li&gt;Astro (Any)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;这些框架是随着视图层的成熟和巩固而开始的。既然我们都同意组件是建立在核心基础之上的，那么开始标准化应用程序的其他部分--路由器、构建系统、文件夹结构等，就很有意义了。&lt;/p&gt;
-&lt;p&gt;慢慢地，这些元框架开始建立起与第一代多合一解决方案开箱即用的相同功能，从各自的生态系统中挑选最佳模式，并随着它们的成熟而将其纳入。&lt;/p&gt;
-&lt;p&gt;然后他们又进一步。&lt;/p&gt;
-&lt;p&gt;在这之前，SPA一直只专注于客户端。SSR是每个框架都希望解决的问题，但只是作为一种优化，一种获得渲染的方式，最终会在数兆字节的JS最终加载完毕后被取代。&lt;/p&gt;
-&lt;p&gt;只有一个第一代框架敢于想得更远，即&lt;code&gt;Meteor.js&lt;/code&gt;，但它同构JS的想法从未真正实现。&lt;/p&gt;
-&lt;p&gt;但随着应用程序的规模和复杂性的增加，这个想法被重新审视。&lt;/p&gt;
-&lt;p&gt;我们注意到，将后端和前端搭配在一起实际上是非常有用的，这样你就可以做一些事情，比如为某些请求隐藏API秘密，在返回页面时修改头文件，代理API请求。随着Node和Deno实现了越来越多的 web 标准，服务器端JS和客户端JS之间的差距每年都在缩小，它开始看起来毕竟不是一个疯狂的想法。将其与 edge-computing和惊人的工具结合起来，就会有一些令人难以置信的潜力。&lt;/p&gt;
-&lt;p&gt;最新一代的框架充分利用了这种潜力，将客户端和服务器无缝地融合在一起，我无法强调这种感觉有多么令人惊讶。在过去9个月与SvelteKit的合作中，我不知道有多少次坐下来对自己说："这就是我们应该一直做的事情。"&lt;/p&gt;
-&lt;p&gt;以下是我最近遇到的一些任务，通过这种设置，这些任务变得异常简单。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;将服务器端的OAuth添加到我们的应用程序中，这样认证令牌就不会离开服务器，同时还有一个API代理，在向我们的API发送请求时添加令牌。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;将某些路由直接代理到我们的CDN，这样我们就可以托管在任何其他框架中构建的静态HTML页面，允许用户制作自己的定制页面（我们为一些客户提供的服务）。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;当我们需要使用一个需要密匙的外部服务时，添加几个不同的一次性API路由（不需要为我们的API添加一个全新的路由并与后端人员协调）。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;将我们对LaunchDarkly的使用转移到服务器端，这样我们就可以加载更少的JS，从而降低整体成本。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;通过后端路由代理我们的Sentry请求，这样我们就可以捕捉到由于广告屏蔽器而未被报告的错误。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;而这仅仅是冰山一角。这种模式真的有很多很酷的地方，其中最大的一点是它如何重振渐进式增强的理念，利用服务器和客户端的组合特性，允许客户端在用户禁用JavaScript的情况下回退到基本的HTML + HTTP。&lt;/p&gt;
-&lt;p&gt;当我开始从事SPA工作时，我自己已经完全放弃了这种做法，认为它们是未来的趋势，但我们有可能看到它卷土重来的世界，这真的很酷。&lt;/p&gt;
-&lt;p&gt;这些是新的功能，从经验上看，我把这些框架归为新一代的框架。以前难以解决或不可能解决的问题现在变得微不足道，只需改变一点点的响应处理逻辑。&lt;/p&gt;
-&lt;p&gt;可靠的性能和用户体验是开箱即用的，不需要任何额外的配置。我们不需要建立整个新的服务，而是能够根据需要添加一些额外的端点或中间件。这已经改变了生活。&lt;/p&gt;
-&lt;p&gt;我认为这一代也解决了第一代和第二代框架及其用户之间的一些主要矛盾点。&lt;/p&gt;
-&lt;p&gt;它始于向零配置术语的转变，但我认为它最终是由围绕第二代框架的生态系统的成熟和稳定所驱动的，这也是一种文化转变。&lt;/p&gt;
-&lt;p&gt;第三代框架现在正试图再次成为一体化的解决方案，试图解决我们作为前端开发者需要解决的所有基本问题--不仅仅是渲染。&lt;/p&gt;
-&lt;p&gt;现在比以往任何时候都感觉到社区在解决所有困扰SPA的许多问题方面是一致的，而且重要的是，共同解决了这些问题。&lt;/p&gt;
-&lt;h2&gt;我们接下来要去哪里？&lt;/h2&gt;
-&lt;p&gt;总的来说，我认为JavaScript社区正朝着正确的方向发展。我们终于开发出了成熟的解决方案，可以从头开始构建完整的应用程序，这些解决方案并不是 "仅仅是一个视图层"。&lt;/p&gt;
-&lt;p&gt;我们终于开始与原生应用的SDK在同一起跑线上竞争，提供一个开箱即用的完整工具包。&lt;/p&gt;
-&lt;p&gt;我们在这方面仍有很多工作要做。在SPA领域，可访问性长期以来一直是一个事后的想法，而在GraphQL之外，我仍然认为 data story 可以使用一些工作（不管你喜欢与否，大部分的 web 仍然运行在REST上）。&lt;/p&gt;
-&lt;p&gt;但趋势是正确的，如果我们继续朝着共享解决方案的方向发展，我认为我们可以用比以前更好的方式解决这些问题。&lt;/p&gt;
-&lt;p&gt;我还对将这些模式进一步提升到 web平台本身背后的潜力感到兴奋。Web组件仍在悄悄地迭代，致力于解决SSR和摆脱全局注册等问题，这将使它们与这些第三代框架更加兼容。&lt;/p&gt;
-&lt;p&gt;在另一个方向，WebAssembly可以以一种令人难以置信的方式迭代这种模式。想象一下，能够用任何语言编写一个全栈框架。&lt;/p&gt;
-&lt;p&gt;同构的Rust、Python、Swift、Java等语言最终可以将前台和后台之间的障碍减少到几乎为零--只是在你的系统边缘有一点HTML模板（这讽刺地使我们几乎绕了一圈，尽管有更好的用户体验）。&lt;/p&gt;
-&lt;p&gt;我在这里最大的希望是，我们正在走过碎片化的时代，走过每天都有新的JS框架的时代。自由和灵活孕育了创新，但它们也导致了 web 体验的混乱、不连贯，而且常常是根本性的破坏。&lt;/p&gt;
-&lt;p&gt;当开发者不得不在50多个选项中做出选择，并在有限的资源和紧迫的期限内将它们拼凑在一起时，这就是我们看到的体验，这也是合理的。一些应用程序非常快速、一致、可靠，使用起来也很有趣，而另一些则令人沮丧、困惑、缓慢和破损。&lt;/p&gt;
-&lt;p&gt;如果我们能给开发者提供更容易使用的工具，默认地做正确的事情，也许一般的网站会变得更好一些，一般的体验会更顺畅一些。&lt;/p&gt;
-&lt;p&gt;它不会修复每个网站--没有多少代码可以解决糟糕的用户体验设计。但它会奠定一个共同的基础，所以每个网站开始时都会好一点，每个开发人员都有更多的时间专注于其他事情。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;编辑中可能存在的bug没法实时知道，事后为了解决这些bug,花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;作者：Chris 译者：小智  来源：pzuraq&lt;/p&gt;
-&lt;p&gt;原文：https://www.pzraq.com/blog/four-eras-of-javascript-frameworks&lt;/p&gt;</description><author>前端小智</author><pubDate>Mon, 27 Jun 2022 16:31:15 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
+&lt;p&gt;&lt;img alt="" src="https://juejin.cn/img/remote/1460000020353567?w=800&amp;amp;h=400" /&gt;&lt;/p&gt;</description><author>前端小智</author><pubDate>Tue, 05 Jul 2022 16:37:32 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: awesome-green
 highlight: a11y-light&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://juejin.cn/post/7095547569777934367"&gt;13.5W 播放量的 TS 动画版进阶教程合集来了！&lt;/a&gt;，通过形象生动的动画，让你轻松搞懂 TypeScript 的难点和核心知识点！&lt;/p&gt;
