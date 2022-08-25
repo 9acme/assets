@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Wed, 24 Aug 2022 22:45:44 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 49 期：Deno即将迎来重大变革、Blitz 2.0 Beta、Chrome删除HTTP/2服务端推送</title><link>https://juejin.cn/post/7134661235454246948</link><description>&lt;hr /&gt;
+<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Thu, 25 Aug 2022 22:46:14 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 49 期：Deno即将迎来重大变革、Blitz 2.0 Beta、Chrome删除HTTP/2服务端推送</title><link>https://juejin.cn/post/7134661235454246948</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: fancy
 highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
@@ -5960,7 +5960,176 @@ module.exports.handler  = function (req, res, context) {
 &lt;h2&gt;招贤纳士&lt;/h2&gt;
 &lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 60 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
 &lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 28 Jun 2022 16:23:12 GMT</pubDate></item><item><title>Vue 状态管理未来样子</title><link>https://juejin.cn/post/7133008213301002253</link><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 28 Jun 2022 16:23:12 GMT</pubDate></item><item><title>你不应该依赖CSS 100vh，这就是原因!</title><link>https://juejin.cn/post/7135600743095992327</link><description>&lt;blockquote&gt;
+&lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
+本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果有一个文本和一个按钮，我们想让文本粘在上面，而按钮粘在下面！使用CSS Flex 似乎很容易做到。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// HTML
+&amp;lt;div className="layout"&amp;gt;
+  &amp;lt;p&amp;gt;Lorem ipsum dolor sit amet...&amp;lt;/p&amp;gt;
+  &amp;lt;button&amp;gt;Sign Up&amp;lt;/button&amp;gt;
+&amp;lt;/div&amp;gt;
+
+// CSS
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在真机检查一下效果：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/af2efdbdaa284a7fa34578d51cdb0ad5~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;酷! Git add, git commit, git push, oh yeah!&lt;/p&gt;
+&lt;h2&gt;这有什么问题吗？&lt;/h2&gt;
+&lt;p&gt;当然，是有的! 要看到这个问题，你需要在真实的手机或模拟器上查看你的应用程序。在本文中使用的 iPhone 13（iOS 15.2）进行测试，下面是结果:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/81dfd42e6c564138be3ed6403a9e3e0a~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;啥，底部按钮跑哪里去了？&lt;/p&gt;
+&lt;p&gt;顺便说一下，它在安卓手机上甚至不能按预期工作。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b0c5c004f67448f8a931390b1d52e506~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;为什么100vh问题会发生在移动设备上？&lt;/h2&gt;
+&lt;p&gt;我对这个问题进行了一番调查，发现了其中的原因。简短的答案是，浏览器的工具栏高度没有被考虑在内。如果你想深入了解为什么会发生这种情况，&lt;a href="https://stackoverflow.com/questions/37112218/css3-100vh-not-constant-in-mobile-browser"&gt;Stack Overflow的这个帖子&lt;/a&gt;很有帮助。&lt;/p&gt;
+&lt;h2&gt;如何修复移动设备上的100vh问题？&lt;/h2&gt;
+&lt;p&gt;第一个建议是尽量少用 &lt;code&gt;vh&lt;/code&gt;。例如，在上面的代码中，你可以使用一个 sticky 按钮，避免使用&lt;code&gt;vh&lt;/code&gt;单位。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// HTML
+&amp;lt;div className="layout"&amp;gt;
+  &amp;lt;p&amp;gt;Lorem ipsum dolor sit amet...&amp;lt;/p&amp;gt;
+  &amp;lt;button&amp;gt;Sign Up&amp;lt;/button&amp;gt;
+&amp;lt;/div&amp;gt;
+
+// CSS
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.layout button {
+  position: sticky;
+  bottom: 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;效果：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="001.gif" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b127408ff862403c9ac04a490afd0a6e~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;它在横向模式下也很好:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="002.gif" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/84a6522035dc474b907a9a48e4edc5fb~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;说实话，结果是好的，但你不能总是用 &lt;code&gt;sticky&lt;/code&gt;  元素来解决 &lt;code&gt;100vh&lt;/code&gt; 的问题。&lt;/p&gt;
+&lt;h2&gt;仅使用 CSS 在移动设备上修复 100VH 问题&lt;/h2&gt;
+&lt;p&gt;时，使用 &lt;code&gt;vh&lt;/code&gt; 的目的是为了简单地创建与视口高度相等的部分。例如，当你在建立登陆页面时，这很常见。在这些情况下，&lt;code&gt;position sticky&lt;/code&gt;不会有帮助，这里介绍一下 &lt;code&gt;fill-available&lt;/code&gt;属性。它用起来很简单，只要记住使用前缀和回退值就可以了。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.layout {
+  min-height: 100vh;            /* fall-back */
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;效果：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="003.gif" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/85f87adc32b94fa0afba91f05b73002e~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;而且，当你旋转设备时，它还会更新高度，太棒了!&lt;/p&gt;
+&lt;p&gt;&lt;img alt="004.gif" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/383f36177dba4fbd96f941e41a0c3795~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;用 &lt;code&gt;fill-available&lt;/code&gt; 修复 100vh 的问题确实很直接，但在调查这个解决方案时，也遇到过一些问题。&lt;/p&gt;
+&lt;h2&gt;1. HTML类型声明问题&lt;/h2&gt;
+&lt;p&gt;页面上有  &lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/code&gt; 声明，会使 &lt;code&gt;fill-available&lt;/code&gt; 在 Chrome 浏览器上无法正常工作。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fbcb4ae466f8496798b5d59587621404~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;甚至不能在安卓浏览器上工作:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fd1d2786b1844113a67beda174ee59d0~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;因此，为了解决这个问题，必须从页面中删除 &lt;code&gt;doctype&lt;/code&gt; 声明。&lt;/p&gt;
+&lt;h2&gt;2. Safari上的垂直 padding  问题&lt;/h2&gt;
+&lt;p&gt;在 &lt;code&gt;min-height&lt;/code&gt;（或 &lt;code&gt;height&lt;/code&gt;）为 &lt;code&gt;fill-available&lt;/code&gt;的元素上添加垂直 &lt;code&gt;padding&lt;/code&gt; （bottom 和  top），Safari浏览器上会导致问题，高度不会正确。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e497d58e438644a38a65dd974db1d7d9~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;要解决这个问题，只需将你的内容包在另一个 &lt;code&gt;div&lt;/code&gt; 元素内，就可以了:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// HTML
+&amp;lt;div class="screen"&amp;gt;
+  &amp;lt;div class="content"&amp;gt;
+    ...
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+
+// CSS
+.screen {
+  background-color: mediumpurple;
+  min-height: 100vh;
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
+}
+.content {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 30px;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;3. fill-available 不能与 &lt;code&gt;calc()&lt;/code&gt; 一起使用&lt;/h2&gt;
+&lt;p&gt;需要注意的一件事是，不能在 &lt;code&gt;fill-available&lt;/code&gt; 属性下使用 &lt;code&gt;calc()&lt;/code&gt;。所以，下面的CSS规则就不会生效：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;min-height: calc(-webkit-fill-available / 2);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;例如，如果需要在元素上有一半的可用高度，必须使用JavaScript。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用JavaScript修复移动设备上的100vh问题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;可以使用 window 的 &lt;code&gt;innerHeight&lt;/code&gt; 属性，将元素 &lt;code&gt;height&lt;/code&gt; （或&lt;code&gt;minHeight&lt;/code&gt;）设置为&lt;code&gt;window.innerHeight&lt;/code&gt;，如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang="en"&amp;gt;
+&amp;lt;head&amp;gt;
+  &amp;lt;style&amp;gt;
+    ...
+  &amp;lt;/style&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;div id="intro"&amp;gt;
+  &amp;lt;h1&amp;gt;Hello World!&amp;lt;/h1&amp;gt;
+  &amp;lt;h2&amp;gt;The height of this area is equal to...&amp;lt;/h2&amp;gt;
+&amp;lt;/div&amp;gt;
+...
+&amp;lt;script&amp;gt;
+  (function () {
+    const el = document.getElementById('intro');
+    el.style.minHeight = window.innerHeight + 'px';
+  })();
+&amp;lt;/script&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;效果：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="005.gif" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/51b76c0b4e2542219b46b55ed79509ef~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;接着，再介绍一种花销的方式。 一些开发者喜欢根据窗口的内部高度定义一个&lt;strong&gt;CSS变量&lt;/strong&gt;，并使用该变量来设计他们所需的元素。代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 以像素为单位计算1vh值
+// 基于窗口的内部高度
+var vh = window.innerHeight * 0.01;
+
+//  将CSS变量设置为根元素
+// 相当于1vh
+document.documentElement.style.setProperty('--vh', vh + 'px');
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在 CSS 中：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;min-height: calc(var(--vh) * 100);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;最后一件事是当窗口被调整大小或设备方向改变时，重新计算这个值:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function calculateVh() {
+  var vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', vh + 'px');
+}
+
+// 初始计算
+calculateVh();
+
+// 调整大小时重新计算
+window.addEventListener('resize', calculateVh);
+
+// 在设备方向改变时重新计算
+window.addEventListener('orientationchange', calculateVh);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在我看来，你应该先用CSS的解决方案。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;作者：Mehdi Namvar  译者：前端小智 来源：mediun&lt;/p&gt;
+&lt;p&gt;原文：https://ilxanlar.mdium.com/you-shouldnt-relyon-css-100vh-and-here-s-why-1b4721e74487&lt;/p&gt;
+&lt;h3&gt;交流&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
+&lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
+&lt;/blockquote&gt;</description><author>前端小智</author><pubDate>Wed, 24 Aug 2022 16:17:31 GMT</pubDate></item><item><title>Vue 状态管理未来样子</title><link>https://juejin.cn/post/7133008213301002253</link><description>&lt;blockquote&gt;
 &lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
 本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -8510,63 +8679,7 @@ export default {
 &lt;p&gt;新的 &lt;code&gt;expose&lt;/code&gt; 方法是非常直观的，而且很容易在我们的组件中实现。它清除了一些非常重要的组成问题，这些问题在过去甚至需要重写一个完整的组件，所以即使它不是你日常使用的API，它也是值得收藏在我们文件夹中吃灰。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;原文：https://www.vuemastery.com/blog/understanding-vue-3-expose/&lt;/p&gt;</description><author>前端小智</author><pubDate>Wed, 06 Jul 2022 16:28:49 GMT</pubDate></item><item><title>Vue 3是一个错误，我们不应该再犯。</title><link>https://juejin.cn/post/7117051988558217230</link><description>&lt;blockquote&gt;
-&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
-&lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;文本是翻译的，作者Fotis Adamakis， 他是  Vue.js雅典会议的共同组织者，文中的第一人称指的是该大佬。&lt;/p&gt;
-&lt;p&gt;从最初引入Vue 3开始，已经过去了4年多。&lt;a href="https://github.com/vuejs/rfcs/tree/master/active-rfcs"&gt;经过多次RFC&lt;/a&gt;的讨论，以及其他现代框架（包括React和Svelte）的影响，Vue 可能已经成为最强大和最全面的框架，能够逐步支持任何规模和架构的应用。&lt;/p&gt;
-&lt;p&gt;听起来很刺激，对吗？嗯，事实远非如此。从那时起，就发生了很多延迟和降级的情况。尽管Vue 3最近成为了新的默认版本，但很多重要的支持库还没有准备好，甚至没有计划与两个版本兼容。这说明很多代码库还停留在Vue 2上，迁移到版本3的路径并不容易。&lt;/p&gt;
-&lt;p&gt;请不要误解我，Vue 3非常棒。它可能是目前最好的框架了。但事实上，从第二版开始没有简单的迁移路径，这是一个错误，我们不应该在未来重复。&lt;/p&gt;
-&lt;h2&gt;Vue 2的问题&lt;/h2&gt;
-&lt;p&gt;Vue一直被认为是一个进步的框架。选项API很容易理解，我们可以学习并在需要时引入更复杂的模式和库。小的学习曲线和良好的文档是大家喜欢它的原因。&lt;/p&gt;
-&lt;p&gt;另一方面，在将通用逻辑抽象为mixin时，使用继承而不是组合的体系结构缺陷造成了许多可伸缩性问题，并破坏了干净组件声明的许多原则。Vue3 引入组合API 作为一种解决方案。&lt;/p&gt;
-&lt;p&gt;另一个重要的问题是对typecript的支持。当然，在Vue组件中编写typescript就像在&lt;code&gt;script&lt;/code&gt;标签中添加&lt;code&gt;type="ts"&lt;/code&gt;一样容易。但在模板和 store 里，支持是有问题的。&lt;/p&gt;
-&lt;h2&gt;vue3 解决方案&lt;/h2&gt;
-&lt;p&gt;完全重写是一个改善框架内部结构的机会。Vue3 广泛地使用了Typescript，包括响应性机制在内的许多方面都从头开始。这使得Vue 3在数据包大小、初始渲染、更新和内存使用方面的性能得到了明显的改善。&lt;/p&gt;
-&lt;p&gt;此外，还增加了很多新的功能。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Composition API&lt;/li&gt;
-&lt;li&gt;语法糖 &lt;code&gt;&amp;lt;script setup&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Fragments&lt;/li&gt;
-&lt;li&gt;Emits Component Option&lt;/li&gt;
-&lt;li&gt;来自&lt;code&gt;@vue/runtime-core&lt;/code&gt;的&lt;code&gt;createRenderer&lt;/code&gt; API可以创建自定义渲染器&lt;/li&gt;
-&lt;li&gt;style 里面可以绑定变量&lt;/li&gt;
-&lt;li&gt;SFC的&lt;code&gt;&amp;lt;style scoped&amp;gt;&lt;/code&gt;现在可以包括全局规则或只针对插槽内容的规则&lt;/li&gt;
-&lt;li&gt;Suspense&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;新功能改善了整体的开发体验，欢迎很多开发都的追捧。争论的焦点是，其中大部分功能，包括组合API、teleport、 suspense 等，在Vue 2中已经都能用了，所以它们不能真正算作框架的改进。&lt;/p&gt;
-&lt;h2&gt;真正的问题&lt;/h2&gt;
-&lt;p&gt;破坏的性变化，有&lt;a href="https://v3-migration.vuejs.org/breaking-changes/"&gt;很多&lt;/a&gt;。其中一些很简单，比如&lt;a href="https://v3.cn.vuejs.org/guide/migration/events-api.html#_2-x-%E8%AF%AD%E6%B3%95"&gt;Events API&lt;/a&gt;。Vue实例不能再用作事件总线，但有即插即用的解决方案，如 &lt;a href="https://github.com/developit/mitt"&gt;mitt&lt;/a&gt; 或 &lt;a href="https://github.com/scottcorgan/tiny-emitter"&gt;tiny-emitter&lt;/a&gt;，可以用作直接替代。这需要有一定工作时间，但可以及时完成，没有太多风险。&lt;/p&gt;
-&lt;p&gt;另一方面，有些变化不能安全地进行，也不能不进行小规模或大规模的重构。在一个用Vue 2构建的现有大型应用中，你可能会使用一些被废弃或改变的API。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://v3.cn.vuejs.org/guide/migration/migration-build.html"&gt;迁移构建&lt;/a&gt;应该是两个版本之间的桥梁，但由于有这么多被废弃的功能，它对大型项目并不适用。此外，官方对一些基本的支持库的建议是迁移到另一个不同的库，这进一步增加了复杂性。由于有这么多的移动组件，即使迁移构建成功，也需要大量的工作，这对大项目来需要有更多的时间用来解决技术债务。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/00084746e4e0497b9866421abdd61738~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;h2&gt;不需要的东西&lt;/h2&gt;
-&lt;p&gt;Vue始终是一个有意义的框架。你可以试着猜测一个API应该如何工作，你很可能是对的。Vue 3不再是这种情况。&lt;/p&gt;
-&lt;p&gt;一个例子是关于新的基于函数的Vue组件编写方式的&lt;a href="https://github.com/vuejs/rfcs/pull/42"&gt;意见征集&lt;/a&gt;，有大量的回应，包括正面和负面的。不管你在这场争论中的立场如何，将社区分成两半绝不是一个好兆头。&lt;/p&gt;
-&lt;h2&gt;文档&lt;/h2&gt;
-&lt;p&gt;在开发过程中，特别是在一个新的框架中，谷歌和StackOverflow是你最好的朋友。目前，Vue 2的答案占据了压倒性的优势，但在Vue 3中，很多API实现的原理都不一样了，因此可能会造成一定的混乱。&lt;/p&gt;
-&lt;h2&gt;生态&lt;/h2&gt;
-&lt;p&gt;一个框架有多强大，它的生态系统就有多强大。有争议的决定和不负责任的废弃功能驱使许多贡献者离开，导致许多库被放弃。但是，当你没有给开源库一个可行的方法来支持两个版本的时候，就指责他们没跟上你的版本时，这表明你缺乏同情心和对大局的理解。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;一个框架的真正力量来自于它周围的社区和生态系统。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;过去&lt;/h2&gt;
-&lt;p&gt;如果你有幸在2015年前后写代码，你有可能会使用当时最主流的框架AngularJS。&lt;/p&gt;
-&lt;p&gt;转到 Vue 3的看起来很像从 AngularJS 到 Angular（版本1⇒2）的过渡。大量的破坏性的变化导致了挫败感，最终Angular失去了对React和Vue的吸引力。&lt;/p&gt;
-&lt;p&gt;如果你是一个全栈工程师，你可能熟悉大约10年前在Python生态系统中发生的同样情况。在大约十年的时间里，许多项目无法升级，因为许多核心库没有增加对Python 3的支持，而出现的新库只支持Python 3。当然，后来的Python版本开始只在版本3上添加新的和闪亮的功能，这种混乱的情况还没有真正结束。&lt;/p&gt;
-&lt;h2&gt;未来--这种情况会再次发生吗？&lt;/h2&gt;
-&lt;p&gt;看起来前进的方向是向后退，把所有的东西都移植到迁移构建中，但是损害已经造成了，开发满意度看起来并不乐观，不能忽视。有远见地让框架参与进来是合理的，但开发经验是框架的核心职责之一。Vue 4应该考虑到整个生态系统，并提供一个迁移路径，否则它将成为没有人愿意使用的最佳框架。&lt;/p&gt;
-&lt;p&gt;到目前为止，你对Vue 3的迁移有什么经验？请在评论中分享你的想法和建议。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;编辑中可能存在的bug没法实时知道，事后为了解决这些bug,花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;作者：Chris 译者：小智  来源：medium&lt;/p&gt;
-&lt;p&gt;原文：https://fadamais.medium.com/vue-3-was-a-mitake-that-we-should-not-repeat-81cc65484954&lt;/p&gt;
-&lt;h3&gt;交流&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
-&lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="" src="https://juejin.cn/img/remote/1460000020353567?w=800&amp;amp;h=400" /&gt;&lt;/p&gt;</description><author>前端小智</author><pubDate>Tue, 05 Jul 2022 16:37:32 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
+&lt;p&gt;原文：https://www.vuemastery.com/blog/understanding-vue-3-expose/&lt;/p&gt;</description><author>前端小智</author><pubDate>Wed, 06 Jul 2022 16:28:49 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: awesome-green
 highlight: a11y-light&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://juejin.cn/post/7095547569777934367"&gt;13.5W 播放量的 TS 动画版进阶教程合集来了！&lt;/a&gt;，通过形象生动的动画，让你轻松搞懂 TypeScript 的难点和核心知识点！&lt;/p&gt;
