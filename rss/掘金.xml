@@ -1,5 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Tue, 13 Sep 2022 22:50:18 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 51 期：pnpm v7.10.0、8 月登陆网络平台的新内容、重新思考流行的 Node.js 模式和工具、打包 JavaScript 库的</title><link>https://juejin.cn/post/7140216695834017822</link><description>&lt;hr /&gt;
+<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Wed, 14 Sep 2022 22:50:04 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 52 期：Babel 7.19.0、Fresh 1.1、React Native 0.70、新的 Web 性能指标 INP</title><link>https://juejin.cn/post/7143094170108821540</link><description>&lt;hr /&gt;
+&lt;h2&gt;theme: fancy
+highlight: github-gist&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;口味：西瓜挖球冰&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/Geekhyt/weekly"&gt;食堂技术周刊仓库地址：https://github.com/Geekhyt/weekly&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;本期摘要&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Babel 7.19.0&lt;/li&gt;
+&lt;li&gt;Fresh 1.1&lt;/li&gt;
+&lt;li&gt;React Native 0.70&lt;/li&gt;
+&lt;li&gt;Node.js 工作原理解析&lt;/li&gt;
+&lt;li&gt;JSON Crack&lt;/li&gt;
+&lt;li&gt;新的 Web 性能指标 INP&lt;/li&gt;
+&lt;li&gt;React 为什么重新渲染&lt;/li&gt;
+&lt;li&gt;JavaScript 历史的时间轴&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;大家好，我是童欧巴。欢迎来到本期的前端食堂技术周刊，我们先来看下上周的技术资讯。&lt;/p&gt;
+&lt;h1&gt;技术资讯&lt;/h1&gt;
+&lt;h2&gt;1.&lt;a href="https://babeljs.io/blog/2022/09/05/7.19.0"&gt;Babel 7.19.0&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;该版本包括对如下内容的实现：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/tc39/proposal-decorators"&gt;decorators proposal&lt;/a&gt;  5 年了，终于要定下来了，不过功能砍了很多；&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/tc39/proposal-duplicate-named-capturing-groups"&gt;Duplicate named capturing groups&lt;/a&gt; 正则支持重复命名捕获。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;2.&lt;a href="https://deno.com/blog/fresh-1.1"&gt;Fresh 1.1&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Fresh 1.1 近期发布，更新了好多特性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;默认支持 JSX；&lt;/li&gt;
+&lt;li&gt;支持插件，提供官方 twind 插件；&lt;/li&gt;
+&lt;li&gt;支持 &lt;a href="https://preactjs.com/blog/introducing-signals/"&gt;Preact Signals&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;支持 Preact DevTools；&lt;/li&gt;
+&lt;li&gt;ctx.renderNotFound() 渲染 404 页面；&lt;/li&gt;
+&lt;li&gt;支持多个中间件；&lt;/li&gt;
+&lt;li&gt;实验性支持 Deno.serve；&lt;/li&gt;
+&lt;li&gt;Showcase 展示区和 Made with Fresh 徽章。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;3.&lt;a href="https://reactnative.dev/blog/2022/09/05/version-070"&gt;React Native 0.70&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;React Native 0.70 主要更新如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;文档更新“新的架构“部分；&lt;/li&gt;
+&lt;li&gt;使用 Hermes 作为默认引擎；&lt;/li&gt;
+&lt;li&gt;统一配置 iOS 和 Android 的 Codegen Config；&lt;/li&gt;
+&lt;li&gt;在新架构下 Android 支持库的 Auto-linking ；&lt;/li&gt;
+&lt;li&gt;Android 构建时支持 CMake；&lt;/li&gt;
+&lt;li&gt;等等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面我们来看技术资料。&lt;/p&gt;
+&lt;h1&gt;技术资料&lt;/h1&gt;
+&lt;h2&gt;1.&lt;a href="https://2ality.com/2022/09/nodejs-overview.html#the-node.js-platform"&gt;Node.js 工作原理解析&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Axel Rauschmayer 博士的这篇博文概述了 Node.js 的工作原理，包含如下几个方面：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;架构；&lt;/li&gt;
+&lt;li&gt;API；&lt;/li&gt;
+&lt;li&gt;全局变量和内置模块的亮点；&lt;/li&gt;
+&lt;li&gt;事件循环；&lt;/li&gt;
+&lt;li&gt;并发方案。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;年底前，他将发布新书&lt;a href="https://buttondown.email/rauschma"&gt;《Shell scripting with Node.js》&lt;/a&gt;。&lt;/p&gt;
+&lt;h2&gt;2.&lt;a href="https://jsoncrack.com/"&gt;JSON Crack&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;JSON 可视化工具。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b354acaca295439e984cee415704787a~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;3.&lt;a href="https://web.dev/inp/"&gt;新的 Web 性能指标 INP&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;INP 通过测量用户与页面的所有交互事件的延迟，来得出代表页面整体响应能力的实验性指标。INP 测量的范围包括鼠标/触摸屏点击事件、键盘事件，不包括悬停和滚动事件。当用户离开页面时计算，结果是一个单一的值，越低越好。&lt;/p&gt;
+&lt;p&gt;与 FID 的区别：INP 综合考虑了页面的所有交互，得出更全面的指标，而 FID 只是首次。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/92e523ee11a84ce1b87d83bfee7b64c6~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;4.&lt;a href="https://blog.skk.moe/post/react-re-renders-101/"&gt;React 为什么重新渲染&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;你认为 React 组件更新有几个原因？&lt;/p&gt;
+&lt;p&gt;是因为它的 prop 发生了改变吗？还是 Context.Provider 的 value 发生了更新？当一个状态发生改变时，整棵 React 树都会更新吗？&lt;/p&gt;
+&lt;p&gt;上面的问题如果你不能保证你能完全回答正确，那就去这篇博文一探究竟吧～&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6ba82534668e4ad4886cbe3f64427a00~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;5.&lt;a href="https://blog.risingstack.com/history-of-javascript-on-a-timeline/"&gt;JavaScript 历史的时间轴&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;这个站点整理了 JavaScript 历史上的关键事件节点。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1994-1998: 网景时代；&lt;/li&gt;
+&lt;li&gt;1999-2007: IE 大战 Firefox；&lt;/li&gt;
+&lt;li&gt;2008-2012: 网景终结，Chrome 诞生；&lt;/li&gt;
+&lt;li&gt;2013-2014: 从 ASM.js 到 WebAssembly；&lt;/li&gt;
+&lt;li&gt;2015-2020: Node.js 崛起；&lt;/li&gt;
+&lt;li&gt;2020-2022年：Deno 诞生，IE 退休。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d6b8ce032ceb42c79820a87bff8db529~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h1&gt;其他信息&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/nuxt-modules/icon"&gt;Nuxt Icon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nextjs.org/blog/next-12-3"&gt;Next.js 12.3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/microsoft/TypeScript/issues/50457"&gt;TypeScript 4.9 Iteration Plan&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;好文推荐&lt;/h1&gt;
+&lt;p&gt;下面来看一下好文推荐，本周推荐的好文是：&lt;/p&gt;
+&lt;p&gt;1.&lt;a href="https://w3cplus.medium.com/%E5%88%9B%E6%84%8F%E6%80%A7%E7%9A%84css%E5%B8%83%E5%B1%80%E5%92%8C%E7%81%B5%E6%B4%BBweb-eb7e83e99575"&gt;创意性的 CSS 布局和灵活 Web&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.&lt;a href="https://meticulous.ai/blog/react-error-boundaries-complete-guide/"&gt;React Error Boundary 指南&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;好了，以上就是本期的食堂周刊，观众老爷们如果觉得还不错，一键三连是对食堂老板最大的支持。&lt;/p&gt;
+&lt;p&gt;你的前端食堂，吃好每一顿饭，我们下期见。&lt;/p&gt;
+&lt;h2&gt;❤️爱心三连击&lt;/h2&gt;
+&lt;p&gt;1.如果你觉得食堂酒菜还合胃口，就点个赞支持下吧，你的&lt;strong&gt;赞&lt;/strong&gt;是我最大的动力。&lt;/p&gt;
+&lt;p&gt;2.关注&lt;a href="https://github.com/Geekhyt/front-end-canteen/blob/master/images/new-qrcode.jpg"&gt;公众号前端食堂&lt;/a&gt;，&lt;strong&gt;吃好每一顿饭！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3.点赞、评论、转发 === 催更！&lt;/p&gt;
+&lt;p&gt;&lt;img alt="透明footer.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/99c1796074d64d1aa9c78087f4463969~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;</description><author>童欧巴</author><pubDate>Tue, 13 Sep 2022 20:54:16 GMT</pubDate></item><item><title>前端食堂技术周刊第 51 期：pnpm v7.10.0、8 月登陆网络平台的新内容、重新思考流行的 Node.js 模式和工具、打包 JavaScript 库的</title><link>https://juejin.cn/post/7140216695834017822</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: fancy
 highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
@@ -808,253 +908,7 @@ highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;1.如果你觉得食堂酒菜还合胃口，就点个赞支持下吧，你的&lt;strong&gt;赞&lt;/strong&gt;是我最大的动力。&lt;/p&gt;
 &lt;p&gt;2.关注&lt;a href="https://github.com/Geekhyt/front-end-canteen/blob/master/images/new-qrcode.jpg"&gt;公众号前端食堂&lt;/a&gt;，&lt;strong&gt;吃好每一顿饭！&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;3.点赞、评论、转发 === 催更！&lt;/p&gt;
-&lt;p&gt;&lt;img alt="透明footer.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/99c1796074d64d1aa9c78087f4463969~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;</description><author>童欧巴</author><pubDate>Sun, 03 Jul 2022 08:45:56 GMT</pubDate></item><item><title>前端食堂技术周刊第 42 期：Vue 2.7 Beta、TS 4.8 Beta、React 开源奖、ECMAScript 2022</title><link>https://juejin.cn/post/7113586663741194247</link><description>&lt;hr /&gt;
-&lt;h2&gt;theme: fancy
-highlight: github-gist&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;口味：青橘伏特加&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/Geekhyt/weekly"&gt;食堂技术周刊仓库地址：https://github.com/Geekhyt/weekly&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;PC 端在仓库里看体验更好，顺手赏个 Star 是对食堂最大的支持。&lt;/p&gt;
-&lt;h1&gt;本期摘要&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Vue 2.7 Beta&lt;/li&gt;
-&lt;li&gt;TypeScript 4.8 Beta&lt;/li&gt;
-&lt;li&gt;React 开源奖&lt;/li&gt;
-&lt;li&gt;JavaScript 开源奖&lt;/li&gt;
-&lt;li&gt;Umi 4 发布&lt;/li&gt;
-&lt;li&gt;5 月登陆浏览器的 API&lt;/li&gt;
-&lt;li&gt;Component party 9 大框架的语法和特性概览&lt;/li&gt;
-&lt;li&gt;Ecma International 批准的新标准&lt;/li&gt;
-&lt;li&gt;Git Command Explorer&lt;/li&gt;
-&lt;li&gt;Jiffy Reader&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;大家好，我是童欧巴。欢迎来到本期的前端食堂技术周刊，我们先来看下上周的技术资讯。&lt;/p&gt;
-&lt;h2&gt;技术资讯&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="https://blog.vuejs.org/posts/vue-2-7-beta.html"&gt;Vue 2.7 Beta&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;为了让还在使用 Vue2 的用户享受到 Vue3 的好处，Vue3 中的一些重要特性将会向后移植到 Vue2.7：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Composition API&lt;/li&gt;
-&lt;li&gt;SFC &lt;code&gt;&amp;lt;script setup&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;SFC CSS v-bind&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;向后移植的功能不仅是上面几点，还包括其他的 API 和内容(API 暴露注意事项、与 Vue3 的行为差异、Beta 采用指南等)，可以前往链接查看。&lt;/p&gt;
-&lt;p&gt;2.7 稳定版计划于 2022 年 6 月底左右发布，截止本期周刊撰稿时，Vue 团队宣布 2.7 稳定版将于下周发布。一旦 2.7 稳定版发布，Vue2 将不再接收新功能，并将进入持续 18 个月的 LTS(长期支持)，这意味着 Vue2 将在 2023 年底结束生命周期。&lt;/p&gt;
-&lt;ol start="2"&gt;
-&lt;li&gt;&lt;a href="https://devblogs.microsoft.com/typescript/announcing-typescript-4-8-beta/"&gt;TypeScript 4.8 Beta&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;主要更新如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;--strictNullChecks 下带来一系列正确性和一致性的改进&lt;/li&gt;
-&lt;li&gt;改进 infer 在模板字符串类型中的类型推断&lt;/li&gt;
-&lt;li&gt;--build、--watch、--incremental 性能优化&lt;/li&gt;
-&lt;li&gt;比较对象和数组字面量时的错误&lt;/li&gt;
-&lt;li&gt;改进 Binding Patterns 推断&lt;/li&gt;
-&lt;li&gt;修复文件监听&lt;/li&gt;
-&lt;li&gt;Find-All-References 性能改进&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Breaking Changes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;lib.d.ts 更新&lt;/li&gt;
-&lt;li&gt;不受约束的泛型不再可分配给 {}&lt;/li&gt;
-&lt;li&gt;无法在 JavaScript 文件中导入/导出类型&lt;/li&gt;
-&lt;li&gt;Binding Patterns 不再改变函数调用中的推断结果的类型&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start="3"&gt;
-&lt;li&gt;&lt;a href="https://osawards.com/react/"&gt;React 开源奖&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;GitNation 基金会于 2022 年 6 月 17 日颁布了 React 的 Open Source Awards。&lt;/p&gt;
-&lt;h2&gt;年度最佳创新突破奖&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/pmndrs/jotai"&gt;jotai&lt;/a&gt;：原始且灵活的 React 状态管理库。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/remix-run/remix"&gt;Remix&lt;/a&gt;：一个将 90 年代 Web 简单的心智模型与现代平台功能相结合的元框架，实现首屈一指的 UX 和 DX。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/pankod/refine"&gt;refine&lt;/a&gt;：一个基于 React 的框架，用于快速构建内部工具。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/tmm/wagmi"&gt;wagmi&lt;/a&gt;：以太坊的 React Hooks。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/fwouts/previewjs"&gt;Preview.js&lt;/a&gt;：在 IDE 中实时预览 React、Solid 和 Vue 组件。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;最激动人心的技术应用&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/remotion-dev/remotion"&gt;Remotion&lt;/a&gt;：用 React 制作视频。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/wbkd/react-flow"&gt;React Flow&lt;/a&gt;：一个高度可定制的 React 组件，用于构建交互式图形和基于节点的编辑器。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/react-native-tvos/react-native-tvos"&gt;react-native-tvos&lt;/a&gt;：Fork 自 React Native，额外支持 Apple TV 和 Android TV。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/jeffreylanters/react-unity-webgl"&gt;React Unity WebGL&lt;/a&gt;：为 Unity WebGL 构建嵌入 React 应用程序提供了一种现代解决方案，同时为 Unity 和 React 之间的双向通信和交互提供了高级 API。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/nvh95/jest-preview"&gt;Jest Preview&lt;/a&gt;：在浏览器中预览 Jest 测试，并帮助你轻松的调试。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;年度趣味项目&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/akarlsten/cuberun"&gt;Cuberun&lt;/a&gt;：使用 react-three-fiber 构建的合成波无限跑酷游戏。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/reactgular/tetromino"&gt;Tetromino&lt;/a&gt;：使用 React、Redux 和 Tailwind 构建的俄罗斯方块游戏。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/emmelleppi/corona-game"&gt;Corona Game&lt;/a&gt;：使用 react-three-fiber 构建的 3d 游戏。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/anatoliygatt/heart-switch"&gt;Heart Switch&lt;/a&gt;：React 的心形切换开关组件。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/LBALab/lba2remake"&gt;LBA2 Remake&lt;/a&gt;：用 TypeScript、Three.js 和 React 实现 A Little Big Adventure 2。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;对社区最有影响力的贡献项目&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://twitter.com/reactjsgirls"&gt;ReactJSGirls&lt;/a&gt;：React 爱好者聚会，女性登台分享她们的学习和经验。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://reactnewsletter.com/"&gt;React Newsletter&lt;/a&gt;：React 周刊。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://reactnativeradio.com/"&gt;React Native Radio&lt;/a&gt;：播客，一起探索 React Native。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://pmnd.rs/"&gt;Poimandres&lt;/a&gt;：一个开源开发者团队，主要维护和支持 React Spring、React Three Fiber 及其生态系统。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.reactiflux.com/"&gt;Reactiflux&lt;/a&gt;：一个由 170,000 多名 React 开发人员组成的聊天社区。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;生产力助推器&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/mantinedev/mantine"&gt;Mantine&lt;/a&gt;：一个功能齐全的 React 组件库。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/streamich/react-use"&gt;React Use&lt;/a&gt;：React Hooks 工具包。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/pankod/superplate"&gt;Superplate&lt;/a&gt;：具有超能力的前端模版库，提供 30 多个插件，支持 React 和 Next.js。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/rpldy/react-uploady"&gt;React Uploady&lt;/a&gt;：基于 React Hook 的上传组件。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/tanstack/react-virtual"&gt;React Virtual&lt;/a&gt;：在 JS/TS、React、Solid、Vue 和 Svelte 中实现虚拟化滚动元素的无头 UI 。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start="4"&gt;
-&lt;li&gt;&lt;a href="https://osawards.com/javascript/"&gt;JavaScript 开源奖&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;GitNation 基金会于 2022 年 6 月 16 日颁布了 JavaScript Open Source Award。&lt;/p&gt;
-&lt;h2&gt;年度最佳创新突破奖&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/hoppscotch/hoppscotch"&gt;Hoppscotch&lt;/a&gt;：开源的 API 开发生态系统。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/solidjs/solid"&gt;Solid&lt;/a&gt;：用于构建用户界面的声明式、高效且灵活的 JavaScript 库。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/ChainSafe/web3.js"&gt;Web3.js&lt;/a&gt;：以太坊 JavaScript API。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;最激动人心的技术应用&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/seek-oss/vanilla-extract"&gt;vanilla-extract&lt;/a&gt;：TypeScript 中的零运行时样式表，CSS Modules in TypeScript。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/trpc/trpc"&gt;tRPC&lt;/a&gt;：端到端的类型安全 API。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/google/zx"&gt;zx&lt;/a&gt;：用 JavaScript 编写 Shell 脚本。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/stewdio/q.js"&gt;Q.js&lt;/a&gt;：浏览器中的量子计算。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/tauri-apps/tauri"&gt;Tauri&lt;/a&gt;：使用 Web 前端构建更小、更快、更安全的桌面应用程序，底层引擎和后端绑定由 Rust 编写。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/BuilderIO/partytown"&gt;Partytown&lt;/a&gt;：将资源密集型第三方脚本从主线程转移到 Web Worker 中。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;年度趣味项目&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/RobertBroersma/bigheads"&gt;Big Heads&lt;/a&gt;：自动生成头像。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/djyde/ossart"&gt;Ossart&lt;/a&gt;：将你的 GitHub activity 打印为艺术品。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/charliegerard/gaze-detection"&gt;Gaze Detection&lt;/a&gt;：在 JavaScript 中使用机器学习来检测眼球运动并构建注视控制体验。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/handtracking-io/yoha"&gt;Yoha&lt;/a&gt;：一个实用的手部跟踪引擎。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;对社区最有影响力的贡献项目&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/pnpm/pnpm"&gt;pnpm&lt;/a&gt;：快速、节省磁盘空间的包管理器，精益求精。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://threejs-journey.com/"&gt;Three.js journey&lt;/a&gt;：学习 Three.js 的最佳方式。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.devsforukraine.io/"&gt;Devs for Ukraine&lt;/a&gt;：Devs For Ukraine 是一个免费的在线工程师会议，旨在筹集资金并为乌克兰提供支持。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/medusajs/medusa"&gt;Medusa&lt;/a&gt;：开源 Shopify 替代品。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://bytes.dev/"&gt;Bytes.dev&lt;/a&gt;：最佳 JavaScript Newsletter。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;生产力助推器&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/amplication/amplication"&gt;Amplication&lt;/a&gt;：自动生成使用 TypeScript 和 Node.js 构建的后端应用程序，以及使用 React 构建的客户端。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/colinhacks/zod"&gt;Zod&lt;/a&gt;：带有静态类型推断的 TypeScript 优先模式验证。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/NomicFoundation/hardhat"&gt;Hardhat&lt;/a&gt;：Hardhat 是一个用于编译、部署、测试和调试以太坊软件的开发环境。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/alyssaxuu/omni"&gt;Omni&lt;/a&gt;：提高生产力的多合一浏览器插件，提供浏览器选项卡、书签、历史记录等管理功能。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start="5"&gt;
-&lt;li&gt;&lt;a href="https://zhuanlan.zhihu.com/p/531657498"&gt;Umi 4 发布&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;新功能&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;多构建引擎：支持 Vite 和 Webpack。&lt;/li&gt;
-&lt;li&gt;默认快：MFSU V3 + Webpack 5 缓存(解决 Dev 时编译慢的问题)、Webpack 5 物理缓存 + CD 平台(解决 Build 时编译慢的问题)、esbuild 作为 js 和 css 的压缩器、jest 的 transformer 等等的环节提速。&lt;/li&gt;
-&lt;li&gt;Umi Max：内网 Bigfish 的外部版本。&lt;/li&gt;
-&lt;li&gt;React Router 6，路由层实现更优雅，不过有一些 Break Change。&lt;/li&gt;
-&lt;li&gt;支持 Vue，由社区同学提供，只需装载一个 preset 即可切换到 Vue。&lt;/li&gt;
-&lt;li&gt;默认最快的 CSR 请求，避免 React 项目经典的 Render-Then-Fetch 的加载瀑布流问题。&lt;/li&gt;
-&lt;li&gt;白盒稳定的 Lint，内置精挑细选的 lint 规则。&lt;/li&gt;
-&lt;li&gt;SSR，重写 SSR 功能，此功能目前处于 beta 阶段。&lt;/li&gt;
-&lt;li&gt;API 路由，打包成不同平台支持的 Serverless Function 产物。&lt;/li&gt;
-&lt;li&gt;微生成器，小型脚手架、控制功能的开启与关闭、库版本切换。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;DX 改进&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;自动 https(实现基于 mkcert)。&lt;/li&gt;
-&lt;li&gt;浏览器里的构建进度条。&lt;/li&gt;
-&lt;li&gt;Terminal 中的日志。&lt;/li&gt;
-&lt;li&gt;umi.js 产物调试。&lt;/li&gt;
-&lt;li&gt;项目级插件：plugin.ts(可以在项目级做很多事，比如 deadCode 检测等)。&lt;/li&gt;
-&lt;li&gt;Umi UI 卷土重来(排查问题时，提供 Umi 框架的内部状态作为开发辅助)。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start="6"&gt;
-&lt;li&gt;&lt;a href="https://web.dev/web-platform-05-2022/"&gt;5 月登陆浏览器的 API&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;一些在 2022 年 5 月登陆稳定版和测试版浏览器的新功能。&lt;/p&gt;
-&lt;h2&gt;稳定的浏览器&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Chrome 102 和 Safari 15.5 包含 &lt;a href="https://developer.chrome.com/articles/inert/"&gt;inert 属性&lt;/a&gt;，一个全局 HTML 属性，使开发人员能够从 tab 顺序和可访问性树中移除一个元素，带来更好的可访问性。&lt;/li&gt;
-&lt;li&gt;Chrome 102 包含 &lt;a href="https://developer.chrome.com/articles/hidden-until-found/"&gt;hidden=until-found&lt;/a&gt;，可以在页面中查找并滚动到折叠区域内的文本。&lt;/li&gt;
-&lt;li&gt;Chrome 102 发布了 &lt;a href="https://developer.chrome.com/docs/web-platform/navigation-api/"&gt;Navigation API&lt;/a&gt;，经典的 Histroy API 看起来很简单，但是它的定义不是很明确，在极端情况和不同浏览器的实现方式方面存在 &lt;a href="https://github.com/whatwg/html/issues?q=is%3Aissue+is%3Aopen+history"&gt;大量问题&lt;/a&gt;，Navigation API 是全新的实现。&lt;/li&gt;
-&lt;li&gt;Firefox 101 支持 &lt;a href="https://web.dev/constructable-stylesheets"&gt;Constructable Stylesheets&lt;/a&gt;，使 Shadow DOM 创建和分发可重用样式变得更加容易。&lt;/li&gt;
-&lt;li&gt;Firefox 101 包含 &lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast"&gt;prefers-contrast&lt;/a&gt;，该媒体功能用来检测用户是否请求以较低或者较高的对比度呈现页面内容。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Beta 浏览器&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Chrome 103 包含 &lt;a href="https://web.dev/local-fonts/"&gt;Local Font Access API&lt;/a&gt;，允许访问用户本地安装的字体。&lt;/li&gt;
-&lt;li&gt;Firefox 102 包含 &lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/update-frequency"&gt;update&lt;/a&gt; 媒体功能，用于查询输出设备是否可以在内容渲染后修改其外观。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;下面我们来看技术资料。&lt;/p&gt;
-&lt;h2&gt;技术资料&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="https://component-party.dev/"&gt;Component party&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;九大前端框架语法和特性快速概览。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/99a31d702cd24133869761f8f878093b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;ol start="2"&gt;
-&lt;li&gt;&lt;a href="https://www.ecma-international.org/news/ecma-international-approves-new-standards-6/"&gt;Ecma International 批准的新标准&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;第 123 届 Ecma 大会批准了 ECMAScript 2022 语言规范，该规范是 ECMAScript 语言规范的第十三版，包括如下特性：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/tc39/proposal-top-level-await"&gt;Top-level await&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/tc39/proposal-accessible-object-hasownproperty"&gt;Object.hasOwn()&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/tc39/proposal-relative-indexing-method"&gt;.at()&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/tc39/proposal-error-cause"&gt;Error Cause&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/tc39/proposal-regexp-match-indices"&gt;RegExp Match Indices&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Class Fields
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/tc39/proposal-private-methods"&gt;Private instance methods and accessors&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/tc39/proposal-class-fields"&gt;Class Public Instance Fields &amp;amp; Private Instance Fields&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/tc39/proposal-static-class-features"&gt;Static class fields and private static methods&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;此外，还包括 &lt;a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-402/"&gt;ECMAScript 2022 国际化 API 规范&lt;/a&gt;、&lt;a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-334/"&gt;C# 语言规范&lt;/a&gt;、&lt;a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-413/"&gt;数据迁移方法&lt;/a&gt;。&lt;/p&gt;
-&lt;ol start="3"&gt;
-&lt;li&gt;&lt;a href="https://gitexplorer.com/"&gt;Git Command Explorer&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;交互式 Git 命令探索器，可以离线访问。根据你的输入，帮你找到正确的 Git 命令，作者还实现了一个&lt;a href="https://github.com/sdras/array-explorer"&gt;数组方法探索器&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b713301318394f36843e4108ab804d7d~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;ol start="4"&gt;
-&lt;li&gt;&lt;a href="https://www.jiffyreader.com/"&gt;Jiffy Reader&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;最近很火的一个黑科技 Bionic Reading，通过将英文单词的前几个字母加粗，从而提升你的阅读速度(高达 10 倍)，这个浏览器插件可以将文本渲染成 Bionic Reading，你觉得阅读速度提升了吗？&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5bcd2a12405e4831b4cbdb66d694d830~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;h2&gt;其他信息&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md#300-beta2-2022-06-24"&gt;vite 3.0.0-beta.2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://reactnative.dev/blog/2022/06/21/version-069"&gt;React Native v0.69&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/pnpm/pnpm/releases"&gt;pnpm v7.4.0-1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://v8.dev/blog/discontinuing-release-posts"&gt;Chrome V8 博客更换地址&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PL37ZVnwpeshGuMZrOZzEo8QLBjjpbtBGm#budapest2022"&gt;JSConf Budapest 2022&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.reddit.com/r/reactjs/comments/vi6q6f/what_is_the_recommended_way_to_load_data_for/iddrjue/"&gt;React 18 加载数据的最佳方式&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.gabe.pizza/notes-on-component-libraries/"&gt;维护内部 React 组件库的注意事项&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.phoronix.com/scan.php?page=news_item&amp;amp;px=Rust-For-Linux-5.20-Possible"&gt;Rust 即将出现在 Linux 内核中&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://blog.scottlogic.com/2022/06/20/state-of-wasm-2022.html"&gt;The State of WebAssembly 2022&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;好文推荐&lt;/h2&gt;
-&lt;p&gt;下面来看一下好文推荐，本周推荐的好文是：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://www.gabe.pizza/notes-on-component-libraries/"&gt;维护内部 React 组件库的注意事项&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://cloud.tencent.com/developer/article/1880211"&gt;转转搭建 iconfont 平台实践&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;好了，以上就是本期的食堂周刊，观众老爷们如果觉得还不错，一键三连是对食堂老板最大的支持。&lt;/p&gt;
-&lt;p&gt;你的前端食堂，吃好每一顿饭，我们下期见。&lt;/p&gt;
-&lt;h2&gt;❤️爱心三连击&lt;/h2&gt;
-&lt;p&gt;1.如果你觉得食堂酒菜还合胃口，就点个赞支持下吧，你的&lt;strong&gt;赞&lt;/strong&gt;是我最大的动力。&lt;/p&gt;
-&lt;p&gt;2.关注&lt;a href="https://github.com/Geekhyt/front-end-canteen/blob/master/images/new-qrcode.jpg"&gt;公众号前端食堂&lt;/a&gt;，&lt;strong&gt;吃好每一顿饭！&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;3.点赞、评论、转发 === 催更！&lt;/p&gt;
-&lt;p&gt;&lt;img alt="透明footer.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/99c1796074d64d1aa9c78087f4463969~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;</description><author>童欧巴</author><pubDate>Sun, 26 Jun 2022 08:33:51 GMT</pubDate></item><item><title>「程序人生」在腾讯工作是怎么样的体验</title><link>https://juejin.cn/post/6976896524198346760</link><description>&lt;hr /&gt;
+&lt;p&gt;&lt;img alt="透明footer.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/99c1796074d64d1aa9c78087f4463969~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;</description><author>童欧巴</author><pubDate>Sun, 03 Jul 2022 08:45:56 GMT</pubDate></item><item><title>「程序人生」在腾讯工作是怎么样的体验</title><link>https://juejin.cn/post/6976896524198346760</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: condensed-night-purple&lt;/h2&gt;
 &lt;h2&gt;在腾讯工作是怎么样的体验&lt;/h2&gt;
 &lt;p&gt;大家好，我是&lt;strong&gt;TianTian&lt;/strong&gt;。&lt;/p&gt;
@@ -3394,7 +3248,199 @@ S 仅由数字和字母组成。&lt;/p&gt;
 &lt;ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959;"&gt;
 &lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6872115031501340679" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」一张脑图带你看动态规划算法之美&lt;/a&gt;（370+👍）&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6861376131615227912" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」DFS和BFS算法之美&lt;/a&gt;(240+👍)&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6856546833025237006" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」梳理6大排序算法&lt;/a&gt;(220+👍)&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6874708801208254478" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」带你看哈希算法之美(210+👍)&lt;/a&gt;&lt;/section&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;/section&gt;&lt;/li&gt;&lt;/ol&gt;
-&lt;p class="nice-suffix-juejin-container" id="nice-suffix-juejin-container" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; margin-top: 20px !important;"&gt;本文使用 &lt;a href="https://mdnice.com/?from=juejin" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;mdnice&lt;/a&gt; 排版&lt;/p&gt;&lt;/section&gt;</description><author>TianTianUp</author><pubDate>Sun, 11 Oct 2020 08:11:57 GMT</pubDate></item><item><title>你想知道的前后端协作规范都在这了</title><link>https://juejin.cn/post/7140422304920109092</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p class="nice-suffix-juejin-container" id="nice-suffix-juejin-container" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; margin-top: 20px !important;"&gt;本文使用 &lt;a href="https://mdnice.com/?from=juejin" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;mdnice&lt;/a&gt; 排版&lt;/p&gt;&lt;/section&gt;</description><author>TianTianUp</author><pubDate>Sun, 11 Oct 2020 08:11:57 GMT</pubDate></item><item><title>规范升级 NPM 包</title><link>https://juejin.cn/post/7143025612267978760</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="刘静.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/29a8a543e7ad456eb573501b05ff9796~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是第 158 篇不掺水的原创，想获取更多原创好文，请搜索公众号【政采云前端团队】关注我们吧~&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;在日常工作中，当组件跨项目使用时，我们往往会选择把组件抽成 npm 包。那么在 npm 开发以及发布的过程中有什么需要注意的事项吗？本文将从我自己的角度，来为大家介绍一下我认为的一些需要大家注意的点。&lt;/p&gt;
+&lt;h2&gt;版本号规则&lt;/h2&gt;
+&lt;p&gt;从日常的开发中我们可以看到，npm 包的版本号的格式都是 X.Y.Z。那么大家发布的 npm 包为什么都在遵循这个格式呢？这个格式其实是由 Gravatars 创办者兼 GitHub 共同创办者 &lt;a href="http://tom.preston-werner.com/"&gt;Tom Preston-Werner&lt;/a&gt; 所建立。由 GitHub 起草的统一的版本号表示规则，称为 Semantic Versioning(语义化版本表示)。这些规范具体包含的内容大家可以参考&lt;a href="https://semver.org/lang/zh-CN/"&gt;语义化版本 2.0.0&lt;/a&gt;。本文只针对我们开发中容易忽略的地方做一些详述。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;X 代表主版本号，也叫做大版本号&lt;/p&gt;
+&lt;p&gt;升级大版本时意味着这个包可能做了颠覆性的改动，和低版本的包已经&lt;strong&gt;无法兼容&lt;/strong&gt;。每当主版本号递增时，次版本号和修订号必须归零。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Y 代表次版本号，也叫做小版本号&lt;/p&gt;
+&lt;p&gt;当做了&lt;strong&gt;向下兼容&lt;/strong&gt;的功能性新增时，升级小版本号。每当次版本号递增时，修订号必须归零。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Z 代表修订号&lt;/p&gt;
+&lt;p&gt;当做了&lt;strong&gt;向下兼容&lt;/strong&gt;的问题修正（bugfix）时， 升级修订号。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;常见版本格式/引用方式&lt;/h2&gt;
+&lt;table&gt;
+   &lt;tbody&gt;&lt;tr&gt;
+      &lt;td style="width: 130px;"&gt;版本引用方式&lt;/td&gt;
+      &lt;td style="width: 90px;"&gt;版本号&lt;/td&gt;
+      &lt;td&gt;匹配版本&lt;/td&gt;
+      &lt;td&gt;解释&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+      &lt;td&gt;直接使用版本号&lt;/td&gt;
+      &lt;td&gt;2.3.1&lt;/td&gt;
+      &lt;td&gt;2.3.1&lt;/td&gt;
+      &lt;td&gt;只可以匹配 2.3.1 这个版本，如果是比较重要的项目，建议用这种方式固定版本。&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+      &lt;td rowspan="3"&gt;^:不能修改版本号最左侧非零数字&lt;/td&gt;
+      &lt;td&gt;^2.3.1&lt;/td&gt;
+      &lt;td&gt;&amp;gt;= 2.3.1 &amp;amp;&amp;amp; &amp;lt; 3.0.0&lt;/td&gt;
+      &lt;td&gt;最左侧非零数字是 2&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+      &lt;td&gt;^0.3.1&lt;/td&gt;
+      &lt;td&gt;&amp;gt;= 0.3.1 &amp;amp;&amp;amp; &amp;lt; 0.4.0&lt;/td&gt;
+      &lt;td&gt;最左侧非零数字是 3&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+      &lt;td&gt;^0.0.1&lt;/td&gt;
+      &lt;td&gt; &amp;gt;= 0.01 &amp;amp;&amp;amp; &amp;lt; 0.02，即 0.01&lt;/td&gt;
+      &lt;td&gt;最左侧非零数字是 1&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+      &lt;td rowspan="2"&gt;~:版本号列出 Y 时兼容 Z 的修改。列出 X 时兼容 Y、Z&lt;/td&gt;
+      &lt;td&gt;~2.3.1&lt;/td&gt;
+      &lt;td&gt;&amp;gt;= 2.3.1 &amp;amp;&amp;amp; &amp;lt; 2.4.0&lt;/td&gt;
+      &lt;td&gt;Y 为 3。～2.3 同理&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+      &lt;td&gt;～2&lt;/td&gt;
+      &lt;td&gt;&amp;gt;= 2.0.0 &amp;amp;&amp;amp; &amp;lt; 3.0.0&lt;/td&gt;
+      &lt;td&gt;X 为 2&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+      &lt;td rowspan="3"&gt;*、X、x，空：表示可以匹配任何版本&lt;/td&gt;
+      &lt;td&gt;"2.3.X"、"2.3.x"、"2.3*"、"2.3"&lt;/td&gt;
+      &lt;td&gt;&amp;gt;= 2.3.0 &amp;amp;&amp;amp; &amp;lt; 2.4.0&lt;/td&gt;
+      &lt;td&gt;Z 可以为任意值&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+      &lt;td&gt;"2.X"、"2.x"、"2.*"、"2"&lt;/td&gt;
+      &lt;td&gt;&amp;gt;= 2.0.0 &amp;amp;&amp;amp; &amp;lt; 3.0.0&lt;/td&gt;
+      &lt;td&gt;Y、Z 为任意值&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+      &lt;td&gt;*、X、x，空&lt;/td&gt;
+      &lt;td&gt;任意版本&lt;/td&gt;
+      &lt;td&gt;任意版本指的是最新的正式版&lt;/td&gt;
+   &lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;关于 npm 的版本格式还有许多，此处不再赘述。&lt;/p&gt;
+&lt;p&gt;从上边的常用格式介绍可以看出来，在精确版本号的情况下，版本号是完全固定的，在项目发布时不会出现一些实际安装的包和 package.json 中版本号不一致的问题。或者如果使用方有用到 package-lock.json 文件来固定包的版本，也可以避免包的版本号导致的问题。&lt;/p&gt;
+&lt;p&gt;但是在实际开发中，我们并不知道我们包的使用方是否使用的固定版本号或者 package-lock.json 文件，我们怎么做才能让使用方不受影响呢？&lt;/p&gt;
+&lt;p&gt;这时候就要用到先行版本号了，下面我将为大家具体介绍。&lt;/p&gt;
+&lt;h2&gt;先行版本&lt;/h2&gt;
+&lt;p&gt;npm 的先行版本号，放到 X.Y.Z 的后边，作为延伸。被标上先行版本号则表示这个版本&lt;strong&gt;并非稳定&lt;/strong&gt;而且&lt;strong&gt;可能无法满足预期&lt;/strong&gt;的兼容性需求。例如：1.0.0-alpha.1，2.0.0-beta.1 等。一般常用的关键词有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;alpha：预览版，或者叫内部测试版；一般不向外部发布，会有很多bug（会不太稳定）；一般只有测试人员使用。&lt;/li&gt;
+&lt;li&gt;beta：测试版，或者叫公开测试版；这个阶段的版本会一直加入新的功能；在alpha版之后推出。&lt;/li&gt;
+&lt;li&gt;rc(release candidate)：最终测试版本；可能成为最终产品的候选版本，如果未出现问题则可发布成为正式版本。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;先行版本升级规则&lt;/h4&gt;
+&lt;p&gt;我们使用 &lt;code&gt;npm dist-tag ls @zcy/zcy-region-detail-back&lt;/code&gt; 查看 @zcy/zcy-region-detail-back 的 tag，如下：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fb7df6aa7692494a8c31d5044c76f1e1~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;我们可以看到这个包有一个 beta 版，一个 latest 版。&lt;/p&gt;
+&lt;p&gt;对比两个版本的名字可以发现，beta 版本是在 latest 版本的 Z 上加了 1 且添加了一个 beta 作为延伸。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果包只是对现有的问题进行修复，那么只需要对 Z 进行加 1，然后添加延伸。&lt;/li&gt;
+&lt;li&gt;如果包本次是做&lt;strong&gt;向下兼容&lt;/strong&gt;的功能性新增，那么需要对 Y 进行加 1，Z 清零，然后添加延伸。&lt;/li&gt;
+&lt;li&gt;如果包本次的升级是&lt;strong&gt;无法向下兼容&lt;/strong&gt;的，那么就需要对 X 进行加 1，Y、Z 清零，然后添加延伸。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果在加了延伸的版本上需要进行 bugfix 时，只需要将我们延伸的版本继续增加即可。当 bugfix 结束，需要发布正式版本时，只需要去掉延伸版本，发布版本即可。&lt;/p&gt;
+&lt;h4&gt;什么时候需要使用先行版本&lt;/h4&gt;
+&lt;p&gt;假设 P 项目中引用了 @zcy/zcy-region-detail-back 包，如下：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c620677fe4b2487281a4698d3693f74f~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;A 需求改动了项目 P，发布时间为 6.30。&lt;/p&gt;
+&lt;p&gt;B 需求改动了 @zcy/zcy-region-detail-back 包，改动的时间是 6.29。&lt;/p&gt;
+&lt;p&gt;B 需求的改动没有使用先行版本且包中的 bug 在 6.30 项目 P 发布时没有修改。此时就会导致项目 P 发布时，下载到了有 bug 的 @zcy/zcy-region-detail-back 包，就会导致线上问题。&lt;/p&gt;
+&lt;p&gt;这是因为我们在 P 项目中执行 &lt;code&gt;npm i @zcy/zcy-region-detail-back&lt;/code&gt; 后，下载出来的 &lt;code&gt;@zcy/zcy-region-detail-back&lt;/code&gt;  的版本号为 1.0.0。因为在执行 &lt;code&gt;npm i @zcy/zcy-region-detail-back&lt;/code&gt; 时会默认下载 tag 为 latest 下的最新包。相当于执行了 &lt;code&gt;npm i @zcy/zcy-region-detail-back@latest&lt;/code&gt;。&lt;strong&gt;注&lt;/strong&gt;：这里的 tag 指的是 npm 中的 tag。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c43e162b9ea54b90849d9f5b6cdce364~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;所以 npm 的 tag 到底有什么用呢？其实 tag 就相当于是 git 的分支管理中的标签，不同的 tag 之间的包互不影响。可以使我们发布先行版本时不影响正式版本。&lt;/p&gt;
+&lt;p&gt;一般常用的有三种类型的 tag：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;latest：最后的稳定版，npm install 时就是下载的这个&lt;/li&gt;
+&lt;li&gt;beta：测试版本，需要指定版本或者使用 &lt;code&gt;npm install packageName@beta&lt;/code&gt;  来下载。例如：1.0.0-beta.0&lt;/li&gt;
+&lt;li&gt;next：先行版本，使用 &lt;code&gt;npm install packageName@next&lt;/code&gt; 安装&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;版本发布&lt;/h2&gt;
+&lt;p&gt;那么我们如何发布先行版本的包呢？首先需要升级 A 包的版本号，此处介绍两种升级方式&lt;/p&gt;
+&lt;p&gt;方式一：简单粗暴，手动修改 package.json 中的 version：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image-20220313200823440" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3bd766dbef3647f2bbe02428b8399165~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;这种方式需要我们自己手动执行 &lt;code&gt;git commit -am 'XXXX'&lt;/code&gt; 提交代码，如果需要在此版本的 git 仓库打上 tag 时，需要我们自己手动触发&lt;code&gt;git tag v2.3.2-beta.1&lt;/code&gt; ，&lt;code&gt;git push origin v2.3.2-beta.1&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;方式二：借助 &lt;code&gt;npm version&lt;/code&gt; 命令&lt;/p&gt;
+&lt;p&gt;A 包中所有的改动都 commit 后，可以根据以下命令更新版本&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm version [&amp;lt;newversion&amp;gt; | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]
+// newversion：指定更新的版本号
+// major：大版本并且不向下兼容时，使用 major
+// minor：有新功能且向下兼容时，使用 minor
+// patch：修复一些问题、优化等，使用 patch
+// 以 A：2.3.1 为例
+npm version premajor // 版本号会成为 3.0.0-0，即 3.0.0 的预发版本
+npm version preminor // 版本号为成为 2.4.0-0，即 2.4.0 的预发版本
+npm version prepatch // 版本号成为 2.3.2-0，即 2.3.2 的预发版本
+/**
+* 版本号会成为 2.3.2-0。
+* 执行此命令时，如果没有预发布版本号，则增加 Z，增加预发布号为 0
+* 如果有预发步号，增加预发步号
+*/
+npm version prerelease
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;根据上边的 API 可以看到我们能通过 &lt;code&gt;npm version 2.3.2-beta.1&lt;/code&gt; 将 A 的版本升为 2.3.2-beta.1 的形式，除此之外，在 &lt;code&gt;npm 6.4.0&lt;/code&gt; 之后，我们也可以使用 &lt;code&gt;--preid&lt;/code&gt; 参数来添加前缀：&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm version prerelease --preid=beta
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;此种方式需要注意，必须要 commit 本地的修改之后才可以执行。&lt;code&gt;npm version&lt;/code&gt; 修改版本号，会默认执行 &lt;code&gt;git add&lt;/code&gt; -&amp;gt; &lt;code&gt;git commit&lt;/code&gt; -&amp;gt; &lt;code&gt;git tag&lt;/code&gt; 操作，此时的版本号看起来有 beta，如下：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image-20220703204725616" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e0adbc7e25294507bc20cf51b92ae97a~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;但是这个 beta 是 git 仓库的 tag，并不是 npm 的 tag。如果不想默认给 git 添加 tag 的话，可以使用以下命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm --no-git-tag-version version xxx
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;那么 &lt;code&gt;npm version &lt;/code&gt; 执行时具体发生了什么呢？简要流程图如下&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1079bc8d179d49c8ae78feae23bca45e~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;执行完 &lt;code&gt;npm version 2.3.2-beta.1&lt;/code&gt; 之后，如果直接使用 &lt;code&gt;npm publish&lt;/code&gt; 来发布的话，发布出来的包的 tag 是 latest，但是我们其实是想发布一个测试包。如果其他人 &lt;code&gt;npm i&lt;/code&gt; 下载时就会下载 version 为 2.3.2-beta.1 的包。只有使用 &lt;code&gt;npm publish --tag XXX&lt;/code&gt; 才是给 npm 包上打了 tag 标签。&lt;/p&gt;
+&lt;p&gt;执行以下命令就可以生成一个 tag 为 beta 的包：&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm run build // 打包
+npm publish --tag beta // 发布 beta 包
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9b99153d765a4a7ba2621049c0042273~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;如果不小心直接使用 &lt;code&gt;npm publish&lt;/code&gt; 发错了也没有关系，可以使用以下命令来添加 tag：&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm dist-tag add &amp;lt;pkg&amp;gt;@2.3.2-beta.1 &amp;lt;tag&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;当需要删除多余的 tag 时：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm dist-tag rm &amp;lt;pkg&amp;gt; &amp;lt;tag&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;给大家提供一条指令完成 beta 版本的发布：&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;"scripts": {
+    "publish:beta": npm version prerelease --preid=beta &amp;amp;&amp;amp; npm run build &amp;amp;&amp;amp; npm publish --tag=beta"
+  },
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;代码开发完毕，提交之后，只需要 &lt;code&gt;npm run publish:beta&lt;/code&gt; 就可以发布一个测试版本啦～&lt;/p&gt;
+&lt;p&gt;以上就是我本次分享的所有内容啦，如果有不足的地方，还望指正。&lt;/p&gt;
+&lt;h2&gt;参考文献&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://semver.org/lang/zh-CN/spec/v2.0.0.html"&gt;语义化版本 2.0.0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/6844903870578032647"&gt;前端工程化（5）：你所需要的npm知识储备都在这了&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://docs.npmjs.com/cli/v6/commands/npm-version"&gt;npm version&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;推荐阅读&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7140422304920109092"&gt;你想知道的前后端协作规范都在这了&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7135217402983235592"&gt;带你了解 Tree Shaking&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7132628898453880840"&gt;厉害！这篇正则表达式竟写的如此详尽&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoo.team/article/http-referer"&gt;学习 HTTP Referer&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7127440050937151525"&gt;浅谈低代码平台远程组件加载方案&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;开源作品&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;政采云前端小报&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://www.zoo.team/openweekly/"&gt;www.zoo.team/openweekly/&lt;/a&gt;&lt;/strong&gt; (小报官网首页有微信交流群)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;商品选择 sku 插件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://github.com/zcy-inc/skuPathFinder-back"&gt;https://github.com/zcy-inc/skuPathFinder-back/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;招贤纳士&lt;/h2&gt;
+&lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
+&lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 13 Sep 2022 16:28:07 GMT</pubDate></item><item><title>你想知道的前后端协作规范都在这了</title><link>https://juejin.cn/post/7140422304920109092</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="商陆.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/19edac65d0f24d80b2d945ceb06a339a~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;这是第 157 篇不掺水的原创，想获取更多原创好文，请搜索公众号【政采云前端团队】关注我们吧~&lt;/p&gt;
@@ -5540,557 +5586,7 @@ export const phoneRule = {
 &lt;h2&gt;招贤纳士&lt;/h2&gt;
 &lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 60 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
 &lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 12 Jul 2022 16:00:53 GMT</pubDate></item><item><title>如何将传统 Web 框架部署到 Serverless</title><link>https://juejin.cn/post/7117042614313943070</link><description>&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d4eb6a01e6564840817b127265b07edd~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="雪霁.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/781c0e37784b40aeac741101c4b1babc~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这是第 150 篇不掺水的原创，想获取更多原创好文，请搜索公众号关注我们吧~ 本文首发于政采云前端博客：&lt;a href="https://www.zoo.team/article/serverless-web"&gt;如何将传统 Web 框架部署到 Serverless&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1&gt;背景&lt;/h1&gt;
-&lt;p&gt;因为 Serverless 的“无服务器架构”应用相比于传统应用有很多优点，比如：无需关心服务器、免运维、弹性伸缩、按需付费、开发可以更加关注业务逻辑等等，所以现在 Serverless 应用已经逐渐广泛起来。&lt;/p&gt;
-&lt;p&gt;但是目前原生的 Serverless 开发框架还比较少，也没有那么成熟，另外主流的 Web 框架还不支持直接 Serverless 部署，但好在是现在国内各大云厂商比如阿里云、腾讯云已经提供能力能够将我们的传统框架以简单、快速、科学的方式部署到 Serverless 上，下面让我们一起研究看看它们是怎么做的吧。&lt;/p&gt;
-&lt;p&gt;我们以 Node.js 的 Express 应用为例，看看如何通过阿里云函数计算，实现不用按照传统部署方式购买云主机去部署，不用自己运维，快速部署到 Serverless 平台上。&lt;/p&gt;
-&lt;h1&gt;传统应用与函数计算的入口差异&lt;/h1&gt;
-&lt;h3&gt;传统应用的入口文件&lt;/h3&gt;
-&lt;p&gt;首先看下传统 Express 应用的入口文件：&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;const express = require('express')
-const app = express()
-const port = 3000
-
-// 监听 / 路由，处理请求
-app.get('/', (req, res) =&amp;gt; {
-  res.send('Hello World!')
-})
-
-// 监听 3000 端口，启动 HTTP 服务
-app.listen(port, () =&amp;gt; {
-  console.log(`Example app listening on port ${port}`)
-})
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;可以看到传统 Express 应用是：&lt;/p&gt;
-&lt;p&gt;1.通过 app.listen() 启动了 HTTP 服务，其本质上是调用的 Node.js http 模块的 createServer() 方法创建了一个 HTTP Server&lt;/p&gt;
-&lt;p&gt;2.监听了&lt;code&gt;/&lt;/code&gt;路由，由回调函数&lt;code&gt;function(request, response)&lt;/code&gt;处理请求&lt;/p&gt;
-&lt;h3&gt;函数计算的入口函数&lt;/h3&gt;
-&lt;p&gt;Serverless 应用中， FaaS 是基于事件触发的，触发器是触发函数执行的方式， 其中 API 网关触发器与 HTTP 触发器与均可应用于 Web应用的创建。函数计算会从指定的入口函数开始执行，其中 API 网关触发器对应的入口函数叫事件函数，HTTP 触发器对应的入口函数叫 HTTP 函数，它们的入口函数形式不同。&lt;/p&gt;
-&lt;h4&gt;API 网关触发器的入口函数形式&lt;/h4&gt;
-&lt;p&gt;API 网关触发器的入口函数形式如下，函数入参包括 event、context、callback，以 Node.js 为例，如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;/*
-* handler: 函数名 handler 需要与创建函数时的 handler 字段相对应。例如创建函数时指定的 handler 为 index.handler，那么函数计算会去加载 index.js 文件中定义的 handler 函数
-*event: 您调用函数时传入的数据，其类型是 Buffer，是函数的输入参数。您在函数中可以根据实际情况对 event 进行转换。如果输入数据是一个 JSON 字符串 ，您可以把它转换成一个 Object。
-* context: 包含一些函数的运行信息，例如 request Id、 临时 AK 等。您在代码中可以使用这些信息
-* callback: 由系统定义的函数，作为入口函数的入参用于返回调用函数的结果，标识函数执行结束。与 Node.js 中使用的 callback 一样，它的第一个参数是 error，第二个参数 data。
-*/
-module.exports.handler = (event, context, callback) =&amp;gt; {
-
-  // 处理业务逻辑
-  callback(null, data);
-
-};
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;HTTP 触发器的入口函数形式&lt;/h4&gt;
-&lt;p&gt;一个简单的 Node.js HTTP 函数示例如下所示：&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;module.exports.handler = function(request, response, context)  {
-  response.send("hello world");
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;差异对比&lt;/h3&gt;
-&lt;p&gt;对比可以看出，在传统应用中，是启动一个服务监听端口号去处理 HTTP 请求，服务处理的是 HTTP 的请求和响应参数；而在 Serverless 应用中， Faas 是基于事件触发的，触发器类型不同，参数映射和处理不同：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;若是 API 网关触发器
-&lt;ul&gt;
-&lt;li&gt;当有请求到达后端服务设置为函数计算的 API 网关时，API 网关会触发函数的执行，触发器会将事件信息生成 event 参数，然后 FaaS 以 event 为参数执行入口函数，最后将执行结果返回给 API 网关。所以传统应用和 Serverless 应用在请求响应方式和参数的数据结构上都有很大差异，要想办法让函数计算的入口方法适配 express。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;若是 HTTP 触发器
-&lt;ul&gt;
-&lt;li&gt;相对 API 网关触发器参数处理会简单些。因为 HTTP 触发器通过发送 HTTP 请求触发函数执行，会把真实的 HTTP 请求直接传递给 FaaS 平台，不需要编码或解码成 JSON 格式，不用增加转换逻辑，性能也更优。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;适配层&lt;/h1&gt;
-&lt;p&gt;下面我们通过解读阿里云 FC 提供的将函数计算的请求转发给 express 应用的 npm 包 &lt;a href="https://github.com/awesome-fc/webserverless/tree/master/packages/fc-express"&gt;@webserverless/fc-express&lt;/a&gt; 源码，看看函数计算的入口方法是如何适配 express 的，如何适配 API 网关 和 HTTP 触发器这两种类型。&lt;/p&gt;
-&lt;p&gt;根据上述分析，Web 应用若想 Serverless 化需要开发一个&lt;strong&gt;适配层&lt;/strong&gt;，将函数计算接收到的请求转发给 express 应用处理，最后再返回给函数计算。&lt;/p&gt;
-&lt;h2&gt;API 网关触发的适配层&lt;/h2&gt;
-&lt;h3&gt;实现原理&lt;/h3&gt;
-&lt;p&gt;API 网关触发的情况下，通过适配层将 FaaS 函数接收到的 API 网关事件参数 event 先转化为标准的 HTTP 请求，再去让传统 Web 服务去处理请求和响应，最后再将 HTTP 响应转换为函数返回值。整体工作原理如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/58071288512b4e798d3abf8deb78ea71~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;适配层核心&lt;/strong&gt;就是：把 event 映射到 express 的 request 对象上， 再把 express 的 response 对象映射到 callback 的数据参数上。&lt;/p&gt;
-&lt;p&gt;API 网关调用函数计算的事件函数时，会将 API 的相关数据转换为 Map 形式传给函数计算服务。函数计算服务处理后，按照下图中 Output Format 的格式返回 statusCode、headers、body 等相关数据。API 网关再将函数计算返回的内容映射到 statusCode、header、body等位置返回给客户端。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4a49ac8084904030adcc7e19b0fdfc85~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;p&gt;​(此图来源于阿里云)&lt;/p&gt;
-&lt;h3&gt;核心过程&lt;/h3&gt;
-&lt;p&gt;通过分析&lt;a href="https://github.com/awesome-fc/webserverless/tree/master/packages/fc-express"&gt;@webserverless/fc-express&lt;/a&gt;源码，我们可以抽取核心过程实现一个简易版的适配层。&lt;/p&gt;
-&lt;h4&gt;1.创建一个自定义 HTTP Server，通过监听 Unix Domain Socket，启动服务&lt;/h4&gt;
-&lt;p&gt;（友情链接：不清楚 Unix Domain Socket 的小伙伴可以先看下这篇文章: &lt;a href="https://www.cnblogs.com/sparkdev/p/8359028.html"&gt;Unix domain socket 简介 &lt;/a&gt;）&lt;/p&gt;
-&lt;p&gt;第一步我们若想把函数计算接收的 event 参数映射到 Express.js 的 request 对象上，就需要&lt;strong&gt;创建并启动&lt;/strong&gt;一个自定义的 HTTP 服务来代替 Express.js 的 app.listen，然后接下来就可以将函数的事件参数 event 转换为 Express.js 的 request 请求参数。&lt;/p&gt;
-&lt;p&gt;首先创建一个 server.js 文件如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;// server.js
-const http = require('http');
-const ApiGatewayProxy = require('./api-gateway-proxy');//&amp;nbsp;api-gateway-proxy.js 文件下一步会说明其内容
-
-/*
-* requestListener：被代理的 express 应用
-* serverListenCallback： http 代理服务开始监听的回调函数
-* binaryTypes: 当 express 应用的响应头 content-type 符合 binaryTypes 中定义的任意规则，则返回给 API 网关的 isBase64Encoded 属性为 true
-*/
-function Server(requestListener,serverListenCallback,binaryTypes) { 
-  this.apiGatewayProxy = new ApiGatewayProxy(this);   // ApiGatewayProxy 核心过程 2 会介绍
-
-  this.server = http.createServer(requestListener);// 1.1 创建一个自定义 HTTP Server
-
-  this.socketPathSuffix = getRandomString(); // 随机生成一个字符串，作为 Unix Domain Socket 使用
-  
-  this.binaryTypes = binaryTypes ? binaryTypes.slice() : [];// 当 express 应用响应的 content-type 符合 Server 构造函数参数 binaryTypes 中定义的任意规则时，则函数的返回值的 isBase64Encoded 为 true，从而告诉 API 网关如何解析函数返回值的 body 参数
-
-  this.server.on("listening", () =&amp;gt; {
-    this.isListening = true;
-    if (serverListenCallback) serverListenCallback();
-  });
-
-  this.server.on("close", () =&amp;gt; {
-    this.isListening = false;
-  }).on("error", (error) =&amp;gt; {
-    // 异常处理
-  });
-
-}
-
-// 暴露给函数计算入口函数 handler 调用的方法
-Server.prototype.proxy = function (event, context, callback) {
-  const e = JSON.parse(event);
-  this.apiGatewayProxy.handle({
-    event: e,
-    context,
-    callback
-  });
-}
-
-// 1.2 启动服务
-Server.prototype.startServer = function () {
-  return this.server.listen(this.getSocketPath()); //  采用监听 Unix Domain Socket 方式启动服务，减少函数执行时间，节约成本
-}
-
-Server.prototype.getSocketPath = function () {
-  /* istanbul ignore if */
-  /* only running tests on Linux; Window support is for local dev only */
-  if (/^win/.test(process.platform)) {
-    const path = require('path');
-    return path.join('\\\\?\\pipe', process.cwd(), `server-${this.socketPathSuffix}`);
-  } else {
-    return `/tmp/server-${this.socketPathSuffix}.sock`;
-  }
-}
-
-function getRandomString() {
-  return Math.random().toString(36).substring(2, 15);
-}
-
-module.exports = Server;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在 server.js 中，我们定义了一个构造函数 Server 并导出。在 Server 中，我们创建了一个自定义的 HTTP 服务，然后随机生成了一个 Unix Domain Socket，采用监听该 Socket 方式启动服务来代替 Express.js 的&lt;code&gt;app.listen&lt;/code&gt;。&lt;/p&gt;
-&lt;h4&gt;2.将函数计算参数 event 转换为 Express.js 的 HTTP request&lt;/h4&gt;
-&lt;p&gt;下面开始第 2 步，创建一个 api-gateway-proxy.js 文件，将函数计算参数 event 转换为 Express.js 的 HTTP request。&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;//api-gateway-proxy.js
-const http = require('http');
-const isType = require('type-is');
-
-function ApiGatewayProxy(server) {
-  this.server = server;
-}
-
-ApiGatewayProxy.prototype.handle = function ({
-  event,
-  context,
-  callback
-}) {
-  this.server.startServer()
-    .on('listening', () =&amp;gt; {
-      this.forwardRequestToNodeServer({
-        event,
-        context,
-        callback
-      });
-    });
-}
-
-ApiGatewayProxy.prototype.forwardRequestToNodeServer = function ({
-  event,
-  context,
-  callback
-}) {
-  const resolver = data =&amp;gt; callback(null, data);
-  try {
-    // 2.1将 API 网关事件转换为 HTTP request
-    const requestOptions = this.mapContextToHttpRequest({
-      event,
-      context,
-      callback
-    });
-    
-    // 2.2 通过 http.request() 将 HTTP request 转发给 Node.js Server 处理，发起 HTTP 请求
-    const req = http.request(requestOptions, response =&amp;gt; this.forwardResponse(response, resolver));
-    req.on('error', error =&amp;gt; {
-         //...
-        });
-    req.end();
-  } catch (error) {
-    // ...
-  }
-}
-
-ApiGatewayProxy.prototype.mapContextToHttpRequest = function ({
-  event,
-  context,
-  callback
-}) {
-  const headers = Object.assign({}, event.headers);
-  return {
-    method: event.httpMethod,
-    path: event.path,
-    headers,
-    socketPath: this.server.getSocketPath()
-    // protocol: `${headers['X-Forwarded-Proto']}:`,
-    // host: headers.Host,
-    // hostname: headers.Host, // Alias for host
-    // port: headers['X-Forwarded-Port']
-  };
-}
-
-// 核心过程 3 会介绍
-ApiGatewayProxy.prototype.forwardResponse = function (response, resolver) {
-  const buf = [];
-
-  response
-    .on('data', chunk =&amp;gt; buf.push(chunk))
-    .on('end', () =&amp;gt; {
-      const bodyBuffer = Buffer.concat(buf);
-      const statusCode = response.statusCode;
-      const headers = response.headers;
-      const contentType = headers['content-type'] ? headers['content-type'].split(';')[0] : '';
-      const isBase64Encoded = this.server.binaryTypes &amp;amp;&amp;amp; this.server.binaryTypes.length &amp;gt; 0 &amp;amp;&amp;amp; !!isType.is(contentType, this.server.binaryTypes);
-      const body = bodyBuffer.toString(isBase64Encoded ? 'base64' : 'utf8');
-    
-      const successResponse = {
-        statusCode,
-        body,
-        headers,
-        isBase64Encoded
-      };
-
-      resolver(successResponse);
-    });
-}
-
-module.exports = ApiGatewayProxy;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在 api-gateway-proxy.js 中，我们定义了一个构造函数 ApiGatewayProxy 并导出。在这里我们会将 event 转换为 HTTP request，然后向 Node.js Server 发起请求，由 Node.js Server 再进行处理做出响应。&lt;/p&gt;
-&lt;h4&gt;3.将 HTTP response 转换为 API 网关标准数据结构，作为 callback 的参数返回给 API 网关&lt;/h4&gt;
-&lt;p&gt;接着继续对 api-gateway-proxy.js 文件中的&lt;code&gt;http.request(requestOptions, response =&amp;gt; this.forwardResponse(response, resolver))&lt;/code&gt;分析发出 HTTP 请求后的响应处理部分。&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;//api-gateway-proxy.js
-
-ApiGatewayProxy.prototype.forwardRequestToNodeServer = function ({
-  event,
-  context,
-  callback
-}) {
-  const resolver = data =&amp;gt; callback(null, data); // 封装 callback 为 resolver
-  //...
-  // 请求、响应
-  const req = http.request(requestOptions, response =&amp;gt; this.forwardResponse(response, resolver));
-  //...
-}
-
-//3.Node.js Server 对 HTTP 响应进行处理，将 HTTP response 转换为 API 网关标准数据结构，作为函数计算返回值
-ApiGatewayProxy.prototype.forwardResponse = function (response, resolver) {
-  const buf = [];
-
-  response
-    .on('data', chunk =&amp;gt; buf.push(chunk))
-    .on('end', () =&amp;gt; {
-      const bodyBuffer = Buffer.concat(buf);
-      const statusCode = response.statusCode;
-      const headers = response.headers;
-      const contentType = headers['content-type'] ? headers['content-type'].split(';')[0] : '';
-      const isBase64Encoded = this.server.binaryTypes &amp;amp;&amp;amp; this.server.binaryTypes.length &amp;gt; 0 &amp;amp;&amp;amp; !!isType.is(contentType, this.server.binaryTypes);
-      const body = bodyBuffer.toString(isBase64Encoded ? 'base64' : 'utf8');
-    
-    // 函数返回值
-      const successResponse = {
-        statusCode,
-        body,
-        headers,
-        isBase64Encoded //当函数的 event.isBase64Encoded 是 true 时，会按照 base64 编码来解析 event.body，并透传给 express 应用，否则就按照默认的编码方式来解析，默认是 utf8
-      };
-
-    // 将 API 网关标准数据结构作为回调 callback 参数，执行 callback，返回给 API 网关
-      resolver(successResponse);
-    });
-}
-
-
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;接着第 2 步，Node.js Server 对 http.request() 发出的 HTTP 请求做出响应处理，将 HTTP response 转换为 API 网关标准数据结构，把它作为回调 callback 的参数，调用 callback 返回给 API 网关。&lt;/p&gt;
-&lt;h4&gt;4.在入口函数中引入适配层代码并调用&lt;/h4&gt;
-&lt;p&gt;以上 3 步就将适配层核心代码完成了，整个过程就是：将 API 网关事件转换成 HTTP 请求，通过本地 socket 和函数起 Node.js Server 进行通信。&lt;/p&gt;
-&lt;p&gt;最后我们在入口函数所在文件 index.js 中引入 server.js，先用 Server 构建一个 HTTP 代理服务，然后在入口函数 handler 中调用&lt;code&gt;server.proxy(event, context, callback);&lt;/code&gt; 即可将函数计算的请求转发给 express 应用处理。&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;// index.js
-const express = require('express');
-
-const Server = require('./server.js'); 
-
-const app = express();
-app.all('*', (req, res) =&amp;gt; {
-  res.send('express-app hello world!');
-});
-
-const server = new Server(app); // 创建一个自定义 HTTP Server
-
-module.exports.handler = function(event, context, callback) {
-  server.proxy(event, context, callback); // server.proxy 将函数计算的请求转发到 express 应用
-};
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;我们将以上代码在 FC 上部署、调用，执行成功结果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/74340067644b4769ac93f88cd4dd42e4~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;h2&gt;HTTP 触发的适配层&lt;/h2&gt;
-&lt;h3&gt;实现原理&lt;/h3&gt;
-&lt;p&gt;HTTP 触发的情况下，不用对请求参数做转换，其它原理与 API 网关触发器一致：通过适配层将 FaaS 函数接收到的请求参数直接转发到自定义的 Web 服务内，最后再将 HTTP 响应包装返回即可，整体工作原理如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5b3c804d55034189aaefb1e75df1f198~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;h3&gt;核心过程&lt;/h3&gt;
-&lt;p&gt;同样我们抽取核心过程简单实现一个适配层，与 API 网关触发器原理相同的部分将不再赘述 。&lt;/p&gt;
-&lt;h4&gt;1.创建一个自定义 HTTP Server，通过监听 Unix Domain Socket，启动服务&lt;/h4&gt;
-&lt;p&gt;server.js 代码如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;// server.js
-const http = require('http');
-const HttpTriggerProxy = require('./http-trigger-proxy');
-
-function Server(requestListener,serverListenCallback) {
-  this.httpTriggerProxy = new HttpTriggerProxy(this);
-
-  this.server = http.createServer(requestListener); // 1.1 创建一个自定义 HTTP Server
-
-  this.socketPathSuffix = getRandomString();
-
-  this.server.on("listening", () =&amp;gt; {
-    this.isListening = true;
-    if (serverListenCallback) serverListenCallback();
-  });
-
-  this.server.on("close", () =&amp;gt; {
-    this.isListening = false;
-  }).on("error", (error) =&amp;gt; {
-    // 异常处理，例如判读 socket 是否已被监听
-  });
-
-}
-
-// 暴露给函数计算入口函数 handler 调用的方法
-Server.prototype.httpProxy = function (request, response, context) {
-    this.httpTriggerProxy.handle({ request, response, context });
-}
-
-// 1.2 启动服务
-Server.prototype.startServer = function () {
-  return this.server.listen(this.getSocketPath());
-}
-
-Server.prototype.getSocketPath = function () {
-  /* istanbul ignore if */
-  /* only running tests on Linux; Window support is for local dev only */
-  if (/^win/.test(process.platform)) {
-    const path = require('path');
-    return path.join('\\\\?\\pipe', process.cwd(), `server-${this.socketPathSuffix}`);
-  } else {
-    return `/tmp/server-${this.socketPathSuffix}.sock`;
-  }
-}
-
-function getRandomString() {
-  return Math.random().toString(36).substring(2, 15);
-}
-
-module.exports = Server;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;2.将 HTTP request 直接转发给 Web Server，再将 HTTP response 包装返回&lt;/h4&gt;
-&lt;p&gt;创建一个 api-trigger-proxy.js 文件如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;// api-trigger-proxy.js
-const http = require('http');
-const isType = require('type-is');
-const url = require('url');
-const getRawBody = require('raw-body');
-
-function HttpTriggerProxy(server) {
-  this.server = server;
-}
-
-HttpTriggerProxy.prototype.handle = function ({
-  request,
-  response,
-  context
-}) {
-  this.server.startServer()
-    .on('listening', () =&amp;gt; {
-      this.forwardRequestToNodeServer({
-        request,
-        response,
-        context
-      });
-    });
-}
-
-HttpTriggerProxy.prototype.forwardRequestToNodeServer = function ({
-    request,
-    response,
-    context
-}) {
-  // 封装 resolver
-  const resolver = data =&amp;gt; {
-    response.setStatusCode(data.statusCode);
-    for (const key in data.headers) {
-        if (data.headers.hasOwnProperty(key)) {
-            const value = data.headers[key];
-            response.setHeader(key, value);
-        }
-    }
-    response.send(data.body); // 返回 response body
-  };
-  try {
-    // 透传 request
-    const requestOptions = this.mapContextToHttpRequest({
-        request,
-        context
-    });
-  // 2.将 HTTP request 直接转发给 Web Server，再将 HTTP response 包装返回
-    const req = http.request(requestOptions, response =&amp;gt; this.forwardResponse(response, resolver));
-    req.on('error', error =&amp;gt; {
-         // ...
-        });
-    // http 触发器类型支持自定义 body：可以获取自定义 body
-    if (request.body) {
-        req.write(request.body);
-        req.end();
-    } else {
-      // 若没有自定义 body：http 触发器触发函数，会通过流的方式传输 body 信息，可以通过 npm 包 raw-body 来获取
-        getRawBody(request, (err, body) =&amp;gt; {
-            req.write(body);
-            req.end();
-        });
-    }
-  } catch (error) {
-    // ...
-  }
-}
-
-HttpTriggerProxy.prototype.mapContextToHttpRequest = function ({
-    request,
-    context
-}) {
-  const headers = Object.assign({}, request.headers); 
-  headers['x-fc-express-context'] = encodeURIComponent(JSON.stringify(context));
-  return {
-    method: request.method,
-    path: url.format({ pathname: request.path, query: request.queries }),
-    headers,
-    socketPath: this.server.getSocketPath()
-    // protocol: `${headers['X-Forwarded-Proto']}:`,
-    // host: headers.Host,
-    // hostname: headers.Host, // Alias for host
-    // port: headers['X-Forwarded-Port']
-  };
-}
-
-HttpTriggerProxy.prototype.forwardResponse = function (response, resolver) {
-  const buf = [];
-
-  response
-    .on('data', chunk =&amp;gt; buf.push(chunk))
-    .on('end', () =&amp;gt; {
-      const bodyBuffer = Buffer.concat(buf);
-      const statusCode = response.statusCode;
-      const headers = response.headers;
-      const contentType = headers['content-type'] ? headers['content-type'].split(';')[0] : '';
-      const isBase64Encoded = this.server.binaryTypes &amp;amp;&amp;amp; this.server.binaryTypes.length &amp;gt; 0 &amp;amp;&amp;amp; !!isType.is(contentType, this.server.binaryTypes);
-      const body = bodyBuffer.toString(isBase64Encoded ? 'base64' : 'utf8');
-      const successResponse = {
-        statusCode,
-        body,
-        headers,
-        isBase64Encoded
-      };
-
-      resolver(successResponse);
-    });
-}
-
-module.exports = HttpTriggerProxy;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;3.入口函数引入适配层代码&lt;/h4&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;// index.js
-const express = require('express');
-const Server = require('./server.js');
-
-const app = express();
-app.all('*', (req, res) =&amp;gt; {
-  res.send('express-app-httpTrigger hello world!');
-});
-
-const server = new Server(app);
-
-
-
-module.exports.handler  = function (req, res, context) { 
-  server.httpProxy(req, res, context);
-};
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;同样地，我们将以上代码在 FC 上部署、调用，执行成功结果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/aaa9a758fd674628b7dcfe08e65dfa1f~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;p&gt;看到最后，大家会发现 API 网关触发器和 HTTP触发器很多代码逻辑是可以复用的，大家可以自行阅读优秀的源码是如何实现的～&lt;/p&gt;
-&lt;h1&gt;其他部署到 Serverless 平台的方案&lt;/h1&gt;
-&lt;p&gt;将传统 Web 框架部署到 Serverless 除了通过适配层转换实现，还可以通过 &lt;a href="https://juejin.cn/post/6981921291980767269#heading-5"&gt;Custom Runtime 或者 Custom Container Runtime&lt;/a&gt; ，3 种方案总结如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;通过引入适配层，将函数计算接收的事件参数转换为 HTTP 请求交给自定义的 Web Server 处理&lt;/li&gt;
-&lt;li&gt;通过 Custom Runtime
-&lt;ul&gt;
-&lt;li&gt;本质上也是一个 &lt;strong&gt;HTTP Server&lt;/strong&gt;，&lt;strong&gt;接管了函数计算平台的所有请求&lt;/strong&gt;，包括事件调用或者 HTTP 函数调用等&lt;/li&gt;
-&lt;li&gt;开发者需要创建一个启动目标 Server 的可执行文件 bootstrap&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;通过 Custom Container Runtime
-&lt;ul&gt;
-&lt;li&gt;工作原理与Custom Runtime 基本相同&lt;/li&gt;
-&lt;li&gt;开发者需要&lt;strong&gt;把应用代码和运行环境打包为 Docker 镜像&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;小结&lt;/h1&gt;
-&lt;p&gt;本文介绍了传统 Web 框架如何部署到 Serverless 平台的方案：可以通过适配层和自定义（容器）运行时。其中主要以 Express.js 和阿里云函数计算为例讲解了通过适配层实现的原理和核心过程，其它 Web 框架 Serverless 化的原理也基本一致，腾讯云也提供了原理一样的 &lt;a href="https://github.com/serverless-plus/tencent-serverless-http"&gt;tencent-serverless-http&lt;/a&gt; 方便大家直接使用（但腾讯云不支持 HTTP 触发器），大家可以将自己所使用的 Web 框架对照云厂商函数计算的使用方法亲自开发一个适配层实践一下～&lt;/p&gt;
-&lt;h1&gt;参考资料&lt;/h1&gt;
-&lt;p&gt;&lt;a href="https://github.com/awesome-fc/webserverless/tree/master/packages/fc-express"&gt;Webserverless - FC Express extension&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://zhuanlan.zhihu.com/p/152391799"&gt;如何将 Web 框架迁移到 Serverless&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://developer.aliyun.com/article/790302"&gt;Serverless 工程实践 | 传统 Web 框架迁移&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://help.aliyun.com/document_detail/53102.html"&gt;阿里云-触发器简介&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://zhuanlan.zhihu.com/p/72076708"&gt;前端学serverless系列——WebApplication迁移实践&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;推荐阅读&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7114450860335169543"&gt;浅谈前端埋点 &amp;amp; 监控&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7111848825232293918"&gt;如何让 x == 1 &amp;amp;&amp;amp; x == 2 &amp;amp;&amp;amp; x == 3 等式成立&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/editor/drafts/7109126523466022948"&gt;数据统计在性能检测中的应&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7106652838800916517"&gt;浅析 path 常用工具函数源码&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7104055306396631076"&gt;Web Components-LitElement实践&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;开源作品&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;政采云前端小报&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://www.zoo.team/openweekly/"&gt;www.zoo.team/openweekly/&lt;/a&gt;&lt;/strong&gt; (小报官网首页有微信交流群)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;商品选择 sku 插件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://github.com/zcy-inc/skuPathFinder-back"&gt;https://github.com/zcy-inc/skuPathFinder-back/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h2&gt;招贤纳士&lt;/h2&gt;
-&lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 60 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
-&lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 05 Jul 2022 16:02:10 GMT</pubDate></item><item><title>在 JavaScript 中，什么时候使用 Map 或胜过 Object</title><link>https://juejin.cn/post/7141174031411052581</link><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 12 Jul 2022 16:00:53 GMT</pubDate></item><item><title>在 JavaScript 中，什么时候使用 Map 或胜过 Object</title><link>https://juejin.cn/post/7141174031411052581</link><description>&lt;blockquote&gt;
 &lt;p&gt;本文首发于微信公众号：大迁世界, 我的微信：qq449245884，我会第一时间和你分享前端行业趋势，学习途径等等。
 更多开源作品请看 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; ，包含一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
 &lt;/blockquote&gt;
