@@ -1,5 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Sun, 18 Sep 2022 22:48:46 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 52 期：Babel 7.19.0、Fresh 1.1、React Native 0.70、新的 Web 性能指标 INP</title><link>https://juejin.cn/post/7143094170108821540</link><description>&lt;hr /&gt;
+<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Mon, 19 Sep 2022 22:49:18 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 53 期：React Router 6.4、VS Code August 2022、2022 Google 谷歌开发者大会、Meta 开源</title><link>https://juejin.cn/post/7145061375994724389</link><description>&lt;hr /&gt;
+&lt;h2&gt;theme: fancy
+highlight: github-gist&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;口味：劲浓芝士薯片&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/Geekhyt/weekly"&gt;食堂技术周刊仓库地址：https://github.com/Geekhyt/weekly&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;本期摘要&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;React Router 6.4&lt;/li&gt;
+&lt;li&gt;VS Code August 2022&lt;/li&gt;
+&lt;li&gt;2022 Google 谷歌开发者大会&lt;/li&gt;
+&lt;li&gt;Meta 开源 MemLab&lt;/li&gt;
+&lt;li&gt;WAI-ARIA 指南&lt;/li&gt;
+&lt;li&gt;《Vue.js 技术内幕》&lt;/li&gt;
+&lt;li&gt;Remix 基础知识&lt;/li&gt;
+&lt;li&gt;创建现代 npm 包的最佳实践&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;大家好，我是童欧巴。欢迎来到本期的前端食堂技术周刊，我们先来看下上周的技术资讯。&lt;/p&gt;
+&lt;h1&gt;技术资讯&lt;/h1&gt;
+&lt;h2&gt;1.&lt;a href="https://remix.run/blog/react-router-v6.4"&gt;React Router 6.4&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;随着 React Router 6.4 正式发布，React Router 也加入到了远程状态管理的阵营，开发团队将 Remix 中的功能带入到 React Router 中。&lt;/p&gt;
+&lt;p&gt;特性总览可以移步 &lt;a href="https://beta.reactrouter.com/en/main/start/overview"&gt;What's New in 6.4?&lt;/a&gt;。&lt;/p&gt;
+&lt;h2&gt;2.&lt;a href="https://code.visualstudio.com/updates/v1_71"&gt;VS Code August 2022&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;VS Code 近期发布 2022 年 8 月的版本，下面摘出来一些特性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;合并编辑器优化(改为手动打开，可以和旧版合并编辑器同时使用、实验性开启优化的 diff 算法)&lt;/li&gt;
+&lt;li&gt;FFmpeg 编解码器支持(支持更多格式)&lt;/li&gt;
+&lt;li&gt;资源管理器重命名选择改进(F2 快捷键选择文件名、扩展名和全部)&lt;/li&gt;
+&lt;li&gt;全部按钮添加圆角 (看来谁也逃不过圆角。。)&lt;/li&gt;
+&lt;li&gt;粘性滚动正式发布&lt;/li&gt;
+&lt;li&gt;终端优化(平滑滚动、优化渲染)&lt;/li&gt;
+&lt;li&gt;等等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;3.&lt;a href="https://mp.weixin.qq.com/s/K5V91yZojijWiR801fNkRg"&gt;2022 Google 谷歌开发者大会&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;错过直播的同学可以在这里看亮点回顾啦～&lt;/p&gt;
+&lt;p&gt;下面我们来看技术资料。&lt;/p&gt;
+&lt;h1&gt;技术资料&lt;/h1&gt;
+&lt;h2&gt;1.&lt;a href="https://engineering.fb.com/2022/09/12/open-source/memlab/"&gt;Meta 开源 MemLab&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;MemLab 是一个自动检测内存泄漏的 JavaScript 内存测试工具。工作原理是通过在预定义的测试场景中运行无头浏览器并对 JavaScript 堆快照进行差异分析来发现内存泄漏。&lt;/p&gt;
+&lt;h2&gt;2.&lt;a href="https://www.smashingmagazine.com/2022/09/wai-aria-guide/"&gt;WAI-ARIA 指南&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;一篇关于无障碍综合指南的博文，总结了一些常见的错误场景，教你用正确的姿势使用它。&lt;/p&gt;
+&lt;h2&gt;3.&lt;a href="https://book.douban.com/subject/36092368/"&gt;《Vue.js技术内幕》&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;黄轶老师的新书，厚实的 474 页，昨天刚收到还没读，先领读个目录：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一部分：Vue.js 的整体设计&lt;/li&gt;
+&lt;li&gt;第二部分：组件&lt;/li&gt;
+&lt;li&gt;第三部分：响应式原理&lt;/li&gt;
+&lt;li&gt;第四部分：编译和优化&lt;/li&gt;
+&lt;li&gt;第五部分：实用特性&lt;/li&gt;
+&lt;li&gt;第六部分：内置组件&lt;/li&gt;
+&lt;li&gt;第七部分：官方生态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6a46ee85ae184e018bda09436bda709b~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;4.&lt;a href="https://css-tricks.com/the-basics-of-remix/"&gt;Remix 基础知识&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;一篇关于 Remix 基础知识的入门博客。&lt;/p&gt;
+&lt;h2&gt;5.&lt;a href="https://snyk.io/blog/best-practices-create-modern-npm-package/"&gt;创建现代 npm 包的最佳实践&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Snyk 团队的一篇博文，包括如下方面：初始化项目、创建 npm 账户、发布 npm 包、支持 TypeScript、CJS 和 ESM 的打包配置、单元测试及 Pipeline 配置、本地调试、使用 GitHub Actions 和 Snyk 进行安全检查、自动化版本管理和发布，使用 Snyk 进行持续安全监控。&lt;/p&gt;
+&lt;h1&gt;其他信息&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/preactjs/preact/releases/tag/10.11.0"&gt;Preact v10.11.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/npm/cli/releases/tag/v9.0.0-pre.0"&gt;npm v9.0.0-pre.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://webkit.org/blog/13152/webkit-features-in-safari-16-0/"&gt;WebKit Features in Safari 16.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.iviewui.com/resource"&gt;View Design 设计资源免费上线&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/oven-sh/bun/releases"&gt;Bun v0.1.12&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;好文推荐&lt;/h1&gt;
+&lt;p&gt;下面来看一下好文推荐，本周推荐的好文是：&lt;/p&gt;
+&lt;p&gt;1.&lt;a href="https://www.smashingmagazine.com/2022/09/javascript-api-guide/"&gt;你不知道的 JavaScript API&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.&lt;a href="https://olivernguyen.io/s/js2022/"&gt;2022 年最新的 JavaScript 功能&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;好了，以上就是本期的食堂周刊，观众老爷们如果觉得还不错，一键三连是对食堂老板最大的支持。&lt;/p&gt;
+&lt;p&gt;你的前端食堂，吃好每一顿饭，我们下期见。&lt;/p&gt;
+&lt;h2&gt;❤️爱心三连击&lt;/h2&gt;
+&lt;p&gt;1.如果你觉得食堂酒菜还合胃口，就点个赞支持下吧，你的&lt;strong&gt;赞&lt;/strong&gt;是我最大的动力。&lt;/p&gt;
+&lt;p&gt;2.关注&lt;a href="https://github.com/Geekhyt/front-end-canteen/blob/master/images/new-qrcode.jpg"&gt;公众号前端食堂&lt;/a&gt;，&lt;strong&gt;吃好每一顿饭！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3.点赞、评论、转发 === 催更！&lt;/p&gt;
+&lt;p&gt;&lt;img alt="透明footer.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/99c1796074d64d1aa9c78087f4463969~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;</description><author>童欧巴</author><pubDate>Mon, 19 Sep 2022 04:07:43 GMT</pubDate></item><item><title>前端食堂技术周刊第 52 期：Babel 7.19.0、Fresh 1.1、React Native 0.70、新的 Web 性能指标 INP</title><link>https://juejin.cn/post/7143094170108821540</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: fancy
 highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
@@ -792,123 +869,7 @@ highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;1.如果你觉得食堂酒菜还合胃口，就点个赞支持下吧，你的&lt;strong&gt;赞&lt;/strong&gt;是我最大的动力。&lt;/p&gt;
 &lt;p&gt;2.关注&lt;a href="https://github.com/Geekhyt/front-end-canteen/blob/master/images/new-qrcode.jpg"&gt;公众号前端食堂&lt;/a&gt;，&lt;strong&gt;吃好每一顿饭！&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;3.点赞、评论、转发 === 催更！&lt;/p&gt;
-&lt;p&gt;&lt;img alt="透明footer.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/99c1796074d64d1aa9c78087f4463969~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;</description><author>童欧巴</author><pubDate>Sun, 10 Jul 2022 08:13:00 GMT</pubDate></item><item><title>前端食堂技术周刊第 43 期：Vue 2.7 Naruto、Prisma 4.0.0、Grid 布局生成器、HTML Tips</title><link>https://juejin.cn/post/7116186506254876679</link><description>&lt;hr /&gt;
-&lt;h2&gt;theme: fancy
-highlight: github-gist&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;口味：乌龙桃桃&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/Geekhyt/weekly" title="食堂技术周刊仓库地址：https://github.com/Geekhyt/weekly"&gt;食堂技术周刊仓库地址：https://github.com/Geekhyt/weekly&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;PC 端在仓库里看体验更好，顺手赏个 Star 是对食堂最大的支持。&lt;/p&gt;
-&lt;h1&gt;本期摘要&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Vue 2.7 "Naruto" Released&lt;/li&gt;
-&lt;li&gt;Prisma 4.0.0&lt;/li&gt;
-&lt;li&gt;father 4 RC&lt;/li&gt;
-&lt;li&gt;Layoutit grid 生成器&lt;/li&gt;
-&lt;li&gt;Oh Shit, Git&lt;/li&gt;
-&lt;li&gt;HTML Tips - The hidden Gems&lt;/li&gt;
-&lt;li&gt;给前端开发人员和设计师的最佳 Chrome 插件&lt;/li&gt;
-&lt;li&gt;Data Flow in Remix&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;大家好，我是童欧巴。欢迎来到本期的前端食堂技术周刊，我们先来看下上周的技术资讯。&lt;/p&gt;
-&lt;h2&gt;技术资讯&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="https://blog.vuejs.org/posts/vue-2-7-naruto.html"&gt;Vue 2.7 Naruto Released&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fb0f6564198c4a709cad9a07e65b4472~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;p&gt;Vue 2.7 如期而至，版本代号为 Naruto。我翻出了写于 2 年前的文章 &lt;a href="https://juejin.cn/post/6876628905923444749" title="海贼王 One Piece，一起康康 Vue 版本号中的彩蛋"&gt;海贼王 One Piece，一起康康 Vue 版本号中的彩蛋&lt;/a&gt;，结尾还抛出了对火影忍者的期待。文章的评论区有堂友在 11 个月前预测 Vue 2.7 Naruto，我愿称之为全场最佳。&lt;/p&gt;
-&lt;p&gt;说回本次版本发布，发布公告相比 Beta 版本多出了以下内容：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;升级指南(Vue CLI / webpack、Vite、Volar、Vue Devtools)&lt;/li&gt;
-&lt;li&gt;额外细节(Vue2 从 Flow 移植到 TypeScript，单元测试从 Karma + Jasmine 移植到 Vitest)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;并对 Vue2.7 发布前社区内为弥补差距所开发的插件作出感谢：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;@vue/composition-api&lt;/li&gt;
-&lt;li&gt;vue-demi&lt;/li&gt;
-&lt;li&gt;vite-plugin-vue2&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start="2"&gt;
-&lt;li&gt;&lt;a href="https://github.com/prisma/prisma/releases/tag/4.0.0" title="Prisma 4.0.0"&gt;Prisma 4.0.0&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Prisma 4.0.0 带来了一系列的 Breaking Changes，包括 Prima Schema、Prisma Client 和一般性改进，并提供了详尽的&lt;a href="https://www.prisma.io/docs/guides/upgrade-guides/upgrading-versions/upgrading-to-prisma-4" title="升级指南"&gt;升级指南&lt;/a&gt;。&lt;/p&gt;
-&lt;ol start="3"&gt;
-&lt;li&gt;&lt;a href="https://mp.weixin.qq.com/s/zaFwGY-CztDUYTbIuaef1A"&gt;father 4 RC&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;距离 father 上一个 major 版本发布已经过去了近 3 年，father 4 RC 版近日发布，主要特性如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;双模式构建 (Bundless 和 Bundle 两种构建模式)&lt;/li&gt;
-&lt;li&gt;多 Bundless 编译核心 (Babel 和 esbuild，未来计划支持 SWC 等)&lt;/li&gt;
-&lt;li&gt;依赖预打包 (基于 Vercel 的 ncc 和 Microsoft 的 api-extractor，目前处于持续优化阶段)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;在正式版发布之前还将完成如下特性：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;SWC Bundless 编译核心&lt;/li&gt;
-&lt;li&gt;father doctor 命令，自动诊断当前项目中存在的问题，给开发者提示&lt;/li&gt;
-&lt;li&gt;father g 命令，提供工程原子化能力的生成&lt;/li&gt;
-&lt;li&gt;插件接入能力，给项目提供定制化入口，并发展插件生态&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;下面我们来看技术资料。&lt;/p&gt;
-&lt;h2&gt;技术资料&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="https://github.com/Leniolabs/layoutit-grid" title="Layoutit grid 生成器"&gt;Layoutit grid 生成器&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;CSS Grid 布局生成器，提供简洁干净的编辑器快速设计网页布局，并获取 HTML 和 CSS 代码以快速启动您的下一个项目。(该项目使用 Vue3、Vite、Vueuse 等搭建)&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e3f24ea9d2b04f2bb2c99f121be4d2a7~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;ol start="2"&gt;
-&lt;li&gt;&lt;a href="https://ohshitgit.com/zh" title="Oh Shit, Git"&gt;Oh Shit, Git&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;作者总结了他使用 Git 遇到过的抓狂经历，并提供了详细的解决方法，包括如下问题：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;进行了错误操作，能给我台时光机吗？&lt;/li&gt;
-&lt;li&gt;刚提交 commit 就发现还有东西需要改动，如何快速添加？&lt;/li&gt;
-&lt;li&gt;如何修改刚刚提交的 commit 信息？&lt;/li&gt;
-&lt;li&gt;不小心把本应该在新分支上提交的东西提交到了 master&lt;/li&gt;
-&lt;li&gt;把 commit 提交错分支怎么办？&lt;/li&gt;
-&lt;li&gt;diff 命令查看变更却发现什么也没有&lt;/li&gt;
-&lt;li&gt;想要撤回很早以前的 commit&lt;/li&gt;
-&lt;li&gt;想要撤回某一个文件的改动&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start="3"&gt;
-&lt;li&gt;&lt;a href="https://markodenic.com/html-tips-hidden-gems/" title="HTML Tips - The hidden Gems"&gt;HTML Tips - The hidden Gems&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;HTML 免费电子书，本书介绍了一些不常见的 HTML 特性，包含大量示例和精美的图片。&lt;/p&gt;
-&lt;ol start="4"&gt;
-&lt;li&gt;&lt;a href="https://cesscode.hashnode.dev/best-chrome-extensions-for-frontend-developers-and-designers" title="给前端开发人员和设计师的最佳 Chrome 插件"&gt;给前端开发人员和设计师的最佳 Chrome 插件&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;本文包含 10 余个可以帮助你提升效率的 Chrome 插件。&lt;/p&gt;
-&lt;ol start="5"&gt;
-&lt;li&gt;&lt;a href="https://remix.run/blog/remix-data-flow" title="Data Flow in Remix"&gt;Data Flow in Remix&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/62bbe2de26fe42bd88875f64835aeb94~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;p&gt;本文介绍了 Remix 中的数据流，Remix 简化了组件与服务器的交互，帮你有效的跨越网络鸿沟：客户端上的状态与服务器上状态的差距，这正是许多客户端状态管理库所不能做到的。而 Remix 扩展了网络中的数据流，使其真正实现单向和循环：从服务器状态(state)到客户端视图(view)，再返回到服务器(action)。&lt;/p&gt;
-&lt;h2&gt;其他信息&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://survey.stackoverflow.co/2022/" title="Stack Overflow 2022 年开发者调查"&gt;Stack Overflow 2022 年开发者调查&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://news.itsfoss.com/vim-9-0-release/" title="Vim 9.0"&gt;Vim 9.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://storybook.js.org/blog/storybook-6-5/" title="Storybook 6.5"&gt;Storybook 6.5&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://nextjs.org/blog/next-12-2" title="Next.js 12.2"&gt;Next.js 12.2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/pnpm/pnpm/releases/tag/v7.4.0" title="pnpm v7.4"&gt;pnpm v7.4&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;好文推荐&lt;/h2&gt;
-&lt;p&gt;下面来看一下好文推荐，本周推荐的好文是：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://2ality.com/2022/06/global-npm-install-alternatives.html" title="全局安装 npm 包的替代方案"&gt;全局安装 npm 包的替代方案&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://shopify.engineering/how-we-built-hydrogen" title="How We Built Hydrogen"&gt;How We Built Hydrogen&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;好了，以上就是本期的食堂周刊，观众老爷们如果觉得还不错，一键三连是对食堂老板最大的支持。&lt;/p&gt;
-&lt;p&gt;你的前端食堂，吃好每一顿饭，我们下期见。&lt;/p&gt;
-&lt;h2&gt;❤️爱心三连击&lt;/h2&gt;
-&lt;p&gt;1.如果你觉得食堂酒菜还合胃口，就点个赞支持下吧，你的&lt;strong&gt;赞&lt;/strong&gt;是我最大的动力。&lt;/p&gt;
-&lt;p&gt;2.关注&lt;a href="https://github.com/Geekhyt/front-end-canteen/blob/master/images/new-qrcode.jpg"&gt;公众号前端食堂&lt;/a&gt;，&lt;strong&gt;吃好每一顿饭！&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;3.点赞、评论、转发 === 催更！&lt;/p&gt;
-&lt;p&gt;&lt;img alt="透明footer.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/99c1796074d64d1aa9c78087f4463969~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;</description><author>童欧巴</author><pubDate>Sun, 03 Jul 2022 08:45:56 GMT</pubDate></item><item><title>「程序人生」在腾讯工作是怎么样的体验</title><link>https://juejin.cn/post/6976896524198346760</link><description>&lt;hr /&gt;
+&lt;p&gt;&lt;img alt="透明footer.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/99c1796074d64d1aa9c78087f4463969~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;</description><author>童欧巴</author><pubDate>Sun, 10 Jul 2022 08:13:00 GMT</pubDate></item><item><title>「程序人生」在腾讯工作是怎么样的体验</title><link>https://juejin.cn/post/6976896524198346760</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: condensed-night-purple&lt;/h2&gt;
 &lt;h2&gt;在腾讯工作是怎么样的体验&lt;/h2&gt;
 &lt;p&gt;大家好，我是&lt;strong&gt;TianTian&lt;/strong&gt;。&lt;/p&gt;
@@ -5586,7 +5547,99 @@ export const phoneRule = {
 &lt;h2&gt;招贤纳士&lt;/h2&gt;
 &lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 60 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
 &lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 12 Jul 2022 16:00:53 GMT</pubDate></item><item><title>为什么说：JavaScript 模块中的默认导出很糟糕</title><link>https://juejin.cn/post/7143396454366314527</link><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 12 Jul 2022 16:00:53 GMT</pubDate></item><item><title>新指令 v-memo，提高性能的又一利器</title><link>https://juejin.cn/post/7144884293423071268</link><description>&lt;blockquote&gt;
+&lt;p&gt;本文首发于微信公众号：大迁世界, 我的微信：qq449245884，我会第一时间和你分享前端行业趋势，学习途径等等。
+更多开源作品请看 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; ，包含一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Vue3 为我们提供了几项开箱即用的重大性能改进，但也引入了一些额外的手动功能，可以帮助提高我们的应用性能。&lt;/p&gt;
+&lt;p&gt;在这节课中，我们介绍一下，在 Vue 3.2 中引入新指令 &lt;code&gt;v-memo&lt;/code&gt;。引入这个指令的目的是帮助我们提高中型/大型 Vue 应用程序的性能，小项目大家根据需要自行决定。&lt;/p&gt;
+&lt;h2&gt;v-memo 是做什么的？&lt;/h2&gt;
+&lt;p&gt;官网对 &lt;code&gt;v-memo&lt;/code&gt; 定义是这样的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;缓存一个模板的子树。在元素和组件上都可以使用。为了实现缓存，该指令需要传入一个固定长度的依赖值数组进行比较。如果数组里的每个值都与最后一次的渲染相同，那么整个子树的更新将被跳过。举例来说：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;看起来有点绕，但实际上，很好理解。&lt;code&gt;v-memo&lt;/code&gt; 所做的与我们现有的计算属性一样，只不过 &lt;code&gt;v-memo&lt;/code&gt; 的对象是 DOM。&lt;/p&gt;
+&lt;p&gt;这个新指令将缓存它所控制的DOM部分，如果一个特定的值发生变化，只需运行更新并重新渲染。这些值是由我们自己手动设置。&lt;/p&gt;
+&lt;h2&gt;事例&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+    ..the rest of the component
+    &amp;lt;div v-memo="[myValue]"&amp;gt;
+      &amp;lt;svg &amp;gt;
+        &amp;lt;title&amp;gt;{{MyValue}}&amp;lt;/title&amp;gt;
+        ...
+      &amp;lt;/svg&amp;gt;
+      &amp;lt;vue-custom-element :value="myValue"&amp;gt;&amp;lt;/vue-custom-element&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;对上面解释一下： &lt;code&gt;v-memo&lt;/code&gt; 通常是作为组件的一部分来使用的，它只是影响组件 dom 的一个子集。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div v-memo="[myValue]"&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;接着，我们将 &lt;code&gt;v-memo&lt;/code&gt;分配给了一个特定的 &lt;code&gt;DIV&lt;/code&gt; 和它的所有子元素。当调用 &lt;code&gt;v-memo&lt;/code&gt; 时，需要传递一个值数组，以控制子树的渲染。&lt;/p&gt;
+&lt;p&gt;数组接受一个或多个值 &lt;code&gt;v-memo="[valueOne, valueTwo]"&lt;/code&gt;，也接受像 &lt;code&gt;v-memo="myValue === true"&lt;/code&gt;这样的表达。&lt;/p&gt;
+&lt;p&gt;另外：用一个空数组调用 &lt;code&gt;v-memo&lt;/code&gt;相当于使用&lt;code&gt;v-once&lt;/code&gt;，只会渲染该部分组件一次。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;svg &amp;gt;
+  &amp;lt;title&amp;gt;{{MyValue}}&amp;lt;/title&amp;gt;
+  ...
+&amp;lt;/svg&amp;gt;
+&amp;lt;vue-custom-element :value="myValue"&amp;gt;&amp;lt;/vue-custom-element&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;同在看下子树的内容。在我们的例子中，使用了一个 svg 元素和一个自定义 Vue 组件 &lt;code&gt;vue-custom-element&lt;/code&gt;。这样做是为了说明一件事：&lt;code&gt;v-memo&lt;/code&gt; 包含任何元素。&lt;/p&gt;
+&lt;h4&gt;错误的使用方式&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div v-memo="[myValue]"&amp;gt;
+  &amp;lt;p&amp;gt;Static content, no vue values here&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在上面的例子中，包含在 &lt;code&gt;v-memo&lt;/code&gt; 中的子树不需要被缓存，因为它是静态的，不会改变（它不包括任何Vue变量）。Vue3 会对静态进行一个提升，以便提高性能。&lt;/p&gt;
+&lt;p&gt;在一个静态的HTML上添加 &lt;code&gt;v-memo&lt;/code&gt; 是没啥作用，不管这个HTML有多复杂。&lt;/p&gt;
+&lt;h4&gt;管理更新&lt;/h4&gt;
+&lt;p&gt;在有些情况下，&lt;code&gt;v-memo&lt;/code&gt;不仅可以用来提高性能，还可以通过控制组件的更新周期，实际改善UX（用户体验）。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div v-memo="[allFieldChanged]"&amp;gt;
+  &amp;lt;p&amp;gt;{{ field1 }}&amp;lt;/p&amp;gt;
+  &amp;lt;p&amp;gt;{{ field2 }}&amp;lt;/p&amp;gt;
+  &amp;lt;p&amp;gt;{{ field3 }}&amp;lt;/p&amp;gt;
+  &amp;lt;p&amp;gt;{{ field4 }}&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在上面的例子中，改变一个单独的字段，例如 &lt;code&gt;field1&lt;/code&gt;，并不会导致重新渲染。新的字段将在所有字段都被更新后显示。&lt;/p&gt;
+&lt;p&gt;最近遇到一个情况，一个子组件会对一个大的JSON数据集进行更新和响应。在这种情况下，使用 &lt;code&gt;v-memo&lt;/code&gt; 真的很有帮助，当所有的变化都完成后，就可以触发更新。&lt;/p&gt;
+&lt;h4&gt;与 v-for 结合使用&lt;/h4&gt;
+&lt;p&gt;使用 &lt;code&gt;v-memo&lt;/code&gt; 的一个最常见的用例是在处理使用 &lt;code&gt;v-for&lt;/code&gt; 渲染的非常大的列表时。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div v-for="item in list" :key="item.id" v-memo="[item.id === selected]"&amp;gt;
+  &amp;lt;p&amp;gt;ID: {{ item.id }} - selected: {{ item.id === selected }}&amp;lt;/p&amp;gt;
+  &amp;lt;p&amp;gt;...more child nodes&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果不在上面的代码中使用 &lt;code&gt;v-memo&lt;/code&gt;，&lt;code&gt;selected&lt;/code&gt; 变量的每一次改变都会导致列表的完全重新渲染。新指令提供的缓存，允许只更新表达式 &lt;code&gt;item.id === selected&lt;/code&gt; 发生变化的行，也就是当某个项被选中或者取消时。&lt;/p&gt;
+&lt;p&gt;如果我们考虑一个有 1000 条数据的列表。使用上述代码的 &lt;code&gt;v-memo&lt;/code&gt;，可以为每一个变化节省998个条重新渲染。&lt;/p&gt;
+&lt;h4&gt;无意中停止了子组件触发的更新&lt;/h4&gt;
+&lt;p&gt;我们知道 &lt;code&gt;v-memo&lt;/code&gt; 会停止子树渲染更新，但需要注意的是，使用这个指令实际上会停止任何可能被更新触发的代码的执行，如 watch 函数等。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div v-memo="[points &amp;gt; 1000]"&amp;gt;
+  &amp;lt;myComponent :points="points" /&amp;gt;
+&amp;lt;/div&amp;gt;
+
+//myComponent
+&amp;lt;isLevel1 v-if="points &amp;lt;= 1000"&amp;gt;....&amp;lt;/isLevel1&amp;gt;
+&amp;lt;isLevel2 v-if="points &amp;gt; 1000"&amp;gt;...&amp;lt;/isLevel2&amp;gt;
+&amp;lt;script&amp;gt;
+...,
+watch: {
+  points() {
+    logPointChange();
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在上面的代码中，如果我们的 &lt;code&gt;points&lt;/code&gt; 值是 1000 以内变化，那么 &lt;code&gt;watch&lt;/code&gt; 函数不会被执行，直到 &lt;code&gt;points&lt;/code&gt; 的值大于 1000 才会触发 watch 函数的执行。&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;这个新的指令对于要求性能极高的项目有很在帮助了，一般是在比较大型的项目中使用的，当然小型项目，大家可以根据项目需要进行食用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;交流&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
+&lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
+&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Sun, 18 Sep 2022 16:41:07 GMT</pubDate></item><item><title>为什么说：JavaScript 模块中的默认导出很糟糕</title><link>https://juejin.cn/post/7143396454366314527</link><description>&lt;blockquote&gt;
 &lt;p&gt;本文首发于微信公众号：大迁世界, 我的微信：qq449245884，我会第一时间和你分享前端行业趋势，学习途径等等。
 更多开源作品请看 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; ，包含一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7483,183 +7536,7 @@ describe("notification.vue", () =&amp;gt; {
 &lt;blockquote&gt;
 &lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
 &lt;p&gt;本文 GitHub  https://github.com/qq449245884/xiaozhi 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Mon, 08 Aug 2022 16:32:18 GMT</pubDate></item><item><title>type="module" 你了解，但 type="importmap" 你知道吗</title><link>https://juejin.cn/post/7127449194389831716</link><description>&lt;blockquote&gt;
-&lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
-本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;当ES模块第一次在ECMAScript 2015中被引入，作为在JavaScript中标准化模块系统的一种方式时，它是通过在&lt;code&gt;import&lt;/code&gt;语句中指定相对或绝对路径来实现的。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import dayjs from "https://cdn.skypack.dev/dayjs@1.10.7"; // ES modules
-
-console.log(dayjs("2019-01-25").format("YYYY-MM-DDTHH:mm:ssZ[Z]"));
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这与模块在其他通用模块系统中的工作方式略有不同，例如CommonJS，以及在使用webpack这样的模块捆绑器时，使用的是更简单的语法。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;const dayjs = require('dayjs') // CommonJS
-
-import dayjs from 'dayjs'; // webpack
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在这些系统中，通过Node.js运行时或相关的构建工具，导入指定器被映射到一个特定（和版本）的文件。用户只需要在导入语句中应用裸露的模块指定符（通常是包名），围绕模块解析的问题就会被自动解决。&lt;/p&gt;
-&lt;p&gt;由于开发者已经熟悉了这种从&lt;code&gt;npm&lt;/code&gt;导入包的方式，所以需要一个构建步骤来确保以这种方式编写的代码能够在浏览器中运行。这个问题由&lt;a href="https://github.com/WICG/import-maps"&gt;import maps&lt;/a&gt;解决了。从本质上讲，它允许将导入指定器映射到相对或绝对的URL上，这有助于控制模块的解析，而不需要应用构建步骤。&lt;/p&gt;
-&lt;h2&gt;import maps 是怎么工作的&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type="importmap"&amp;gt;
-{
-  "imports": {
-    "dayjs": "https://cdn.skypack.dev/dayjs@1.10.7",
-  }
-}
-&amp;lt;/script&amp;gt;
-&amp;lt;script type="module"&amp;gt;
-  import dayjs from 'dayjs';
-
-  console.log(dayjs('2019-01-25').format('YYYY-MM-DDTHH:mm:ssZ[Z]'));
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;import map 是通过HTML document中的 &lt;code&gt;&amp;lt;script type="importmap"&amp;gt;&lt;/code&gt;标签指定的。这个script  标签必须放在 document 中的中第一个 &lt;code&gt;&amp;lt;script type="module"&amp;gt;&lt;/code&gt;标签之前（最好是在&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;中），以便在进行模块解析之前对它进行解析。此外，目前每个 document 只允许有一个 &lt;code&gt;import map&lt;/code&gt;，未来可能会取消这一限制。&lt;/p&gt;
-&lt;p&gt;在 &lt;code&gt;script&lt;/code&gt; 标签内，一个JSON对象被用来指定document中 script 所需的所有必要的模块映射。一个典型的 import map 的结构如下所示。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type="importmap"&amp;gt;
-{
-  "imports": {
-    "react": "https://cdn.skypack.dev/react@17.0.1",
-    "react-dom": "https://cdn.skypack.dev/react-dom",
-    "square": "./modules/square.js",
-    "lodash": "/node_modules/lodash-es/lodash.js"
-  }
-}
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在上面的 &lt;code&gt;imports&lt;/code&gt; 对象中，每个属性都对应着一个映射。映射的左边是 &lt;code&gt;import&lt;/code&gt; 指定器的名称，而右边是指定器应该映射到的相对或绝对URL。&lt;/p&gt;
-&lt;p&gt;当在映射中指定相对URL时，确保它们总是以&lt;code&gt;/&lt;/code&gt;、&lt;code&gt;./&lt;/code&gt;或&lt;code&gt;./&lt;/code&gt;开头。请注意，在 import map 中出现包并不意味着它一定会被浏览器加载。任何没有被页面上的 &lt;code&gt;script&lt;/code&gt; 使用的模块都不会被浏览器加载，即使它存在于&lt;strong&gt;import map&lt;/strong&gt;中。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type="importmap" src="importmap.json"&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;你也可以在一个外部文件中指定你的映射，然后使用&lt;code&gt;src&lt;/code&gt;属性链接到该文件（如上所示）。如果决定使用这种方法，请确保在发送文件时将其&lt;code&gt;Content-Type&lt;/code&gt;标头设置为&lt;code&gt;application/importmap+json&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;注意，出于性能方面的考虑，推荐使用内联方式，本文的其余部分的事例，也会使用内联方式。&lt;/p&gt;
-&lt;p&gt;一旦指定了映射，就可以在&lt;code&gt;import&lt;/code&gt;语句中使用&lt;code&gt;import&lt;/code&gt;说明符，如下所示&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type="module"&amp;gt;
-  import { cloneDeep } from 'lodash';
-
-  const objects = [{ a: 1 }, { b: 2 }];
-
-  const deep = cloneDeep(objects);
-  console.log(deep[0] === objects[0]);
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;需要注意的是，导入映射中的映射不会影响诸如&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;标签的 &lt;code&gt;src&lt;/code&gt; 属性之类的位置。因此，如你的使用&lt;code&gt;&amp;lt;script src="/app.js"&amp;gt;&lt;/code&gt;之类的内容，浏览器将试图在该路径上下载一个字面上的&lt;code&gt;app.js&lt;/code&gt;文件，而不管 import map 中的内容如何。&lt;/p&gt;
-&lt;h2&gt;将指定者映射到整个包中&lt;/h2&gt;
-&lt;p&gt;除了将一个指定器映射到一个模块，你也可以将一个指定器映射到一个包含多个模块的包。这是通过使用指定器键和以尾部斜线结尾的路径来实现的。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type="importmap"&amp;gt;
-{
-  "imports": {
-    "lodash/": "/node_modules/lodash-es/"
-  }
-}
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这种方法允许我们导入指定路径中的任何模块，而不是整个主模块，这会导致所有组件模块由浏览器下载。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type="module"&amp;gt;
-  import toUpper from 'lodash/toUpper.js';
-  import toLower from 'lodash/toLower.js';
-
-  console.log(toUpper('hello'));
-  console.log(toLower('HELLO'));
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;动态地构建 import map&lt;/h2&gt;
-&lt;p&gt;映射也可以基于任意条件在 script  中动态构造，这种能力可以用来根据特征检测有条件地导入模块。下面的例子根据&lt;code&gt;IntersectionObserver API&lt;/code&gt;是否被支持，在&lt;code&gt;lazyload&lt;/code&gt;指定器下选择正确的文件进行导入。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;
-  const importMap = {
-    imports: {
-      lazyload: 'IntersectionObserver' in window
-        ? './lazyload.js'
-        : './lazyload-fallback.js',
-    },
-  };
-
-  const im = document.createElement('script');
-  im.type = 'importmap';
-  im.textContent = JSON.stringify(importMap);
-  document.currentScript.after(im);
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果你想使用这种方法，请确保在创建和插入 import map 脚本标签之前进行（如上所述），因为修改一个已经存在的导入地图对象不会有任何效果。&lt;/p&gt;
-&lt;h2&gt;通过对哈希值的映射来提高脚本的可缓存性&lt;/h2&gt;
-&lt;p&gt;实现静态文件长期缓存的常见技术是在文件名中使用文件内容的哈希值，这样文件就会一直在浏览器的缓存中，直到文件内容发生变化。当这种情况发生时，文件将得到一个新的名字，以便最新的更新立即反映在应用程序中。&lt;/p&gt;
-&lt;p&gt;在传统的 bundling scripts,的方式下，如果一个被多个模块依赖的依赖关系被更新，这种技术就会出现问题。这将导致所有依赖该依赖的文件被更新，迫使浏览器重新下载它们，即使只有一个字符的代码被改变。&lt;/p&gt;
-&lt;p&gt;import map 为这个问题提供了一个解决方案，它允许通过重映射技术单独更新每个依赖关系。假设你需要从一个名为&lt;code&gt;post.bundle.8cb615d12a121f6693aa.js&lt;/code&gt;的文件中导入一个方法:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type="importmap"&amp;gt;
-  {
-    "imports": {
-      "post.js": "./static/dist/post.bundle.8cb615d12a121f6693aa.js",
-    }
-  }
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;而不是这样写：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import { something } from './static/dist/post.bundle.8cb615d12a121f6693aa.js'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;可以这么写：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import { something } from 'post.js'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;当更新文件的时候，只有 &lt;code&gt;import map&lt;/code&gt; 需要更新。由于对其导出的引用没有更改，它们将保持在浏览器中的缓存，同时由于更新的哈希值，更新的脚本将再次被下载。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type="importmap"&amp;gt;
-  {
-    "imports": {
-      "post.js": "./static/dist/post.bundle.6e2bf7368547b6a85160.js",
-    }
-  }
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;使用同一模块的多个版本&lt;/h2&gt;
-&lt;p&gt;在 import map 中很容易实现一个包对应多个版本，所需要做的就是在映射中使用不同的导入指定符，如下图所示：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    &amp;lt;script type="importmap"&amp;gt;
-      {
-        "imports": {
-          "lodash@3/": "https://unpkg.com/lodash-es@3.10.1/",
-          "lodash@4/": "https://unpkg.com/lodash-es@4.17.21/"
-        }
-      }
-    &amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;通过使用作用域，也可以用同一个导入指定符来指代同一个包的不同版本。这允许我们在一个给定的作用域内改变导入指定符的含义。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type="importmap"&amp;gt;
-  {
-    "imports": {
-      "lodash/": "https://unpkg.com/lodash-es@4.17.21/"
-    },
-    "scopes": {
-      "/static/js": {
-        "lodash/": "https://unpkg.com/lodash-es@3.10.1/"
-      }
-    }
-  }
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;有了这种映射，在&lt;code&gt;/static/js&lt;/code&gt;路径下的任何模块，在导入语句中引用lodash/指定器时，将使用&lt;code&gt;https://unpkg.com/lodash-es@3.10.1/&lt;/code&gt;，而其他模块将使用&lt;code&gt;https://unpkg.com/lodash-es@4.17.21/&lt;/code&gt;。&lt;/p&gt;
-&lt;h2&gt;使用带有 import map 的 NPM 包&lt;/h2&gt;
-&lt;p&gt;正如在本文中所展示的，任何使用ES Modules的NPM包的生产版本都可以通过ESM、Unpkg和Skypack等CDN在 import map中使用。&lt;/p&gt;
-&lt;p&gt;即使NPM上的包不是为ES模块系统和本地浏览器导入行为设计的，像Skypack和ESM这样的服务也可以将它们转化为可在导入地图中使用的包。可以使用Skypack主页上的搜索栏来寻找浏览器优化的NPM包，这些包可以立即使用，而无需摆弄构建步骤。&lt;/p&gt;
-&lt;h2&gt;检测 import map支持&lt;/h2&gt;
-&lt;p&gt;只要支持&lt;code&gt;HTMLScriptElement.supports()&lt;/code&gt;方法，就可以在浏览器中检测 import map的支持:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;if (HTMLScriptElement.supports &amp;amp;&amp;amp; HTMLScriptElement.supports('importmap')) {
-  // import maps is supported
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;支持旧的浏览器&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/696ce1e135b9419c9d6628639f7fca16~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;Import map 使得在浏览器中使用裸模块指定器成为可能，而无需依赖目前在JavaScript生态系统中普遍存在的复杂的构建系统，但目前网络浏览器中并不广泛支持它。&lt;/p&gt;
-&lt;p&gt;在整理本文时，Chrome和Edge浏览器的89版及以后的版本提供了全面支持，但Firefox、Safari和一些移动浏览器不支持这项技术。为了在这些浏览器中保留对 import map的使用，必须采用一个合适的 polyfill 。&lt;/p&gt;
-&lt;p&gt;一个可以使用的polyfill的例子是&lt;a href="https://github.com/guybedford/es-module-shims"&gt;ES Module Shims polyfil&lt;/a&gt;l，它为任何支持ES模块基线的浏览器(约94%的浏览器)添加了 import map 和其他新模块特性的支持。我们所需要做的就是在 import map 脚本之前在HTML文件中包含&lt;code&gt;es-module-shim&lt;/code&gt;脚本&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script async src="https://unpkg.com/es-module-shims@1.3.0/dist/es-module-shims.js"&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在包括polyfill之后，可能会在你的控制台中得到一个&lt;strong&gt;JavaScript TypeError&lt;/strong&gt;。这个错误可以被安全地忽略，因为它不会产生任何面向用户的后果。&lt;/p&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
-&lt;p&gt;import map提供了一种更理智的方式来在浏览器中使用ES模块，而不局限于从相对或绝对的URL中导入。这使得我们可以很容易地移动代码，而不需要调整 import语句，并使个别模块的更新更加无缝，而不影响依赖这些模块的脚本的缓存能力。总的来说，import map为ES模块在服务器和浏览器中的使用方式带来了平等性。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;作者：romaopedro199  译者：前端小智 来源：dev 原文：https://www.honeybadger.io/blog/import-maps/&lt;/p&gt;
-&lt;h3&gt;交流&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
-本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Tue, 02 Aug 2022 17:03:17 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
+&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Mon, 08 Aug 2022 16:32:18 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: awesome-green
 highlight: a11y-light&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://juejin.cn/post/7095547569777934367"&gt;13.5W 播放量的 TS 动画版进阶教程合集来了！&lt;/a&gt;，通过形象生动的动画，让你轻松搞懂 TypeScript 的难点和核心知识点！&lt;/p&gt;
