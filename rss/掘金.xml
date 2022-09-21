@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Tue, 20 Sep 2022 22:52:27 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 53 期：React Router 6.4、VS Code August 2022、2022 Google 谷歌开发者大会、Meta 开源</title><link>https://juejin.cn/post/7145061375994724389</link><description>&lt;hr /&gt;
+<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Wed, 21 Sep 2022 22:51:58 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 53 期：React Router 6.4、VS Code August 2022、2022 Google 谷歌开发者大会、Meta 开源</title><link>https://juejin.cn/post/7145061375994724389</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: fancy
 highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
@@ -3209,7 +3209,327 @@ S 仅由数字和字母组成。&lt;/p&gt;
 &lt;ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959;"&gt;
 &lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6872115031501340679" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」一张脑图带你看动态规划算法之美&lt;/a&gt;（370+👍）&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6861376131615227912" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」DFS和BFS算法之美&lt;/a&gt;(240+👍)&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6856546833025237006" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」梳理6大排序算法&lt;/a&gt;(220+👍)&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6874708801208254478" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」带你看哈希算法之美(210+👍)&lt;/a&gt;&lt;/section&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;/section&gt;&lt;/li&gt;&lt;/ol&gt;
-&lt;p class="nice-suffix-juejin-container" id="nice-suffix-juejin-container" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; margin-top: 20px !important;"&gt;本文使用 &lt;a href="https://mdnice.com/?from=juejin" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;mdnice&lt;/a&gt; 排版&lt;/p&gt;&lt;/section&gt;</description><author>TianTianUp</author><pubDate>Sun, 11 Oct 2020 08:11:57 GMT</pubDate></item><item><title>规范升级 NPM 包</title><link>https://juejin.cn/post/7143025612267978760</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p class="nice-suffix-juejin-container" id="nice-suffix-juejin-container" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; margin-top: 20px !important;"&gt;本文使用 &lt;a href="https://mdnice.com/?from=juejin" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;mdnice&lt;/a&gt; 排版&lt;/p&gt;&lt;/section&gt;</description><author>TianTianUp</author><pubDate>Sun, 11 Oct 2020 08:11:57 GMT</pubDate></item><item><title>探索组件在线预览和调试</title><link>https://juejin.cn/post/7145604963593355277</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="梓安.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d0f54a21fcf14baa85523b4ccbba2a52~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是第 159 篇不掺水的原创，想获取更多原创好文，请搜索公众号【政采云前端团队】关注我们吧~&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;背景&lt;/h2&gt;
+&lt;p&gt;前端人员在开发过程中，如何快速&lt;strong&gt;感知&lt;/strong&gt;到组件的功能和属性？现状是通过阅读组件相关文档，好在基础组件库的文档相对完整和清晰，手动补全示例。业务组件相关文档目前只能在内部 NPM 私库上查看，静态的 API 文档，没有组件的 Demo。对于非前端人员，如何预览和调试组件呢？比如：某一天，产品想提前调研其它业务线的业务组件功能能否满足业务诉求；业务组件开发完成，测试和设计可以介入组件相关功能的验证；运营人员可以在低代码搭建平台，预览和调试相关组件等。&lt;/p&gt;
+&lt;p&gt;基于以上痛点问题，我们从需求点出发，逐步探索实现方案。&lt;/p&gt;
+&lt;h2&gt;需求&lt;/h2&gt;
+&lt;h3&gt;场景分析&lt;/h3&gt;
+&lt;h4&gt;功能&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;组件预览&lt;/li&gt;
+&lt;li&gt;组件调试 面向不同的用户群体，组件功能调试的交互分为两种，一种是&lt;strong&gt;代码调试&lt;/strong&gt;，即通过代码编辑器修改示例代码，另一种是组件 &lt;strong&gt;schema 调试&lt;/strong&gt;，通过 schema JSON 数据来描述组件的属性，然后 通过 schema 渲染器渲染成组件属性面板，这样非研发人员也可以方便的调试组件功能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;分类&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;基础组件&lt;/li&gt;
+&lt;li&gt;业务组件&lt;/li&gt;
+&lt;li&gt;低代码组件 大致整理了下：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="组件预览和调试-组件分类-导出.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/08984f1dad7d4d50b3ab0a58ccfa16ac~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;这里的&lt;strong&gt;低代码组件&lt;/strong&gt;是指提供给低代码搭建平台使用的自定义组件，目前公司的低代码搭建平台主要有“鲁班”，对此感兴趣的小伙伴可以翻一下往期关于 &lt;strong&gt;“鲁班”&lt;/strong&gt; 的文章。&lt;/p&gt;
+&lt;p&gt;针对组件&lt;strong&gt;schema 调试&lt;/strong&gt;，低代码组件本身自带 schema 文件，如：“鲁班”自定义组件会有一份 schema.json 文件，需要开发者去编写和维护这份文件。&lt;/p&gt;
+&lt;p&gt;如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+ &amp;nbsp;"props": {
+ &amp;nbsp; &amp;nbsp;"linkList": {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;"group": "链接配置",
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;"title": "链接列表",
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;"type": "array",
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;"fields": [
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;  {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;"name": "imageAddress",
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;"title": "图链接图片地址",
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;"type": "string"
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;  },
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;  {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;"name": "imageLink",
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;"title": "链接跳转地址",
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;"type": "string"
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;  } &amp;nbsp; 
+ &amp;nbsp; &amp;nbsp;  ]
+ &amp;nbsp;  }
+  },
+ &amp;nbsp;"models": {
+ &amp;nbsp; &amp;nbsp;"linkList": [
+ &amp;nbsp; &amp;nbsp;  {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;"imageAddress": "",
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;"imageLink": ""
+ &amp;nbsp; &amp;nbsp;  },
+ &amp;nbsp; &amp;nbsp;  {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;"imageAddress": "",
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;"imageLink": ""
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; }
+ &amp;nbsp;  ]
+  } &amp;nbsp; 
+}
+​
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;同样，业务组件也需要同一份 schema 协议的 JSON 文件，这样就可以动态调试组件的属性。但是，不会让开发组件的同学去手动编写。&lt;/p&gt;
+&lt;p&gt;自动生成 schema 文件大致思路：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="组件在线预览和调试-自动生成 schema 文件-导出.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/44db4b0c13c34831872c27bf7ea8b22c~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h4&gt;应用&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;基础组件的示例在线预览和调试&lt;/li&gt;
+&lt;li&gt;业务组件的 Demo 在线预览和调试&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;面向人群&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;研发&lt;/li&gt;
+&lt;li&gt;非研发：产品、测试、运营 研发主要用到组件的调试功能，而像运营和产品这样非研发人员，他们的诉求简单快捷，就是直接预览该组件，并且可以通过修改组件的 props 看到实时效果，那么问题来了，如何修改组件当前的 props 属性？玩过低代码的同学应该很清楚，有个组件&lt;strong&gt;属性面板&lt;/strong&gt;。基于以上，我们可能需要代码编辑面板、组件属性面板以及组件功能模块。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;大致画了下页面的结构图：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="组件在线预览和调试-界面图-导出.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cd38c6f6cf1449d7a3787312587e0124~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;调研&lt;/h2&gt;
+&lt;h3&gt;市面上成熟的产品&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Stackblitz 一款非常优秀的在线 IDE，移植了很多 VS Code 的功能和特性。目前支持了很多框架模版，如：React、Angular、Vue3、Next.js、Nuxt3 及自定义模版等，其中， StackBlitz 提供的 WebContainers 可以在浏览器端运行 Node.js 环境。&lt;/li&gt;
+&lt;li&gt;CodeSandbox 为 Web 应用程序而开发而构建的在线编辑器，同样也提供了多种模版方便开发者使用。大部分核心代码也开源了，网上也有相关的原理解析和搭建在线 IDE 方案的资料，有兴趣的同学可以去看看。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;p&gt;需求和应用场景已经很明确了，考虑到不同的用户群体，交互方式也有差别，重点是组件调试功能的差异性，对于研发人员可通过代码编辑器去修改代码达到调试效果，非研发人员则通过修改属性面板的组件属性值。而市面上的成熟产品会提供一些设计思路，具体实现方案下面会细讲。&lt;/p&gt;
+&lt;h2&gt;方案&lt;/h2&gt;
+&lt;p&gt;从页面结构图，我们先聊下代码编辑器、组件属性面板、工具栏、预览区的设计方案。&lt;/p&gt;
+&lt;h4&gt;代码编辑器&lt;/h4&gt;
+&lt;p&gt;目前主流的有两种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MonacoEditor&lt;/li&gt;
+&lt;li&gt;Codemirror MonacoEditor 相对来说功能强大，集成度高，但随之带来的是比较重，而 Codemirror 轻量小巧，核心文件压缩后仅 70+ KB 左右，根据所需要支持的语言按需打包。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;两种代码编辑器都能满足我们的需求，在线修改一些组件 Demo 的部分代码，其实 Codemirror 够用了。&lt;/p&gt;
+&lt;h4&gt;组件属性面板&lt;/h4&gt;
+&lt;p&gt;了解低代码搭建平台的朋友应该很熟悉了，其实就是通过表单去动态修改组件的属性参数，因此，需要一份通用的 schema 协议，来描述组件的自定义属性。可以由&lt;strong&gt;鲁班&lt;/strong&gt;和大数据搭建平台那边提供 schema 数据，我们负责渲染即可。&lt;/p&gt;
+&lt;p&gt;大致列了下组件属性的类型和操作表单类型的对应关系：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="组件预览和调试-属性面板-导出.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30bc75c06daa4ec1a76c4c17c4617fc2~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h4&gt;工具栏&lt;/h4&gt;
+&lt;p&gt;工具栏包含的主要功能有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;账号登陆&lt;/li&gt;
+&lt;li&gt;接口代理 业务组件和低代码组件需要被调试时，比如测试人员需要介入测试组件功能，需要用到&lt;strong&gt;账号登陆&lt;/strong&gt;和&lt;strong&gt;接口代理功能&lt;/strong&gt;。组件内涉及到业务接口的请求头需要携带当前登陆用户的 token 信息，先通过请求 oauth 接口拿到对应的 token，然后塞到请求头的 Authorization 字段上。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上面实现的前提是需要一个代理服务，在本地开发环境我们可以用 &lt;strong&gt;http-proxy&lt;/strong&gt;插件创建本地代理服务，那么问题来了，在浏览器端如何做代理服务？&lt;/p&gt;
+&lt;p&gt;目前主流的方案都是通过 Chrome 插件形式，需要用户手动填写代理接口等信息。在我们的场景下，这个方案对用户体验显然不够友好。还有个方案可以利用浏览器的黑科技 —— &lt;strong&gt;Service Worker&lt;/strong&gt;，它可以拦截网页发出的请求，并能自定义返回内容，相当于在浏览器内部实现了一个反向代理。&lt;/p&gt;
+&lt;h4&gt;预览区&lt;/h4&gt;
+&lt;p&gt;核心会涉及到两点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;容器&lt;/li&gt;
+&lt;li&gt;通信 容器是指页面容器，业界通用做法都是通过 iframe，将编译好的组件代码挂载到 iframe 里一个 root 节点上，主要有环境隔离和动态生成预览页面的访问链接作用。编辑器、核心包、预览区之间的通信可以用 postMessage。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通信时序图：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="组件预览和调试-通信.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2d3c6df9ec5e494ebc6559c25d467036~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h4&gt;核心包&lt;/h4&gt;
+&lt;p&gt;设计思路，主要参考了 CodeSandbox 的核心源码，主要涉及到代码转译和代码执行。核心模块有 Manger、Transpiler、Preset、Transpiled-module、Runtime。&lt;/p&gt;
+&lt;p&gt;架构图：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="组件预览和调试架构图-导出.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2c1842b6b80e446dbe3d62debd4e314a~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;大致流程：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="组件在线预览和调试-核心包流程图-导出.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4de5229d7f9747138764c3d681c04d13~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h4&gt;Manger 模块&lt;/h4&gt;
+&lt;p&gt;顾名思义“管理者“，即管理其它核心模块，主要负责代码转译和执行的一系列过程。&lt;/p&gt;
+&lt;p&gt;核心方法有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;addTranspiledModule&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;resolveTranspiledModuleSync&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;resolveTranspiledModuleAsync&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;evaluateTranspiledModule&lt;/code&gt; 首先将转译后的模块缓存起来放到 &lt;code&gt;transpiledModules&lt;/code&gt; 对象 ，需要的话可以从缓存里同步或异步加载转译后的模块，如果需要执行转译的模块，可以调用 &lt;code&gt;evaluateTranspiledModule&lt;/code&gt; 方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;transpiledModules&lt;/code&gt; 的类型定义：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type IModule = {
+ &amp;nbsp;path: string;
+ &amp;nbsp;url?: any;
+ &amp;nbsp;code: string;
+ &amp;nbsp;requires?: Array&amp;lt;string&amp;gt;;
+ &amp;nbsp;parent?: Module;
+};
+​
+interface ITranspiledModules {
+ &amp;nbsp;  [path: string]: {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;module: IModule;
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;tModules: {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;  [query: string]: ITranspiledModule; // ITranspiledModule 类型定义放在 Transpiled-module 模块
+ &amp;nbsp; &amp;nbsp;  };
+ &amp;nbsp;  };
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Transpiler 模块&lt;/h4&gt;
+&lt;p&gt;类比 Webpack 的 loader，对指定类型的文件进行编译，如：Babel、Typescript、vue、tsx、jsx 等。&lt;/p&gt;
+&lt;p&gt;介绍下部分内置的 Transpiler 模块：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;babelTranspiler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stylesTranspiler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rawTranspiler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;noopTranspiler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vueTranspiler&lt;/code&gt; &lt;code&gt;rawTranspiler&lt;/code&gt; 跟 Webpack 的 raw-loader 作用一样，将模块的内容作为字符串导入，从而实现静态资源内联。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;实现原理也很简单：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;module.exports = JSON.stringify(sourceCode)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;babelTranspiler&lt;/code&gt; 这里实现了简化版，script 标签引入 bable-standalone.js，拿到全局对象 Babel。&lt;/p&gt;
+&lt;p&gt;部分核心代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import babelPluginRenameImports from './plugins/babel-plugin-rename-imports';
+​
+const transpiledCode = window.Babel.transform(code, {
+ &amp;nbsp;plugins: [babelPluginRenameImports],
+ &amp;nbsp;presets: ['es2015', 'es2016', 'es2017'],
+}).code;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;vueTranspiler&lt;/code&gt; ，这里默认是 vue2.0 版本，核心依赖了 &lt;code&gt;vue-template-compiler&lt;/code&gt;、&lt;code&gt;vue-template-es2015-compiler&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;将 vue 单文件组件转换为 SFC 对象：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import * as compiler from 'vue-template-compiler';
+import type {SFCDescriptor} from 'vue-template-compiler';
+​
+const sfc:SFCDescriptor = compiler.parseComponent(content, { pad: 'line' });
+​
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;解析 Vue template 部分核心代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import * as compiler from 'vue-template-compiler';
+import transpile from 'vue-template-es2015-compiler'; &amp;nbsp; 
+ &amp;nbsp;
+function vueTemplateCompiler(html, options) {
+ &amp;nbsp;const bubleOptions = options.buble;
+ &amp;nbsp;const vueOptions = options.vueOptions || {};
+ &amp;nbsp;const userModules = vueOptions.compilerModules || options.compilerModules;
+ &amp;nbsp;const stripWith = bubleOptions.transforms.stripWith !== false;
+ &amp;nbsp;const { stripWithFunctional } = bubleOptions.transforms;
+ &amp;nbsp;const staticRenderFns = compiled.staticRenderFns.map((fn) =&amp;gt; 
+ &amp;nbsp; &amp;nbsp; toFunction(fn, stripWithFunctional)
+  ); // 静态渲染函数放到数组中
+ &amp;nbsp;const compilerOptions: compiler.CompilerOptionsWithSourceRange = {
+ &amp;nbsp; &amp;nbsp;preserveWhitespace: options.preserveWhitespace, // 是否保留HTML标记之间的所有空白字符
+ &amp;nbsp; &amp;nbsp;modules: defaultModules.concat(userModules || []), // 自定义编译模版 
+ &amp;nbsp; &amp;nbsp;directives: vueOptions.compilerDirectives || options.compilerDirectives || {}, // 自定义指令 
+ &amp;nbsp; &amp;nbsp;comments: options.hasComment, // 是否保留注释
+ &amp;nbsp; &amp;nbsp;scopeId: options.hasScoped ? options.id : null, / 
+  };
+  const compiled = compiler.compile(html, compilerOptions);
+  
+ &amp;nbsp;// 生成渲染函数和静态子树
+  let code = transpile(
+ &amp;nbsp;  'var render = ' +
+ &amp;nbsp;    toFunction(compiled.render, stripWithFunctional) +
+ &amp;nbsp; &amp;nbsp;'\n' +
+ &amp;nbsp; &amp;nbsp;'var staticRenderFns = [' + 
+      staticRenderFns.join(',') +
+ &amp;nbsp; &amp;nbsp; ']') + '\n';
+ &amp;nbsp; &amp;nbsp;// mark with stripped (this enables Vue to use correct runtime proxy detection)
+ &amp;nbsp; &amp;nbsp;if (stripWith) {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;code += `render._withStripped = true\n`;
+ &amp;nbsp;  }
+​
+ &amp;nbsp; &amp;nbsp;const exports = `{ render: render, staticRenderFns: staticRenderFns }`;
+ &amp;nbsp; &amp;nbsp;code += `module.exports = ${exports}`;
+ &amp;nbsp;
+    return code;
+}
+​
+function toFunction(code, stripWithFunctional) {
+ &amp;nbsp;return 'function (' + (stripWithFunctional ? '_h,_vm' : '') + ') {' + code + '}';
+}
+​
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Vue 在渲染阶段将模板编译为 AST，然后根据 AST 生成 render 函数，底层通过调用 render 函数会生成 VNode 创建虚拟 DOM。&lt;/p&gt;
+&lt;h4&gt;Preset 模块&lt;/h4&gt;
+&lt;p&gt;组件预设构建模版，针对不同组件的框架类型，如：Vue2、React 等，预设默认该类型组件所需的 &lt;code&gt;Transpiler&lt;/code&gt; 模块。类似于 vue-cli、create-react-app。&lt;/p&gt;
+&lt;p&gt;核心方法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;registerTranspiler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;getTranspilers&lt;/code&gt; &lt;code&gt;registerTranspiler&lt;/code&gt; 作用是注册 Transpiler 模块。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;部分伪代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vuePreset.registerTranspiler(
+  (module) =&amp;gt; /.(m|c)?jsx?$/.test(module.path),
+  [{ transpiler: babelTranspiler }]
+);
+vuePreset.registerTranspiler(
+  (module) =&amp;gt; /.vue$/.test(module.path),
+  [{ transpiler: vueTranspiler }]
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Transpiled-module 模块&lt;/h4&gt;
+&lt;p&gt;即转译后的模块，维护转译的结果、代码执行的结果、依赖的模块信息，负责驱动具体模块的转译(调用 Transpiler)和执行。&lt;/p&gt;
+&lt;h4&gt;Runtime 模块&lt;/h4&gt;
+&lt;p&gt;执行转译后的模块入口，使用 eval 执行入口文件，若遇到 require 函数，加载转译后的依赖模块然后使用 eval 执行执行。&lt;/p&gt;
+&lt;p&gt;核心代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export default function (
+ &amp;nbsp;code: string,
+ &amp;nbsp;require: Function,
+ &amp;nbsp;module: { exports: any },
+ &amp;nbsp;env: Object = {},
+ &amp;nbsp;globals: Object = {},
+  { asUMD = false }: { asUMD?: boolean } = {}
+) {
+ &amp;nbsp;const { exports } = module;
+  
+ &amp;nbsp;const g = typeof window === 'undefined' ? self : window;
+ &amp;nbsp;const global = g;
+ &amp;nbsp;g.global = global;
+  
+ &amp;nbsp;// 兼容 Node.js 环境，列举了一部分
+ &amp;nbsp;const process = {
+ &amp;nbsp; &amp;nbsp;env: { NODE_ENV: 'development', ...env },
+ &amp;nbsp; &amp;nbsp;cwd: () =&amp;gt; { return '/' },
+ &amp;nbsp; &amp;nbsp;umask: () =&amp;gt; { return 0 }
+  };
+ &amp;nbsp;
+ &amp;nbsp;// 全局变量
+ &amp;nbsp;const allGlobals: { [key: string]: any } = {
+ &amp;nbsp; &amp;nbsp;require, // require 函数
+ &amp;nbsp; &amp;nbsp;module,
+ &amp;nbsp; &amp;nbsp;exports,
+ &amp;nbsp; &amp;nbsp;process,
+ &amp;nbsp; &amp;nbsp;global,
+ &amp;nbsp; &amp;nbsp;...globals,
+  };
+​
+ &amp;nbsp;// 是否 UMD 模块
+ &amp;nbsp;if (asUMD) {
+ &amp;nbsp; &amp;nbsp;delete allGlobals.module;
+ &amp;nbsp; &amp;nbsp;delete allGlobals.exports;
+ &amp;nbsp; &amp;nbsp;delete allGlobals.global;
+  }
+ &amp;nbsp;
+ &amp;nbsp;const allGlobalKeys = Object.keys(allGlobals);
+ &amp;nbsp;const globalsCode = allGlobalKeys.length ? allGlobalKeys.join(', ') : '';
+ &amp;nbsp;const globalsValues = allGlobalKeys.map((k) =&amp;gt; allGlobals[k]);
+ &amp;nbsp;
+ &amp;nbsp;const newCode = `(function $csb$eval(` + globalsCode + `) {` + code + `\n})`;
+  (0, eval)(newCode).apply(allGlobals.global, globalsValues);
+​
+}
+​
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;小结&lt;/h3&gt;
+&lt;p&gt;从页面功能模块到组件的构建核心包设计，相信各位看官已经有了初步的了解。有两点没有提到，在这里简单补充下。&lt;/p&gt;
+&lt;p&gt;第一点是依赖包的数据源问题，简单粗暴点就是创建 manifest 文件，事先预存一份底层通用的依赖包数据，如：Babel 插件相关等，如果需要动态添加依赖包，可以使用 import-maps 特性。&lt;/p&gt;
+&lt;p&gt;第二点在 Transpiler 模块没有提到针对 react 组件的构建方案，添加相关 Babel 插件就好了，如：&lt;code&gt;transform-runtime&lt;/code&gt; 、&lt;code&gt;@babel/plugin-transform-react-jsx-source&lt;/code&gt; 等。&lt;/p&gt;
+&lt;h2&gt;最后&lt;/h2&gt;
+&lt;p&gt;背景、需求、调研、方案这四个层面，其中背景和需求更多是从产品的角度去思考和设计，这样做出来的东西才更符合用户需求和提升用户体验。我们技术人员不仅仅只关心技术层面的设计，更多时候还要从产品的角度去思考。&lt;/p&gt;
+&lt;p&gt;组件作为项目开发不可分割的一部分，从基础组件到业务组件，我们前端开发人员每天都在跟组件打交道。围绕着组件我们可以有很多专题，如何打造高质量组件？如何提升组件的复用率？如何提升组件的感知度？等等，贯穿组件的整个生命周期，那么如何治理好组件，需要我们共同努力和思考。&lt;/p&gt;
+&lt;h2&gt;参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://github.com/codesandbox/codesandbox-client/tree/master/packages/sandpack-core"&gt;CodeSandbox 核心源码&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.yuque.com/wangxiangzhong/aob8up/nb1gp2"&gt;CodeSandbox浏览器端的webpack是如何工作的？&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;推荐阅读&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7143025612267978760"&gt;规范升级 NPM 包&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7140422304920109092"&gt;你想知道的前后端协作规范都在这了&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7135217402983235592"&gt;带你了解 Tree Shaking&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7132628898453880840"&gt;厉害！这篇正则表达式竟写的如此详尽&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.zoo.team/article/http-referer"&gt;学习 HTTP Referer&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;开源作品&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;政采云前端小报&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://www.zoo.team/openweekly/"&gt;www.zoo.team/openweekly/&lt;/a&gt;&lt;/strong&gt; (小报官网首页有微信交流群)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;商品选择 sku 插件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://github.com/zcy-inc/skuPathFinder-back"&gt;https://github.com/zcy-inc/skuPathFinder-back/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;招贤纳士&lt;/h2&gt;
+&lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
+&lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 20 Sep 2022 15:18:36 GMT</pubDate></item><item><title>规范升级 NPM 包</title><link>https://juejin.cn/post/7143025612267978760</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="刘静.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/29a8a543e7ad456eb573501b05ff9796~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;这是第 158 篇不掺水的原创，想获取更多原创好文，请搜索公众号【政采云前端团队】关注我们吧~&lt;/p&gt;
@@ -5234,320 +5554,183 @@ export default defineConfig({
 &lt;h2&gt;招贤纳士&lt;/h2&gt;
 &lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
 &lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 19 Jul 2022 16:12:17 GMT</pubDate></item><item><title>表单数据形式配置化设计</title><link>https://juejin.cn/post/7119639489567260686</link><description>&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d4eb6a01e6564840817b127265b07edd~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="二刚.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7a11764e148a4c2f9ee11daa421af36b~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这是第 151 篇不掺水的原创，想获取更多原创好文，请搜索公众号关注我们吧~ 本文首发于政采云前端博客：&lt;a href="https://www.zoo.team/article/form-data"&gt;表单数据形式配置化设计&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 19 Jul 2022 16:12:17 GMT</pubDate></item><item><title>在 Vue 中，使用 $attrs 构建高级组件</title><link>https://juejin.cn/post/7145626573948469261</link><description>&lt;blockquote&gt;
+&lt;p&gt;本文首发于微信公众号：大迁世界, 我的微信：qq449245884，我会第一时间和你分享前端行业趋势，学习途径等等。
+更多开源作品请看 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; ，包含一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3&gt;前言&lt;/h3&gt;
-&lt;p&gt;在日常的中后台系统开发中，表单是和我们打交道非常多的名词。但是在一般的表单实现中、我们会做着很多重复的工作，不停在写 FormItem...，以及为组件加上“请输入/请选择”等无脑的 placeholder 文本和“请输入xx/请选择xx”等必填提示。其次表单一般都存在编辑页和详情页，而为了代码更好的维护性通常会将编辑和详情用一套代码实现。此时我们的代码里就会出现&lt;code&gt;“isEdit ？ 表单组件 ： 纯文本”&lt;/code&gt;这样无脑且重复率高的代码。秉承着更少代码更多产出的原则，我设计了一套配置化逻辑来提升这一开发体验。&lt;/p&gt;
-&lt;h4&gt;一般实现&lt;/h4&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;// 一般实现
-import React from 'react';
-import { Form, Input, Select } from 'antd';
-
-const Demo = (props) =&amp;gt; {
-  const { form: { getFieldDecorator }, obj = {}, isEdit } = props;
-  return (
-    &amp;lt;&amp;gt;
-      &amp;lt;FormItem label="姓名" &amp;gt;
-        {isEdit ? obj.name || '-' : 
-          getFieldDecorator('name', {
-            initialValue: obj.name,
-          })(
-            &amp;lt;Input placeholder="请输入" /&amp;gt;
-          )
-        }
-      &amp;lt;/FormItem&amp;gt;
-      &amp;lt;FormItem label="性别" &amp;gt;
-        {isEdit ? obj.sex || '-' : 
-          getFieldDecorator('sex', {
-            initialValue: obj.sex,
-            rules: [{ required: true, message: '请选择性别' }],
-          })(
-            &amp;lt;Select placeholder="请选择" &amp;gt;
-              &amp;lt;Option key="male" value="male"&amp;gt;男&amp;lt;/Option&amp;gt;            
-              &amp;lt;Option key="female" value="female"&amp;gt;女&amp;lt;/Option&amp;gt;
-            &amp;lt;/Select&amp;gt;
-          )
-        }
-      &amp;lt;/FormItem&amp;gt;
-       &amp;lt;FormItem label="手机号" &amp;gt;
-        {isEdit ? obj.phone || '-' : 
-          getFieldDecorator('phone', {
-            initialValue: obj.phone,
-            rules: [{ required: true, message: '请输入手机号' }],
-          })(
-            &amp;lt;Input placeholder="请输入" /&amp;gt;
-          )
-        }
-      &amp;lt;/FormItem&amp;gt;
-    &amp;lt;&amp;gt;
-  )
+&lt;p&gt;这节课，我们来看下 Vue3 中的 &lt;code&gt;$attrs&lt;/code&gt; 属性。首先，我们会介绍它的用途以及它的实现与 Vue2 有哪些不两同点，并通过事例来加深对它的理解。&lt;/p&gt;
+&lt;p&gt;真正理解了 &lt;code&gt;$attrs&lt;/code&gt; 属性有助于我们构建易于使用和可扩展的高级组件&lt;/p&gt;
+&lt;h2&gt;什么是 &lt;code&gt;$attrs&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;对 &lt;code&gt;$attrs&lt;/code&gt; 定义， Vue2 与 Vue3 是不一样的，这里我们主要来介绍 Vue3 的版本：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$attrs 对象包含了除组件所声明的 props 和 emits 之外的所有其他 attribute，例如 class，style，v-on 监听器等等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;$attrs &lt;/code&gt;也可以被看作是一个安全网，它可以捕获任何我们没有在组件中声明的东西。我们考虑一个只有一个属性和事件处理程序的组件，如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+  &amp;lt;h1 @click="$emit('custom', '改变标题')"&amp;gt;{{ title }}&amp;lt;/h1&amp;gt;
+&amp;lt;/template&amp;gt;
+&amp;lt;script&amp;gt;
+export default {
+  name: 'Example',
+  props: ['title'],
+  emits: ['custom'],
 }
+&amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;配置化的实现&lt;/h4&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;// 配置化的实现
-import React from 'react';
-import { renderDataForm } from 'src/util/renderDataForm';
+&lt;p&gt;如果在父组件中像下面这样实例化上面的组件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div id="app"&amp;gt;
+    &amp;lt;SimpleEvent
+      id="myId"
+      class="myClass"
+      data-cy="cypress-testing"
+      @blur="onBlur"
+      title="测试$attrs"
+      description="没有声明 props"
+      @custom="onCustom"
+    /&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
 
-const Demo = (props) =&amp;gt; {
-  const { form, obj = {}, isEdit } = props;
-  const conf = [{
-    label: '姓名', // 表单的label
-    field: 'name', // 表单字段名
-    initialValue: obj.name, // 表单默认值
-    required: false, // 是否必填、默认必填
-  }, {
-    label: '性别',
-    field: 'sex',
-    initialValue: obj.sex,
-    formItemType: 'Select', // 表单类型默认 Input
-    options: [{ value: 'male', label: '男' }, { value: 'female', label: '女' }], // 下拉选项
-  }, {
-    label: '手机号',
-    field: 'phone',
-    initialValue: obj.phone,
-  }];
-  const dataForm = isEdit ? 'form' : 'text';
-  // 传入form，表单配置，想要的数据形式
-  return renderDataForm(form, conf, dataForm));
+&amp;lt;script setup&amp;gt;
+import SimpleEvent from './components/Button.vue'
+
+const onBlur = () =&amp;gt; {
+  // todo
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;实现思路&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e18fd50e8a52429294102208f7d5f5ae~tplv-k3u1fbpfcp-zoom-1.image" /&gt;
-如上图所示，无论是在详情页中显示文本亦或是编辑页中的表单组件包裹的数据，其实本身所对应的都是同一个数据，只是展示形式不一样而已。在这里我们暂时将数据的形式定为表单组件形式与文本形式。其实在实际的使用中，由于数据的收集形式不同，会出现第三种数据形式。它就是表单文本形式，一种以文本展示但数据可被表单自动收集的形式，我把它定义为 FormText（如下所示）。至此，针对实现数据详情与编辑形式的方案有了这样两种，表单与文本组合或表单与表单文本组合的实现。本次我选择表单与文本组合的方案。&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;/**
- * 用于 Form 表单内部受控展示文本
- */
-export default class FormText extends Component {
-  render() {
-    const { value, formatMethod = a =&amp;gt; a, defaultText = '-', ...resetProps } = this.props;
-    return &amp;lt;span {...resetProps}&amp;gt;{formatMethod(value) || defaultText}&amp;lt;/span&amp;gt;;
-  }
+const onCustom = () =&amp;gt; {
+  // todo
 }
 
-// 使用
-&amp;lt;FormItem label="姓名"&amp;gt;
-  {getFieldDecorator('name', {
-      initialValue: 'egg',
-  })(&amp;lt;FormText /&amp;gt;)}
-&amp;lt;/FormItem&amp;gt;
-   
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;具体实现&lt;/h3&gt;
-&lt;p&gt;1、形式选择(表单组件 or 文本)&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;const renderDataForm = (form, conf = {}, dataForm = 'form') =&amp;gt; {
-  // customRenderText 自定义文本形式
-  const { customRenderText } = conf;
-  return (
-    &amp;lt;FormItem label={conf.label} {...conf.formItemProps} &amp;gt;
-      {dataForm === 'form' ? renderFormItem(form, conf) : 
-        customRenderText ? customRenderText(conf) : renderText(conf) }
-    &amp;lt;/FormItem&amp;gt;
-  );
-};
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;2、表单组件选择&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;
-export const renderFormItem = (form, rest) =&amp;gt; {
-  const { getFieldDecorator } = form;
-  const { label = '', field = '', formItemType = 'input', initialValue, required = true, rules = [], ...itemRest } = rest;
-  return (getFieldDecorator(field, {
-    initialValue,
-    rules: [
-      // 必填提示
-      { required, message: renderMessage(formItemType, label) },
-      ...rules,
-    ],
-    ...(formItemType === 'upload' ? { // Upload组件的通用配置
-      getValueFromEvent: (e) =&amp;gt; {
-        if (Array.isArray(e)) {
-          return e;
-        }
-        return e &amp;amp;&amp;amp; e.fileList;
-      },
-      valuePropName: 'fileList' } : {}),
-  })(
-    renderItem(formItemType, itemRest)
-  ));
-};
+&amp;lt;/script&amp;gt;
 
-// 选择表单组件
-const renderItem = (formItemType, itemRest) =&amp;gt; {
-  const { options = [], CustomFormItem } = itemRest;
-  const obj = { Input, TextArea, InputNumber, Upload, Select, RadioGroup, CheckboxGroup, DatePicker };
-  // 自定义的表单组件
-  if (formItemType === 'CustomFormItem') {
-    return &amp;lt;CustomFormItem {...itemRest} /&amp;gt;;
-  }
-  // 不存在对应组件时返回默认的 Input 组件
-  if (!obj[formItemType]) {
-    return &amp;lt;Input placeholder="请输入" {...itemRest} /&amp;gt;;
-  }
-  const Comp = obj[formItemType];
-  // 双标签组件处理
-  if (['Select', 'Upload'].includes(formItemType)) {
-    return formItemType === 'Upload' ? (
-      &amp;lt;Upload
-        {...itemRest}
-      &amp;gt;
-        &amp;lt;Button&amp;gt;&amp;lt;Icon type="upload" /&amp;gt;上传&amp;lt;/Button&amp;gt;
-      &amp;lt;/Upload&amp;gt;
-    ) : (
-      &amp;lt;Comp {...getDefaultCompProps(itemRest)} {...itemRest} &amp;gt;
-        {options.map(el =&amp;gt; (
-          &amp;lt;Option key={el.value} value={el.value}&amp;gt;{el.label || el.name}&amp;lt;/Option&amp;gt;))}
-      &amp;lt;/Comp&amp;gt;
-    );
-  }
-  // 单标签组件
-  return &amp;lt;Comp {...getDefaultCompProps(itemRest)} {...itemRest} /&amp;gt;;
-};
-
-// 获取组件属性
-const getDefaultCompProps = (conf = {}) =&amp;gt; {
-  const { formItemType } = conf;
-  const props = {};
-  props.placeholder = renderMessage(formItemType);
-  if (formItemType === 'InputNumber') {
-    // zeroOmit 小数点后多余的零是否省略，limitDecimal 限制最长的小数位数
-    const { zeroOmit = true, limitDecimal = 6 } = conf;
-    const limitDecimalsF = (value) =&amp;gt; {
-      const reg = new RegExp(`^(-)*(\\d+)\\.(\\d{${limitDecimal}}).*$`);
-      return `${value}`.replace(reg, '$1$2.$3');
-    };
-    if (zeroOmit) {
-      props.formatter = limitDecimalsF;
-      props.parse = limitDecimalsF;
-    }
-  }
-  if (formItemType === 'Input') {
-    props.maxLength = 100; // 输入框的默认最大输入字符长度
-  }
-  if (formItemType === 'TextArea') {
-    props.maxLength = 500; // 文本框的默认最大输入字符长度
-  }
-  return props;
-};
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;3、映射文本&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;export const renderText = (rest) =&amp;gt; {
-  const { formItemType = 'Input', initialValue, selectOptions = [], selectMode = '', options = [] } = rest;
-  switch (formItemType) {
-  case 'RadioGroup': 
-    return (options.find(item =&amp;gt; item.value === initialValue) || {}).label || '-';
-  case 'DatePick': 
-    const { format = 'YYYY-MM-DD HH:mm:ss' } = rest;
-    // 日期组件组件值格式化为对应的 文本
-    return initialValue !== undefined ? moment(initialValue).format(format) : '-';
-  // ...code
-  default: 
-    return bizStringFormat(initialValue); // 无 值 时 默认 ‘-’
-  }
+&lt;p&gt;如果在组件中把 &lt;code&gt;$attrs&lt;/code&gt; 打印出来，我们会得到如下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  id: 'myId',
+  class: 'myClass',
+  'data-cy': 'cypress-testing',
+  description: '没有声明 props',
+  onBlur: () =&amp;gt; { // todo } 
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;4、通用校验规则整理&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;export const postCode = /^[0-9]{6}$/;
-export const phone = /^1\d{10}$/;
-// ...其他正则
-
-// form rules
-export const postCodeRule = {
-  pattern: postCode,
-  message: '请输入6位数字',
-};
-export const phoneRule = { 
-  pattern: phone,
-  message: '请输入11位号码',
-};
-// ...其他表单校验规则
-
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;使用示例&lt;/h3&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;const Demo = (props) =&amp;gt; {
-  const { form } = props;
-  // 数据
-  const obj = {
-    email: '123@egg.com',
-    addr: '派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星派大星',
-    sort: 'up',
-    birthday: '1999-01-23',
-    sex: 'male',
-    file: [{ fileId: '123', name: '信用承诺书', size: 1024 }],
-  };
-  // 因为数据的形式默认为表单，所以 dataForm: 'form' 可不配置
-  const formConf = [{
-    label: '邮箱',
-    field: 'email',
-    initialValue: obj.email,
-    rules: [emailRule], // emailRule 为邮箱校验规则
-  }, {
-    label: '地址',
-    field: 'addr',
-    initialValue: obj.addr,
-    formItemType: 'TextArea',
-  }, {
-    label: '排序',
-    field: 'sort',
-    initialValue: obj.sort,
-    formItemType: 'Select',
-    options: [{ value: 'up', label: '升序' }, { value: 'down', label: '降序' }],
-  }, {
-    label: '生日',
-    field: 'birthday',
-    initialValue: obj.birthday,
-    formItemType: 'DatePicker',
-    format: 'YYYY-MM-DD', // 日期组件的格式配置字段
-  }, {
-    label: '性别',
-    field: 'sex',
-    initialValue: obj.sex,
-    formItemType: 'RadioGroup',
-    options: [{ value: 'male', label: '男' }, { value: 'female', label: '女' }],
-  }, {
-    label: '信用承诺书',
-    field: 'file',
-    initialValue: obj.file,
-    formItemType: 'Upload',
-  }];
-  const dataForm = isEdit ? 'form' : 'text';
-  // 将配置遍历传入renderDataForm
-  // 当然你也可以封装成组建，直接向组建传入 form、formConf，减少遍历的重复书写和整洁
-  return formConf.map(item =&amp;gt; renderDataForm(form, item, dataForm));
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;最终呈现如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;编辑&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fa89ecfb595d45239195ce8eb0d09b2b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;
-2. 触发校验&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/02b9149e679c42a6afd1e312ccd4f67e~tplv-k3u1fbpfcp-zoom-1.image" /&gt;
-3. 详情&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3d5eddb7c2434909880f7c23f1aa4d3f~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;h3&gt;总结&lt;/h3&gt;
-&lt;p&gt;虽然，在目前的前端领域，关于页面配置、可视化等更加复杂的能力，已有更丰富和更全面的实现。比如我们前端团队的无相应用早已实现整个表单页的配置化能力。而本文展示的表单块的代码配置化能力接入较为轻量、内容上更容易理解。&lt;/p&gt;
-&lt;h2&gt;推荐阅读&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7117042614313943070"&gt;如何将传统 Web 框架部署到 Serverless&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7114450860335169543"&gt;浅谈前端埋点 &amp;amp; 监控&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7111848825232293918"&gt;如何让 x == 1 &amp;amp;&amp;amp; x == 2 &amp;amp;&amp;amp; x == 3 等式成立&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/editor/drafts/7109126523466022948"&gt;数据统计在性能检测中的应&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7106652838800916517"&gt;浅析 path 常用工具函数源码&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;开源作品&lt;/h2&gt;
+&lt;p&gt;上面这些信息，感觉没啥用，其实不然，我们下面会介绍如何利用这些信息。&lt;/p&gt;
+&lt;h2&gt;attrs V3 vs $attrs V2&lt;/h2&gt;
+&lt;p&gt;这小节，我们来看下 Vue2 与 Vue3 中的 &lt;code&gt;attrs&lt;/code&gt; 属性的区别，先来看张图：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4014a578b352477a81513941014ef3aa~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;与 Vue2 的区别主要有：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;政采云前端小报&lt;/li&gt;
+&lt;li&gt;自定义事件放在 &lt;code&gt;@listerner&lt;/code&gt; 对象中&lt;/li&gt;
+&lt;li&gt;不包含 &lt;code&gt;class&lt;/code&gt; 属性&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://www.zoo.team/openweekly/"&gt;www.zoo.team/openweekly/&lt;/a&gt;&lt;/strong&gt; (小报官网首页有微信交流群)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;商品选择 sku 插件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://github.com/zcy-inc/skuPathFinder-back"&gt;https://github.com/zcy-inc/skuPathFinder-back/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h2&gt;招贤纳士&lt;/h2&gt;
-&lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 60 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
-&lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 12 Jul 2022 16:00:53 GMT</pubDate></item><item><title>新指令 v-memo，提高性能的又一利器</title><link>https://juejin.cn/post/7144884293423071268</link><description>&lt;blockquote&gt;
+&lt;p&gt;而 Vue3 中的 &lt;code&gt;attrs&lt;/code&gt; 对象包含了除组件所声明的 &lt;code&gt;props&lt;/code&gt; 和 &lt;code&gt;emits&lt;/code&gt; 之外的所有其他 &lt;code&gt;attribute&lt;/code&gt;，这有利于我们方便使用这些属性。&lt;/p&gt;
+&lt;p&gt;下面我们来看些事例。&lt;/p&gt;
+&lt;h2&gt;事例&lt;/h2&gt;
+&lt;p&gt;事例地址：https://stackblitz.com/edit/vue-slider-listener-example?file=src/components/Slider.vue&lt;/p&gt;
+&lt;p&gt;首先我们创建一个 Slider 组件，内容如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+  &amp;lt;input 
+    type="range"  
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
+    class="slider__input" /&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script&amp;gt;
+export default {
+  name: "Slider-1",
+  props: {
+    modelValue: [Number, String],
+  }
+};
+&amp;lt;/script&amp;gt;
+&amp;lt;style lang="scss"&amp;gt;
+// 这里省略一堆样式，自行看事例
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上面代码我们创建一个 &lt;code&gt;slider&lt;/code&gt;，还实现了一个双向绑定。然后可以像下面这样使用该组件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; &amp;lt;Slider-1 v-model="value" /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a5a15c7252e34248bf58d852009bfe72~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h4&gt;添加一些属性&lt;/h4&gt;
+&lt;p&gt;目前我们的 Slier 组件还很简单，不太符合实际情况。所以，我们添加几个属性（&lt;code&gt;min&lt;/code&gt;, &lt;code&gt;max&lt;/code&gt;, &lt;code&gt;class&lt;/code&gt;, &lt;code&gt;id&lt;/code&gt;, &lt;code&gt;data-cy&lt;/code&gt;, &lt;code&gt;@keydown&lt;/code&gt; 和 &lt;code&gt;aria-label&lt;/code&gt;）。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  &amp;lt;Slider-1
+      v-model="value"
+      min="0"
+      max="50"
+      class="blue_slider"
+      id="special_id"
+      data-cy="cypress-slider"
+      @keydown="() =&amp;gt; true"
+      aria-label="Example slider"
+    /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行后，通过控制检查元素，我们可以看下，我们新加的属性都被添加到了 HTML 元素上了：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/968f923e8ec74f14a8222c720272371b~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;看到这里，大家可能有疑问了，既然所有的 "非属性/事件" 属性都已经自动应用于内部的HTML元素，为什么还要对 &lt;code&gt;$attrs&lt;/code&gt; 做这么大的介绍？&lt;/p&gt;
+&lt;h4&gt;添加标题和值&lt;/h4&gt;
+&lt;p&gt;新增需求：作为一个滑块的使用者，用户希望能够看到一个标题，以及它在屏幕上显示的数字形式的值。&lt;/p&gt;
+&lt;p&gt;我们在调整一下 Slider 组件，内容如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Slider-2.vue
+
+&amp;lt;template&amp;gt;
+  &amp;lt;div class="slider"&amp;gt;
+    &amp;lt;h1&amp;gt;{{ title }}&amp;lt;/h1&amp;gt;
+    &amp;lt;input 
+      type="range" 
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+      class="slider__input" /&amp;gt;
+      &amp;lt;div&amp;gt;Value: {{ value }}&amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script&amp;gt;
+export default {
+  name: "Slider-2",
+  props: {
+    modelValue: [Number, String]
+    title: [String],
+    value: [Number, String],
+  }
+};
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f9798b8b735644dfa8bafce4f5ef04d4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;乍一看，好像没啥问题，但如果我们仔细观察，可以看到有些东西是不对的。&lt;/p&gt;
+&lt;p&gt;首先，Slider 不是蓝色的。第二，&lt;code&gt;value&lt;/code&gt; 远远超过了50，最后，检查一下HTML，会看到我们所有的额外属性（&lt;code&gt;min, max, data-cy&lt;/code&gt;）都被分配给了根元素，而不是我们的 &lt;code&gt;input&lt;/code&gt; 元素。&lt;/p&gt;
+&lt;p&gt;解决上述问题的最好方法是找到一种方法，将所有的属性、类、参数和事件直接 "应用" 到 input  字段上，而不需我们手动的一个个声明。这就是 &lt;code&gt;$attrs&lt;/code&gt; 出场的地方。&lt;/p&gt;
+&lt;h4&gt;$attrs 救场&lt;/h4&gt;
+&lt;p&gt;在本文的开头，我们介绍了 &lt;code&gt;$attrs&lt;/code&gt;。它是一个存放所有 "未声明"的属性和事件的地方，而这正是我们需要解决的问题。&lt;/p&gt;
+&lt;p&gt;要使用这个功能，我们只需将 &lt;code&gt;$attrs&lt;/code&gt; 属性应用于一个或多个HTML元素，使用 &lt;code&gt;v-bind&lt;/code&gt; 操作符。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div class="slider"&amp;gt;
+    &amp;lt;h1&amp;gt;{{ title }}&amp;lt;/h1&amp;gt;
+    &amp;lt;input 
+      type="range"  
+      v-bind="$attrs"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+      class="slider__input" /&amp;gt;
+      &amp;lt;div&amp;gt;Value: {{ modelValue }}&amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在组件中，我们使用 &lt;code&gt;attrs&lt;/code&gt; 充当桥梁，将所有的属性（类、属性、属性和自定义事件）复制到一个或多个元素上。 Slider 组件又回到了正常模式上了。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4a5c586bdd144adaa9c0d6b567c9add6~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;还有一个问题--我们添加的属性不仅被分配给了 &lt;code&gt;input&lt;/code&gt; 元素上，也分配给了 &lt;code&gt;root&lt;/code&gt;元素。&lt;/p&gt;
+&lt;p&gt;通常情况下，这可能对界面没啥影响，但有的属性确实会生产一些副作用，下面，我们来解决这个问题。&lt;/p&gt;
+&lt;h2&gt;inheritAttrs: false&lt;/h2&gt;
+&lt;p&gt;默认情况下，任何被传递给组件的额外参数都会自动应用于根元素（以及所有有 &lt;code&gt;$attrs&lt;/code&gt; 绑定的元素）。&lt;/p&gt;
+&lt;p&gt;为了关闭这个功能，并控制哪些元素可接受这个额外的属性，我们可以使用一个名为 &lt;code&gt;inheritAttrs&lt;/code&gt; 的标志，并将其设置为&lt;code&gt;false&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;经过这样的改变，我们的HTML就变得漂亮且干净了。所有的额外属性都只作用于 &lt;code&gt;input&lt;/code&gt; 元素。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;编辑中可能存在的bug没法实时知道，事后为了解决这些bug,花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;交流&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
+&lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
+&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Tue, 20 Sep 2022 16:41:47 GMT</pubDate></item><item><title>新指令 v-memo，提高性能的又一利器</title><link>https://juejin.cn/post/7144884293423071268</link><description>&lt;blockquote&gt;
 &lt;p&gt;本文首发于微信公众号：大迁世界, 我的微信：qq449245884，我会第一时间和你分享前端行业趋势，学习途径等等。
 更多开源作品请看 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; ，包含一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7011,532 +7194,7 @@ export default /*#__PURE__*/_defineComponent({
 &lt;p&gt;正如上面所看到的，SFC编译器采用TypeScript类型信息，并建立了 &lt;code&gt;props&lt;/code&gt; 对象。原始类型是一对一的。接口变成对象，而 &lt;code&gt;?&lt;/code&gt; 可选语法驱动 &lt;code&gt;required&lt;/code&gt; 的属性。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;作者：romaopedro  译者：前端小智 来源：logrocket
-https://unicorn-utterances.com/posts/vue-composition-inspector&lt;/p&gt;</description><author>王大冶</author><pubDate>Mon, 15 Aug 2022 16:35:41 GMT</pubDate></item><item><title>试试使用 Vitest 进行组件测试，确实很香。</title><link>https://juejin.cn/post/7129667747134308389</link><description>&lt;blockquote&gt;
-&lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
-本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;什么是Vitest？&lt;/h2&gt;
-&lt;p&gt;自从 &lt;strong&gt;尤大&lt;/strong&gt; 的构建工具Vite获得了巨大的人气，现在有了一个由它驱动的极快的单元测试框架。&lt;strong&gt;Vitest&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;Vitest 与 Jest 兼容，具有开箱即用的 ESM、Typescript 和 JSX 支持，并且由 &lt;strong&gt;esbuild&lt;/strong&gt; 提供支持。它在测试过程中使用 Vite 开发服务器来转换你的文件，并监听你的应用程序的相同配置（通过&lt;code&gt;vite.config.js&lt;/code&gt;），从而消除了使用Jest等测试替代品所涉及的重复工作。&lt;/p&gt;
-&lt;h2&gt;为什么选择Vitest？&lt;/h2&gt;
-&lt;p&gt;Vite是一个构建工具，旨在为现代 web 项目提供更快、更精简的开发体验，它开箱即用，支持常见的 web  模式、&lt;code&gt;glob&lt;/code&gt;导入和 &lt;strong&gt;SSR&lt;/strong&gt; 等功能。它的许多插件和集成正在促进一个充满活力的生态系统。&lt;/p&gt;
-&lt;p&gt;但这导致了一个新问题：如何在Vite上编写单元测试。&lt;/p&gt;
-&lt;p&gt;将Jest等框架与Vite一起使用，导致Vite和Jest之间有很多重复的配置，而 Vitest 解决了这一问题，它消除了为我们的应用程序编写单元测试所需的额外配置。Vitest 使用与 Vite 相同的配置，并在开发、构建和测试时共享一个共同的转换管道。它还可以使用与 Vite 相同的插件API进行扩展，并与Jest的API兼容，以方便从Jest迁移，而不需要做很多重构工作。&lt;/p&gt;
-&lt;p&gt;因此，Vitest 的速度也非常快。&lt;/p&gt;
-&lt;h2&gt;如何使用 Vitest 来测试组件&lt;/h2&gt;
-&lt;h3&gt;安装 Vitest&lt;/h3&gt;
-&lt;p&gt;在项目中使用 &lt;code&gt;Vitest&lt;/code&gt; 需要 &lt;code&gt;Vite &amp;gt;=v2.7.10&lt;/code&gt; 和 &lt;code&gt;Node &amp;gt;=v14&lt;/code&gt; 才能工作。&lt;/p&gt;
-&lt;p&gt;可以使用 &lt;code&gt;npm&lt;/code&gt;、&lt;code&gt;yarn&lt;/code&gt; 或 &lt;code&gt;pnpm&lt;/code&gt; 来安装 Vitest，根据自己的喜好，在终端运行以下命令：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;NPM&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;npm install -D vitest
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;YARN&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;yarn add -D vitest
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;PNPM&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pnpm add -D vitest
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e83bc8229d474498882e8332db9fcf98~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;h2&gt;Vitest 配置&lt;/h2&gt;
-&lt;p&gt;安装完 Vitest 后，需要将其添加到 &lt;code&gt;vite.config.js&lt;/code&gt; 文件中:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;vite.config.js&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-
-export default defineConfig({
-    plugins: [vue()],
-    //add test to vite config
-    test: {
-        // ...
-    },
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;为 TypeScript 配置 Vitest 是类似的，但如果从 Vite 导入 &lt;code&gt;defineConfig&lt;/code&gt;，我们需要在配置文件的顶部使用三斜线命令添加对 Vitest 类型的引用。&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;/// &amp;lt;reference types="vitest" /&amp;gt;
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-// https://vitejs.dev/config/
-
-export default defineConfig({
-    plugins: [vue()],
-    test: {
-        // ...
-    },
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;值得注意的是，Vitest 也可以在项目中通过在根文件夹中添加 &lt;code&gt;vitest.config.js&lt;/code&gt; 文件来配置。如果这个文件存在，它将优先于 &lt;code&gt;vite.config.js&lt;/code&gt; 来配置Vitest。Vitest 也允许额外的配置，可以在&lt;a href="https://vitest.dev/config/#configuration"&gt;配置&lt;/a&gt;页面中找到。&lt;/p&gt;
-&lt;h2&gt;事例演示：Notification&lt;/h2&gt;
-&lt;p&gt;为了看看Vitest的运作情况，我们创建一个显示三种类型通知的通知组件：&lt;code&gt;info&lt;/code&gt;、&lt;code&gt;error&lt;/code&gt; &lt;code&gt;和success&lt;/code&gt;。这个组件的每个状态如下所示：&lt;/p&gt;
-&lt;h3&gt;info&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="2397151611-62ef6b8a2c5ec.webp" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/aedf37442beb45ff923c5347be5796c0~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;h3&gt;error&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="433512350-62ef6ba12a0f9.webp" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/51e8e9f3392f425a87f4121a00389a5d~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;h3&gt;success&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="2957620330-62ef6c2cc37e3.webp" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1df8ac15b12e4063956457e691a1a553~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;notification.vue &lt;/code&gt;内容如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
-  &amp;lt;div
-    :class="[
-      'notification',
-      type === 'error' ? 'notification--error' : null,
-      type === 'success' ? 'notification--success' : null,
-      type === 'info' ? 'notification--info' : null,
-      message &amp;amp;&amp;amp; message.length &amp;gt; 0 ? 'notification--slide' : null,
-    ]"
-  &amp;gt;
-    &amp;lt;img
-      src="https://res.cloudinary.com/djalafcj9/image/upload/v1634261166/getequityV2/denied_sbmv0e.png"
-      v-if="type === 'error'"
-    /&amp;gt;
-    &amp;lt;img
-      src="https://res.cloudinary.com/djalafcj9/image/upload/v1656690265/getequityV2/Frame_irxz3e.png"
-      v-if="type === 'success'"
-    /&amp;gt;
-    &amp;lt;img
-      src="https://res.cloudinary.com/djalafcj9/image/upload/v1634261166/getequityV2/pending_ctj1ke.png"
-      v-if="type === 'info'"
-    /&amp;gt;
-    &amp;lt;p class="notification__text"&amp;gt;
-      {{ message }}
-    &amp;lt;/p&amp;gt;
-    &amp;lt;button
-      ref="closeButton"
-      class="notification__button"
-      @click="$emit('clear-notification')"
-    &amp;gt;
-      &amp;lt;img
-        src="https://res.cloudinary.com/djalafcj9/image/upload/v1635485821/getequityV2/close_muxdyb.png"
-      /&amp;gt;
-    &amp;lt;/button&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/template&amp;gt;
-&amp;lt;script&amp;gt;
-  export default {
-    name: "Notification",
-    emits: ['clear-notification'],
-    props: {
-      type: {
-        type: String,
-        default: null,
-      },
-      message: {
-        type: String,
-        default: null,
-      },
-    },
-  };
-&amp;lt;/script&amp;gt;
-
-&amp;lt;style&amp;gt;
-  .notification {
-    transition: all 900ms ease-out;
-    opacity: 0;
-    z-index: 300001;
-    transform: translateY(-100vh);
-    box-sizing: border-box;
-    padding: 10px 15px;
-    width: 100%;
-    max-width: 730px;
-    /* margin: 0 auto; */
-    display: flex;
-    position: fixed;
-    /* left: 0; */
-    top: 20px;
-    right: 15px;
-    justify-content: flex-start;
-    align-items: center;
-    border-radius: 8px;
-    min-height: 48px;
-    box-sizing: border-box;
-    color: #fff;
-  }
-
-  .notification--slide {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-
-  .notification--error {
-    background-color: #fdecec;
-  }
-
-  .notification__text {
-    margin: 0;
-    margin-left: 17px;
-    margin-right: auto;
-  }
-
-  .notification--error .notification__text {
-    color: #f03d3e;
-  }
-
-  .notification--success {
-    background-color: #e1f9f2;
-  }
-
-  .notification--success &amp;gt; .notification__text {
-    color: #146354;
-  }
-
-  .notification--info {
-    background-color: #ffb647;
-  }
-
-  .notification__button {
-    border: 0;
-    background-color: transparent;
-  }
-&amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在这里，我们使用 &lt;code&gt;message&lt;/code&gt; prop创建了一个显示动态消息的组件。我们还利用 &lt;code&gt;type&lt;/code&gt; prop 来设计这个组件的背景和文本，并利用这个 &lt;code&gt;type&lt;/code&gt; prop  显示我们计划的不同图标（error, success, info）。&lt;/p&gt;
-&lt;p&gt;最后，我们有一个按钮，用来通过发出一个自定义事件：&lt;code&gt;clear-notification&lt;/code&gt;来解除通知。&lt;/p&gt;
-&lt;h2&gt;我们应该测试什么？&lt;/h2&gt;
-&lt;p&gt;现在我们对需要测试的组件的结构有了了解，我们可以再思考一下，这个组件需要做什么，以达到预期的功能。&lt;/p&gt;
-&lt;p&gt;我们的测试需要检查以下内容：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;该组件根据通知类型渲染出正确的样式。&lt;/li&gt;
-&lt;li&gt;当 &lt;code&gt;message&lt;/code&gt;  为空时，通知就会逐渐消失。&lt;/li&gt;
-&lt;li&gt;当关闭按钮被点击时，该组件会发出一个事件。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;为了测试这些功能，在项目中添加一个 &lt;code&gt;notification.test.js&lt;/code&gt; 用于测试。&lt;/p&gt;
-&lt;h2&gt;安装测试依赖项&lt;/h2&gt;
-&lt;p&gt;在编写单元测试时，可能会有这样的情况：我们需要用一个什么都不做的假组件来替换组件的现有实现。这被称为 &lt;strong&gt;stub(存根)&lt;/strong&gt;，为了在测试中使用存根，我们需要访问Vue Test Utils的&lt;code&gt;mount&lt;/code&gt;方法，这是Vue.js的官方&lt;a href="https://test-utils.vuejs.org/"&gt;测试工具库&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;现在我们来安装Vue Test Utils。&lt;/p&gt;
-&lt;h2&gt;安装&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;npm install --save-dev @vue/test-utils@next
-
-# or
-
-yarn add --dev @vue/test-utils@next
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;现在，在我们的测试文件中，我们可以从&lt;code&gt;"@vue/test-utils"&lt;/code&gt;导入 &lt;code&gt;mount&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;notification.test.js&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import { mount } from "@vue/test-utils";
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在测试中，我们还需要能够模拟 DOM。Vitest目前同时支持 &lt;code&gt;happy-dom&lt;/code&gt; 和 &lt;code&gt;jsdom&lt;/code&gt;。对于这个演示，我们将使用&lt;code&gt;happy-dom&lt;/code&gt;，然后安装它：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;yarn add happy-dom --dev
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;安装后，我们可以在测试文件的顶部添加以下注释...&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;notification.test.js&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/**
- * @vitest-environment happy-dom
- */
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;.或者将此添加到 &lt;code&gt;vite/vitest&lt;/code&gt; 配置文件中，以避免在有多个需要 &lt;code&gt;happy-dom&lt;/code&gt; 工作的测试文件时出现重复情况。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;vite.config.js&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-// https://vitejs.dev/config/
-export default defineConfig({
-    plugins: [vue()],
-    test: {
-        environment: "happy-dom",
-    },
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;因为我们只有一个测试文件，所以我们可以选择第一个选项，所以我们测试文件内容如下：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;notification.test.js&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/**
- * @vitest-environment happy-dom
- */
-
-import { mount } from "@vue/test-utils";
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;有了这些依赖关系，我们现在可以导入我们要测试的组件。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;notification.test.js&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/**
- * @vitest-environment happy-dom
- */
-
-import { mount } from "@vue/test-utils";
-import notification from "../components/notification.vue";
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;常见的Vitest方法&lt;/h2&gt;
-&lt;p&gt;为了编写测试，我们需要利用以下常见的方法，这些方法可以从 Vitest 导入。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;describe&lt;/code&gt;：这个函数接受一个名字和一个函数，用于将相关的测试组合在一起。当你为一个有多个测试点（如逻辑和外观）的组件编写测试时，它就会很方便。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;test/it&lt;/code&gt;：这个函数代表被测试的实际代码块。它接受一个字符串，通常是测试案例的名称或描述（例如，渲染成功的正确样式）和另一个函数，所有的检查和测试在这里进行。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;expect&lt;/code&gt;： 这个函数用于测试值或创建断言。它接受一个预期为实际值（字符串、数字、对象等）的参数&lt;strong&gt;x&lt;/strong&gt;，并使用任何支持的方法对其进行评估（例如&lt;code&gt;toEqual(y)&lt;/code&gt;，检查 x 是否与 y 相同）。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;因此，我们现在将这些导入我们的测试文件中&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;notification.test.js&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/**
- * @vitest-environment happy-dom
- */
-
-import { mount } from "@vue/test-utils";
-import notification from "../components/notification.vue";
-import { describe, expect, test } from "vitest";
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;有了这些函数，我们开始构建我们的单元测试。&lt;/p&gt;
-&lt;h2&gt;建立 Vitest 单元测试&lt;/h2&gt;
-&lt;p&gt;首先使用 &lt;code&gt;describe&lt;/code&gt;  方法将测试分组。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;notification.test.js&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;describe("notification.vue", () =&amp;gt; {
-    
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在 &lt;code&gt;describe&lt;/code&gt; 块内，我们添加每个实际的测试。&lt;/p&gt;
-&lt;p&gt;我们第一个要测试的用例是：&lt;strong&gt;组件根据通知类型渲染出正确的样式&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;notification.test.js&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;describe("notification.vue", () =&amp;gt; {
-    test("renders the correct style for error", () =&amp;gt; {
-
-    });
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;renders the correct style for error&lt;/code&gt; 表示 &lt;code&gt;test&lt;/code&gt; 所检查的内容的 &lt;strong&gt;name&lt;/strong&gt;。它有助于为代码块检查的内容提供上下文，这样就可以由原作者以外的人轻松维护和更新。它也使人们容易识别一个特定的失败的测试案例。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4dc53c1159384e73bc06784b8032ea78~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;notification.test.js&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;describe("notification.vue", () =&amp;gt; {
-    test("renders the correct style for error", () =&amp;gt; {
-       const type = "error";
-    });
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在我们组件中，定义了一个 &lt;code&gt;type&lt;/code&gt; 参数，它接受一个字符串，用来决定诸如背景颜色、图标类型和文本颜色在组件上的渲染。在这里，我们创建一个变量 &lt;code&gt;type&lt;/code&gt;，并将我们正在处理的类型之一，error （&lt;code&gt;error&lt;/code&gt;, &lt;code&gt;info&lt;/code&gt;, 或 &lt;code&gt;success&lt;/code&gt;）分配给它。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;notification.test.js&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;describe("notification.vue", () =&amp;gt; {
-    test("renders the correct style for error", () =&amp;gt; {
-        const type = "error";
-        const wrapper = mount(notification, {
-            props: { type },
-        });
-    });
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在这里，我们使用 &lt;code&gt;mount&lt;/code&gt; 来存根我们的组件，以便进行测试。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;mount&lt;/code&gt; 接受组件作为第一个参数，接受一个选项列表作为第二个参数。这些选项提供了不同的属性，目的是确保你的组件能在浏览器中正常工作。&lt;/p&gt;
-&lt;p&gt;在这个列表中，我们只需要 &lt;code&gt;props&lt;/code&gt; 属性。我们使用这个属性是因为我们的 &lt;code&gt;notification.vue&lt;/code&gt;组件至少需要一个 &lt;strong&gt;prop&lt;/strong&gt; 才能有效工作。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;notification.test.js&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;describe("notification.vue", () =&amp;gt; {
-    test("renders the correct style for error", () =&amp;gt; {
-        const type = "error";
-        const wrapper = mount(notification, {
-            props: { type },
-        });
-        expect(wrapper.classes()).toEqual(
-            expect.arrayContaining(["notification--error"])
-        );
-    });
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在这一点上，剩下的就是写一个断言，或者更好的是，写出我们组件的预期行为，即：&lt;code&gt;renders the correct style for error&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;为了做到这一点，我们使用了 &lt;code&gt;expect&lt;/code&gt; 方法。它接受我们的存根组件和所有的选项（在我们的例子中，我们把它命名为&lt;code&gt;wrapper&lt;/code&gt;以方便参考）。&lt;/p&gt;
-&lt;p&gt;这个方法可以被链接到其他一些方法上，但是对于这个特定的断言，我们要重新检查组件的类列表是否返回一个包含这个 &lt;code&gt;notification——error&lt;/code&gt; 的数组。。&lt;/p&gt;
-&lt;p&gt;我们使用 &lt;code&gt;classes&lt;/code&gt; 函数来实现这一点，该函数返回包含该组件所有类的数组。在这之后，下一件事就是使用 &lt;code&gt;toEqual&lt;/code&gt; 函数进行比较，它检查一个值 &lt;strong&gt;X&lt;/strong&gt; 是否等于** Y**。在这个函数中，我们检查它是否返回一个包含我们的类的数组: &lt;code&gt;notification--error&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;同样，对于 type 为 &lt;code&gt;success&lt;/code&gt; 或 &lt;code&gt;info&lt;/code&gt; 类型，测试过程也差不多。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import { mount } from "@vue/test-utils";
-import notification from "../components/notification.vue";
-import { describe, expect, test } from "vitest";
-describe("notification.vue", () =&amp;gt; {
-    test("renders correct style for error", () =&amp;gt; {
-        const type = "error";
-        const wrapper = mount(notification, {
-            props: { type },
-        });
-        expect(wrapper.classes()).toEqual(
-            expect.arrayContaining(["notification--error"])
-        );
-    });
-
-    test("renders correct style for success", () =&amp;gt; {
-        const type = "success";
-        const wrapper = mount(notification, {
-            props: { type },
-        });
-        expect(wrapper.classes()).toEqual(
-            expect.arrayContaining(["notification--success"])
-        );
-    });
-
-    test("renders correct style for info", () =&amp;gt; {
-        const type = "info";
-        const wrapper = mount(notification, {
-            props: { type },
-        });
-        expect(wrapper.classes()).toEqual(
-            expect.arrayContaining(["notification--info"])
-        );
-    });
-
-    test("slides down when message is not empty", () =&amp;gt; {
-        const message = "success";
-        const wrapper = mount(notification, {
-            props: { message },
-        });
-        expect(wrapper.classes()).toEqual(
-            expect.arrayContaining(["notification--slide"])
-        );
-    });
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;到这，我们已经写好了测试，以确保我们的通知是根据其类型来进行样式设计的。当用户点击组件上的关闭按钮时，我们会重置 &lt;code&gt;message&lt;/code&gt; 参数。根据我们的代码，我们要根据这个 &lt;code&gt;message&lt;/code&gt; 参数的值来添加或删除 &lt;code&gt;notification--slide&lt;/code&gt; 类，如下所示:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;notification.vue&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;div
-    :class="[
-      'notification',
-      type === 'error' ? 'notification--error' : null,
-      type === 'success' ? 'notification--success' : null,
-      type === 'info' ? 'notification--info' : null,
-      message &amp;amp;&amp;amp; message.length &amp;gt; 0 ? 'notification--slide' : null,
-    ]"
-  &amp;gt;
-//...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果我们要测试这个特定的断言，它的内容如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;test("slides up when message is empty", () =&amp;gt; {
-        const message = "";
-        const wrapper = mount(notification, {
-            props: { message },
-        });
-        expect(wrapper.classes("notification--slide")).toBe(false);
-    });
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在这段测试代码中，我们用一个空字符串创建一个 &lt;code&gt;message&lt;/code&gt; 变量，并把它作为一个 prop 传递给我们的组件。&lt;/p&gt;
-&lt;p&gt;之后，我们检查我们组件的类数组，确保它不包括 &lt;code&gt;notification--slide&lt;/code&gt; 类，该类负责使我们的组件向下/向外滑动到用户的视图。为了做到这一点，我们使用 &lt;code&gt;toBe&lt;/code&gt; 函数，它接收一个值&lt;strong&gt;A&lt;/strong&gt;，并试图检查它是否与 &lt;strong&gt;B&lt;/strong&gt; 相同。&lt;/p&gt;
-&lt;p&gt;我们还想测试一下，每当组件上的按钮被点击，它就会发出一个事件:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;test("emits event when close button is clicked", async() =&amp;gt; {
-        const wrapper = mount(notification, {
-            data() {
-                return {
-                    clicked: false,
-                };
-            },
-        });
-        const closeButton = wrapper.find("button");
-        await closeButton.trigger("click");
-        expect(wrapper.emitted()).toHaveProperty("clear-notification");
-    });
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在这个测试块中，我们使用了一个 &lt;strong&gt;async&lt;/strong&gt;  函数，因为我们将触发一个事件，它返回一个 Promise，我们需要等待这个 Promise 的解决，以便捕捉这个事件所引起的变化。我们还使用了&lt;code&gt;data&lt;/code&gt;函数，并添加了一个 &lt;code&gt;clicked&lt;/code&gt; 属性，当点击时将被切换。&lt;/p&gt;
-&lt;p&gt;到这，我们需要触发这个点击事件，我们首先通过使用 &lt;code&gt;find&lt;/code&gt; 函数来获得按钮。这个函数与&lt;code&gt;querySelector&lt;/code&gt;相同，它接受一个类、一个id或一个属性，并返回一个元素。&lt;/p&gt;
-&lt;p&gt;在找到按钮后，使用 &lt;a href="https://test-utils.vuejs.org/api/#trigger"&gt;trigger&lt;/a&gt; 方法来触发一个点击事件。这个方法接受要触发的事件名称（click, focus, blur, keydown等），执行这个事件并返回一个 promise。出于这个原因，我们等待这个动作，以确保在我们根据这个事件做出断言之前，已经对我们的DOM进行了改变。&lt;/p&gt;
-&lt;p&gt;最后，我们使用返回一个数组的 &lt;code&gt;[emitted](https://test-utils.vuejs.org/api/#emitted)&lt;/code&gt; 方法检查我们的组件所发出的事件列表。然后我们检查这个数组是否包括&lt;code&gt; clear-notification&lt;/code&gt; 事件。&lt;/p&gt;
-&lt;p&gt;最后，我们测试以确保我们的组件渲染出正确的消息，并传递给 &lt;code&gt;message&lt;/code&gt;  prop。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;test("renders message when message is not empty", () =&amp;gt; {
-        const message = "Something happened, try again";
-        const wrapper = mount(notification, {
-            props: { message },
-        });
-        expect(wrapper.find("p").text()).toBe(message);
-    });
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这里，我们创建了一个 &lt;code&gt;message&lt;/code&gt;  变量，给它分配了一个随机字符串，并把它作为一个 prop  传递给我们的组件。&lt;/p&gt;
-&lt;p&gt;然后，我们使用 &lt;code&gt;p&lt;/code&gt; 标签搜索我们的消息文本，因为这里是显示消息的地方，并检查其文本是否与 &lt;code&gt;message&lt;/code&gt;  相同。&lt;/p&gt;
-&lt;p&gt;我们使用 &lt;code&gt;text&lt;/code&gt; 方法提取这个标签的内容，这和 &lt;code&gt;innerText&lt;/code&gt;很相似。最后，我们使用前面的函数 &lt;code&gt;toBe&lt;/code&gt; 来断言这个值与 &lt;code&gt;message&lt;/code&gt;  相同。&lt;/p&gt;
-&lt;h2&gt;完整的测试文件&lt;/h2&gt;
-&lt;p&gt;在涵盖所有这些之后，下面是完整的测试文件内容：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;notification.test.js&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/**
- * @vitest-environment happy-dom
- */
-
-import { mount } from "@vue/test-utils";
-import notification from "../components/notification.vue";
-import { describe, expect, test } from "vitest";
-
-describe("notification.vue", () =&amp;gt; {
-    test("renders the correct style for error", () =&amp;gt; {
-        const type = "error";
-        const wrapper = mount(notification, {
-            props: { type },
-        });
-        expect(wrapper.classes()).toEqual(
-            expect.arrayContaining(["notification--error"])
-        );
-    });
-
-    test("renders the correct style for success", () =&amp;gt; {
-        const type = "success";
-        const wrapper = mount(notification, {
-            props: { type },
-        });
-        expect(wrapper.classes()).toEqual(
-            expect.arrayContaining(["notification--success"])
-        );
-    });
-
-    test("renders the correct style for info", () =&amp;gt; {
-        const type = "info";
-        const wrapper = mount(notification, {
-            props: { type },
-        });
-        expect(wrapper.classes()).toEqual(
-            expect.arrayContaining(["notification--info"])
-        );
-    });
-
-    test("slides down when message is not empty", () =&amp;gt; {
-        const message = "success";
-        const wrapper = mount(notification, {
-            props: { message },
-        });
-        expect(wrapper.classes()).toEqual(
-            expect.arrayContaining(["notification--slide"])
-        );
-    });
-
-    test("slides up when message is empty", () =&amp;gt; {
-        const message = "";
-        const wrapper = mount(notification, {
-            props: { message },
-        });
-        expect(wrapper.classes("notification--slide")).toBe(false);
-    });
-
-    test("emits event when close button is clicked", async() =&amp;gt; {
-        const wrapper = mount(notification, {
-            data() {
-                return {
-                    clicked: false,
-                };
-            },
-        });
-        const closeButton = wrapper.find("button");
-        await closeButton.trigger("click");
-        expect(wrapper.emitted()).toHaveProperty("clear-notificatioon");
-    });
-
-    test("renders message when message is not empty", () =&amp;gt; {
-        const message = "Something happened, try again";
-        const wrapper = mount(notification, {
-            props: { message },
-        });
-        expect(wrapper.find("p").text()).toBe(message);
-    });
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;有几件事需要注意:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;我们利用 &lt;code&gt;mount&lt;/code&gt; 来存根我们要测试的组件，它是由Vue Test Utils提供的。 (&lt;code&gt;yarn add --dev @vue/test-utils@next&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;运行测试&lt;/h2&gt;
-&lt;p&gt;现在已经完成了测试的编写，需要运行它们。要实现这一点，我们去 &lt;code&gt;package.json&lt;/code&gt;，&lt;code&gt;在我们的scripts&lt;/code&gt; 部分添加以下几行。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;"scripts": {
-    "test": "vitest",
-    "coverage": "vitest run --coverage"
-},
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果在终端运行 &lt;code&gt;yarn vitest&lt;/code&gt; 或 &lt;code&gt;yarn test&lt;/code&gt;，我们的测试文件就会被运行，我们应该看到测试结果和故障。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6877580ad7784356a82914c0c99bf4d1~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;到这，我们已经成功地使用Vitest运行了我们的第一次测试。从结果中需要注意的一点是，由于Vitest的智能和即时观察模式，这个命令只需要运行一次，并在我们对测试文件进行更新和修改时被重新运行。&lt;/p&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
-&lt;p&gt;使用 Vitest 对我们的应用程序进行单元测试是无缝的，与Jest等替代品相比，需要更少的步骤来启动和运行。Vitest 还可以很容易地将现有的测试从 Jest 迁移到Vitest，而不需要进行额外的配置。&lt;/p&gt;
-&lt;p&gt;作者：Timi Omoyeni  译者：前端小智  来源：vuemastery&lt;/p&gt;
-&lt;p&gt;原文：https://www.vuemastery.com/blog/getting-started-with-vitest&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;交流&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
-&lt;p&gt;本文 GitHub  https://github.com/qq449245884/xiaozhi 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Mon, 08 Aug 2022 16:32:18 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
+https://unicorn-utterances.com/posts/vue-composition-inspector&lt;/p&gt;</description><author>王大冶</author><pubDate>Mon, 15 Aug 2022 16:35:41 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: awesome-green
 highlight: a11y-light&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://juejin.cn/post/7095547569777934367"&gt;13.5W 播放量的 TS 动画版进阶教程合集来了！&lt;/a&gt;，通过形象生动的动画，让你轻松搞懂 TypeScript 的难点和核心知识点！&lt;/p&gt;
