@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Thu, 22 Sep 2022 22:51:03 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 53 期：React Router 6.4、VS Code August 2022、2022 Google 谷歌开发者大会、Meta 开源</title><link>https://juejin.cn/post/7145061375994724389</link><description>&lt;hr /&gt;
+<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Fri, 23 Sep 2022 22:52:40 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 53 期：React Router 6.4、VS Code August 2022、2022 Google 谷歌开发者大会、Meta 开源</title><link>https://juejin.cn/post/7145061375994724389</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: fancy
 highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
@@ -5698,7 +5698,7 @@ export default {
 &amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f9798b8b735644dfa8bafce4f5ef04d4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;乍一看，好像没啥问题，但如果我们仔细观察，可以看到有些东西是不对的。&lt;/p&gt;
+&lt;p&gt;乍一看，好像没啥问题，但如果我们仔细观察，可以看到有些东西是不对的&lt;/p&gt;
 &lt;p&gt;首先，Slider 不是蓝色的。第二，&lt;code&gt;value&lt;/code&gt; 远远超过了50，最后，检查一下HTML，会看到我们所有的额外属性（&lt;code&gt;min, max, data-cy&lt;/code&gt;）都被分配给了根元素，而不是我们的 &lt;code&gt;input&lt;/code&gt; 元素。&lt;/p&gt;
 &lt;p&gt;解决上述问题的最好方法是找到一种方法，将所有的属性、类、参数和事件直接 "应用" 到 input  字段上，而不需我们手动的一个个声明。这就是 &lt;code&gt;$attrs&lt;/code&gt; 出场的地方。&lt;/p&gt;
 &lt;h4&gt;$attrs 救场&lt;/h4&gt;
