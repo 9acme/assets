@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Thu, 29 Sep 2022 22:52:48 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 54 期：TS 4.9 Beta、Monorepo Handbook、第 92 次 TC39 会议、将 StoryBook Stories</title><link>https://juejin.cn/post/7147660762519961631</link><description>&lt;hr /&gt;
+<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Fri, 30 Sep 2022 22:53:04 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 54 期：TS 4.9 Beta、Monorepo Handbook、第 92 次 TC39 会议、将 StoryBook Stories</title><link>https://juejin.cn/post/7147660762519961631</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: fancy
 highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
@@ -5591,7 +5591,90 @@ export default defineConfig({
 &lt;h2&gt;招贤纳士&lt;/h2&gt;
 &lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
 &lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 19 Jul 2022 16:12:17 GMT</pubDate></item><item><title>别整一坨 CSS 代码了，试试这几个实用函数</title><link>https://juejin.cn/post/7147849664518160415</link><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 19 Jul 2022 16:12:17 GMT</pubDate></item><item><title>CSS容器查询终于来了</title><link>https://juejin.cn/post/7148962811740160007</link><description>&lt;p&gt;CSS容器查询终于来了! 它们目前在谷歌浏览器（105）中得到了支持，很快就会在Safari 16中得到支持。这对前端来说容器查询与媒体查询一样重要。&lt;/p&gt;
+&lt;p&gt;在这节课中，我们介绍一下容器查询是如何工作的，如何使用它们，以及语法是什么样子的，并分享一些现实生活中的例子和用例。&lt;/p&gt;
+&lt;h2&gt;简介&lt;/h2&gt;
+&lt;p&gt;在设计一个组件时，我们需要适配不同的变化，并根据CSS类或视口大小来改变它们。这对于我们开发来说不是很理想，会迫使我们根据变化类或视口尺寸来写CSS。&lt;/p&gt;
+&lt;p&gt;考虑下面例子：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/48dbb5241f354badb6904cf35ff1dd3d~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;我们有一个卡片组件，当视口足够大时，它应该切换到水平样式。乍一看，这可能听起来不错。然而，当你更深入地思考这个问题时，它就有点复杂了。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b75c0021c43641aa9e67c31d807765b3~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;如果我们想在不同的地方使用同一个卡片组件，比如在空间狭小的侧边栏和有更多空间的主区域，我们就需要使用不同的类来适配：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.c-article {
+  /* Default stacked style */
+}
+
+@media (min-width: 800px) {
+  /* Horizontal style. */
+  .c-article--horizontal {
+    display: flex;
+    align-items: center;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果我们不想用上面的方式，那么会出现下面这样的情况：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d2d248843d024a709328207cffbd4136~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;这种从用户界面的角度来看，并不友好。&lt;/p&gt;
+&lt;p&gt;通过容器查询，我们可以简单地编写响应父级或容器宽度的CSS。请看下图：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/25348c0242704f57a0acb02ef57080f5~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;注意到在媒体查询中，我们是如何根据视口或屏幕宽度来查询一个组件的。在容器查询中，同样的情况发生在父级上。&lt;/p&gt;
+&lt;h2&gt;什么是容器查询？&lt;/h2&gt;
+&lt;p&gt;通过 &lt;code&gt;container-type&lt;/code&gt; 属性查询一个组件与最接近的父类的关系，该父类有一个定义的包含物。&lt;/p&gt;
+&lt;p&gt;我们过去在媒体查询中写CSS的方式，但只是针对组件层面。&lt;/p&gt;
+&lt;h4&gt;容器查询语法&lt;/h4&gt;
+&lt;p&gt;要根据一个组件的父级宽度查询，我们需要使用 &lt;code&gt;container-type&lt;/code&gt; 属性。看下面的例子"&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.wrapper {
+  container-type: inline-size;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;有了这些，我们就可以开始查询一个组件。在下面的例子中，如果&lt;code&gt;.card&lt;/code&gt;元素的容器的宽度等于&lt;code&gt;400px&lt;/code&gt;或更大，我们需要添加一个特定的样式。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@container (min-width: 400px) {
+  .card {
+    display: flex;
+    align-items: center;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;虽然上述方法可行，但当有多个容器时，就会造成混乱。为了避免这种情况，最好为一个容器命名。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.wrapper {
+  container-type: inline-size;
+  container-name: card;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在，我们可以在 &lt;code&gt;@container&lt;/code&gt; 旁边加容器名称，如下所示。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@container card (min-width: 400px) {
+  .card {
+    display: flex;
+    align-items: center;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完整代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.wrapper {
+  container-type: inline-size;
+  container-name: card;
+}
+
+.c-article {
+  /* Default stacked style */
+}
+
+@container card (min-width: 400px) {
+  /* Horizontal style. */
+  .c-article {
+    display: flex;
+    align-items: center;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;浏览器支持&lt;/h2&gt;
+&lt;p&gt;容器查询现在在Chrome 105中得到支持，并很快在Safari 16中得到支持。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/10774b9679a84f1b8324db8050f7ff77~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;事例&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dd09e43911434020b4e7b814d60374d7~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;这边有10个关于容器查询的事例，地址：https://lab.ishadeed.com/container-queries&lt;/p&gt;
+&lt;p&gt;来源：https://ishadeed.com/article/container-queries-are-finally-here/&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;</description><author>王大冶</author><pubDate>Thu, 29 Sep 2022 16:30:58 GMT</pubDate></item><item><title>别整一坨 CSS 代码了，试试这几个实用函数</title><link>https://juejin.cn/post/7147849664518160415</link><description>&lt;blockquote&gt;
 &lt;p&gt;本文首发于微信公众号：大迁世界, 我的微信：qq449245884，我会第一时间和你分享前端行业趋势，学习途径等等。
 更多开源作品请看 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; ，包含一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7045,301 +7128,7 @@ window.addEventListener('orientationchange', calculateVh);
 &lt;blockquote&gt;
 &lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
 &lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Wed, 24 Aug 2022 16:17:31 GMT</pubDate></item><item><title>Vue 状态管理未来样子</title><link>https://juejin.cn/post/7133008213301002253</link><description>&lt;blockquote&gt;
-&lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
-本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;随着Vue 3越来越受重视并成为默认版本，许多事情正在发生变化，生态系统逐渐完善中。直到最近，Vue3 的状态管理默认推荐的是使用 Pinia。这节课，我们根据项目的规模，探索不同的状态管理方式，并尝试预测 Vue 中状态管理的未来会是什么样子。&lt;/p&gt;
-&lt;h2&gt;响应式 API&lt;/h2&gt;
-&lt;p&gt;在options API中，我们可以使用 &lt;code&gt;data()&lt;/code&gt; 选项为一个组件声明响应式数据。在内部，返回的对象被包在响应式帮助器中。这个帮助器也可以作为一个公共API使用。&lt;/p&gt;
-&lt;p&gt;如果是多个数据被多个实例共享的状态，那么 可以使用 &lt;code&gt;reactive()&lt;/code&gt;来创建一个 &lt;strong&gt;reactive&lt;/strong&gt; 对象，然后从多个组件中导入它。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import { reactive } from "vue";
-
-export const store = {
-  state: reactive({
-    heroes: ['Aragorn', 'Legolas', 'Gimli', 'Gandalf']
-  }),
-  addHero(hero) {
-    this.state.heroes.push(hero);
-  }
-};
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;通过这种方法，数据被集中起来，并可以在各个组件之间重复使用。这可能是一个简单的选择，对一个小的应用程序来说占用的空间最小。&lt;/p&gt;
-&lt;h2&gt;组合&lt;/h2&gt;
-&lt;p&gt;一个类似的概念，即&lt;strong&gt;composition API&lt;/strong&gt;带来的概念，是使用一个&lt;strong&gt;组合&lt;/strong&gt; 。这种模式在React 那么非常流行，结合Vue强大的响应性机制，可以编写一些优雅的、可重复使用的可组合，比如下面这些：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import { ref, computed } from "vue";
-import fakeApiCall from "../api";
-
-export default function useFellowship() {
-  const heroes = ref([]);
-  const loading = ref(false);
-
-  async function init() {
-    loading.value = true;
-    heroes.value = await fakeApiCall();
-    loading.value = false;
-  }
-  return {
-    heroes: computed(() =&amp;gt; heroes.value),
-    loading: computed(() =&amp;gt; loading.value),
-    init
-  };
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后，可以这样使用：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
-  &amp;lt;p v-if="loading"&amp;gt;Loading...&amp;lt;/p&amp;gt;
-  &amp;lt;p v-else&amp;gt;Companions: {{ heroes.join(", ") }}&amp;lt;/p&amp;gt;
-&amp;lt;/template&amp;gt;
-
-&amp;lt;script&amp;gt;
-import useFellowship from "../composables/useFellowship";
-import { computed } from "vue";
-export default {
-  name: "MiddleEarth",
-  setup() {
-    const { heroes, loading, init } = useFellowship();
-    init();
-    return {
-      heroes: computed(() =&amp;gt; heroes.value),
-      loading,
-    };
-  },
-};
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;事例地址：https://codesandbox.io/s/composables-middle-earth-07yc6h?file=/src/composables/useFellowship.js&lt;/p&gt;
-&lt;p&gt;这种模式最初是为了取代 &lt;strong&gt;mixins&lt;/strong&gt; 而引入的，因为现在的组合比继承更受欢迎。但它也可以用来在组件之间共享状态。这也是许多为取代 Vuex 而出现的库背后的主要想法。&lt;/p&gt;
-&lt;h2&gt;Vuex 4&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f942f91a5b74423a9c2f362a39f8ea40~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Vuex是不会消失的&lt;/strong&gt;。它支持Vue 3，具有相同的API和最小的破坏性变化（这可能是其他库应该注意的）。唯一的变化是，安装必须发生在一个 Vue 实例上，而不是直接安装在 Vue 原型上。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import { createApp } from 'vue'
-import { store } from './store'
-import App from './App.vue'
-
-const app = createApp(App)
-
-app.use(store)
-
-app.mount('#app')
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Vuex 4 仍在维护中。不过，不会再有很多新的功能被添加到它里面。如果你已经有一个使用&lt;strong&gt;Vuex 3&lt;/strong&gt;的项目，并想推迟迁移到其他东西上，这是一个不错的选择。&lt;/p&gt;
-&lt;h2&gt;Pinia&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ad9c48ee71a244f18acf836a756624d9~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;Pinia 开始是一个实验，但很快就成为 Vue 3 的主要选择。它提供了比 Vuex 更多的 API ，有更好的架构和更直观的语法，充分利用了组合API。&lt;/p&gt;
-&lt;p&gt;在开发工具的支持上（状态检查、带动作的时间线和时间旅行的能力），以及 Vuex 所提供的使用插件的扩展性，pinia 在设计上是类型安全和模块化的，这是使用Vuex时最大的两个痛点。&lt;/p&gt;
-&lt;p&gt;此外，定义 story 的语法与 Vuex 模块非常相似，这使得迁移的工作量非常小，而在使用该 store 时，用到的 API，接近于 Vue3 使用组合API的方式。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import { defineStore } from 'pinia'
-
-export const useFellowship = defineStore('fellowship', {
-  state: () =&amp;gt; {
-    return { heroes: ['Aragorn', 'Legolas', 'Gimli', 'Gandalf'] }
-  },
-  actions: {
-    addHero(hero) {
-      this.heroes.push(hero)
-    },
-  },
-})
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;
-import { useFellowship } from '@/stores/fellowship'
-export default {
-  setup() {
-    const fellowship = useFellowship()
-    
-    // 对状态的访问 
-    //可以直接进行
-    console.log(fellowship.heroes)
-    
-    // Using an action
-    fellowship.addHero('Boromir')
-  },
-}
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;你可能已经注意到的，最大的区别是 &lt;strong&gt;mutations 完全消失了&lt;/strong&gt;。它们通常被认为是极其冗长的，而使用它们没有任何真正的好处。此外，也不再需要命名空间了。有了新的导入 store 的方式，所有的东西都被&lt;strong&gt;设计成了命名空间&lt;/strong&gt;。这意味着，在 Pinia 中，你没有一个带有多个模块的 store ，而是有多个按需导入和使用的 store 。&lt;/p&gt;
-&lt;h2&gt;Pinia Setup  Store&lt;/h2&gt;
-&lt;p&gt;Pinia支持另一种语法来定义 store。它使用一个定义响应式属性和方法的函数，并返回它们，与Vue Composition API的 setup 函数非常相似。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import { defineStore } from 'pinia'
-
-export const useFellowship = defineStore('fellowship', () =&amp;gt; {
-  const heroes = ref([]);
-  
-  function addHero(hero) {
-    heroes.value.push(hero)
-  }
-  return {
-    heroes,
-    addHero
-  };
-})
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在 Setup Stores 中：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;ref()&lt;/code&gt; 成为 &lt;code&gt;state&lt;/code&gt; 属性&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;computed()&lt;/code&gt; 成为 &lt;code&gt;getters&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;function()&lt;/code&gt; 成为 &lt;code&gt;actions&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href="https://pinia.vuejs.org/core-concepts/#setup-stores"&gt;Setup stores&lt;/a&gt; 比  &lt;a href="https://pinia.vuejs.org/core-concepts/#option-stores"&gt;Options Store&lt;/a&gt; 带来了更多的灵活性，因为可以在一个 store  内创建 watchers ，并自由使用任何可组合的。&lt;/p&gt;
-&lt;h2&gt;一个更实际的例子&lt;/h2&gt;
-&lt;p&gt;创建一个 fellowship store，它可以容纳一个 &lt;code&gt;heroes&lt;/code&gt; 列表，并能添加和删除对应的元素：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import { defineStore } from 'pinia'
-
-export const useFellowship = defineStore('fellowship', {
-  state: () =&amp;gt; ({
-    heroes: [],
-    filter: 'all',
-    // type will be automatically inferred to number
-    id: 1
-  }),
-  getters: {
-    aliveHeroes(state) {
-      return state.heroes.filter((hero) =&amp;gt; hero.isAlive)
-    },
-    deadHeroes(state) {
-      return state.heroes.filter((hero) =&amp;gt; !hero.isAlive)
-    },
-    filteredHeroes() {
-      switch (this.filter) {
-        case 'alive':
-          return this.aliveHeroes
-        case 'dead':
-          return this.deadHeroes
-        default:
-          return this.heroes
-      }
-    }
-  },
-  actions: {
-    addHero(name) {
-      if (!name) return
-      // Directly mutating the state!
-      this.heroes.push({ name, id: this.id++, isAlive: true })
-    },
-    killHero(name) {
-      this.heroes = this.heroes.map((hero) =&amp;gt; {
-        if (hero.name === name) {
-          hero.isAlive = false
-        }
-        return hero
-      })
-    },
-    setActiveFilter(filter) {
-      this.filter = filter
-    }
-  }
-})
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果你熟悉Vuex，那么理解这段代码应该不是什么难事。&lt;/p&gt;
-&lt;p&gt;首先，每个 state 都需要一个作为命名空间的键。这里，我们使用 &lt;code&gt;fellowship&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;state&lt;/code&gt; 是一个函数，保存这个 store 的所有响应性数据，&lt;code&gt;getters&lt;/code&gt; 是访问 store 里面的数据。&lt;code&gt;state&lt;/code&gt; 和 &lt;code&gt;getters&lt;/code&gt; 都与Vuex相同。&lt;/p&gt;
-&lt;p&gt;但对于 actions 来说与 Vuex 差异比较大。上下文参数已经消失了，actions 可以直接通过 &lt;code&gt;this&lt;/code&gt; 访问 state  和 getters 。你可能已经注意到的，actions 直接操作 state，这在Vuex 中是被严格禁止的。&lt;/p&gt;
-&lt;p&gt;最后，由于状态操作现在是在 actions 进行的，所以 mutations  被完全删除。&lt;/p&gt;
-&lt;p&gt;使用 pinia store  很简单:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;
-import { useFellowship } from '../store/fellowship'
-import HeroFilters from './HeroFilters'
-export default {
-  name: 'MiddleEarth',
-  components: {
-    HeroFilters
-  },
-  setup() {
-    const fellowship = useFellowship()
-    return {
-      fellowship
-    }
-  }
-}
-&amp;lt;/script&amp;gt;
-
-&amp;lt;template&amp;gt;
-  &amp;lt;div&amp;gt;
-    &amp;lt;template v-if="fellowship.heroes.length"&amp;gt;
-      &amp;lt;HeroFilters /&amp;gt;
-      &amp;lt;ol&amp;gt;
-        &amp;lt;li v-for="hero in fellowship.filteredHeroes" :key="hero.id"&amp;gt;
-          {{ hero.name }} - {{ hero.isAlive ? 'Alive' : 'Dead' }}
-          &amp;lt;button v-if="hero.isAlive" @click="fellowship.killHero(hero.name)"&amp;gt;Kill&amp;lt;/button&amp;gt;
-        &amp;lt;/li&amp;gt;
-      &amp;lt;/ol&amp;gt;
-    &amp;lt;/template&amp;gt;
-    &amp;lt;p v-else&amp;gt;Your fellowship is empty&amp;lt;/p&amp;gt;
-    &amp;lt;div&amp;gt;
-      &amp;lt;input type="text" ref="heroName" /&amp;gt;
-      &amp;lt;input type="button" value="Add new hero" @click="fellowship.addHero($refs.heroName.value)" /&amp;gt;
-      &amp;lt;p&amp;gt;
-        Sugestions:
-        &amp;lt;button
-          v-for="suggestion in ['Aragorn', 'Legolas', 'Gimli']"
-          :key="suggestion"
-          @click="fellowship.addHero(suggestion)"
-        &amp;gt;
-          {{ suggestion }}
-        &amp;lt;/button&amp;gt;
-      &amp;lt;/p&amp;gt;
-    &amp;lt;/div&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/template&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;所有的逻辑都发生在 &lt;code&gt;setup&lt;/code&gt; 函数中。导入的 &lt;code&gt;useFellowship&lt;/code&gt; 钩子被执行并返回。这样在 template 就可以直接。&lt;/p&gt;
-&lt;p&gt;当然，这个组件应该被分解成更小的可重复使用的组件，但为了演示的目的，就先这样吧。&lt;/p&gt;
-&lt;p&gt;如果一个不同的组件需要访问相同的 state，可以用类似的方式来完成。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;
-import { useFellowship } from '../store/fellowship'
-export default {
-  name: 'HeroFilters',
-  setup() {
-    const fellowship = useFellowship()
-    return {
-      fellowship
-    }
-  }
-}
-&amp;lt;/script&amp;gt;
-
-&amp;lt;template&amp;gt;
-  &amp;lt;div&amp;gt;
-    Filter:
-    &amp;lt;div v-for="filter in ['all', 'dead', 'alive']" :key="filter"&amp;gt;
-      &amp;lt;input
-        type="radio"
-        :value="filter"
-        :id="filter"
-        @click="fellowship.setActiveFilter(filter)"
-        v-model="fellowship.filter"
-      /&amp;gt;
-      &amp;lt;label :for="filter"&amp;gt;{{ filter }}&amp;lt;/label&amp;gt;
-    &amp;lt;/div&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/template&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;事例地址：https://codesandbox.io/s/pinia-playground-brgy58?file=/src/components/MiddleEarth.vue&lt;/p&gt;
-&lt;h2&gt;从 Vuex 迁移到 Pinia&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://pinia.vuejs.org/cookbook/migration-vuex.html"&gt;Pinia的文档很乐观&lt;/a&gt;，认为代码可以在库之间重复使用，但事实是，架构非常不同，肯定需要重构。首先，在Vuex中，我们有一个带有多个模块的 store ，而 Pinia 是围绕着多个 store  的概念建立的。将这一概念过渡到Pinia 中的最简单方法是，以前使用的每个模块现在都是一个 store 。&lt;/p&gt;
-&lt;p&gt;此外，&lt;code&gt;mutations&lt;/code&gt;  不再存在。相反，这些应该转换为直接访问和改变状态的操作。&lt;/p&gt;
-&lt;p&gt;Actions  不再接受上下文作为其第一个参数。它们应该被更新以直接访问状态或任何其他上下文属性。这同样适用于 &lt;code&gt;rootState&lt;/code&gt;、&lt;code&gt;rootGetters&lt;/code&gt;等，因为单一全局存储的概念并不存在。如果你想使用另一个 store，需要明确地导入它。&lt;/p&gt;
-&lt;p&gt;很明显，对于大型项目来说，迁移将是复杂和耗时的，但希望大量的模板代码将被消除，store 将遵循一个更干净和模块化的架构。改造可以逐个模块进行，而不是一次性改造所有内容。实际上，在迁移过程中，可以将 Pinea 和Vuex混合在一起，这种方法对于复杂的项目来说也是不错的选择。&lt;/p&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/68444c05cd3645fba267226da322c299~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;预测未来并不容易，但就目前而言，Pinea 是最安全的赌注。它提供了一个模块化的架构，通过设计实现类型安全，并消除了模板代码。如果你要用Vue 3开始一个新的项目，Pinia 是值得推荐的选择。&lt;/p&gt;
-&lt;p&gt;如果你已经在使用Vuex，你可以在迁移到Pinia之前升级到第4版，因为这个过程看起来很简单，但需要大量的时间。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;作者：Fotis Adamakis  译者：前端小智 来源：mediun&lt;/p&gt;
-&lt;p&gt;原文：
-https://fadamakis.medium.com/the-future-of-state-management-in-vue-js-fa3f94865d1f&lt;/p&gt;
-&lt;h3&gt;交流&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
-&lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Wed, 17 Aug 2022 16:36:01 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
+&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Wed, 24 Aug 2022 16:17:31 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: awesome-green
 highlight: a11y-light&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://juejin.cn/post/7095547569777934367"&gt;13.5W 播放量的 TS 动画版进阶教程合集来了！&lt;/a&gt;，通过形象生动的动画，让你轻松搞懂 TypeScript 的难点和核心知识点！&lt;/p&gt;
