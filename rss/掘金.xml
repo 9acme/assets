@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Sat, 08 Oct 2022 22:51:59 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 54 期：TS 4.9 Beta、Monorepo Handbook、第 92 次 TC39 会议、将 StoryBook Stories</title><link>https://juejin.cn/post/7147660762519961631</link><description>&lt;hr /&gt;
+<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Sun, 09 Oct 2022 22:52:03 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 54 期：TS 4.9 Beta、Monorepo Handbook、第 92 次 TC39 会议、将 StoryBook Stories</title><link>https://juejin.cn/post/7147660762519961631</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: fancy
 highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
@@ -5591,7 +5591,519 @@ export default defineConfig({
 &lt;h2&gt;招贤纳士&lt;/h2&gt;
 &lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
 &lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 19 Jul 2022 16:12:17 GMT</pubDate></item><item><title>CSS容器查询终于来了</title><link>https://juejin.cn/post/7148962811740160007</link><description>&lt;p&gt;CSS容器查询终于来了! 它们目前在谷歌浏览器（105）中得到了支持，很快就会在Safari 16中得到支持。这对前端来说容器查询与媒体查询一样重要。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 19 Jul 2022 16:12:17 GMT</pubDate></item><item><title>创建现代npm包的最佳实践</title><link>https://juejin.cn/post/7152302632143421470</link><description>&lt;blockquote&gt;
+&lt;p&gt;本文首发于微信公众号：大迁世界, 我的微信：qq449245884，我会第一时间和你分享前端行业趋势，学习途径等等。
+更多开源作品请看 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; ，包含一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;技术一直在变化，我们的流程和做法也需要跟上这些变化。因此，虽然npm已经有12年的历史了，但围绕 npm 包创建的做法应该更现代。&lt;/p&gt;
+&lt;p&gt;在这节课中，我们使用现代最佳实践（截至2022年）一步一步地创建一个npm包。首先学习如何创建一个npm包，这样你就可以熟悉构建和发布一个包到 npm 注册表。&lt;/p&gt;
+&lt;p&gt;然后，再学习如何通过建立测试框架、持续集成和部署管道、安全检查以及发布的自动语义版本管理，来制作一个更健壮、可用于生产的npm包。&lt;/p&gt;
+&lt;h2&gt;简单的npm包示例&lt;/h2&gt;
+&lt;p&gt;我们先通过一个简单的例子来熟悉创建和发布npm包的过程。&lt;/p&gt;
+&lt;h4&gt;创建项目&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;创建一个 GitHub 仓库: https://github.com/new&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;克隆本地的 repo。
+例如：git clone https://github.com/snyk-labs/simple-npm-package.git&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打开你的终端,进入到克隆的项目文件夹。
+例如：cd simple-npm-package&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;运行 &lt;code&gt;npm init -y&lt;/code&gt; 来创建 &lt;code&gt;package.json&lt;/code&gt; 文件。注意：如果克隆了示例仓库，就不需要做这一步。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在package.json 取一个名称，对应 name 字段&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;为该包编写你的代码&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;创建 npm 账户&lt;/h4&gt;
+&lt;p&gt;为了能够让我们的 npm 包供他人使用，需要一个npm账户。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过 https://www.npmjs.com/signup 注册&lt;/li&gt;
+&lt;li&gt;为了提高安全性，请在您的npm账户上启用2FA：https://docs.npmjs.com/configuring-two-factor-authentication&lt;/li&gt;
+&lt;li&gt;使用 npm login 命令在终端中用你的 npm账户登录，并按照屏幕上的指示操作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; npm login
+npm notice Log in on https://registry.npmjs.org/
+Username: clarkio
+Password:
+Email: (this IS public) &amp;lt;email address&amp;gt;
+npm notice Please use the one-time password (OTP) from your authenticator application
+Enter one-time password from our authenticator app: &amp;lt;OTP&amp;gt;
+Logged in as clarkio on https://registry.npmjs.org/.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;如何发布 npm 包&lt;/h2&gt;
+&lt;p&gt;一旦你有了一个npm项目和一个npm账户，你就可以把你的npm包发布到公开的官方&lt;code&gt;npmjs&lt;/code&gt;注册表上，让其他人可以使用。以下是你要遵循的步骤，在执行之前检查将发布的内容，然后运行实际的发布过程。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在终端，运行 &lt;code&gt;npx npm-packlist&lt;/code&gt; 来查看将被包含在发布版本的软件包中的内容。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这可以确保我们没有遗漏任何源代码文件，这些文件是软件包正常运行所需要的。这也是一个好的做法，以确保我们不会意外地将敏感信息泄露给公众，如带有数据库凭证或API密钥的本地配置文件。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; npx npm-packlist
+LICENSE
+index.js
+package.json
+README.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在终端，运行&lt;code&gt;npm publish --dry-run&lt;/code&gt;，看看实际运行命令时将会做什么。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; npm publish --dry-run
+npm notice
+npm notice 📦@clarkio/simple-npm-package@0.0.1
+npm notice === Tarball Contents ===
+npm notice 1.1kB LICENSE
+npm notice 1.2kB README.md
+npm notice 95B index.js
+npm notice 690B package.json
+npm notice === Tarball Details===
+npm notice name: @clarkio/simple-npm-package
+npm notice version: 0.0.1
+npm notice filename:@clarkio/simple-npm-package-0.0.1.tgz
+npm notice package size:1.7 kB
+npm notice unpacked size: 3.1 kB
+npm notice shasum:40ede3ed630fa8857c0c9b8d4c81664374aa811c
+npm notice integrity:sha512-QZCyWZTspkcUXL... ]L60ZKBOOBRLTg==
+npm notice total files:4
+npm notice
++ @clarkio/simple-npm-package@0.0.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;在终端，运行 &lt;code&gt;npm publish --access=public&lt;/code&gt; 来发布软件包到npm。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注意：&lt;strong&gt;--access=public&lt;/strong&gt;对于作用哉内的包（&lt;code&gt;@clarkio/modern-npm-package&lt;/code&gt;）是需要的，因为它们默认是私有的。如果它不是作用哉内的，并且在你的 &lt;code&gt;package.json&lt;/code&gt; 中没有将&lt;code&gt;private&lt;/code&gt; 字段设置为 &lt;code&gt;true&lt;/code&gt;，它也将是公开的。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; npm publish --access=public
+npm notice
+npm notice 📦@clarkio/simple-npm-package@0.0.1
+npm notice === Tarball Contents ===
+npm notice 1.1kB LICENSE
+npm notice 1.2kB README.md
+npm notice 95B index.js
+npm notice 690B package.json
+npm notice === Tarball Details===
+npm notice name: @clarkio/simple-npm-package
+npm notice version: 0.0.1
+npm notice filename:@clarkio/simple-npm-package-0.0.1.tgz
+npm notice package size:2.1 kB
+npm notice unpacked size: 4.1 kB
+npm notice shasum:6f335d6254ebb77a5a24ee729650052a69994594
+npm notice integrity:sha512-VZ1K1eMFOKeJW[...]7ZjKFVAxLcpdQ==
+npm notice total files:4
+npm notice
+This operation requires a one-time password.
+Enter OTP: &amp;lt;OTP&amp;gt;
++ @clarkio/simple-npm-package@0.0.1
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在，我们已经完成了构建和部署自己的npm包。接下来，我们来看一下如何制作一个更强大的包，为生产环境做好准备，并得到更广泛的使用。&lt;/p&gt;
+&lt;h2&gt;生产就绪的npm包&lt;/h2&gt;
+&lt;p&gt;虽然前面的例子的包可以在生产中使用，但它涉及到人工成本来保持其长期的维护。使用工具和自动化以及适当的测试和安全检查将有助于最大限度地减少保持软件包顺利运行的总工作量。让我们深入了解一下这其中的内容。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;构建CommonJS（CJS）和ECMAScript（ESM）模块&lt;/li&gt;
+&lt;li&gt;设置和编写单元测试&lt;/li&gt;
+&lt;li&gt;实施安全检查&lt;/li&gt;
+&lt;li&gt;实现版本管理和发布的自动化&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;构建 CommonJS（CJS）和ECMAScript（ESM）模块&lt;/h4&gt;
+&lt;p&gt;虽然ECMAScript模块格式现在在Node.js的12+版本中被原生支持，但它还没有被社区广泛采用。为了面向未来并支持这两种格式，我们来看下使用 TypeScript怎么来配置。&lt;/p&gt;
+&lt;p&gt;首先，创建一个基本的 TypeScript 配置文件 &lt;code&gt;tsconfig.base.json&lt;/code&gt;。这是通用的编译设置，无论你的目标是哪种模块格式，都可以使用。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "checkJs": true,
+    "allowJs": true,
+    "declaration": true,
+    "declarationMap": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "files": ["../src/index.ts"]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后为 CommonJS 格式创建一个TypeScript配置文件，命名为&lt;code&gt;tsconfig.cjs.json&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;lib&lt;/code&gt; 属性向TypeScript指出它应该参考哪些类型。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;target&lt;/code&gt; 属性向TypeScript指出要编译的项目代码的JavaScript版本。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;module&lt;/code&gt; 属性向 TypeScript 指出在编译的项目代码时应该使用哪种JavaScript模块格式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;moduleResolution&lt;/code&gt; 属性帮助 TypeScript 弄清 "import"语句应该如何被提及。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;outDir&lt;/code&gt; 和 &lt;code&gt;declarationDir&lt;/code&gt; 属性向TypeScript指出了将编译的代码和定义其中使用的类型的结果放在哪里。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES6", "DOM"],
+    "target": "ES6",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "outDir": "../lib/cjs",
+    "declarationDir": "../lib/cjs/types"
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;之后，为 ECMAScript 格式创建一个TypeScript配置文件，命名为&lt;code&gt;tsconfig.esm.json&lt;/code&gt;。这里的属性与你在 CommonJS 配置中看到的相同，但现在针对现代ECMAScript模块格式作为其输出。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM"],
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "../lib/esm",
+    "declarationDir": "../lib/esm/types"
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;更新 &lt;code&gt;package.json&lt;/code&gt; 文件，增加一个 &lt;code&gt;files&lt;/code&gt; 字段，指向&lt;code&gt;lib&lt;/code&gt;文件夹，里面有 TypeScript为你构建软件包的结果。&lt;/p&gt;
+&lt;p&gt;更新 &lt;code&gt;package.json&lt;/code&gt; 文件中的 &lt;code&gt;exports&lt;/code&gt; 字段，以定义如何根据使用的模块加载器（CJS vs. ESM）查找源文件。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;"exports": {
+    ".": {
+      "import": {
+        "types": "./lib/esm/types/index.d.ts",
+        "default": "./lib/esm/index.mjs"
+      },
+      "require": {
+        "types": "./lib/cjs/types/index.d.ts",
+        "default": "./lib/cjs/index.js"
+      }
+    }
+  },
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;更新 &lt;code&gt;package.json&lt;/code&gt; 文件的 &lt;code&gt;main&lt;/code&gt;和 &lt;code&gt;types&lt;/code&gt; 字段，以指向软件包的CJS版本。这将作为一个默认的、后备的选项。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;“types": "./lib/cjs/types/index.d.ts",
+"main": "./lib/cjs/index.js",
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在 &lt;code&gt;package.json&lt;/code&gt; 文件中添加一个 &lt;code&gt;files&lt;/code&gt; 字段，以表明当 &lt;code&gt;npm&lt;/code&gt; 打包你的代码进行发布时，应该包括哪些文件。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;"files": [
+   "lib/**/*"
+],
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;通过 &lt;code&gt;package.json&lt;/code&gt; 中的 &lt;code&gt;scripts&lt;/code&gt; 字段创建命令，使用 &lt;code&gt;tsc&lt;/code&gt; 并编译包的 CJS 和 ESM 格式，并生成 &lt;code&gt;lib&lt;/code&gt; 文件。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;clean&lt;/code&gt; 命令是用来删除过去构建的输出，并从一个干净的地方开始。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;build:esm&lt;/code&gt;命令末尾的 &lt;code&gt;mv lib/esm/index.js lib/esm/index.mjs&lt;/code&gt; 重命名了文件扩展名，这样Node.js模块加载器就知道它是一个ESM模块。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;prepack&lt;/code&gt;命令是npm在打包npm包准备发布到注册表之前使用的。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    "clean": "rm -rf ./lib",
+    "build": "npm run clean &amp;amp;&amp;amp; npm run build:esm &amp;amp;&amp;amp; npm run build:cjs",
+    "build:esm": "tsc -p ./configs/tsconfig.esm.json &amp;amp;&amp;amp; mv lib/esm/index.js lib/esm/index.mjs",
+    "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
+    "prepack": "npm run build"
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在可以在终端运行 &lt;code&gt;npm run build&lt;/code&gt;，让TypeScript构建你的项目，为使用和发布做准备&lt;/p&gt;
+&lt;p&gt;这就是使用 TypeScript 构建 npm 包所需要做的所有设置，它同时支持 CommonJS 和ECMAScript模块格式。&lt;/p&gt;
+&lt;h2&gt;设置和添加测试&lt;/h2&gt;
+&lt;p&gt;为了对代码的行为和结果有信心，我们需要有一个测试过程。测试迫使在第一次创建代码时，在happy-path 之外，以不同的方式思考代码的功能。举个例子，可以想办法打破一个函数，使它抛出一个错误或产生一个非预期的结果。这样做将使你的应用程序更有弹性和可持续性，并确保在添加更多内容时不会出现问题。&lt;/p&gt;
+&lt;h4&gt;单元测试&lt;/h4&gt;
+&lt;p&gt;要确保库以我们想要的方式运行，需要针对代码编写测试。我们需要一些工具来帮助设置我们项目来运行单元测试并显示结果。&lt;/p&gt;
+&lt;p&gt;这些工具有 &lt;code&gt;Mocha.js&lt;/code&gt;、&lt;code&gt;Chai.js&lt;/code&gt;和 &lt;code&gt;ts-node&lt;/code&gt;。Mocha.js 是一个测试运行器，Chai.js是一个断言库，帮助确定你是否从你的代码中得到你所期望的结果，而 &lt;code&gt;ts-node&lt;/code&gt; 帮助我们在TypeScript项目中使用这些工具。按照下面的步骤，为 npm包设置和运行测试。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在终端中使用以下命令安装开发者的依赖:
+&lt;code&gt;npm i -D mocha @type/mocha chai @types/chai ts-node&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在项目的根目录下创建一个新文件 &lt;code&gt;.mocharc.json&lt;/code&gt;，内容如下:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;{
+     "extension": ["ts"],
+     "spec": "./**/*.spec.ts",
+     "require": "ts-node/register"
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在项目的根目录下创建一个 &lt;code&gt;tests&lt;/code&gt; 文件夹。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 &lt;code&gt;index.spec.ts&lt;/code&gt; 文件中写单元测试来测试 &lt;code&gt;index.ts&lt;/code&gt; 中的代码。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 &lt;code&gt;package.json&lt;/code&gt; 文件的 &lt;code&gt;scripts&lt;/code&gt; 部分添加一个 &lt;code&gt;test&lt;/code&gt; 属性，给它一个 &lt;code&gt;mocha&lt;/code&gt; 的值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;  "scripts": {
+    "clean": "rm -rf ./lib",
+    "build": "npm run clean &amp;amp;&amp;amp; npm run build:esm &amp;amp;&amp;amp; npm run build:cjs",
+    "build:esm": "tsc -p ./configs/tsconfig.esm.json &amp;amp;&amp;amp; mv lib/esm/index.js lib/esm/index.mjs",
+    "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
+    "prepack": "npm run build",
+    "test": "mocha"
+  },
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;最后，在终端运行 &lt;code&gt;npm test&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;bc@mbp-snyk modern-npm-package % npm test
+
+&amp;gt; @clarkio/modern-npm-package@0.0.0-development test
+&amp;gt; mocha
+
+  NPM Package
+    ✔️ should be an object
+    ✔️ should have a helloworld property
+
+  Hello World Function
+    ✔️  should be a function
+    ✔️ should return the hello world message
+
+4 passing (22ms)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;管道中的测试&lt;/h2&gt;
+&lt;p&gt;按照下面的步骤，创建一个测试工作流，作为项目管道的一部分。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;为仓库创建一个新的GitHub Action ：&lt;code&gt;https://github.com/&amp;lt;your-account-or-organization&amp;gt;/&amp;lt;your-repo-name&amp;gt;/actions/new&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将工作流程重命名为 &lt;code&gt;test.yml&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在工作流程文件中插入以下Snyk动作脚本:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x, 18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm test
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这个YAML脚本检查出你的最新代码，安装其依赖性，并运行 &lt;code&gt;npm test&lt;/code&gt;命令来执行测试。它对&lt;code&gt;node-version&lt;/code&gt;字段中列出的每一个Node.js版本都会这样做，所以可以确保代码在每次运行时都能按预期工作。&lt;/p&gt;
+&lt;p&gt;现在已经完成了对项目的设置，以便对npm包的代码进行运行和评估测试。然而，你可能在想 "我如何在另一个项目中使用我的npm包进行测试？" 让我们来看看。&lt;/p&gt;
+&lt;h2&gt;包测试&lt;/h2&gt;
+&lt;p&gt;包上传完成后，除了单元测试外，我们还要测试在另一个项目引入我们包使用的情况，看看是否像我们所期望那样。这里有五种可以测试的方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;通过 npm pack 输出安装&lt;/li&gt;
+&lt;li&gt;通过相对路径安装&lt;/li&gt;
+&lt;li&gt;通过npm链接安装&lt;/li&gt;
+&lt;li&gt;通过注册表安装（如npmjs.com的npm公共注册表）。&lt;/li&gt;
+&lt;li&gt;使用Verdaccio（一个开源的npm私有npm注册项目）来运行端到端的软件包发布和安装步骤，作为你CI的一部分。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;npm pack&lt;/h2&gt;
+&lt;p&gt;这种方法将利用&lt;code&gt;npm pack&lt;/code&gt;命令将 npm 包打包并压缩成一个文件（&lt;code&gt;&amp;lt;package-name&amp;gt;.tgz&lt;/code&gt;）。然后你可以到你想使用该包的项目中，通过这个文件安装它。这样做的步骤如下。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;终端运行 &lt;code&gt;npm pack&lt;/code&gt;。注意它产生的&lt;code&gt;.tgz&lt;/code&gt;文件和它的位置。&lt;/li&gt;
+&lt;li&gt;改变目录到你想使用 &lt;code&gt;npm&lt;/code&gt; 包的项目目录。例如：&lt;code&gt;cd /path/to/project&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;运行&lt;code&gt;npm install /path/to/package.tgz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;然后就可以在项目中使用该包来测试东西了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;npm link&lt;/h2&gt;
+&lt;p&gt;利用 &lt;code&gt;npm link&lt;/code&gt; 命令来安装本地包：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在当前包目录中，在终端运行 &lt;code&gt;npm link&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;改变目录到你想使用npm包的项目目录。例如：&lt;code&gt;cd /path/to/project&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在项目中运行 &lt;code&gt;npm link &amp;lt;name-of-your-package&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这样在项目中就可以使用我们的包。&lt;/p&gt;
+&lt;h2&gt;相对路径&lt;/h2&gt;
+&lt;p&gt;这种类似于npm link。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在终端运行 &lt;code&gt;npm install /path/to/your/package&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;与 &lt;code&gt;npm link&lt;/code&gt; 的方法类似，这允许我们在项目中快速测试包的功能，但不会给你完整的类似生产的体验。这是因为它指向完整的软件包源代码目录，而不是你在npm注册表中找到的软件包的构建版本。&lt;/p&gt;
+&lt;h2&gt;npm registry&lt;/h2&gt;
+&lt;p&gt;这种方法利用了npm包的公共（或你自己）注册表。它涉及到发布的包，并像你通常对任何其他npm包那样进行安装。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用本文前面概述的步骤，通过 &lt;code&gt;npm publish&lt;/code&gt; 命令发布npm包&lt;/li&gt;
+&lt;li&gt;改变目录到想使用npm包的项目目录。例如：&lt;code&gt;cd /path/to/project&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在项目目录中运行 &lt;code&gt;npm install &amp;lt;name-of-your-package&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;实施安全检查&lt;/h2&gt;
+&lt;p&gt;就像你不希望在自己的项目中出现安全漏洞一样，你也不希望在其他人的项目中引入漏洞。构建一个预计会在许多其他项目中使用的npm包，这就增加了确保事情安全的责任。你需要有安全检查，以帮助监测、提醒和提供帮助来减少漏洞。这就是像&lt;a href="https://app.snyk.io/login"&gt;Snyk&lt;/a&gt;这样的工具可以简化完成这些需求所需的工作的地方。&lt;/p&gt;
+&lt;p&gt;对于这个例子中的npm包，你使用GitHub作为你的源码控制管理工具，所以利用它的GitHub Actions功能将Snyk整合到工作流程中。Snyk 有一个GitHub Actions参考项目，可以帮助启动这方面的工作，并为你的项目可能使用的其他编程语言和工具提供例子。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Snyk是免费的，这里可以进行&lt;a href="https://app.snyk.io/login?redirectUri=L2FjY291bnQ%3D&amp;amp;from=snyk_marketing_site"&gt;注册&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在GitHub上将你的Snyk API令牌添加为仓库秘密： &lt;code&gt;https://github.com/&amp;lt;your-account-or-organization&amp;gt;/&amp;lt;your-repo-name&amp;gt;/settings/secrets/actions/new&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;仓库创建一个新的GitHub Action: &lt;code&gt;https://github.com/&amp;lt;your-account-or-organization&amp;gt;/&amp;lt;your-repo-name&amp;gt;/actions/new&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将workflow 重命名为 &lt;code&gt;snyk.yml&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 workflow 文件中插入以下Snyk Action 脚本:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;name: Snyk Security Check
+on: [push,pull_request]
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start="6"&gt;
+&lt;li&gt;提交你的修改。&lt;/li&gt;
+&lt;li&gt;验证Action 成功运行: &lt;code&gt;https://github.com/&amp;lt;your-account-or-organization&amp;gt;/&amp;lt;your-repo-name&amp;gt;/actions&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;有了这个设置，任何时候任何人推送到你的版本库或针对它打开一个拉动请求，都会进行安全检查，以确保它不会在软件包中引入任何漏洞。如果发现了问题，行动将失败，并提醒你发现的安全问题的细节。接下来，你将围绕版本管理和发布你的npm包进行自动化处理。&lt;/p&gt;
+&lt;p&gt;关于目前的设置，需要注意的一点是，它只利用了Snyk开源（SCA）产品，而不是Snyk代码（SAST）。Snyk Code是我们的代码安全产品，你需要首先通过你的Snyk账户启用它（免费），然后在这里添加到你的工作流程脚本中，以充分利用它。&lt;/p&gt;
+&lt;h2&gt;实现版本管理和发布的自动化&lt;/h2&gt;
+&lt;p&gt;每当在主分支中合并变化时，我们不想每次都手动更新npm包的版本并发布它。相反，会想让这个过程自动发生。如果你还记得本篇文章前面那个简单的npm包的例子，用以下命令来更新npm包的版本，然后发布它。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm version &amp;lt;major|minor|patch&amp;gt;
+npm publish
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;什么是语义版本管理？&lt;/h4&gt;
+&lt;p&gt;语义版本管理规定，版本要用三个占位符进行编号。第一个是主要版本，第二个是次要版本，而最后一个是补丁版本。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://semantic-release.gitbook.io/semantic-release/"&gt;Semantic Release&lt;/a&gt;的工具可以与 GitHub Actions 整合来帮助我们自动修改版本并发布。实现这一过程自动化的关键是，你在向项目提交变更时使用所谓的常规提交。这使得自动化能够相应地更新一切，并知道如何为你准备项目的下一个版本。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;运行：&lt;code&gt;npm i -D semantic-release&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;npx semantic-release-cli setup&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;按照终端的提示，提供所需的令牌&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;需要一个来自 GitHub 的个人访问令牌。要创建一个，请到 https://github.com///settings/secrets/actions/new&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在创建此令牌时，请使用以下作用域&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7d5f102e01154db2ac100e1a13459baf~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;还需要一个来自npm的自动化类型的访问令牌，只在CI环境中使用，这样它就能绕过你的账户的2FA。要创建一个，请到https://www.npmjs.com/settings//tokens。请确保选择 "Automation"类型，因为这将用于CI/CD工作流程中。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b68b33fe4e3e42ac967d3b763a14a785~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bc@mbp-snyk modern-npm-package % npx semantic-release-cli setup
+? What is your npm registry? https://registry.npmjs.org/
+? What is vour nom username? clarkio
+? What is your pm password? [hidden]
+? What is your NPM two-factor authentication code? &amp;lt;2FA code&amp;gt;
+Provide a GitHub Personal Access Token (create a token at https://github.com/settings/tokens/new?scopes=repo
+&amp;lt;token&amp;gt;
+? What CI are you using? Github Actions
+bc@mbp-snyk modern-npm-package %
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start="5"&gt;
+&lt;li&gt;将npm令牌作为仓库秘密添加到GitHub仓库中：&lt;code&gt;https://github.com/&amp;lt;your-name-or-organization/&amp;lt;your-repository&amp;gt;/settings/secrets/actions/new&lt;/code&gt;。将秘密的名称设置为&lt;code&gt;NPM_TOKEN&lt;/code&gt;，其值是你在前面步骤中检索到的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a31451f109e045609eced9eaf1f970e8~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;ol start="6"&gt;
+&lt;li&gt;回到项目中，进入&lt;code&gt;package.json&lt;/code&gt;文件，像下面这样添加一个&lt;code&gt;release&lt;/code&gt;键。如果你的版本库的主分支仍然叫&lt;code&gt;master&lt;/code&gt;而不是&lt;code&gt;main&lt;/code&gt;，那么就相应地更新上述分支的值。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;"release": {
+    "branches": ["main"]
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start="7"&gt;
+&lt;li&gt;在 &lt;code&gt;package.json&lt;/code&gt; 文件中也添加一个&lt;code&gt;publishConfig&lt;/code&gt;键。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;"publishConfig": {
+    "access": "public"
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start="8"&gt;
+&lt;li&gt;
+&lt;p&gt;通过使用&lt;code&gt;semantic-release npm&lt;/code&gt;脚本进行模拟运行来测试一切。采用以下命令，并将&lt;code&gt;NPM_TOKEN=&lt;/code&gt;和&lt;code&gt;GH_TOKEN=&lt;/code&gt;值设置为使用您各自的令牌值。然后在你的终端中复制并运行完整的命令，看看一切是否运行正常。你会看到进程被记录在终端的输出中。如果出现任何问题，它们会在这里显示出来，并提供解决这些问题的细节。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在确认试运行成功后，可以为GitHub仓库设置一个新的GitHub动作来为你处理发布过程。转到你在GitHub上的仓库，点击 "Actions"。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击新建工作流程选项。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将工作流程重命名为release.yml。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在新的工作流程文件中加入以下YAML脚本。这个脚本主要是说，一旦Snyk安全检查工作成功完成，就运行发布工作。发布作业会检查代码，设置Node.js环境，安装你的依赖项，然后使用你的GitHub和npm令牌运行语义发布。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;name: Release
+on:
+  workflow_run:
+    workflows: ['Snyk Security Check', 'Tests']
+    branches: [main]
+    types:
+      - completed
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 'lts/*'
+      - name: Install dependencies
+        run: npm ci
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;13.提交你的本地修改并推送到你的GitHub仓库&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以通过在终端运行命令 &lt;code&gt;git commit -am '&amp;lt;your commit message&amp;gt;'&lt;/code&gt;，然后&lt;code&gt;git push&lt;/code&gt;来实现。&lt;/li&gt;
+&lt;li&gt;也可以在VS Code中通过其版本控制功能做到这一点。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start="14"&gt;
+&lt;li&gt;在所有这些设置完成后，现在可以使用传统的提交方式将修改推送到你的主分支（或通过合并拉动请求），然后发布工作流就会运行（当然是在Snyk安全检查之后）。你可以在&lt;code&gt;modern-npm-package&lt;/code&gt;版本库工作流程的例子中看到这种情况。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;我们总结一下在本文中学到的一切。首先，熟悉了设置、创建和部署一个简单的npm包。这对于熟悉首次发布自己的npm包来说是很好的。然而，如果想制作一个供生产使用的npm包，这样做是相当费力的，也是不可持续的。&lt;/p&gt;
+&lt;p&gt;为了完成制作一个可用于生产的包，随后学会了如何为CommonJS（CJS）和ECMAScript（ESM）模块格式进行构建，设置和编写单元测试，实现安全检查，并自动进行版本管理和发布。有了这些知识，现在已经准备好制作更多属于你自己的npm包了，这些包很容易被社区或你的公司所使用。&lt;/p&gt;
+&lt;p&gt;来源：https://snyk.io/blog/best-practices-create-modern-npm-package/&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;交流&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
+&lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
+&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Sat, 08 Oct 2022 16:27:57 GMT</pubDate></item><item><title>CSS容器查询终于来了</title><link>https://juejin.cn/post/7148962811740160007</link><description>&lt;p&gt;CSS容器查询终于来了! 它们目前在谷歌浏览器（105）中得到了支持，很快就会在Safari 16中得到支持。这对前端来说容器查询与媒体查询一样重要。&lt;/p&gt;
 &lt;p&gt;在这节课中，我们介绍一下容器查询是如何工作的，如何使用它们，以及语法是什么样子的，并分享一些现实生活中的例子和用例。&lt;/p&gt;
 &lt;h2&gt;简介&lt;/h2&gt;
 &lt;p&gt;在设计一个组件时，我们需要适配不同的变化，并根据CSS类或视口大小来改变它们。这对于我们开发来说不是很理想，会迫使我们根据变化类或视口尺寸来写CSS。&lt;/p&gt;
@@ -6960,175 +7472,7 @@ const { foo, bar = 100 } = defineProps&amp;lt;Props&amp;gt;()
 &lt;blockquote&gt;
 &lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
 &lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Mon, 29 Aug 2022 16:25:28 GMT</pubDate></item><item><title>你不应该依赖CSS 100vh，这就是原因!</title><link>https://juejin.cn/post/7135600743095992327</link><description>&lt;blockquote&gt;
-&lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
-本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果有一个文本和一个按钮，我们想让文本粘在上面，而按钮粘在下面！使用CSS Flex 似乎很容易做到。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// HTML
-&amp;lt;div className="layout"&amp;gt;
-  &amp;lt;p&amp;gt;Lorem ipsum dolor sit amet...&amp;lt;/p&amp;gt;
-  &amp;lt;button&amp;gt;Sign Up&amp;lt;/button&amp;gt;
-&amp;lt;/div&amp;gt;
-
-// CSS
-.layout {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在真机检查一下效果：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/af2efdbdaa284a7fa34578d51cdb0ad5~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;酷! Git add, git commit, git push, oh yeah!&lt;/p&gt;
-&lt;h2&gt;这有什么问题吗？&lt;/h2&gt;
-&lt;p&gt;当然，是有的! 要看到这个问题，你需要在真实的手机或模拟器上查看你的应用程序。在本文中使用的 iPhone 13（iOS 15.2）进行测试，下面是结果:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/81dfd42e6c564138be3ed6403a9e3e0a~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;啥，底部按钮跑哪里去了？&lt;/p&gt;
-&lt;p&gt;顺便说一下，它在安卓手机上甚至不能按预期工作。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b0c5c004f67448f8a931390b1d52e506~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;h2&gt;为什么100vh问题会发生在移动设备上？&lt;/h2&gt;
-&lt;p&gt;我对这个问题进行了一番调查，发现了其中的原因。简短的答案是，浏览器的工具栏高度没有被考虑在内。如果你想深入了解为什么会发生这种情况，&lt;a href="https://stackoverflow.com/questions/37112218/css3-100vh-not-constant-in-mobile-browser"&gt;Stack Overflow的这个帖子&lt;/a&gt;很有帮助。&lt;/p&gt;
-&lt;h2&gt;如何修复移动设备上的100vh问题？&lt;/h2&gt;
-&lt;p&gt;第一个建议是尽量少用 &lt;code&gt;vh&lt;/code&gt;。例如，在上面的代码中，你可以使用一个 sticky 按钮，避免使用&lt;code&gt;vh&lt;/code&gt;单位。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// HTML
-&amp;lt;div className="layout"&amp;gt;
-  &amp;lt;p&amp;gt;Lorem ipsum dolor sit amet...&amp;lt;/p&amp;gt;
-  &amp;lt;button&amp;gt;Sign Up&amp;lt;/button&amp;gt;
-&amp;lt;/div&amp;gt;
-
-// CSS
-.layout {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-}
-.layout button {
-  position: sticky;
-  bottom: 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="001.gif" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b127408ff862403c9ac04a490afd0a6e~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;它在横向模式下也很好:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="002.gif" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/84a6522035dc474b907a9a48e4edc5fb~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;说实话，结果是好的，但你不能总是用 &lt;code&gt;sticky&lt;/code&gt;  元素来解决 &lt;code&gt;100vh&lt;/code&gt; 的问题。&lt;/p&gt;
-&lt;h2&gt;仅使用 CSS 在移动设备上修复 100VH 问题&lt;/h2&gt;
-&lt;p&gt;时，使用 &lt;code&gt;vh&lt;/code&gt; 的目的是为了简单地创建与视口高度相等的部分。例如，当你在建立登陆页面时，这很常见。在这些情况下，&lt;code&gt;position sticky&lt;/code&gt;不会有帮助，这里介绍一下 &lt;code&gt;fill-available&lt;/code&gt;属性。它用起来很简单，只要记住使用前缀和回退值就可以了。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;.layout {
-  min-height: 100vh;            /* fall-back */
-  min-height: -moz-available;
-  min-height: -webkit-fill-available;
-  min-height: fill-available;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="003.gif" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/85f87adc32b94fa0afba91f05b73002e~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;而且，当你旋转设备时，它还会更新高度，太棒了!&lt;/p&gt;
-&lt;p&gt;&lt;img alt="004.gif" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/383f36177dba4fbd96f941e41a0c3795~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;用 &lt;code&gt;fill-available&lt;/code&gt; 修复 100vh 的问题确实很直接，但在调查这个解决方案时，也遇到过一些问题。&lt;/p&gt;
-&lt;h2&gt;1. HTML类型声明问题&lt;/h2&gt;
-&lt;p&gt;页面上有  &lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/code&gt; 声明，会使 &lt;code&gt;fill-available&lt;/code&gt; 在 Chrome 浏览器上无法正常工作。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fbcb4ae466f8496798b5d59587621404~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;甚至不能在安卓浏览器上工作:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fd1d2786b1844113a67beda174ee59d0~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;因此，为了解决这个问题，必须从页面中删除 &lt;code&gt;doctype&lt;/code&gt; 声明。&lt;/p&gt;
-&lt;h2&gt;2. Safari上的垂直 padding  问题&lt;/h2&gt;
-&lt;p&gt;在 &lt;code&gt;min-height&lt;/code&gt;（或 &lt;code&gt;height&lt;/code&gt;）为 &lt;code&gt;fill-available&lt;/code&gt;的元素上添加垂直 &lt;code&gt;padding&lt;/code&gt; （bottom 和  top），Safari浏览器上会导致问题，高度不会正确。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e497d58e438644a38a65dd974db1d7d9~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;要解决这个问题，只需将你的内容包在另一个 &lt;code&gt;div&lt;/code&gt; 元素内，就可以了:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// HTML
-&amp;lt;div class="screen"&amp;gt;
-  &amp;lt;div class="content"&amp;gt;
-    ...
-  &amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-
-// CSS
-.screen {
-  background-color: mediumpurple;
-  min-height: 100vh;
-  min-height: -moz-available;
-  min-height: -webkit-fill-available;
-  min-height: fill-available;
-}
-.content {
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  padding: 30px;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;3. fill-available 不能与 &lt;code&gt;calc()&lt;/code&gt; 一起使用&lt;/h2&gt;
-&lt;p&gt;需要注意的一件事是，不能在 &lt;code&gt;fill-available&lt;/code&gt; 属性下使用 &lt;code&gt;calc()&lt;/code&gt;。所以，下面的CSS规则就不会生效：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;min-height: calc(-webkit-fill-available / 2);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;例如，如果需要在元素上有一半的可用高度，必须使用JavaScript。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;使用JavaScript修复移动设备上的100vh问题&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;可以使用 window 的 &lt;code&gt;innerHeight&lt;/code&gt; 属性，将元素 &lt;code&gt;height&lt;/code&gt; （或&lt;code&gt;minHeight&lt;/code&gt;）设置为&lt;code&gt;window.innerHeight&lt;/code&gt;，如下所示：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html lang="en"&amp;gt;
-&amp;lt;head&amp;gt;
-  &amp;lt;style&amp;gt;
-    ...
-  &amp;lt;/style&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-&amp;lt;div id="intro"&amp;gt;
-  &amp;lt;h1&amp;gt;Hello World!&amp;lt;/h1&amp;gt;
-  &amp;lt;h2&amp;gt;The height of this area is equal to...&amp;lt;/h2&amp;gt;
-&amp;lt;/div&amp;gt;
-...
-&amp;lt;script&amp;gt;
-  (function () {
-    const el = document.getElementById('intro');
-    el.style.minHeight = window.innerHeight + 'px';
-  })();
-&amp;lt;/script&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;效果：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="005.gif" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/51b76c0b4e2542219b46b55ed79509ef~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;接着，再介绍一种花销的方式。 一些开发者喜欢根据窗口的内部高度定义一个&lt;strong&gt;CSS变量&lt;/strong&gt;，并使用该变量来设计他们所需的元素。代码如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// 以像素为单位计算1vh值
-// 基于窗口的内部高度
-var vh = window.innerHeight * 0.01;
-
-//  将CSS变量设置为根元素
-// 相当于1vh
-document.documentElement.style.setProperty('--vh', vh + 'px');
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在 CSS 中：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;min-height: calc(var(--vh) * 100);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;最后一件事是当窗口被调整大小或设备方向改变时，重新计算这个值:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function calculateVh() {
-  var vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', vh + 'px');
-}
-
-// 初始计算
-calculateVh();
-
-// 调整大小时重新计算
-window.addEventListener('resize', calculateVh);
-
-// 在设备方向改变时重新计算
-window.addEventListener('orientationchange', calculateVh);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在我看来，你应该先用CSS的解决方案。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;作者：Mehdi Namvar  译者：前端小智 来源：mediun&lt;/p&gt;
-&lt;h3&gt;交流&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
-&lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Wed, 24 Aug 2022 16:17:31 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
+&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Mon, 29 Aug 2022 16:25:28 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: awesome-green
 highlight: a11y-light&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://juejin.cn/post/7095547569777934367"&gt;13.5W 播放量的 TS 动画版进阶教程合集来了！&lt;/a&gt;，通过形象生动的动画，让你轻松搞懂 TypeScript 的难点和核心知识点！&lt;/p&gt;
