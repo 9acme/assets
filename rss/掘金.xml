@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Tue, 11 Oct 2022 22:55:25 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 54 期：TS 4.9 Beta、Monorepo Handbook、第 92 次 TC39 会议、将 StoryBook Stories</title><link>https://juejin.cn/post/7147660762519961631</link><description>&lt;hr /&gt;
+<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Wed, 12 Oct 2022 22:53:34 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 54 期：TS 4.9 Beta、Monorepo Handbook、第 92 次 TC39 会议、将 StoryBook Stories</title><link>https://juejin.cn/post/7147660762519961631</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: fancy
 highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
@@ -3246,7 +3246,471 @@ S 仅由数字和字母组成。&lt;/p&gt;
 &lt;ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959;"&gt;
 &lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6872115031501340679" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」一张脑图带你看动态规划算法之美&lt;/a&gt;（370+👍）&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6861376131615227912" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」DFS和BFS算法之美&lt;/a&gt;(240+👍)&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6856546833025237006" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」梳理6大排序算法&lt;/a&gt;(220+👍)&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6874708801208254478" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」带你看哈希算法之美(210+👍)&lt;/a&gt;&lt;/section&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;/section&gt;&lt;/li&gt;&lt;/ol&gt;
-&lt;p class="nice-suffix-juejin-container" id="nice-suffix-juejin-container" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; margin-top: 20px !important;"&gt;本文使用 &lt;a href="https://mdnice.com/?from=juejin" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;mdnice&lt;/a&gt; 排版&lt;/p&gt;&lt;/section&gt;</description><author>TianTianUp</author><pubDate>Sun, 11 Oct 2020 08:11:57 GMT</pubDate></item><item><title>探索组件在线预览和调试</title><link>https://juejin.cn/post/7145604963593355277</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p class="nice-suffix-juejin-container" id="nice-suffix-juejin-container" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; margin-top: 20px !important;"&gt;本文使用 &lt;a href="https://mdnice.com/?from=juejin" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;mdnice&lt;/a&gt; 排版&lt;/p&gt;&lt;/section&gt;</description><author>TianTianUp</author><pubDate>Sun, 11 Oct 2020 08:11:57 GMT</pubDate></item><item><title>所见即所得 —— HTML转图片组件开发</title><link>https://juejin.cn/post/7153410606673395725</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="伟豪.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6546c8b2768040829a7667de22ff7830~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是第 160 篇不掺水的原创，想获取更多原创好文，请搜索公众号【政采云前端团队】关注我们吧~&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;在我们日常开发中一定会遇到&lt;code&gt;"所见即所得"&lt;/code&gt;的需求，如导出查询表格中的内容为Excel表格——&lt;a href="https://juejin.cn/post/7030291455243452429"&gt;《前端导出Excel，让后端刮目相看》&lt;/a&gt;、通过后台网页配置实现配置预览页与实际页面展示的统一——&lt;a href="https://juejin.cn/post/6937257727106220040"&gt;《从零开发一款可视化大屏制作平台》&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;今天我们也来实现一个"所见即所得"的需求：将用户所见网页提取为图片。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="2C0714D1-BBEB-4810-8C64-F66963489F9D.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/946b0753eb2c4e87ad73f3fbeafa1034~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;方案1：最短步骤实现结果&lt;/h2&gt;
+&lt;p&gt;第一个想到的方案就是通过浏览器自带的网页另存为图片去实现。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="68630441-5C95-4594-AFB1-CDE4C6F1B348.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c060bfc087148f397b0db5013012234~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;但这种方法显然是不可行的。第一需要提示用户操作进行繁琐的操作，第二无法达到局部提取为图片的效果。&lt;/p&gt;
+&lt;h2&gt;方案2：达成初步可行方案&lt;/h2&gt;
+&lt;p&gt;通过调研发现，可以使用 &lt;a href="http://html2canvas.hertzen.com/"&gt;html2canvas&lt;/a&gt; 将网页先转换为 &lt;code&gt;canvas&lt;/code&gt;数据。再将其转换为图片的方法，最终实现我们想要的功能。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="20221011134318.jpg" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5a77d7bf291740349a16c0cca4e30ade~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;引入html2canvas&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cnpm install --save html2canvas
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;HTML&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;div class="box"&amp;gt;
+    &amp;lt;!-- 将可保存为图片的内容 通过一个 标签 框起来 --&amp;gt;
+    &amp;lt;div id="screenshot-box"&amp;gt;
+      &amp;lt;!-- 内容可以随意 --&amp;gt;
+      &amp;lt;p&amp;gt;名称：&amp;lt;a-input v-model="formState.name" /&amp;gt;&amp;lt;/p&amp;gt;
+      &amp;lt;p&amp;gt;年龄：&amp;lt;a-input v-model="formState.age" /&amp;gt;&amp;lt;/p&amp;gt;
+      &amp;lt;p&amp;gt;
+        班级：
+        &amp;lt;a-radio-group v-model="formState.class"&amp;gt;
+          &amp;lt;a-radio value="1"&amp;gt;班级1&amp;lt;/a-radio&amp;gt;
+          &amp;lt;a-radio value="2"&amp;gt;班级2&amp;lt;/a-radio&amp;gt;
+        &amp;lt;/a-radio-group&amp;gt;
+      &amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;a-button  @click="onSaveCanvas"&amp;gt;保存为图片&amp;lt;/a-button&amp;gt;
+  &amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;JS&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;// 点击保存为Canvas
+    onSaveCanvas(){
+       // 这里的类名要与点击事件里的一样
+        const canvas = document.querySelector('#screenshot-box');
+        let that = this;
+        html2canvas(canvas,{scale:2,logging:false,useCORS:true}).then(function(canvas) {
+          const type = 'png';
+          let imgData = canvas.toDataURL(type);
+          // 图片格式处理
+          let _fixType = function(type) {
+          type = type.toLowerCase().replace(/jpg/i, 'jpeg');
+          let r = type.match(/png|jpeg|bmp|gif/)[0];
+          return 'image/' + r;
+        };
+            imgData = imgData.replace(_fixType(type),'image/octet-stream');
+            let filename = "htmlImg" + '.' + type;
+            // 保存为文件
+            //  以bolb文件下载
+ that.downFileToLocal(filename,that.convertBase64ToBlob(imgData))
+        });
+    },
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如此我们便实现了初步的功能。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="1.gif" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dec5e02062c74cba8d889df06ca8c900~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;当然，我们也可以设置一个预览图片来预览我们将要导出的图片。&lt;/p&gt;
+&lt;p&gt;HTML&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;img :src="previewPic" alt="预览图片"&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;JS&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;this.previewPic = URL.createObjectURL(that.convertBase64ToBlob(imgData));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;展示效果&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A9A4712D-B30C-452E-A610-9F5ACF492162.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/02bbb33f4bef4f5cbe2929f51b8bbbad~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;将方案进行拓展并升级&lt;/h2&gt;
+&lt;p&gt;需求止步于此，但秉承着"将事情做的更好"的我们岂能止步于此。&lt;/p&gt;
+&lt;h3&gt;实现HTML导出为Word&lt;/h3&gt;
+&lt;p&gt;我们需要通过 html-docx 来实现导出为Word（&lt;strong&gt;导出Word目前只支持原生HTML + CSS&lt;/strong&gt;）。&lt;/p&gt;
+&lt;p&gt;引入html-docx&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cnpm install --save html-docx-js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;HTML&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;div id="export-word"&amp;gt;
+      &amp;lt;table border &amp;gt;
+        &amp;lt;tr&amp;gt;
+          &amp;lt;th&amp;gt;姓名&amp;lt;/th&amp;gt;
+          &amp;lt;th&amp;gt;年龄&amp;lt;/th&amp;gt;
+        &amp;lt;/tr&amp;gt;
+        &amp;lt;tr&amp;gt;
+          &amp;lt;td&amp;gt;贾维斯&amp;lt;/td&amp;gt;
+          &amp;lt;td&amp;gt;2&amp;lt;/td&amp;gt;
+        &amp;lt;/tr&amp;gt;
+      &amp;lt;/table&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;a-button  @click="onWordExport"&amp;gt;导出为word&amp;lt;/a-button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;JS&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;onWordExport(){
+        var contentHtml = document.getElementById("export-word").innerHTML;
+        const cssHTML = `table {
+                          width: 200px;
+                          border: 1px solid #ccc;
+                          color:red;
+                        }`
+        var content = `&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;
+            &amp;lt;head&amp;gt;
+                &amp;lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&amp;gt;
+                &amp;lt;style&amp;gt;
+                    ${cssHTML}
+                &amp;lt;/style&amp;gt;
+            &amp;lt;/head&amp;gt;
+            &amp;lt;body&amp;gt;
+                ${contentHtml}
+            &amp;lt;/body&amp;gt;
+            &amp;lt;/html&amp;gt;`
+        var converted = htmlDocx.asBlob(content,{orientation:"landscape"});
+        this.downFileToLocal('word文件名.docx',converted)
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;展示效果&lt;/p&gt;
+&lt;p&gt;&lt;img alt="2.gif" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c25207348094464b8aed24cfdb0cbd05~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;如此我们便实现了导出 HTML 为 Word。&lt;/p&gt;
+&lt;h3&gt;实现HTML导出为PDF&lt;/h3&gt;
+&lt;p&gt;目前市面上 HTML 导出 PDF 的实现方式有多种，如&lt;a href="https://github.com/parallax/jsPDF"&gt;jsPDF&lt;/a&gt;、&lt;a href="https://blog.csdn.net/weixin_43897590/article/details/124729389"&gt;iText&lt;/a&gt;、&lt;a href="https://github.com/wkhtmltopdf/wkhtmltopdf"&gt;wkhtmltopdf&lt;/a&gt;等。在不同情况下我们应该使用不同的解决方案：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;方案&lt;/th&gt;
+&lt;th&gt;优点&lt;/th&gt;
+&lt;th&gt;缺点&lt;/th&gt;
+&lt;th&gt;分页&lt;/th&gt;
+&lt;th&gt;图片&lt;/th&gt;
+&lt;th&gt;表格&lt;/th&gt;
+&lt;th&gt;链接&lt;/th&gt;
+&lt;th&gt;中文&lt;/th&gt;
+&lt;th&gt;特殊字符&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;jsPDF&lt;/td&gt;
+&lt;td&gt;1、整个过程在客户端执行(不需要服务器参与)，调用简单&lt;/td&gt;
+&lt;td&gt;1、生成的pdf为图片形式，且内容失真&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;不支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;iText&lt;/td&gt;
+&lt;td&gt;1、功能基本可以实现，比较灵活 2、生成pdf质量较高&lt;/td&gt;
+&lt;td&gt;1、对html标签严格，少一个结束标签就会报错；2、后端实现复杂，服务器需要安装字体；3、图片渲染比较复杂&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;wkhtmltopdf&lt;/td&gt;
+&lt;td&gt;1、调用方式简单；2、生成pdf质量较高&lt;/td&gt;
+&lt;td&gt;1、服务器需要安装wkhtmltopdf环境；2、根据网址生成pdf，对于有权限控制的页面需要在拦截器进行处理&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;今天我们使用在&lt;strong&gt;客户端执行&lt;/strong&gt;(不需要服务器参与)的方式——jsPDF。&lt;/p&gt;
+&lt;p&gt;导入jsPDF&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install --save jspdf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;HTML&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt; &amp;lt;a-button  @click="onPDFExport"&amp;gt;导出为PDF&amp;lt;/a-button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;JS&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;// 导出为PDF
+    onPDFExport(){
+      const canvas = document.querySelector('#screenshot-box');
+      html2canvas(canvas).then(function(canvas) {
+        let contentWidth = canvas.width;
+            let contentHeight = canvas.height;
+            //一页pdf显示html页面生成的canvas高度;
+            let pageHeight = contentWidth / 592.28 * 841.89;
+            //未生成pdf的html页面高度
+            let leftHeight = contentHeight;
+            //页面偏移
+            let position = 0;
+            //a4纸的尺寸[595.28,841.89]，html页面生成的canvas在pdf中图片的宽高
+            let imgWidth = 595.28;
+            let imgHeight = 592.28/contentWidth * contentHeight;
+
+            let pageData = canvas.toDataURL('image/jpeg', 1.0);
+
+            let pdf = new jsPDF('', 'pt', 'a4');
+
+            //有两个高度需要区分，一个是html页面的实际高度，和生成pdf的页面高度(841.89)
+            //当内容未超过pdf一页显示的范围，无需分页
+            if (leftHeight &amp;lt; pageHeight) {
+              pdf.addImage(pageData, 'JPEG', 0, 0, imgWidth, imgHeight );
+            } else {
+              while(leftHeight &amp;gt; 0) {
+                  pdf.addImage(pageData, 'JPEG', 0, position, imgWidth, imgHeight)
+                  leftHeight -= pageHeight;
+                  position -= 841.89;
+                  //避免添加空白页
+                  if(leftHeight &amp;gt; 0) {
+                    pdf.addPage();
+                  }
+              }
+            }
+            pdf.save('content.pdf');
+      })
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;展示效果&lt;/p&gt;
+&lt;p&gt;&lt;img alt="3.gif" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/77defcda66bd45269560301574d7fde8~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;如此我们便实现了导出 HTML 为 PDF。&lt;/p&gt;
+&lt;h2&gt;将功能封装为组件&lt;/h2&gt;
+&lt;p&gt;实现一次HTML导出图片需要写的代码太多，很多参数也需要按需定制。是否能够将其封装成组件呢？&lt;/p&gt;
+&lt;p&gt;我们可以通过&lt;a href="https://v2.cn.vuejs.org/v2/api/#v-slot"&gt;Vue的插槽&lt;/a&gt;将我们导出的内容进行插入&lt;/p&gt;
+&lt;h3&gt;完整组件&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="language-HTML"&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div class="box"&amp;gt;
+    &amp;lt;!-- 将可保存为图片的内容 通过一个 标签 框起来 --&amp;gt;
+    &amp;lt;div :id="id"&amp;gt;
+        &amp;lt;!-- 需要导出的内容 --&amp;gt;
+        &amp;lt;slot&amp;gt;&amp;lt;/slot&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+&amp;lt;script&amp;gt;
+//引入html2canvas
+import html2canvas from 'html2canvas';
+export default {
+  name: "Html2Image",
+  props: {
+    id: { // id
+      type: String,
+      default: 'export-box',
+    },
+    filename: { // 导出文件名称
+      type: String,
+      default: 'htmlPic',
+    },
+    outType:{ // 导出类型
+      type: String,
+      default: 'png',
+      validator(value) {
+        return ['png', 'jpg', 'bmp','jpeg','gif'].includes(value)
+      }
+    },
+    isFile: { // 是否为导出文件
+      type: Boolean,
+      default: false,
+    },
+    
+  },
+  methods: {
+    //点击保存为Canvas
+    onSaveCanvas(){
+       // 这里的类名要与点击事件里的一样
+        const canvas = document.querySelector(`#${this.id}`);
+        let that = this;
+        html2canvas(canvas,{scale:2,logging:false,useCORS:true}).then(function(canvas) {
+          const type = that.outType;
+          let imgData = canvas.toDataURL(type);
+          
+          // 图片格式处理
+          let _fixType = function(type) {
+            type = type.toLowerCase().replace(/jpg/i, 'jpeg');
+            let r = type.match(/png|jpeg|bmp|gif/)[0];
+            return 'image/' + r;
+          };
+          imgData = imgData.replace(_fixType(type),'image/octet-stream');
+          if(!that.isFile){
+              const retn = URL.createObjectURL(that.convertBase64ToBlob(imgData))
+              that.$emit('onExport',retn)
+              return retn
+          }
+          //  以bolb文件下载
+          that.downFileToLocal(that.filename + '.' + type,that.convertBase64ToBlob(imgData))
+        });
+    },
+    // base64转化为Blob对象
+    convertBase64ToBlob(imageEditorBase64) {
+      let base64Arr = imageEditorBase64.split(",");
+      let imgtype = "";
+      let base64String = "";
+      if (base64Arr.length &amp;gt; 1) {
+        //如果是图片base64，去掉头信息
+        base64String = base64Arr[1];
+        imgtype = base64Arr[0].substring(
+          base64Arr[0].indexOf(":") + 1,
+          base64Arr[0].indexOf(";")
+        );
+      }
+      // 将base64解码
+      let bytes = atob(base64String);
+      //let bytes = base64;
+      let bytesCode = new ArrayBuffer(bytes.length);
+      // 转换为类型化数组
+      let byteArray = new Uint8Array(bytesCode);
+ 
+      // 将base64转换为ascii码
+      for (let i = 0; i &amp;lt; bytes.length; i++) {
+        byteArray[i] = bytes.charCodeAt(i);
+      }
+      // 生成Blob对象（文件对象）
+      return new Blob([bytesCode], { type: imgtype });
+    },
+    // 下载Blob流文件
+    downFileToLocal(fileName, blob) {
+      // 创建用于下载文件的a标签
+      const d = document.createElement("a");
+      // 设置下载内容
+      d.href = URL.createObjectURL(blob);
+      // 设置下载文件的名字
+      d.download = fileName;
+      // 界面上隐藏该按钮
+      d.style.display = "none";
+      // 放到页面上
+      document.body.appendChild(d);
+      // 点击下载文件
+      d.click();
+      // 从页面移除掉
+      document.body.removeChild(d);
+      // 释放 URL.createObjectURL() 创建的 URL 对象
+      window.URL.revokeObjectURL(d.href);
+    },
+  },
+};
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Attributes&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;id&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;唯一ID，盒子内容将作为导出内容&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;filename&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;导出的文件名称（不带文件类型后缀）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;outType&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;导出文件类型&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isFile&lt;/td&gt;
+&lt;td&gt;Boolean&lt;/td&gt;
+&lt;td&gt;是否导出为文件，true将下载文件，false返回bolb路径&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Methods&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;方法&lt;/th&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;onSaveCanvas&lt;/td&gt;
+&lt;td&gt;执行导出或保存方法&lt;/td&gt;
+&lt;td&gt;若isFile为true则保存文件，若isFile为false则返回bolb路径&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Events&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;方法&lt;/th&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;onExport&lt;/td&gt;
+&lt;td&gt;导出方法&lt;/td&gt;
+&lt;td&gt;当触发导出/下载时会触发该方法输出 Bolb路径 类型String&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;使用组件&lt;/h3&gt;
+&lt;p&gt;HTML&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;Html2Image ref="html2Image" @onExport="exportPic" &amp;gt;
+      &amp;lt;div class="export-content" style="border: 1px solid #F0F;width:200px"&amp;gt;
+        &amp;lt;div&amp;gt;1&amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;2&amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;3&amp;lt;/div&amp;gt;
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/Html2Image&amp;gt;
+&amp;lt;a-button  @click="onExportImgByComponent"&amp;gt;组件导出为图片&amp;lt;/a-button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;JS&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;// 引入组件
+import Html2Image from '@/components/Html2Image/Html2Image.vue'
+// 使用组件
+components: { 
+    Html2Image
+},
+
+// methods
+onExportImgByComponent(){
+      this.previewPicComponent =this.$refs.html2Image.onSaveCanvas()
+    },
+exportPic(baseUrl){
+       // 赋值导出图片的blob路径
+      this.previewPicComponent = baseUrl;
+    },  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Q&amp;amp;A&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Q.为什么外网图片展示不出?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="7BFD5507-2620-4EEB-A4AF-144F63441CD8.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/36068e8ea46442fca4e0527ca3fa42f6~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;A: 设置 html2canvas 方法中 useCORS 为 true 即可。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="AC53AB9C-170A-4CF8-8F1B-2C7724EDC3F6.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8296ccb966454ebfb835e28d46404673~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;最后要说的&lt;/h2&gt;
+&lt;p&gt;项目地址: &lt;a href="https://github.com/FireSmallPanda/vuexDemo.git"&gt;https://github.com/FireSmallPanda/vuexDemo.git&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;HTML导出为图片组件地址:&lt;a href="https://github.com/FireSmallPanda/vuexDemo/tree/master/src/components/ImageUpload"&gt;HTML导出为图片组件&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;根据需求目前只封装了HTML导出为图片，相信大家可以依葫芦画瓢将导出Word和PDF也一并封装为组件。&lt;/p&gt;
+&lt;h2&gt;参考文章&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://blog.csdn.net/liuzemtx/article/details/109307540"&gt;《前端实现将页面保存成图片功能》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://blog.csdn.net/xiao970615/article/details/126305092"&gt;《base64字串转Blob文件流，Blob文件流再下载到本地》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gitcode.net/mirrors/linwalker/render-html-to-pdf?utm_source=csdn_github_accelerator"&gt;《render-html-to-pdf》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://blog.csdn.net/lisheng19870305/article/details/124158191"&gt;《HTML页面导出为PDF》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://landscape.tuchong.com/"&gt;外网图片来源——《风光摄影精选》&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;推荐阅读&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7145604963593355277"&gt;探索组件在线预览和调试&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7143025612267978760"&gt;规范升级 NPM 包&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7140422304920109092"&gt;你想知道的前后端协作规范都在这了&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7135217402983235592"&gt;带你了解 Tree Shaking&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7132628898453880840"&gt;厉害！这篇正则表达式竟写的如此详尽&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;开源作品&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;政采云前端小报&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://www.zoo.team/openweekly/"&gt;www.zoo.team/openweekly/&lt;/a&gt;&lt;/strong&gt; (小报官网首页有微信交流群)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;商品选择 sku 插件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://github.com/zcy-inc/skuPathFinder-back"&gt;https://github.com/zcy-inc/skuPathFinder-back/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;招贤纳士&lt;/h2&gt;
+&lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
+&lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 11 Oct 2022 16:07:23 GMT</pubDate></item><item><title>探索组件在线预览和调试</title><link>https://juejin.cn/post/7145604963593355277</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="梓安.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d0f54a21fcf14baa85523b4ccbba2a52~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;这是第 159 篇不掺水的原创，想获取更多原创好文，请搜索公众号【政采云前端团队】关注我们吧~&lt;/p&gt;
@@ -5471,127 +5935,7 @@ export default defineConfig({
 &lt;h2&gt;招贤纳士&lt;/h2&gt;
 &lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
 &lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 26 Jul 2022 16:17:49 GMT</pubDate></item><item><title>可视化搭建系统之数据源</title><link>https://juejin.cn/post/7122240814108901406</link><description>&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d4eb6a01e6564840817b127265b07edd~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="明昼.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2bb672bfce5b469b808e29c436ce5dcc~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这是第 152 篇不掺水的原创，想获取更多原创好文，请搜索公众号关注我们吧~ 本文首发于政采云前端博客：&lt;a href="https://www.zoo.team/article/visual-construction"&gt;可视化搭建系统之数据源&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1&gt;背景&lt;/h1&gt;
-&lt;p&gt;接上一篇文章&lt;a href="https://juejin.cn/post/6844903950508883982#heading-21"&gt;《前端工程实践之可视化搭建系统（一）》&lt;/a&gt;，鸽了比较久，看过的同学应该也都已经不记得了，也是又看到两年前文章下热评一位同学问的问题，两年后我们换个形式来讨论下这个问题(手动艾特水白泉同学)。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/84779318c9014bb29eaf388856f33196~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;p&gt;众所周知，可视化搭建系统是为了提效，从纯人工撸代码开发需求到拖拖拽拽完成业务需求，大大提高了效率，降低了开发同学的压力。我司可视化搭建系统鲁班也已投入使用两年有余，取得的效果也十分显著，但由于时间的推移，问题也逐渐暴露出来：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;大量的页面使用相同组件，运营同学经常需要重复配置一个组件，导致每天要花费了大量的时间去维护页面。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;组件中耦合大量的特殊业务接口，导致组件复用性以及扩展性极差。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如何帮助运营同学提效？如何提高组件复用性同时并降低组件业务耦合度？这就是我们今天要聊的主题，可视化搭建系统中的数据源。&lt;/p&gt;
-&lt;h1&gt;数据源是什么&lt;/h1&gt;
-&lt;p&gt;从字面上来看，其实就是数据的来源，告诉应用所需要的数据在什么位置。数据源保证了应用程序与目标数据之间交互的规范和协议，它可以是数据库，也可以是 Excel 等等。&lt;/p&gt;
-&lt;h1&gt;产品设计&lt;/h1&gt;
-&lt;p&gt;上文介绍了什么是数据源以及在当前搭建系统中我们遇到的问题，下面我们就从需求入手，先充当起产品的角色，针对需求我们先做问题分析，然后我们再做详细设计。&lt;/p&gt;
-&lt;h4&gt;问题1：大量的页面使用相同组件，运营同学经常需要重复配置一个组件，导致每天要花费了大量的时间去维护页面&lt;/h4&gt;
-&lt;p&gt;分析：组件中的重复配置，其中以营销场景以及前台大厅为主，这两块承载了我司大量的业务场景，其中各个组件的配置复杂且配置项繁多，其中又会出现针对不同的区划做不同的数据项配置，一旦差异化配置过多，重复配置会不断变多，维护起来会非常困难。&lt;/p&gt;
-&lt;p&gt;设计：从组件配置入手，正常业务开发中我们使用接口传参来获取差异化的数据，来做动态数据展示以及控制各项配置的开关。可视化搭建中控制配置项的开关我们已经有了，缺的是不是就是一个接口，我们能不能让组件中的配置也变成一个接口，这样即使组件数据出现差异性，我们也可以通过入参的不同来下发不同的数据来决定组件应该展示什么数据。&lt;/p&gt;
-&lt;h4&gt;问题2：组件中耦合大量的特殊业务接口，导致组件复用性以及扩展性极差&lt;/h4&gt;
-&lt;p&gt;分析：组件由各业务团队同学自行开发贡献，开发水平不一导致组件设计不同，有的同学喜欢把接口抽离成组件配置，有的同学又喜欢把接口直接写在组件内部，两者都有优缺点我们不做评价，时间久了，使用前者的组件使用难度会很高，一旦维护的同学离职，组件直接就变黑盒了，使用后者的不然，除了当时服务过的需求可以使用这个组件，其他即使视觉层面一致的需求，也由于组件内部耦合的特殊业务接口，让其他业务团队宁愿重新开发也不敢在用这个组件。两者最终得到的结果其实都是一样的，组件复用性降低。&lt;/p&gt;
-&lt;p&gt;设计：如何提高组件复用性，从上述问题点接口入手，如果我们将可以将接口外置，动态与组件配置对接，也就是组件既可以使用外部接口做配置，也可以使用自己的静态配置，是不是就可以解决上述问题。&lt;/p&gt;
-&lt;p&gt;下面是根据上述需求分析设计，产出的 PRD 简版脉络：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;组件管理侧新增数据源维护入口（以组件为维度，可以绑定多个数据源-接口或 EXCEL 等数据 ）
-&lt;ul&gt;
-&lt;li&gt;新增、编辑、详情、删除（数据源信息维护 ）&lt;/li&gt;
-&lt;li&gt;数据源使用页面（可查看当前数据源被哪些页面所使用 ）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;新增数据源管理菜单（全局数据源概览 ）
-&lt;ul&gt;
-&lt;li&gt;查询、复制（跨组件复制数据源，查看所有数据源与组件关系）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;搭建页（页面搭建以及配置侧）&lt;/li&gt;
-&lt;li&gt;配置面板-新增数据源配置项（展示组件关联的所有数据源，无关联数据源不展示）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;数据源实现&lt;/h1&gt;
-&lt;p&gt;下面我们根据上述 PRD 脉络来看数据源的详细设计。&lt;/p&gt;
-&lt;h2&gt;数据源创建&lt;/h2&gt;
-&lt;p&gt;前面有提到，数据源我们可以使用接口，业务侧有后端同学，不用多想，数据源直接用后端同学写的接口就完事了，但是我们的搭建平台大多用户为运营同学，业务场景基本上都无后端同学投入，这个时候问题就来了：&lt;/p&gt;
-&lt;p&gt;如何不用开发同学介入创造一个接口来跟组件做绑定呢？我们继续往下看。&lt;/p&gt;
-&lt;p&gt;基于内部系统神笔，我们解决了这个问题，神笔是什么，神笔是个数据投放接口管理平台，可以让不懂代码的业务一样可以写接口。神笔中有静态化这么一个定义：&lt;/p&gt;
-&lt;p&gt;**静态化：**即从0到1创建一个接口，接口入参以及出参支持自由定义，数据纯静态，可以自定义高级规则来根据入参不同返回不同的数据。&lt;/p&gt;
-&lt;p&gt;哎，这不就是我们想要的嘛。使用神笔静态化，业务同学可以基于自己的需求，创造自己的接口来下发不同的数据，自给自足，妈妈再也不用担心我不会写接口啦。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/19ad5a90ed3444f0abeffcadc968d44d~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;h2&gt;数据源关联&lt;/h2&gt;
-&lt;p&gt;进入组件管理，选择需要关联的组件，点击数据源维护。由于组件业务属性不同，对应的数据源也会存在差异性，为了避免运营同学配置数据源时，出现选择困难症，我们以组件维度关联数据源，一个组件可以关联多个数据源，搭配数据源描述，让运营同学可以最快选到需要的数据源。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image (1).png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a33257a2970d4f37869f349a2a465dcb~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image (2).png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ad32120691f4624a08406a6f4719814~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;p&gt;新增数据源，目前我们使用最多的数据源多为 API 类型，也就是我们每天都在浏览器里看到的接口，在新增弹窗内输入我们已有的接口或者神笔注册的接口信息，配置好接口地址，请求方式，请求头，请求参数，以及最重要的接口出参字段与组件数据字段之前的映射关系，输入完成后就完成了数据源与组件的关联。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image (3).png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/015c14a74b6a4e7c94444869b6f45315~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;p&gt;维护接口与组件内部暴露字段的映射关系，输入框会自动检测映射关系是否正确。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4d7c25dc42d64c5c809587e9022567de~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;h2&gt;数据源使用&lt;/h2&gt;
-&lt;p&gt;进入我们需要搭建的页面，选择我们已绑定数据源的组件，右侧配置面板选择我们绑定的数据源，保存页面配置，即可完成在页面组件中使用数据源。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image (4).png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6cdb54618df34ee79e9da8b927450277~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;h2&gt;数据源管理&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;查看数据源使用页面&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;可查看已绑定的数据源被多少页面使用，方便后续接口维护评估影响面以及进行数据分析&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="image (5).png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5d6bf37b8b644b01bebcb1e3ad3a6530~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;跨团队使用&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;为了提高数据源的复用性，我们提供了数据源管理中心，这里可以看到整个系统所有维护的数据源，方便跨组件跨业务团队数据源复制复用。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="image (6).png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/242bf08e1bdf45759d56995346e65618~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;数据源注入&lt;/h2&gt;
-&lt;p&gt;这一块我们在搭建侧做统一收拢，对一个页面所有组件选择使用的数据源做统一处理。&lt;/p&gt;
-&lt;p&gt;为什么这么做？&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;上述提到数据源可以查看被哪些页面使用，这部分数据便来自于此，在发布页面时针对当前页面所使用的数据源做页面与数据源的关系落库。&lt;/li&gt;
-&lt;li&gt;当页面组件数量居多，绑定的数据源也会剧增，这时候接口并发数也会剧增。在这里无需开发者关心，我们可以统一处理，对全局的数据源请求做限流（引出一道经典面试题：&lt;a href="https://juejin.cn/post/6916317088521027598"&gt;请用 JS 实现 Ajax 并发请求控制&lt;/a&gt;），以及对重复的数据源过滤，避免重复请求。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;其他还有很多优点不再赘述，感兴趣的同学欢迎一起讨论。&lt;/p&gt;
-&lt;p&gt;注入流程如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;发布时将当前数据源详情注入组件 schema&lt;/li&gt;
-&lt;li&gt;访问页面时，针对当前页面所有组件，过滤使用了数据源的组件&lt;/li&gt;
-&lt;li&gt;数据源去重，标记重复项&lt;/li&gt;
-&lt;li&gt;去重后的数据源并发请求数据，请求池控制并发数，最大并发10&lt;/li&gt;
-&lt;li&gt;数据源返回结果后，根据各组件 schema 内存储的数据源信息中的组件字段与数据源字段的映射关系做数据映射&lt;/li&gt;
-&lt;li&gt;最后通过组件的 props 统一注入（为啥用 props ？请看我们上一篇：&lt;a href="https://juejin.cn/post/6844903950508883982#heading-21"&gt;鲁班核心代码&lt;/a&gt;），最后完成整个页面的数据源注入及渲染。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;流程图如下：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b55254ed4d6d409e917d472dc782f474~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;h1&gt;总结&lt;/h1&gt;
-&lt;p&gt;数据源是搭建系统建设过程中重要的一环，为提效再进一步，他不仅降低了页面的重复搭建，还收拢了差异化配置的入口，并且让运营同学可以做一些研发同学才可以做的事：接口创建、引用、发布等。以上是我个人对搭建系统中数据源的一些总结，后续还会继续分享数据投放相关，如有错误，劳烦指正修改，感谢各位能看到这里。&lt;/p&gt;
-&lt;h2&gt;推荐阅读&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7119639489567260686"&gt;表单数据形式配置化设计&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7117042614313943070"&gt;如何将传统 Web 框架部署到 Serverless&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7114450860335169543"&gt;浅谈前端埋点 &amp;amp; 监控&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7111848825232293918"&gt;如何让 x == 1 &amp;amp;&amp;amp; x == 2 &amp;amp;&amp;amp; x == 3 等式成立&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/editor/drafts/7109126523466022948"&gt;数据统计在性能检测中的应&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;开源作品&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;政采云前端小报&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://www.zoo.team/openweekly/"&gt;www.zoo.team/openweekly/&lt;/a&gt;&lt;/strong&gt; (小报官网首页有微信交流群)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;商品选择 sku 插件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://github.com/zcy-inc/skuPathFinder-back"&gt;https://github.com/zcy-inc/skuPathFinder-back/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h2&gt;招贤纳士&lt;/h2&gt;
-&lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
-&lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 19 Jul 2022 16:12:17 GMT</pubDate></item><item><title>创建现代npm包的最佳实践</title><link>https://juejin.cn/post/7152302632143421470</link><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 26 Jul 2022 16:17:49 GMT</pubDate></item><item><title>创建现代npm包的最佳实践</title><link>https://juejin.cn/post/7152302632143421470</link><description>&lt;blockquote&gt;
 &lt;p&gt;本文首发于微信公众号：大迁世界, 我的微信：qq449245884，我会第一时间和你分享前端行业趋势，学习途径等等。
 更多开源作品请看 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; ，包含一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
 &lt;/blockquote&gt;
