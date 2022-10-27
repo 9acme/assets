@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Wed, 26 Oct 2022 22:50:26 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 56 期：Solid v1.6.0、2022 State of GraphQL、ViteConf 回放、Lerna v6、SEO 入门指南</title><link>https://juejin.cn/post/7157942637201195038</link><description>&lt;hr /&gt;
+<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Thu, 27 Oct 2022 22:48:05 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 56 期：Solid v1.6.0、2022 State of GraphQL、ViteConf 回放、Lerna v6、SEO 入门指南</title><link>https://juejin.cn/post/7157942637201195038</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: fancy
 highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
@@ -3189,7 +3189,7 @@ S 仅由数字和字母组成。&lt;/p&gt;
 &lt;p class="nice-suffix-juejin-container" id="nice-suffix-juejin-container" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; margin-top: 20px !important;"&gt;本文使用 &lt;a href="https://mdnice.com/?from=juejin" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;mdnice&lt;/a&gt; 排版&lt;/p&gt;&lt;/section&gt;</description><author>TianTianUp</author><pubDate>Sun, 11 Oct 2020 08:11:57 GMT</pubDate></item><item><title>IntersectionObserver 实现虚拟列表初探</title><link>https://juejin.cn/post/7158607083699437605</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="陈皮.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cdb140efc78b4c28a84a70654794b122~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;这是第 161 篇不掺水的原创，想获取更多原创好文，请搜索公众号关注我们吧~ 本文首发于政采云前端博客：&lt;a href="http://zoo.zhengcaiyun.cn/blog/article/intersectionobserver"&gt;IntersectionObserver 实现虚拟列表初探&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这是第 162 篇不掺水的原创，想获取更多原创好文，请搜索公众号关注我们吧~ 本文首发于政采云前端博客：&lt;a href="http://zoo.zhengcaiyun.cn/blog/article/intersectionobserver"&gt;IntersectionObserver 实现虚拟列表初探&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;前端开发中经常会遇到大数据量列表展示的性能问题，即大数据量一次性展示时前端渲染大量 Dom，触发渲染性能问题，造成初始加载白屏，交互卡顿等。解决这类问题的方案也有很多，使用虚拟列表展示是一个比较常见的解决方案。今天我们来介绍如何使用 IntersectionObserver 这个API来自定义实现虚拟列表。&lt;/p&gt;
@@ -3353,7 +3353,7 @@ root: document.querySelector('.main'),
 &lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 25 Oct 2022 16:12:45 GMT</pubDate></item><item><title>所见即所得 —— HTML转图片组件开发</title><link>https://juejin.cn/post/7153410606673395725</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="伟豪.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6546c8b2768040829a7667de22ff7830~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;这是第 160 篇不掺水的原创，想获取更多原创好文，请搜索公众号【政采云前端团队】关注我们吧~&lt;/p&gt;
+&lt;p&gt;这是第 161 篇不掺水的原创，想获取更多原创好文，请搜索公众号【政采云前端团队】关注我们吧~&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;在我们日常开发中一定会遇到&lt;code&gt;"所见即所得"&lt;/code&gt;的需求，如导出查询表格中的内容为Excel表格——&lt;a href="https://juejin.cn/post/7030291455243452429"&gt;《前端导出Excel，让后端刮目相看》&lt;/a&gt;、通过后台网页配置实现配置预览页与实际页面展示的统一——&lt;a href="https://juejin.cn/post/6937257727106220040"&gt;《从零开发一款可视化大屏制作平台》&lt;/a&gt;。&lt;/p&gt;
@@ -3817,7 +3817,7 @@ exportPic(baseUrl){
 &lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 11 Oct 2022 16:07:23 GMT</pubDate></item><item><title>探索组件在线预览和调试</title><link>https://juejin.cn/post/7145604963593355277</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="梓安.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d0f54a21fcf14baa85523b4ccbba2a52~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;这是第 159 篇不掺水的原创，想获取更多原创好文，请搜索公众号【政采云前端团队】关注我们吧~&lt;/p&gt;
+&lt;p&gt;这是第 160 篇不掺水的原创，想获取更多原创好文，请搜索公众号【政采云前端团队】关注我们吧~&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;背景&lt;/h2&gt;
 &lt;p&gt;前端人员在开发过程中，如何快速&lt;strong&gt;感知&lt;/strong&gt;到组件的功能和属性？现状是通过阅读组件相关文档，好在基础组件库的文档相对完整和清晰，手动补全示例。业务组件相关文档目前只能在内部 NPM 私库上查看，静态的 API 文档，没有组件的 Demo。对于非前端人员，如何预览和调试组件呢？比如：某一天，产品想提前调研其它业务线的业务组件功能能否满足业务诉求；业务组件开发完成，测试和设计可以介入组件相关功能的验证；运营人员可以在低代码搭建平台，预览和调试相关组件等。&lt;/p&gt;
@@ -4137,7 +4137,7 @@ vuePreset.registerTranspiler(
 &lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 20 Sep 2022 15:18:36 GMT</pubDate></item><item><title>规范升级 NPM 包</title><link>https://juejin.cn/post/7143025612267978760</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="刘静.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/29a8a543e7ad456eb573501b05ff9796~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;这是第 158 篇不掺水的原创，想获取更多原创好文，请搜索公众号【政采云前端团队】关注我们吧~&lt;/p&gt;
+&lt;p&gt;这是第 159 篇不掺水的原创，想获取更多原创好文，请搜索公众号【政采云前端团队】关注我们吧~&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;在日常工作中，当组件跨项目使用时，我们往往会选择把组件抽成 npm 包。那么在 npm 开发以及发布的过程中有什么需要注意的事项吗？本文将从我自己的角度，来为大家介绍一下我认为的一些需要大家注意的点。&lt;/p&gt;
@@ -4329,7 +4329,7 @@ npm publish --tag beta // 发布 beta 包
 &lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 13 Sep 2022 16:28:07 GMT</pubDate></item><item><title>你想知道的前后端协作规范都在这了</title><link>https://juejin.cn/post/7140422304920109092</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="商陆.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/19edac65d0f24d80b2d945ceb06a339a~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;这是第 157 篇不掺水的原创，想获取更多原创好文，请搜索公众号【政采云前端团队】关注我们吧~&lt;/p&gt;
+&lt;p&gt;这是第 158 篇不掺水的原创，想获取更多原创好文，请搜索公众号【政采云前端团队】关注我们吧~&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4&gt;一. 前言&lt;/h4&gt;
 &lt;p&gt;你是否在为如何制定前后端协作规范而发愁？干货来啦，一文带你了解我们团队内部沉淀并践行已久的前后端协作规范，读完本文，回去大胆拒绝你后端的不合理设计！&lt;/p&gt;
@@ -5726,7 +5726,141 @@ export default defineConfig({
 &lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 3 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
 &lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。等你扫描下方的二维码。&lt;/p&gt;
 &lt;h3&gt;更多问题&lt;/h3&gt;
-&lt;p&gt;关于招聘，如果有更多问题，欢迎关注【政采云前端团队】公众号并回复 &lt;strong&gt;交流群&lt;/strong&gt; 获取入群二维码，咨询猴子或其他团队成员了解更多政采云前端团队详情和招聘资讯✌️！&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Sun, 31 Jul 2022 22:19:30 GMT</pubDate></item><item><title>为什么JSON.parse会损坏大数字，如何解决这个问题？</title><link>https://juejin.cn/post/7158616152271388708</link><description>&lt;blockquote&gt;
+&lt;p&gt;关于招聘，如果有更多问题，欢迎关注【政采云前端团队】公众号并回复 &lt;strong&gt;交流群&lt;/strong&gt; 获取入群二维码，咨询猴子或其他团队成员了解更多政采云前端团队详情和招聘资讯✌️！&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Sun, 31 Jul 2022 22:19:30 GMT</pubDate></item><item><title>我用这9个小技巧封装Vue组件，老大夸我’封得好‘</title><link>https://juejin.cn/post/7158969880362876964</link><description>&lt;blockquote&gt;
+&lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
+本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;组件是前端框架的基本构建块。把它们设计得更好会使我们的应用程序更容易改变和理解。在这节课中，分享一下在过去几年中工作中学到的 9 个技巧。&lt;/p&gt;
+&lt;h2&gt;1. 你可能不需要创建一个组件&lt;/h2&gt;
+&lt;p&gt;在创建一个组件之前，看看它是为了可重用性和为某些UI添加一个状态，还是仅仅为了组织和划分代码。&lt;/p&gt;
+&lt;p&gt;如果是后者，那么你就不需要创建它，因为它只会增加更多不必要的工作，比如传递&lt;code&gt;props&lt;/code&gt;和发射事件。&lt;/p&gt;
+&lt;p&gt;不仅如此，它还要求我们跳转到该文件以查看它所包含的内容，而不是直接在父组件中看到它，这就干净多了。&lt;/p&gt;
+&lt;h2&gt;2. 使用插槽而不是 prop 来显示内容&lt;/h2&gt;
+&lt;p&gt;假设有一个可重复使用的按钮组件，它通过&lt;code&gt;props&lt;/code&gt;获取文本。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;BaseButton label="Delete Item"/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果想在其中显示一个图标，必须添加更多的道具，如&lt;code&gt;&amp;lt;BaseButton label="Delete Item" icon="delete" /&amp;gt;&lt;/code&gt;并更新组件以显示该图标。&lt;/p&gt;
+&lt;p&gt;但有了插槽，我们就可以在每次使用该组件时，以想要的方式显示标签：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;BaseButton&amp;gt;
+  Delete Item &amp;lt;Icon name="delete" /&amp;gt;
+&amp;lt;/BaseButton&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或者你只需要把某个单词加粗。对于插槽，可以直接在文本中使用&lt;code&gt;&amp;lt;strong&amp;gt;&lt;/code&gt;标记，而不是在组件中解析它。&lt;/p&gt;
+&lt;h2&gt;3. 将该组件与触发它的因素分组&lt;/h2&gt;
+&lt;p&gt;有时有两个独立的组件在某种情况下一起使用。最好把它们放在一个新的组件中，这样重复使用和移动它们更容易。&lt;/p&gt;
+&lt;p&gt;一个常见的例子是 &lt;code&gt;Modal&lt;/code&gt; 组件。我们通常在点击一个特定的按钮时显示&lt;code&gt;Modal&lt;/code&gt;。与其在每次我们想重用它（或把它移到其他地方）时添加&lt;code&gt;showModal&lt;/code&gt;状态和导入modal与它的按钮，不如有一个单一的组件来显示按钮，当用户点击时，它显示相关的modal。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- CreateItemButton.vue --&amp;gt;
+&amp;lt;template&amp;gt;
+  &amp;lt;Modal v-if="showModal" @close="showModal = false" /&amp;gt;
+  &amp;lt;BaseButton @click="showModal = true"&amp;gt;
+    Create Item
+  &amp;lt;/BaseButton&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script setup&amp;gt;
+const showModal = false
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;4. 使用 teleport，从任何地方显示固定位置的元素&lt;/h2&gt;
+&lt;p&gt;继续前面的例子，如果我们想正确地显示 modal ，我们需要确保模态使用正确的&lt;code&gt;z-index&lt;/code&gt;，并且它在HTML代码中显示在正确的位置，所以它总是显示在页面上所有东西的上面。&lt;/p&gt;
+&lt;p&gt;我们可以通过直接将 modal 显示为&lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;元素的一个子元素来轻松地避免这个问题，无论我们在组件结构中使用它。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://vuejs.org/guide/built-ins/teleport.html"&gt;Teleport组件&lt;/a&gt;使我们能够做到这一点。&lt;/p&gt;
+&lt;p&gt;我们所要做的就是用 &lt;code&gt;&amp;lt;Teleport to="body"&amp;gt;&lt;/code&gt; 来包装 modal 组件。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- BaseModal.vue --&amp;gt;
+&amp;lt;template&amp;gt;
+  &amp;lt;Teleport to="body"&amp;gt;
+    &amp;lt;div class="modal"&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;/Teleport&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这个组件是Vue 3内置组件的一部分。如果你使用的是Vue 2，请查看&lt;a href="https://github.com/LinusBorg/portal-vue"&gt;PortalVue&lt;/a&gt;。&lt;/p&gt;
+&lt;h2&gt;5. 在一个对象中分组相关的 props&lt;/h2&gt;
+&lt;p&gt;组件的 prop 列表是组件界面的一个主要部分。接口越清晰，就越容易使用和推理。&lt;/p&gt;
+&lt;p&gt;改进 &lt;code&gt;prop&lt;/code&gt; 列表的一个方法是将相关的属性分组在一起。以这个组件为例:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;PostCard
+  :title="post.title"
+  :date="post.date"
+  :layout="currentLayout"
+  :image="post.imageUrl"
+  &amp;lt;!-- more props --&amp;gt;
+/&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们需要花几秒钟时间来了解这里有哪些 &lt;code&gt;props&lt;/code&gt; 与帖子(post )相关。但我们可以像这样把与帖子相关的 &lt;code&gt;props&lt;/code&gt; 分组，使之更加清晰。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;PostCard :post="post" :layout="currentLayout" /&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;所以现在我们很快就知道，&lt;code&gt;layout&lt;/code&gt; 不是 &lt;code&gt;post&lt;/code&gt; 数据的一部分。&lt;/p&gt;
+&lt;p&gt;不仅如此，我们还通过这种方法使更新 &lt;code&gt;props&lt;/code&gt; 变得更加容易。例如，&lt;code&gt;添加或删除与帖子相关的props&lt;/code&gt; ，不需要我们更新组件的 &lt;code&gt;props&lt;/code&gt;  列表。&lt;/p&gt;
+&lt;h2&gt;6. 赋予每个循环item,赋予自己的状态&lt;/h2&gt;
+&lt;p&gt;创建一个新的组件的一个很好的理由是给一块用户界面提供它自己的状态。我们需要这样做的一个常见的地方是在&lt;code&gt;v-for&lt;/code&gt;循环中：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;div v-for="(item, index) in items" :key="item.id"&amp;gt;
+      &amp;lt;input type="checkbox" v-model="checkedItems[index]"&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+&amp;lt;script setup&amp;gt;
+const checkedItems = ref(items.map(item =&amp;gt; item.checked))
+&amp;lt;/script&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;为了跟踪检查过的 &lt;code&gt;items&lt;/code&gt;，我们不得不创建一个数组，并用 &lt;code&gt;items&lt;/code&gt; 的初始值来填充它。但是这段代码还不够强大。为了让它变得更好，我们必须让 &lt;code&gt;items&lt;/code&gt;  通过它们的&lt;code&gt;id&lt;/code&gt;而不是&lt;code&gt;index &lt;/code&gt;来访问，因为 &lt;code&gt;index&lt;/code&gt; 是不可靠的，可以改变。例如，如果你添加一个支持通过拖放来重新排列items  的功能呢？&lt;/p&gt;
+&lt;p&gt;为了简化这段代码，我们可以引入一个新的组件，为每个 &lt;code&gt;item&lt;/code&gt; 保存一个状态。像这样:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;Item v-for="item in items" :key="item.id" :item="item" /&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;Item&lt;/code&gt; 组件内容如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;input type="checkbox" v-model="checked"&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script setup&amp;gt;
+const props = defineProps({ item: Object })
+const checked = ref(props.item.checked)
+&amp;lt;/script&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这种方法的另一个好处是，我们把所有 item 的相关数据、计算属性和方法都加在一个地方，便于理解和改变。&lt;/p&gt;
+&lt;h2&gt;7. 尽可能地将加载数据移至其用户界面附近&lt;/h2&gt;
+&lt;p&gt;无论你是用GraphQL还是其他API加载，最好把代码放在尽可能接近使用它的用户界面的地方。这有两个原因:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;移动带有数据的UI组件变得更加容易。只需移动该组件，而无需寻找其依赖关系。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;当所有的碎片被放在一个地方时，总是更容易理解代码--可以看到用户界面和它的数据来自哪里。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;有时，有多个组件使用同一个获取的数据。在这种情况下，可以将获取的代码上移一级。因此，会有一个父组件，在那里获取数据，还有一个子组件，然后把数据传递给它。&lt;/p&gt;
+&lt;p&gt;但一定要确保它是一个单一的层次。如果不是，那就寻找一种方法来改进你的组件设计和它们之间的关系。&lt;/p&gt;
+&lt;h2&gt;8. 纯粹的UI组件不应访问应用程序的状态&lt;/h2&gt;
+&lt;p&gt;有两种类型的前端组件：纯UI组件和特定应用组件。&lt;/p&gt;
+&lt;p&gt;纯粹的UI组件是像按钮、输入框等。它们不应该知道关于应用程序的任何事情。它们的工作仅仅是为了显示UI--它们通过 props 获取数据。&lt;/p&gt;
+&lt;p&gt;特定于应用程序的组件是知道应用程序状态的组件，无论是本地状态还是全局状态(通过状态管理库，如Pinia)。&lt;/p&gt;
+&lt;p&gt;分离这些组件使得在应用程序的其他地方，甚至在其他应用程序中重用UI组件更加容易。&lt;/p&gt;
+&lt;p&gt;如果你正在构建自己的UI组件，这个技巧也适用。如果你使用的是外部库，如 &lt;code&gt;Vuetify&lt;/code&gt; 或Quasar，那么你就不必担心这个问题--这些组件在设计时就考虑到了这一点。&lt;/p&gt;
+&lt;h2&gt;9. 不要在组件中指定 width 或 margin&lt;/h2&gt;
+&lt;p&gt;当创建一个组件时，你应该把它看作是一块UI，可以像其他本地元素一样使用。&lt;/p&gt;
+&lt;p&gt;让用户指定组件周围的空间是实现这一目标的好方法。&lt;/p&gt;
+&lt;p&gt;假设你的组件在其根元素上有一个顶部边距，而用户想把它显示在某个元素下面，但没有顶部边距。要做到这一点，用户必须设置一个与组件的&lt;code&gt;margin&lt;/code&gt;相同的负&lt;code&gt;margin&lt;/code&gt;，比如&lt;code&gt;margin-top: -50px；&lt;/code&gt;更不用说在某些情况下，用户必须与选择器的特异性相匹配（或者可能使用&lt;code&gt;!important&lt;/code&gt;）。&lt;/p&gt;
+&lt;p&gt;而宽度也是如此。如果用户想让该组件具有响应性，他们必须覆盖其宽度和最大宽度。&lt;/p&gt;
+&lt;p&gt;因此，通过不在组件内部设置宽度和边距，总是给用户这种控制是有意义的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;来源：https://tahazsh.com/blog/vue-component-design-tips/&lt;/p&gt;
+&lt;h3&gt;交流&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
+&lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
+&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Wed, 26 Oct 2022 15:43:21 GMT</pubDate></item><item><title>为什么JSON.parse会损坏大数字，如何解决这个问题？</title><link>https://juejin.cn/post/7158616152271388708</link><description>&lt;blockquote&gt;
 &lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
 本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7253,173 +7387,7 @@ Object.hasOwn(obj, 'a') // true
 &lt;blockquote&gt;
 &lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
 &lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Mon, 05 Sep 2022 16:57:22 GMT</pubDate></item><item><title>为什么 async/await 不仅仅是语法糖</title><link>https://juejin.cn/post/7138200786319704078</link><description>&lt;blockquote&gt;
-&lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
-本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;开篇观点，&lt;code&gt;async/await&lt;/code&gt; 不仅仅是 Promise 上面的语法糖，因为 &lt;code&gt;async/await&lt;/code&gt; 确实提供了切实的好处。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;async/await&lt;/code&gt; 让异步代码变成同步的方式，从而使代码更具表现力和可读性。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;async/await&lt;/code&gt; 统一了异步编程的经验；以及提供了更好的错误堆栈跟踪。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;关于 JS 中异步编程的一点历史&lt;/h2&gt;
-&lt;p&gt;异步编程在 JavaScript 中很常见。每当我们需要进行网络服务调用、文件访问或数据库操作时，尽管语言是单线程的，但异步性是我们防止用户界面被阻塞的方法。&lt;/p&gt;
-&lt;p&gt;在  ES6 之前，回调是猿们处理异步编程的方式。我们表达时间依赖性（即异步操作的执行顺序）的唯一方法是将一个回调嵌套在另一个回调中，这导致了所谓的&lt;strong&gt;回调地狱&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;Es6 中引入了 &lt;code&gt;Promise&lt;/code&gt;，它是一个用于异步操作的一流对象，我们可以轻松地传递、组合、聚合和应用转换。时间上的依赖性通过 &lt;code&gt;then&lt;/code&gt;方法链干净地表达出来。&lt;/p&gt;
-&lt;p&gt;有了 &lt;code&gt;Promise&lt;/code&gt; 这个强大的伙伴，听起来异步编程在 JS 中是一个已经解决的问题，对吗？&lt;/p&gt;
-&lt;p&gt;恩，还没有，因为有时候 Promise 的级别太低了，不太适合使用。&lt;/p&gt;
-&lt;h2&gt;有时 Promise 的级别太低，不适合使用&lt;/h2&gt;
-&lt;p&gt;尽管出现了 Promise，但在 JS 中仍然需要一个更高级别的语言结构来进行异步编程。&lt;/p&gt;
-&lt;p&gt;我们来看个例子， 假设我们需要某个函数在某个时间间隔轮询一个API。当达到最大重试次数时，它就会解析为 &lt;code&gt;null&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;下面是 Promise 的一种解决方案：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;let count = 0;
-
-function apiCall() {
-  return new Promise((resolve) =&amp;gt;
-    // a在第6次重试时，它被解析为 "value"。
-    count++ === 5 ? resolve('value') : resolve(null)
-  );
-}
-
-function sleep(interval) {
-  return new Promise((resolve) =&amp;gt; setTimeout(resolve, interval));
-}
-
-function poll(retry, interval) {
-  return new Promise((resolve) =&amp;gt; {
-    // 为了简洁起见，跳过错误处理
-
-    if (retry === 0) resolve(null);
-    apiCall().then((val) =&amp;gt; {
-      if (val !== null) resolve(val);
-      else {
-        sleep(interval).then(() =&amp;gt; {
-          resolve(poll(retry - 1, interval));
-        });
-      }
-    });
-  });
-}
-
-poll(6, 1000).then(console.log); // 'value'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这种解决方案的直观性和可读性取决于人们对Promise的熟悉程度，以及 &lt;code&gt;Promise.resolve&lt;/code&gt; 如何 "平铺" Promise 和递归。对我来说，这不是写这样一个函数的最可读的方式。&lt;/p&gt;
-&lt;h2&gt;使用 async/await&lt;/h2&gt;
-&lt;p&gt;我们用 &lt;code&gt;async/await&lt;/code&gt; 语法重写上述解决方案：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;async function poll(retry, interval) {
-  while (retry &amp;gt;= 0) {
-    const value = await apiCall().catch((e) =&amp;gt; {}); 
-    if (value !== null) return value;
-    await sleep(interval);
-    retry--;
-  }
-
-  return null;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;我想大多数人都会觉得上面的解决方案更有可读性，因为我们能够使用所有正常的语言结构，如循环、异步操作的 &lt;code&gt;try-catch&lt;/code&gt; 等。&lt;/p&gt;
-&lt;p&gt;这可能是 &lt;code&gt;async/await&lt;/code&gt; 的最大卖点--使我们能够以同步的方式编写异步代码。另一方面，这可能是对 &lt;code&gt;async/await&lt;/code&gt; 最常见的反对意见的来源，稍后再谈这个问题。&lt;/p&gt;
-&lt;p&gt;顺便说一下，&lt;code&gt;await&lt;/code&gt;甚至有正确的操作符优先级，所以&lt;code&gt;await a + await b&lt;/code&gt; 等于&lt;code&gt;(await a) + (await b)&lt;/code&gt;，而不是让我们说&lt;code&gt;await (a + await b)&lt;/code&gt;。&lt;/p&gt;
-&lt;h2&gt;async/await 在同步和异步代码中提供了统一的体验&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;async/await&lt;/code&gt;的另一个好处是，&lt;code&gt;await&lt;/code&gt;自动将任何非Promise（non-thenables）包装成 Promises 。&lt;code&gt;await&lt;/code&gt;的语义等同于&lt;code&gt;Promise.resolve&lt;/code&gt;，这意味着可以 &lt;code&gt;await&lt;/code&gt; 任何东西:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function fetchValue() {
-  return 1;
-}
-
-async function fn() {
-  const val = await fetchValue();
-  console.log(val); // 1
-}
-
-// 上面等同于下面
-
-function fn() {
-  Promise.resolve(fetchValue()).then((val) =&amp;gt; {
-    console.log(val); // 1
-  });
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果我们将 &lt;code&gt;then&lt;/code&gt; 方法附加到从 &lt;code&gt;fetchValue&lt;/code&gt; 返回的数字 &lt;code&gt;1&lt;/code&gt; 上，就会出现以下错误。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function fetchValue() {
-  return 1;
-}
-
-function fn() {
-  fetchValue().then((val) =&amp;gt; {
-    console.log(val);
-  });
-}
-
-fn(); // ❌ Uncaught TypeError: fetchValue(...).then is not a function
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;最后， 从 &lt;code&gt;async&lt;/code&gt; 函数返回的任何东西都是一个 &lt;strong&gt;Promise&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Object.prototype.toString.call((async function () {})()); // '[object Promise]'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;async/await 提供更好的错误堆栈跟踪&lt;/h2&gt;
-&lt;p&gt;V8工程师Mathias写了一篇名为&lt;code&gt;Asynchronous stack traces: why await beats Promise#then()&lt;/code&gt; 的文章，介绍了为什么与 Promise相比，引擎更容易捕捉和存储 &lt;code&gt;async/await&lt;/code&gt; 的堆栈跟踪。事例如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;async function foo() {
-  await bar();
-  return 'value';
-}
-
-function bar() {
-  throw new Error('BEEP BEEP');
-}
-
-foo().catch((error) =&amp;gt; console.log(error.stack));
-
-// Error: BEEP BEEP
-//     at bar (&amp;lt;anonymous&amp;gt;:7:9)
-//     at foo (&amp;lt;anonymous&amp;gt;:2:9)
-//     at &amp;lt;anonymous&amp;gt;:10:1
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;async 版本正确地捕获了错误堆栈跟踪。&lt;/p&gt;
-&lt;p&gt;我们再来看看 &lt;code&gt;Promise&lt;/code&gt;  版本。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function foo() {
-  return bar().then(() =&amp;gt; 'value');
-}
-
-function bar() {
-  return Promise.resolve().then(() =&amp;gt; {
-    throw new Error('BEEP BEEP');
-  });
-}
-
-foo().catch((error) =&amp;gt; console.log(error.stack));
-
-// Error: BEEP BEEP  at &amp;lt;anonymous&amp;gt;:7:11
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;堆栈跟踪丢失。从匿名的箭头函数切换到命名的函数声明有一点帮助，但帮助不大:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function foo() {
-  return bar().then(() =&amp;gt; 'value');
-}
-
-function bar() {
-  return Promise.resolve().then(function thisWillThrow() {
-    throw new Error('BEEP BEEP');
-  });
-}
-
-foo().catch((error) =&amp;gt; console.log(error.stack));
-
-// Error: BEEP BEEP
-//    at thisWillThrow (&amp;lt;anonymous&amp;gt;:7:11)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;对 &lt;code&gt;async/await&lt;/code&gt; 常见反对意见&lt;/h2&gt;
-&lt;p&gt;对 &lt;code&gt;async/await&lt;/code&gt; 主要有两种常见的反对意见。&lt;/p&gt;
-&lt;p&gt;首先，当独立的异步函数调用可以用&lt;code&gt;Promise.all&lt;/code&gt;并发处理时，如果我们还大量使用&lt;code&gt;async/await&lt;/code&gt; 可能会导致滥用，这样会造成开发者不去试图了解 Promise 的幕后是如何工作，而只是一味的使用 &lt;code&gt;async/await&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;第二种情况更为微妙。一些函数式编程爱好者认为 &lt;code&gt;async/await&lt;/code&gt; 会招致命令式编程。从 FP 程序员的角度来看，能够使用循环和 &lt;code&gt;try catch&lt;/code&gt; 并不是一件好事，因为这些语言结构意味着副作用，并鼓励使用不那么理想的错误处理。&lt;/p&gt;
-&lt;p&gt;我对这种说法待保留意见。FP程序员理所当然地关心他们程序中的确定性。他们希望对自己的代码有绝对的信心。为了达到这个目的，需要一个复杂的类型系统，其中包括&lt;strong&gt;Result&lt;/strong&gt;等类型。但我不认为&lt;code&gt;async/await&lt;/code&gt;本身与FP不相容。&lt;/p&gt;
-&lt;p&gt;无论如何，对于大多数人来说，包括我在内，FP仍然是一种后天的味道（尽管我确实认为FP超级酷，而且我正在慢慢学习它）。&lt;code&gt;async/await&lt;/code&gt;提供的正常控制流语句和&lt;code&gt;try catch&lt;/code&gt;错误处理，对于我们在 JavaScript 中协调复杂的异步操作是非常宝贵的。这正是为什么说 "async/await只是一种语法糖" 是一种轻描淡写的说法。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;作者：zhenghao  译者：前端小智 来源：zhenghao&lt;/p&gt;
-&lt;p&gt;原文：https://www.zhenghao.io/posts/await-vs-promise&lt;/p&gt;
-&lt;h3&gt;交流&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
-&lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;、&lt;/p&gt;</description><author>王大冶</author><pubDate>Wed, 31 Aug 2022 16:24:51 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
+&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Mon, 05 Sep 2022 16:57:22 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: awesome-green
 highlight: a11y-light&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://juejin.cn/post/7095547569777934367"&gt;13.5W 播放量的 TS 动画版进阶教程合集来了！&lt;/a&gt;，通过形象生动的动画，让你轻松搞懂 TypeScript 的难点和核心知识点！&lt;/p&gt;
