@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Tue, 08 Nov 2022 22:47:16 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 58 期：TypeScript 4.9 RC、10 月登陆浏览器的新功能、Turbopack 真的比 Vite 快 10 倍吗？</title><link>https://juejin.cn/post/7163235734361473055</link><description>&lt;hr /&gt;
+<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Wed, 09 Nov 2022 22:46:53 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 58 期：TypeScript 4.9 RC、10 月登陆浏览器的新功能、Turbopack 真的比 Vite 快 10 倍吗？</title><link>https://juejin.cn/post/7163235734361473055</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: fancy
 highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
@@ -3192,7 +3192,201 @@ S 仅由数字和字母组成。&lt;/p&gt;
 &lt;ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959;"&gt;
 &lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6872115031501340679" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」一张脑图带你看动态规划算法之美&lt;/a&gt;（370+👍）&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6861376131615227912" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」DFS和BFS算法之美&lt;/a&gt;(240+👍)&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6856546833025237006" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」梳理6大排序算法&lt;/a&gt;(220+👍)&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6874708801208254478" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」带你看哈希算法之美(210+👍)&lt;/a&gt;&lt;/section&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;/section&gt;&lt;/li&gt;&lt;/ol&gt;
-&lt;p class="nice-suffix-juejin-container" id="nice-suffix-juejin-container" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; margin-top: 20px !important;"&gt;本文使用 &lt;a href="https://mdnice.com/?from=juejin" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;mdnice&lt;/a&gt; 排版&lt;/p&gt;&lt;/section&gt;</description><author>TianTianUp</author><pubDate>Sun, 11 Oct 2020 08:11:57 GMT</pubDate></item><item><title>小而美的 css 的原子化</title><link>https://juejin.cn/post/7161211941652791304</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p class="nice-suffix-juejin-container" id="nice-suffix-juejin-container" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; margin-top: 20px !important;"&gt;本文使用 &lt;a href="https://mdnice.com/?from=juejin" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;mdnice&lt;/a&gt; 排版&lt;/p&gt;&lt;/section&gt;</description><author>TianTianUp</author><pubDate>Sun, 11 Oct 2020 08:11:57 GMT</pubDate></item><item><title>大数据前端团队生存指南</title><link>https://juejin.cn/post/7163801933612843016</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="一帧.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/61643608183f4c7d9f8b66ddd73716fe~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是第 164 篇不掺水的原创，想获取更多原创好文，请搜索公众号关注我们吧~ 本文首发于政采云前端博客：&lt;a href="http://zoo.zhengcaiyun.cn/blog/article/big-data"&gt;大数据前端团队生存指南&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本文会简单介绍大数据、大数据前端团队以及可落地的演进方向。 ps.针对数据前端团队10人及以内的中小厂。&lt;/p&gt;
+&lt;p&gt;开始前问几个问题：&lt;/p&gt;
+&lt;ol start="0"&gt;
+&lt;li&gt;你了解大数据技术吗？&lt;/li&gt;
+&lt;li&gt;为什么需要大数据前端团队（和大数据有什么关联）？&lt;/li&gt;
+&lt;li&gt;大数据前端团队在前端团队中的定位？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;浅入浅出大数据&lt;/h2&gt;
+&lt;h3&gt;为什么需要大数据&lt;/h3&gt;
+&lt;p&gt;咱们年终述职汇报的时候，是不是有个标准套路：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用xx工具替换了xx工具，并落地xx个团队的xx个项目，覆盖率x%，整体体积减少了x%，加载速度从x缩短到x。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那么完成上面这条简短而有力的阐述需要那几个步骤？&lt;/p&gt;
+&lt;ol start="0"&gt;
+&lt;li&gt;我需要哪些数据，从哪来？寻源与采集&lt;/li&gt;
+&lt;li&gt;收集的数据很多要怎么管理？聚合与统计&lt;/li&gt;
+&lt;li&gt;如何整理出可读和有用的结果？建模与分析&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;大数据技术在做什么&lt;/h3&gt;
+&lt;p&gt;数据本身的价值——疫情防控啊，通过数据精准发现密接和次密接 数据增值的价值——电商行业根据用户消费情况做商品推荐、我的抖音里每次都是跳舞小姐姐&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;简单来说可以分为提供数据服务和提供数据分析。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;大数据开发分了几个方向： 1.底层的基础平台开发 2.面向用户的数据产品开发 3.数据仓库开发 4.大数据分析 5.算法，数据挖掘&lt;/p&gt;
+&lt;p&gt;简化一下运作流程：&lt;/p&gt;
+&lt;ol start="0"&gt;
+&lt;li&gt;确定需求：要做什么&lt;/li&gt;
+&lt;li&gt;需求分析：沉淀需要的指标（通常是数据分析师和运营）&lt;/li&gt;
+&lt;li&gt;分析数据来源：埋点？业务数据库&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据域划分、指标&amp;amp;模型：原子指标的统计口径、计算逻辑（核心）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;跑数据&amp;amp;结果验证&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;数仓平台&lt;/h3&gt;
+&lt;p&gt;采用阿里的数据体系分层架构分表为：数据引入层（ODS，Operation Data Store）、数据公共层（CDM，Common Data Model）和数据应用层（ADS，Application Data Service）。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;分层&lt;/th&gt;
+&lt;th&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ODS 贴源层&lt;/td&gt;
+&lt;td&gt;实际业务产生的未经处理的原始数据数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DWD 明细数据表&lt;/td&gt;
+&lt;td&gt;以业务过程明细数据进行宽表化处理，形成明细逻辑表。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DWS 汇总数据层&lt;/td&gt;
+&lt;td&gt;面向可复用模型公共建模，汇总成口径统一指标，完成数据加工与整合。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ADS 数据应用层&lt;/td&gt;
+&lt;td&gt;基于指标的个性化数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;作为底层能力，数仓同学会根据产品诉求做抽象和分层，并建立一些内部业务的通用模型。&lt;/p&gt;
+&lt;h3&gt;数据平台&lt;/h3&gt;
+&lt;p&gt;除了配合分层之外，还有跑批、作业、数据集成、抽取 、回流等，这些都是 &lt;strong&gt;数据平台&lt;/strong&gt; 的工作，目的是管理数据，是一个较为独立且闭环的技术产品，也是支撑数仓的能力平台。 通过平台化和gui的能力释放数仓同学的工作压力，同时更合理合规的透出到业务线。&lt;/p&gt;
+&lt;h3&gt;数据应用&lt;/h3&gt;
+&lt;p&gt;通常是前端的主战场，配合各种端的业务，与数据平台联调，使用一些可视化的方案完成用户诉求。&lt;/p&gt;
+&lt;p&gt;在初步介绍了大数据团队工作以后，我们回到前端。&lt;/p&gt;
+&lt;h2&gt;团队成长&lt;/h2&gt;
+&lt;h3&gt;团队现状&lt;/h3&gt;
+&lt;p&gt;内部出现的一些问题：&lt;/p&gt;
+&lt;ol start="0"&gt;
+&lt;li&gt;不了解公司业务、与核心业务交流少&lt;/li&gt;
+&lt;li&gt;与前端基建的关联性很少，导致在大前端里出头脱s节&lt;/li&gt;
+&lt;li&gt;交付效率不够，其中占比最重的来自于数据分析，业务消化不完&lt;/li&gt;
+&lt;li&gt;内部数据处理的业务都搞不清楚（业务知识壁垒高）&lt;/li&gt;
+&lt;li&gt;.......&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;总结：人少活急、业务壁垒、交流不畅&lt;/p&gt;
+&lt;h3&gt;结合行业分析&lt;/h3&gt;
+&lt;p&gt;业界比较出名的数据可视化（排名不分先后）团队有很多，&lt;strong&gt;百度 Echarts 团队、阿里云 DataV 团队 、蚂蚁金服 AntV 团队&lt;/strong&gt; 、&lt;strong&gt;360 企业安全集团可视化团队等&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这些团队Paas化（参考 DataV、网易数帆等）有更复杂的场景和更高的可视化要求，也能诞生很多可视化垂直赛道的专家机会。&lt;/strong&gt; 然而大部分公司想做数字化转型，都没金力培养一个支“可视化”的前端团队 ；要么直接外采，要么成立一个数据团队，前端只要简单场景的分析展示（数据处理后台、BI、大屏、驾驶舱）。&lt;/p&gt;
+&lt;p&gt;目前公司的规模和节奏卡在两者之间，有商业化的规划但是上升期业务交付压力很大，晒一条数据—— 6 月计划需要前端的需求为 27 个，实际排入14个，其中 42% 精力投入大屏、看板的项目交付。&lt;/p&gt;
+&lt;p&gt;经过一系列梳理，决定提升人效问题并借助大数据分析能力帮助其他团队建流程、做分析，我们明确了 3 点方向：&lt;/p&gt;
+&lt;ol start="0"&gt;
+&lt;li&gt;做深、做宽底层能力，并使其通用化&lt;/li&gt;
+&lt;li&gt;提升可视化业务的交付效率&lt;/li&gt;
+&lt;li&gt;与个别业务进行深度合作，提供数字化运营解决方案&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;能力清单&lt;/h2&gt;
+&lt;h3&gt;底层能力-可视化物料体系&lt;/h3&gt;
+&lt;p&gt;数据前端团队内部的底层能力，同时也可以成为公司的规范来保证数据展示的交付效率。 首先需要建立一套通用视化规范，然后形成可插拔的物料体系落地到业务侧。&lt;/p&gt;
+&lt;ol start="0"&gt;
+&lt;li&gt;基础图表组件库&lt;/li&gt;
+&lt;li&gt;业务视图：一些额外的自定义组件&lt;/li&gt;
+&lt;li&gt;3D能力（d3、three）&lt;/li&gt;
+&lt;li&gt;拖拽交互、流程编排（g6）&lt;/li&gt;
+&lt;li&gt;与搭建场景的结合，物料管理等&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;难点&lt;/strong&gt;&lt;/p&gt;
+&lt;ol start="0"&gt;
+&lt;li&gt;可视化规范的约束与视觉创意的 balance，既要克制又要个性。&lt;/li&gt;
+&lt;li&gt;可视化组件库不像传统组件库，配置的复杂度容易牵一发动全身，抽象能力很重要。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;方案&lt;/strong&gt;&lt;/p&gt;
+&lt;ol start="0"&gt;
+&lt;li&gt;定义一套标准化方案（包含可变和约束项）结合主题来满足不同的调性；视觉负责新增的组件以及场景设计&lt;/li&gt;
+&lt;li&gt;充分的分类：素材、信息、控件、地图、图表、表格、业务等，其中素材、控件和业务是需要迭代的工作量&lt;/li&gt;
+&lt;li&gt;配套物料体系需要固定的开发脚手架、模板和物料管理 &lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/36893b5c8ea54c7080df860caf48cb7c~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7122240814108901406"&gt;【鲁班数据源管理方案】&lt;/a&gt; &lt;a href="https://juejin.cn/post/7127440050937151525"&gt;【低代码平台远程组件加载方案】&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;通用服务-可视化搭建平台&lt;/h2&gt;
+&lt;p&gt;可视化搭建采用 NoCode，只有个别数据源处理需要前端做数据规则转换，基于物料沉淀和视觉规范做快速搭建；工作转移和共建流程放在了下面方案中。&lt;/p&gt;
+&lt;ol start="0"&gt;
+&lt;li&gt;大屏&lt;/li&gt;
+&lt;li&gt;BI 驾驶舱：相比大屏的展示更重交互有可能会嵌在管理系统里&lt;/li&gt;
+&lt;li&gt;报表：excel&lt;/li&gt;
+&lt;li&gt;ppt&lt;/li&gt;
+&lt;li&gt;pdf&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;难点&lt;/strong&gt;&lt;/p&gt;
+&lt;ol start="0"&gt;
+&lt;li&gt;搭建系统本身的复杂度，可视化的配置项会比普通搭建多。&lt;/li&gt;
+&lt;li&gt;搭建与物料之间的规范抽象，完善的物料体系，标准的共建规则。&lt;/li&gt;
+&lt;li&gt;搭建的受益群体。搭建由谁来完成？如何配合共工作职责？谁是买单方？&lt;/li&gt;
+&lt;li&gt;搭建产品演进与日常研发的边界，哪些功能从业务中抽象，哪些功能不应该做。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;方案&lt;/strong&gt;&lt;/p&gt;
+&lt;ol start="0"&gt;
+&lt;li&gt;
+&lt;p&gt;物料管理与搭建的关系、渲染加载拖拽能力、图表的数据转换统一规范&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;前面已经说过了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将前端搭建的流程提前提供一些搭建出来的行业解决方案模板给业务方挑选，视觉负责个性化组件和场景的设计。&lt;/p&gt;
+&lt;ol start="0"&gt;
+&lt;li&gt;前端需要对业务方、对应的产品、视觉进行培训&lt;/li&gt;
+&lt;li&gt;完全支持的场景，搭建人由业务方或视觉出，边界是是否需要视觉把控质量&lt;/li&gt;
+&lt;li&gt;视觉与前端的搭建人，边界在于是否可以避免视觉出设计稿以及是否有额外的全局事件代码和新组件&lt;/li&gt;
+&lt;li&gt;数据源的搭建人边界，是否需要前端对数据做大量转换，应尽量避免。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;例如版本、草稿、回退、收藏，交互处理（下钻、刷新、tab等），view之外的逻辑由业务方承接&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;为了支持业务+内部基建，需要搭建产物的多样性，支持 npm、html、url 等方式交付。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="image的副本.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/23a281270f144cf6b3141c1d87dbef83~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7127440050937151525"&gt;【低代码平台远程组件加载方案】&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7145604963593355277"&gt;【探索组件在线预览和调试】&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;数字化能力-埋点分析&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;难点&lt;/strong&gt;&lt;/p&gt;
+&lt;ol start="0"&gt;
+&lt;li&gt;建立一套规范的产研埋点流程，从需求到前端&lt;/li&gt;
+&lt;li&gt;了解数据流转的流程，区分诉求是前端埋点还是后端埋点，实时还是 T+1&lt;/li&gt;
+&lt;li&gt;如何推动产品用起来（数据意识不够）&lt;/li&gt;
+&lt;li&gt;埋点标准化、可视化、无痕化、工程化&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;总结：横向能力 &amp;gt; 技术难度 &lt;strong&gt;方案&lt;/strong&gt; &lt;img alt="image的副本2.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0acbc0f1bde34403b8eaa82cc744b787~tplv-k3u1fbpfcp-zoom-1.image" /&gt; 当然路径图（桑基）、转化率（漏斗）等高定制组件应该是在“可视化物料体系”里面的，相比之下抛开技术本身，埋点更适合有产品思维，横向和数据意识强的同学。 细节我们也沉淀了不少 &lt;a href="https://juejin.cn/post/7114450860335169543"&gt;【埋点能力分享】&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;数据中台抓手-数字化运营&lt;/h3&gt;
+&lt;p&gt;使用大数据已沉淀的能力，连接业务与产研，让产研找到业务侧的技术发力点。 为什么大数据前端团队可以做数据能力的运用和推动落地？&lt;/p&gt;
+&lt;ol start="0"&gt;
+&lt;li&gt;埋点需要产品、运营和技术充分讨论，而前端是唯一的执行者&lt;/li&gt;
+&lt;li&gt;产研数据分析必定需要可视化平台承载&lt;/li&gt;
+&lt;li&gt;数据分析之后需要提供解决方案，前端可以从体验方向作为切入点，也可有依据的" battle需求"&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;数字化运营的通用方案还在路上，感兴趣的关注我，等下一篇《数字化运营在客满业务线的落地》&lt;/p&gt;
+&lt;p&gt;大数据前端是一个特殊的团队，可大可小，如何打破技术边界，渗透到业务内部还需要不断修炼。 最后，如果你正好也在这个团队，同时有些个人建议，欢迎在评论区分享。&lt;/p&gt;
+&lt;h2&gt;推荐阅读&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7153410606673395725"&gt;所见即所得 —— HTML转图片组件开发&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7145604963593355277"&gt;探索组件在线预览和调试&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7143025612267978760"&gt;规范升级 NPM 包&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7140422304920109092"&gt;你想知道的前后端协作规范都在这了&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7158607083699437605"&gt;IntersectionObserver 实现虚拟列表初探&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;开源作品&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;政采云前端小报&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="http://zoo.zhengcaiyun.cn/"&gt;www.zoo.team/openweekly/&lt;/a&gt;&lt;/strong&gt; (小报官网首页有微信交流群)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;商品选择 sku 插件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://github.com/zcy-inc/skuPathFinder-back"&gt;https://github.com/zcy-inc/skuPathFinder-back/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;招贤纳士&lt;/h2&gt;
+&lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
+&lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 08 Nov 2022 16:12:06 GMT</pubDate></item><item><title>小而美的 css 的原子化</title><link>https://juejin.cn/post/7161211941652791304</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="大海.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6de6a33a26c24275a1b59e7592ac0e41~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;这是第 163 篇不掺水的原创，想获取更多原创好文，请搜索公众号关注我们吧~ 本文首发于政采云前端博客：&lt;a href="http://zoo.zhengcaiyun.cn/blog/article/css"&gt;小而美的 css 的原子化&lt;/a&gt;&lt;/p&gt;
@@ -5794,387 +5988,7 @@ document.referrer
 &lt;h2&gt;招贤纳士&lt;/h2&gt;
 &lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
 &lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 09 Aug 2022 16:12:17 GMT</pubDate></item><item><title>浅谈低代码平台远程组件加载方案</title><link>https://juejin.cn/post/7127440050937151525</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="百里.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6240750d2ff44fe59d99bdb9766d22e7~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这是第 154 篇不掺水的原创，想获取更多原创好文，请搜索公众号关注我们吧~ 本文首发于政采云前端博客：&lt;a href="https://www.zoo.team/article/low-code"&gt;浅谈低代码平台远程组件加载方案&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;前言&lt;/h2&gt;
-&lt;p&gt;低代码开发平台（LCDP）是无需编码（0代码）或通过少量代码就可以快速生成应用程序的开发平台。通过可视化进行应用程序开发的方法，使具有不同经验水平的开发人员可以通过图形化的用户界面，使用拖拽组件和模型驱动的逻辑来创建网页和移动应用程序。这两年越来越多的公司和开发人员开始自研低代码平台来达到降本提效的目的。今天和大家分享一下低代码平台开发过程中遇的一个问题和对应的解决思路。&lt;/p&gt;
-&lt;h2&gt;问题&lt;/h2&gt;
-&lt;p&gt;低代码平台之所以不需要写代码是因为平台提供了很多可配置的组件，让平台的用户可以通过配置的方式生成自己想要的产物。那么如果想要能配置出更多的效果，就需要保证物料库足够丰富。&lt;/p&gt;
-&lt;p&gt;如果物料组件很多，就需要按需加载组件。现有的开发工具如 webpack 也支持代码分割。但是在低代码平台的开发场景中，平台应用是和组件分离的，需要用户在选择某个组件的时候，要加载远程组件代码。&lt;/p&gt;
-&lt;h2&gt;加载方案&lt;/h2&gt;
-&lt;h3&gt;组件代码&lt;/h3&gt;
-&lt;p&gt;我们以 vue 框架为例，假如当前有一个组件 A，代码如下，如何远程加载这个组件呢？&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-vue"&gt;&amp;lt;template&amp;gt;
-    &amp;lt;div class="wp"&amp;gt;{{text}}&amp;lt;/div&amp;gt;
-&amp;lt;/template&amp;gt;
-
-&amp;lt;script&amp;gt;
-import { defineComponent, ref } from 'vue';
-import _ from 'lodash';
-  
-export default defineComponent({
-  setup(props) {
-    console.log(_.get(props, 'a'));
-    return {
-      onAdd,
-      option,
-      size,
-      text: 'hello world',
-    };
-  },
-});
-&amp;lt;/script&amp;gt;
-
-&amp;lt;style&amp;gt;
-.wp {
-    color: pink;
-}
-&amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;方案一：放在全局对象上&lt;/h3&gt;
-&lt;h4&gt;步骤&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;打包：组件代码打包为 umd 格式，打包时配置 webpack externals, 使打包产物不包含公共的依赖；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;上传：打包的组件 js 上传到 cdn；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;加载：在需要使用组件时，插入一个 script ，在这个 script 中将组件放在一个全局对象上；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;注册：在 script 插入完成后，从全局对象上获取组件，并进行注册；&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4&gt;组件打包&lt;/h4&gt;
-&lt;p&gt;首先需要增加一个入口文件&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;import Component from './index.vue';
-
-if(!window.share) {
-  window.share = {};
-}
-
-window.share[Component.name] = Component;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;以上面的入口文件为入口，用 webpack 打包为 umd 格式&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;// 组件打包 webpack 配置
-const path = require('path');
-const { VueLoaderPlugin } = require('vue-loader')
-
-module.exports = {
-  mode: 'production',
-  entry: path.resolve(__dirname, './comps/index.js'),
-  output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
-    library: { type: 'umd' }
-  },
-  module: {
-    rules: [
-      {
-        test: /\.vue$/,
-        use: 'vue-loader',
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ]
-      }
-    ]
-  },
-  plugins: [
-    new VueLoaderPlugin()
-  ],
-  externals: {
-    vue: 'vue',
-    lodash: 'lodash',
-  }
-};
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;html 模板&lt;/h4&gt;
-&lt;p&gt;组件公共依赖都需要先加入到模板 html 中&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html lang="en"&amp;gt;
-&amp;lt;head&amp;gt;
-    &amp;lt;meta charset="UTF-8"&amp;gt;
-    &amp;lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&amp;gt;
-    &amp;lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&amp;gt;
-    &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;
-    &amp;lt;script src="https://cdn/vue.global.js"&amp;gt;&amp;lt;/script&amp;gt;
-    &amp;lt;script src="https://cdn/lodash@4.17.21.min.js"&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-    &amp;lt;div id="root"&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;组件加载逻辑&lt;/h4&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;const loadComponent = (name) =&amp;gt; new Promise((resolve) =&amp;gt; {
-  const script = document.createElement('script');
-  script.src=`http://xxx/${name}.js`;
-  script.onload = script.onreadystatechange = function(){
-     resolve();
-  };
-  document.querySelector('head').appendChild(script);
-})
-
-const addComp = async (name) =&amp;gt; {
-  await loadComponent(name);
-  // 注册组件，其中 app 为 Vue 应用实例对象
-  app.component(name, window.share[name]);
-}
-
-// 动态注册组件
-addComp('A');
-
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;缺点&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;组件的依赖共享，需要依赖提前先放到全局，html 模板需要较频繁改动；&lt;/li&gt;
-&lt;li&gt;全局对象上要挂载的内容越来越多，影响加载性能，没有做到真正的按需加载；&lt;/li&gt;
-&lt;li&gt;依赖版本难以管理。如 A 组件依赖了 loadsh 1.0， 而 B 组件依赖了 lodash 2.0，但是全局对象上的 lodash,同时挂载两个版本就必然会有冲突，因此版本必须一致；且后续如果某个组件要升级某个依赖的版本，也势必会影响所以其他组件。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;方案二：amd&lt;/h3&gt;
-&lt;p&gt;amd 格式也是一种模块化方案，这里我们选择知名度比较高的 require.js 作为 amd 模块加载器。&lt;/p&gt;
-&lt;h4&gt;步骤&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;打包：组件代码打包为 umd 或 amd 格式，打包时配置 webpack externals，使打包产物不包含公共的依赖；&lt;/li&gt;
-&lt;li&gt;上传：打包的组件 js 上传到 cdn；&lt;/li&gt;
-&lt;li&gt;加载&amp;amp;注册：在需要使用组件时，用 requirejs 获取组件，并进行注册。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4&gt;组件打包&lt;/h4&gt;
-&lt;p&gt;用 amd 格式来做远程加载时不需要像方案一一样，增加额外的入口文件，可以直接将 .vue 文件作为入口。以下是 webpack 打包配置示例&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;// 组件打包 webpack 配置
-const path = require('path');
-const { VueLoaderPlugin } = require('vue-loader')
-
-module.exports = {
-  mode: 'production',
-  entry: path.resolve(__dirname, './comps/index.vue'),
-  output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
-    library: { type: 'umd' }  // 输出 amd 或者 umd
-  },
-  module: {
-    rules: [
-      {
-        test: /\.vue$/,
-        use: 'vue-loader',
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ]
-      }
-    ]
-  },
-  plugins: [
-    new VueLoaderPlugin()
-  ],
-  externals: {
-    vue: 'vue',
-    lodash: 'lodash',
-  }
-};
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;html 模板&lt;/h4&gt;
-&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html lang="en"&amp;gt;
-&amp;lt;head&amp;gt;
-    &amp;lt;meta charset="UTF-8"&amp;gt;
-    &amp;lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&amp;gt;
-    &amp;lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&amp;gt;
-    &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;
-    &amp;lt;script src="./require.js"&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-    &amp;lt;div id="app"&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;组件加载逻辑&lt;/h4&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;// main.js
-requirejs.config({
-  baseUrl: 'https://cdn.xxx.com',
-  map: {
-    '*': {
-      css: 'require-css',
-    },
-  },
-  paths: {
-    echarts: 'echarts@5.1.1',
-    vueDemo: 'vue-demo',
-    vue: 'vue@3.2.37',
-    moment: 'https://cdn/moment@2.29.1.min',
-  },
-  shim: {
-    'ant-design-vue': ['css!https://cdn/ant-design-vue@2.1.6.min.css'],
-  },
-});
-
-requirejs(['vue', 'vue-demo', 'vue-app'], function (vue, vueDemoModule, VueAppModule) {
-  const app = Vue.createApp(VueAppModule.default);
-  app.component('vue-demo', vueDemoModule.default);
-  const vm = app.mount('#app');
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;缺点&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;平台代码（上述代码的&lt;code&gt;vue-app&lt;/code&gt;）也需要编译为 amd 格式，然后上传到 cdn 上，开发流程改变，需要定制化的开发平台项目的发布机制。&lt;/li&gt;
-&lt;li&gt;有些第三方库没有提供 amd 或 umd 格式，需要开发者自己开发工具去转换（此过程中可能有很多坑要踩）；&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4&gt;优点&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;相比于方案一，组件的依赖可以有版本差异且互相不影响。&lt;/li&gt;
-&lt;li&gt;组件和组件的依赖都可以按需加载，真正做到按需加载。&lt;/li&gt;
-&lt;li&gt;有现成的加载 css 文件的机制；&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;方案三：ESModule&lt;/h3&gt;
-&lt;h4&gt;步骤&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;打包：组件代码打包为 esm 格式，打包时配置webpack externals, 使打包产物不包含公共的依赖；&lt;/li&gt;
-&lt;li&gt;上传：打包的组件 js 上传到 cdn；&lt;/li&gt;
-&lt;li&gt;加载&amp;amp;注册：在需要使用组件时，用 esm 的动态引入获取组件，并进行注册；&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4&gt;组件打包&lt;/h4&gt;
-&lt;p&gt;这里需要注意的是，externals 配置项中直接把公共依赖配置为 cdn 地址；&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;import path from 'path';
-import VueLoader from 'vue-loader';
-
-const VueLoaderPlugin = VueLoader.VueLoaderPlugin;
-
-const __dirname = path.resolve();
-
-export default {
-  mode: 'development',
-  entry: path.resolve(__dirname, './src/vue-demo.vue'),
-  output: {
-    filename: 'vue-demo.esm.js',
-    path: path.resolve(__dirname, 'components'),
-    library: { type: 'module' }
-  },
-  experiments: { outputModule: true },
-  module: {
-    rules: [
-      {
-        test: /\.vue$/,
-        use: 'vue-loader',
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ]
-      }
-    ]
-  },
-  plugins: [
-    new VueLoaderPlugin()
-  ],
-  externals: {
-    vue: 'https://cdn.jsdelivr.net/npm/vue@3.2.37/dist/vue.esm-browser.js',
-    'lodash': 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.js'
-  }
-};
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;使用上述配置打包后产物，中会把 &lt;code&gt;'vue'&lt;/code&gt; 替换为 externals 中的 cdn 地址&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;// 输入
-import Vue from 'vue';
-
-// 输出结果
-import Vue from 'https://cdn.jsdelivr.net/npm/vue@3.2.37/dist/vue.esm-browser.js';
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;组件加载逻辑&lt;/h4&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;const list = ref([]);
-
-const addComp = async () =&amp;gt; {
-  const VueDemo = await import(/* @vite-ignore */`http://cdn/components/vue-demo.esm.js`)
-  window.app.component('vue-demo', VueDemo.default);
-  list.value.push({ key: new Date().valueOf(), name: 'vue-demo' });
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;vite 配置&lt;/h4&gt;
-&lt;p&gt;需要注意的是要保证本地开发时引入的 &lt;code&gt;vue&lt;/code&gt; 也是远程的，所以需要在 vite 的配置文件中增加 alias 配置。&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-javascript"&gt;// vite.config.js
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [vue()],
-  resolve: {
-    alias: {
-      'vue': 'https://cdn.jsdelivr.net/npm/vue@3.2.37/dist/vue.esm-browser.js'
-    }
-  }
-})
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;缺点&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;兼容性问题：很多 Webpack 已经支持很好的功能还没有得到主流浏览器的支持&lt;/li&gt;
-&lt;li&gt;对很多第三方依赖的转化处理不完善，缺失完善的解决机制。要将第三方依赖的加载全部交给浏览器本身来接管，那么首先开发工具要做的就是将第三方依赖全部转换为 ESModule 的模块，而现在 npm 上的绝大部分包都是只支持 CommonJS 版本的，因此这里的转换过程通常需要由开发者自己来接管，而这其中有很多底层的问题并没有得到好的解决。同时，在 ESModule 规范推进的过程中，有许多如&lt;code&gt;exports.default&lt;/code&gt;、&lt;code&gt;exports.__esModule&lt;/code&gt;等利用语法来兼容 ESModule 和 CommonJS 的废案往往也都被 babel 实现，而且被许多开发者使用并且发布到了 npm 上，这就导致了现在 npm 上的许多包中有大量的废弃兼容性代码，而这些代码往往会对开发工具的转化造成阻碍。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4&gt;优点&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;真正的按需加载&lt;/li&gt;
-&lt;li&gt;代码上更加优雅&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;关于 webpack 模块联邦&lt;/h3&gt;
-&lt;p&gt;基于笔者对模块联邦的了解，笔者认为 Webpack 的模块联邦，目前更加适合微前端的场景，但是不太适用于低代码平台的场景。但是笔者对 webpack 模块联邦了解不够深入，判断不一定准确，欢迎有不同意见的小伙伴在评论区讨论。&lt;/p&gt;
-&lt;h2&gt;结论&lt;/h2&gt;
-&lt;p&gt;对比上面三个方案，方案一实现起来最简单，但是没有真正实现按需加载，随着项目规模和需要满足的业务场景的扩大，组件的公共依赖会越来越多。方案二 、方案三 都能实现真正的按需加载，其中 require.js 虽然听上去已经是上个世纪的东西了，但是兼容性和坑相对比较少。说到 ESModule， 虽然有兼容性和上面提到的一些格式转化的问题，但随着近些年 Vite 、Snowpack 的发展，在未来 ESModule 一定是大势所趋，目前笔者也正在将负责的我司内部大屏低代码平台改造为 ESModule 方式加载。&lt;/p&gt;
-&lt;h2&gt;参考&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.requirejs-cn.cn/"&gt;requirejs 中文文档&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mp.weixin.qq.com/s/0AHmP70HnLUZeJWQlRtUKw"&gt;ESModule 系列 ㈠ ：演进&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://blog.csdn.net/lihefei_coder/article/details/81333036"&gt;Require.js加载css依赖&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;推荐阅读&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7124839474575441934"&gt;前端富文本基础及实现&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7122240814108901406"&gt;可视化搭建系统之数据源&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7119639489567260686"&gt;表单数据形式配置化设计&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7117042614313943070"&gt;如何将传统 Web 框架部署到 Serverless&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7114450860335169543"&gt;浅谈前端埋点 &amp;amp; 监控&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;开源作品&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;政采云前端小报&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://www.zoo.team/openweekly/"&gt;www.zoo.team/openweekly/&lt;/a&gt;&lt;/strong&gt; (小报官网首页有微信交流群)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;商品选择 sku 插件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://github.com/zcy-inc/skuPathFinder-back"&gt;https://github.com/zcy-inc/skuPathFinder-back/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h2&gt;招贤纳士&lt;/h2&gt;
-&lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
-&lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 02 Aug 2022 16:28:24 GMT</pubDate></item><item><title>开发人员面临的10个最常见的JavaScript问题</title><link>https://juejin.cn/post/7161959592967012366</link><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 09 Aug 2022 16:12:17 GMT</pubDate></item><item><title>开发人员面临的10个最常见的JavaScript问题</title><link>https://juejin.cn/post/7161959592967012366</link><description>&lt;blockquote&gt;
 &lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
 本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
 &lt;/blockquote&gt;
