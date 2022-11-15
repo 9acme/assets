@@ -1,5 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Mon, 14 Nov 2022 22:48:59 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 58 期：TypeScript 4.9 RC、10 月登陆浏览器的新功能、Turbopack 真的比 Vite 快 10 倍吗？</title><link>https://juejin.cn/post/7163235734361473055</link><description>&lt;hr /&gt;
+<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Tue, 15 Nov 2022 22:45:02 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 59 期：GitHub Universe 2022、Rome v10、Parcel v2.8.0、可扩展的 CSS 演变</title><link>https://juejin.cn/post/7166108391536869383</link><description>&lt;hr /&gt;
+&lt;h2&gt;theme: fancy
+highlight: github-gist&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;口味：草莓拿铁&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/Geekhyt/weekly" title="食堂技术周刊仓库地址：https://github.com/Geekhyt/weekly"&gt;食堂技术周刊仓库地址：https://github.com/Geekhyt/weekly&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;周刊仓库 923 个 Star 了，有时间的兄弟们帮忙冲一波 1000 Star。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1&gt;本期摘要&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub Universe 2022&lt;/li&gt;
+&lt;li&gt;Rome v10&lt;/li&gt;
+&lt;li&gt;Parcel v2.8.0&lt;/li&gt;
+&lt;li&gt;50 个有用的 Vim 命令&lt;/li&gt;
+&lt;li&gt;TanStack Router&lt;/li&gt;
+&lt;li&gt;如何使用 CSS 创建高级动画&lt;/li&gt;
+&lt;li&gt;可扩展的 CSS 演变&lt;/li&gt;
+&lt;li&gt;Solid Start Beta&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;大家好，我是童欧巴。欢迎来到本期的前端食堂技术周刊，我们先来看下上周的技术资讯。&lt;/p&gt;
+&lt;h1&gt;技术资讯&lt;/h1&gt;
+&lt;h2&gt;1.&lt;a href="https://github.blog/2022-11-09-everything-new-from-github-universe-2022/"&gt;GitHub Universe 2022&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;看看我们 “程序员的朋友圈” GitHub 今年有哪些大动作：&lt;/p&gt;
+&lt;p&gt;(省流版)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub Copilot 企业版、支持语音交互；&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/features/codespaces"&gt;GitHub Codespaces：个人开发者每月免费 60 小时&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;全新的代码搜索和代码视图体验；&lt;/li&gt;
+&lt;li&gt;GitHub Projects 提供给你更多可视化视图的 Roadmap 以及 &lt;a href="https://docs.github.com/cn/issues/tracking-your-work-with-issues/about-tasklists"&gt;由 Markdown 生成的任务列表对 Issues 进行管理&lt;/a&gt;、GitHub Mobile 新增功能(跑 GitHub Action、编辑文件、PR 等)；&lt;/li&gt;
+&lt;li&gt;GitHub 企业版：GitHub Enterprise Cloud 即时体验新功能、&lt;a href="https://github.com/features/actions-importer/signup"&gt;GitHub Actions Importer 帮助你迁移 CI/CD&lt;/a&gt;、更细粒度的访问令牌、&lt;a href="https://github.blog/2022-11-02-github-partners-with-arm-to-revolutionize-internet-of-things-software-development-with-github-actions/"&gt;彻底改变物联网 (IoT) 软件开发&lt;/a&gt;（Arm 开发工具在 GitHub Actions 中原生可用）、&lt;a href="https://github.blog/2022-11-08-github-enterprise-server-3-7-is-now-generally-available/"&gt;GitHub Enterprise Server 3.7&lt;/a&gt; 新增 70 个新特性；&lt;/li&gt;
+&lt;li&gt;安全提升：接收来自社区的私有漏洞报告、CodeQL 支持 Ruby、安全概览对企业用户提供更大范围的视图支持；&lt;/li&gt;
+&lt;li&gt;投资社区：开源两款可变字体 Mona Sans 和 Hubot Sans、&lt;a href="https://octoverse.github.com/"&gt;Octoverse 10 周年报告&lt;/a&gt;、GitHub Accelerator 将为 20 名维护人员和团队提供津贴和指导，以开展全职开源职业、&lt;a href="https://github.blog/2022-11-09-an-open-source-economy-built-by-developers-for-developers/"&gt;与 M12 合作设立 1000 万美元的开源基金&lt;/a&gt;、GitHub Sponsors 支持批量赞助。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9b6ac60410204dfc822cfc1a9ec365b7~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;2.&lt;a href="https://rome.tools/blog/2022/11/08/rome-10/"&gt;Rome v10&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;此次发布包括 linter 校验器和 formatter 格式化器，它们具有最小化的配置，漂亮的描述性诊断，并内置对 JavaScript 和 TypeScript 的支持。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;formatter 受 Prettier 启发，允许大多数用户以最小甚至零的改动来进行迁移；&lt;/li&gt;
+&lt;li&gt;linter 建立在一个遵循社区标准的推荐规则集上。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接下来的一年里 Rome 团队会进行 compilation 编译、 bundling 打包、 testing 测试等工作。&lt;/p&gt;
+&lt;p&gt;Rome 用 Rust 重写后的第一个稳定版本终于等来了，让我们再等等。毕竟我们都知道，罗马不是一天建成的。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/de5279fb18be4f64855d94e60c08577e~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;3.&lt;a href="https://parceljs.org/blog/v2-8-0/"&gt;Parcel v2.8.0&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;听说最近流行比谁家的 HMR 更快？不好意思，Parcel 赢麻了。&lt;/p&gt;
+&lt;p&gt;Parcel v2.8.0 的热更新比 Turbopack 快 68%(根组件)，比 Vite 快 74%(叶组件)。同时此版本带来了全新的打包算法、改进了自动代码拆分、提升了大型项目的构建性能，以及优化 Tree Shaking 使包体积减少 50%。&lt;/p&gt;
+&lt;p&gt;下面我们来看技术资料。&lt;/p&gt;
+&lt;h1&gt;技术资料&lt;/h1&gt;
+&lt;h2&gt;1.&lt;a href="https://vimtricks.com/p/50-useful-vim-commands/"&gt;50 个有用的 Vim 命令&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;帮你早点下班回家陪老婆的 50 个 Vim 命令。&lt;/p&gt;
+&lt;h2&gt;3.&lt;a href="https://tanstack.com/router/v1"&gt;TanStack Router&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;嘿，我是框架无关的路由器 TanStack Router，之前叫 React Location，现在改个名字从 v0.0.1 重新开始，&lt;a href="https://tanstack.com/"&gt;我还有一些兄弟姐妹&lt;/a&gt;。&lt;/p&gt;
+&lt;h2&gt;4.&lt;a href="https://www.smashingmagazine.com/2022/10/advanced-animations-css/"&gt;如何使用 CSS 创建高级动画&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;来吧，搞清楚三次贝塞尔曲线、二次贝塞尔曲线和堆叠动画，一起玩次过山车。&lt;/p&gt;
+&lt;h2&gt;5.&lt;a href="https://frontendmastery.com/posts/the-evolution-of-scalable-css/"&gt;可扩展的 CSS 演变&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;为什么传统 CSS 在大型项目中难以管理？&lt;/p&gt;
+&lt;p&gt;难点有四：全局命名空间，代码互相影响 (新出的 CSS Cascade Layers 申请出战解决）、命名难、重构难、调试难。&lt;/p&gt;
+&lt;p&gt;历史破解之法：OOCSS、SMACSS、BEM、ITCSS、Cube CSS。&lt;/p&gt;
+&lt;p&gt;今日破解之法：CSS in JS、CSS Modules、原子化 CSS。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4e69ff8d097843fca3833d2eb462b55a~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;6.&lt;a href="https://www.solidjs.com/blog/introducing-solidstart"&gt;Solid Start Beta&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Solid Start 进入 Beta 阶段，官方公告让我想到了 GALI 的 《70%》，喜欢听黑怕的你一定听过。(开个玩笑)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;构建基于 &lt;a href="https://vitejs.dev/"&gt;Vite&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;平台无关的 Sessions 借鉴 &lt;a href="https://remix.run/"&gt;Remix&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;嵌套文件路由借鉴 &lt;a href="https://nuxtjs.org/docs/features/file-system-routing/#nested-routes"&gt;NuxtJS&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;FileSystem /&amp;gt;&lt;/code&gt; 组件借鉴 &lt;a href="https://shopify.dev/api/hydrogen/components/framework/fileroutes"&gt;Hydrogen&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;API 路由借鉴 &lt;a href="https://kit.svelte.dev/docs/routing#server"&gt;SvelteKit&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;RouteData 和 RouteActions 借鉴 &lt;a href="https://remix.run/"&gt;Remix&lt;/a&gt; 和 &lt;a href="https://tanstack.com/query/v4/docs/adapters/solid-query"&gt;TanStack Query&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://dev.to/this-is-learning/client-side-routing-without-the-javascript-3k1i"&gt;新的实验性功能：Partial Hydration 部分水合、hybrid nested routing 混合嵌套路由&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;好文推荐&lt;/h1&gt;
+&lt;p&gt;下面来看一下好文推荐，本周推荐的好文是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://zhuanlan.zhihu.com/p/581977751"&gt;重新理解 Web&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://blog.maximeheckel.com/posts/the-magical-world-of-particles-with-react-three-fiber-and-shaders/"&gt;用 React Three Fiber 和着色器创造粒子的神奇世界&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;好了，以上就是本期的食堂周刊，观众老爷们如果觉得还不错，一键三连是对食堂老板最大的支持。&lt;/p&gt;
+&lt;p&gt;你的前端食堂，吃好每一顿饭，我们下期见。&lt;/p&gt;
+&lt;h2&gt;❤️爱心三连击&lt;/h2&gt;
+&lt;p&gt;1.如果你觉得食堂酒菜还合胃口，就点个赞支持下吧，你的&lt;strong&gt;赞&lt;/strong&gt;是我最大的动力。&lt;/p&gt;
+&lt;p&gt;2.关注&lt;a href="https://github.com/Geekhyt/front-end-canteen/blob/master/images/new-qrcode.jpg"&gt;公众号前端食堂&lt;/a&gt;，&lt;strong&gt;吃好每一顿饭！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3.点赞、评论、转发 === 催更！&lt;/p&gt;
+&lt;p&gt;&lt;img alt="透明footer.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/99c1796074d64d1aa9c78087f4463969~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;</description><author>童欧巴</author><pubDate>Mon, 14 Nov 2022 21:22:10 GMT</pubDate></item><item><title>前端食堂技术周刊第 58 期：TypeScript 4.9 RC、10 月登陆浏览器的新功能、Turbopack 真的比 Vite 快 10 倍吗？</title><link>https://juejin.cn/post/7163235734361473055</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: fancy
 highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
@@ -765,94 +853,7 @@ highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;1.如果你觉得食堂酒菜还合胃口，就点个赞支持下吧，你的&lt;strong&gt;赞&lt;/strong&gt;是我最大的动力。&lt;/p&gt;
 &lt;p&gt;2.关注&lt;a href="https://github.com/Geekhyt/front-end-canteen/blob/master/images/new-qrcode.jpg"&gt;公众号前端食堂&lt;/a&gt;，&lt;strong&gt;吃好每一顿饭！&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;3.点赞、评论、转发 === 催更！&lt;/p&gt;
-&lt;p&gt;&lt;img alt="透明footer.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/99c1796074d64d1aa9c78087f4463969~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;</description><author>童欧巴</author><pubDate>Mon, 29 Aug 2022 05:31:42 GMT</pubDate></item><item><title>前端食堂技术周刊第 49 期：Deno即将迎来重大变革、Blitz 2.0 Beta、Chrome删除HTTP/2服务端推送</title><link>https://juejin.cn/post/7134661235454246948</link><description>&lt;hr /&gt;
-&lt;h2&gt;theme: fancy
-highlight: github-gist&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;口味：茉莉花拌海蜇&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/Geekhyt/weekly"&gt;食堂技术周刊仓库地址：https://github.com/Geekhyt/weekly&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;PC 端在仓库里看体验更好，顺手赏个 Star 是对食堂最大的支持。&lt;/p&gt;
-&lt;h1&gt;本期摘要&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Deno 即将迎来重大变革&lt;/li&gt;
-&lt;li&gt;StackBlitz 2022 年 7 月更新&lt;/li&gt;
-&lt;li&gt;Announcing Blitz 2.0 BETA&lt;/li&gt;
-&lt;li&gt;从 Chrome 中删除 HTTP/2 服务器推送&lt;/li&gt;
-&lt;li&gt;Web Image 最佳实践&lt;/li&gt;
-&lt;li&gt;Vite Rollup Plugins&lt;/li&gt;
-&lt;li&gt;TypeScript Collections&lt;/li&gt;
-&lt;li&gt;Code Golfing Tips &amp;amp; Tricks&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;大家好，我是童欧巴。欢迎来到本期的前端食堂技术周刊，我们先来看下上周的技术资讯。&lt;/p&gt;
-&lt;h1&gt;技术资讯&lt;/h1&gt;
-&lt;h2&gt;1.&lt;a href="https://deno.com/blog/changes"&gt;Deno 即将迎来重大变革&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;随着 &lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt; 的发布，Deno 明显感受到压力，先是&lt;a href="https://deno.com/blog/v1.24#improved-ffi-call-performance"&gt;将 FFI 性能提升了约 200 倍&lt;/a&gt;。近期 Deno 官方又宣布一系列的大新闻：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;未来三个月，Deno 支持导入 80%-90% 的 npm 包；&lt;/li&gt;
-&lt;li&gt;将最快的 JavaScript 运行时作为发展目标，HTTP 服务器正在重构；&lt;/li&gt;
-&lt;li&gt;支持企业用户：提供办公时段专属套餐；&lt;/li&gt;
-&lt;li&gt;提升 DX：所有第三方 Deno 代码的全文符号搜索、自动生成 JavaScript 和 TypeScript 项目的文档。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d5774c6edd444b4cb99886248fcf49ca~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;h2&gt;2.&lt;a href="https://blog.stackblitz.com/posts/update-2022-07/"&gt;StackBlitz 2022 年 7 月更新&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;StackBlitz 2022 年 7 月更新动态汇总，包含如下几个方面，对此关注的堂友可以移步链接阅读。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;社区的新动态；&lt;/li&gt;
-&lt;li&gt;DX 提升和兼容性改进；&lt;/li&gt;
-&lt;li&gt;快餐资讯。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;3.&lt;a href="https://github.com/blitz-js/blitz/releases/tag/v2.0.0-beta.1"&gt;Announcing Blitz 2.0 BETA&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Blitz 不再是一个一体化的框架，而是一个用于 Next.js 的全栈工具包。这意味着 Blitz 从对 Next.js 的抽象转变为模块化的工具包，支持插入任何新的或者现有的 Next.js 应用。&lt;/p&gt;
-&lt;p&gt;Blitz 2.0 包含如下六个包：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;blitz：核心包，提供实用的工具函数、插件机制和脚手架；&lt;/li&gt;
-&lt;li&gt;@blitzjs/next：暴露特定于 Next.js 框架 functions &amp;amp; components；&lt;/li&gt;
-&lt;li&gt;@blitzjs/auth：提供身份验证和授权；&lt;/li&gt;
-&lt;li&gt;@blitzjs/rpc：Zero-API 数据层；&lt;/li&gt;
-&lt;li&gt;@blitzjs/codemod：为升级提供的 codemod。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;4.&lt;a href="https://developer.chrome.com/blog/removing-push/"&gt;从 Chrome 中删除 HTTP/2 服务器推送&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;在 Chrome 106 和其他基于 Chromium 的浏览器的下一个版本中，对 HTTP/2 服务器推送的支持将被默认禁用。原因及替代方案如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;实际使用中没有明显的性能提升；&lt;/li&gt;
-&lt;li&gt;采用 HTTP2 的站点从 1.25% 下降到 0.7%；&lt;/li&gt;
-&lt;li&gt;替代方案：&lt;a href="https://developer.chrome.com/blog/early-hints/"&gt;Early Hints&lt;/a&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;下面我们来看技术资料。&lt;/p&gt;
-&lt;h1&gt;技术资料&lt;/h1&gt;
-&lt;h2&gt;1.&lt;a href="https://github.com/nucliweb/image-element"&gt;Web Image 最佳实践&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;这个仓库收集了 Web Image 的最佳实践。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e9c8d0f8cc6847dcb20dd12f2c424034~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;h2&gt;2.&lt;a href="https://vite-rollup-plugins.patak.dev/"&gt;Vite Rollup Plugins&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Vite3 中使用 Rollup 插件的兼容性列表，我猜作者 patak 一定是个贴心暖男。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a0cdb6254e1341d58d1d8a8e69ebdf02~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;h2&gt;3.&lt;a href="https://github.com/basarat/typescript-collections"&gt;TypeScript Collections&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;用 TypeScript 编写的数据结构合集，包含如图所示的数据结构。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/012c7506667a497cac0fb14aa3826046~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
-&lt;h2&gt;4.&lt;a href="https://getbutterfly.com/code-golfing-tips-tricks-how-to-minify-your-javascript-code/"&gt;Code Golfing Tips &amp;amp; Tricks&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;这篇博文整理了一系列关于 JavaScript 编码的技巧，包括如何用更少的编码实现同样的功能。在一些比赛，如 &lt;a href="https://js13kgames.com/"&gt;JS13KGames&lt;/a&gt;、&lt;a href="https://js1024.fun/"&gt;js1024&lt;/a&gt; 中这些技巧很实用。但是在真实世界中，我们需要给可读性更多关注，毕竟代码是写给人看的。&lt;/p&gt;
-&lt;h1&gt;其他信息&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/reduxjs/redux-toolkit/releases/tag/v1.9.0-alpha.0"&gt;redux-toolkit v1.9.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/pmndrs/valtio/releases/tag/v1.6.4"&gt;Valtio v1.6.4&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/pmndrs/zustand/releases/tag/v4.1.0"&gt;Zustand v4.1.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/pmndrs/jotai/releases/tag/v1.8.0"&gt;Jotai v1.8.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.blog/changelog/2022-08-03-introducing-the-new-npm-dependency-selector-syntax/"&gt;新的 npm 依赖选择器语法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://storybook.js.org/blog/7-0-design-alpha/"&gt;Figma 7.0 design alpha&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;好文推荐&lt;/h1&gt;
-&lt;p&gt;下面来看一下好文推荐，本周推荐的好文是：&lt;/p&gt;
-&lt;p&gt;1.&lt;a href="https://mp.weixin.qq.com/s/ZO40uAkH0jCXqVO3bBZ6YQ"&gt;闲鱼宗心：这一年，我对终端组织与技术架构的思考&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;2.&lt;a href="https://www.joshwcomeau.com/react/why-react-re-renders/"&gt;Why React Re-Renders&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;好了，以上就是本期的食堂周刊，观众老爷们如果觉得还不错，一键三连是对食堂老板最大的支持。&lt;/p&gt;
-&lt;p&gt;你的前端食堂，吃好每一顿饭，我们下期见。&lt;/p&gt;
-&lt;h2&gt;❤️爱心三连击&lt;/h2&gt;
-&lt;p&gt;1.如果你觉得食堂酒菜还合胃口，就点个赞支持下吧，你的&lt;strong&gt;赞&lt;/strong&gt;是我最大的动力。&lt;/p&gt;
-&lt;p&gt;2.关注&lt;a href="https://github.com/Geekhyt/front-end-canteen/blob/master/images/new-qrcode.jpg"&gt;公众号前端食堂&lt;/a&gt;，&lt;strong&gt;吃好每一顿饭！&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;3.点赞、评论、转发 === 催更！&lt;/p&gt;
-&lt;p&gt;&lt;img alt="透明footer.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/99c1796074d64d1aa9c78087f4463969~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;</description><author>童欧巴</author><pubDate>Mon, 22 Aug 2022 03:29:40 GMT</pubDate></item><item><title>「程序人生」在腾讯工作是怎么样的体验</title><link>https://juejin.cn/post/6976896524198346760</link><description>&lt;hr /&gt;
+&lt;p&gt;&lt;img alt="透明footer.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/99c1796074d64d1aa9c78087f4463969~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;</description><author>童欧巴</author><pubDate>Mon, 29 Aug 2022 05:31:42 GMT</pubDate></item><item><title>「程序人生」在腾讯工作是怎么样的体验</title><link>https://juejin.cn/post/6976896524198346760</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: condensed-night-purple&lt;/h2&gt;
 &lt;h2&gt;在腾讯工作是怎么样的体验&lt;/h2&gt;
 &lt;p&gt;大家好，我是&lt;strong&gt;TianTian&lt;/strong&gt;。&lt;/p&gt;
@@ -5988,7 +5989,223 @@ document.referrer
 &lt;h2&gt;招贤纳士&lt;/h2&gt;
 &lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
 &lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 09 Aug 2022 16:12:17 GMT</pubDate></item><item><title>开发人员面临的10个最常见的JavaScript问题</title><link>https://juejin.cn/post/7161959592967012366</link><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 09 Aug 2022 16:12:17 GMT</pubDate></item><item><title>为什么和 CSS-in-JS 说拜拜</title><link>https://juejin.cn/post/7165878751295700999</link><description>&lt;blockquote&gt;
+&lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
+本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本文是由 Emotion 的第二大活跃维护者 Sam 分享，本文第一人称都指的是 Sam。&lt;a href="https://emotion.sh/docs/introduction"&gt;Emotion&lt;/a&gt; 是一个广泛流行的 CSS-in-JS 库，用于React。文文章 Sam 会带大家深入探讨 CSS-in-JS 最初吸引人的原因，以及为什么作者（以及Spot团队的其他成员）决定放弃它。&lt;/p&gt;
+&lt;h2&gt;什么是 CSS-in-JS？&lt;/h2&gt;
+&lt;p&gt;顾名思义，CSS-in-JS 就是在 JS 或 TS 中直接编写 CSS，为 React 组件提供样式，如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Object Styles  方式
+function ErrorMessage({ children }) {
+  return (
+    &amp;lt;div
+      css={{
+        color: 'red',
+        fontWeight: 'bold',
+      }}
+    &amp;gt;
+      {children}
+    &amp;lt;/div&amp;gt;
+  );
+}
+
+// String Styles 方式
+const ErrorMessage = styled.div`
+  color: red;
+  font-weight: bold;
+`;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href="https://styled-components.com/"&gt;styled-components&lt;/a&gt;和&lt;a href="https://emotion.sh/docs/introduction"&gt;Emotion&lt;/a&gt;是React社区中最流行的CSS-in-JS库。虽然我只使用了Emotion，但我相信本文的所有观点也适用于styled-components。&lt;/p&gt;
+&lt;p&gt;本文重点介绍&lt;strong&gt;运行时CSS-in-JS&lt;/strong&gt;，这个类别包括 styled-components 和 Emotion。运行时CSS-in-JS 仅仅意味着库在应用程序运行时解释并应用你的样式。我们会在文章的最后简要讨论编译时 CSS-in-JS。&lt;/p&gt;
+&lt;h2&gt;CSS-in-JS 的好、坏、丑&lt;/h2&gt;
+&lt;p&gt;在讨论 CSS-in-JS 编码模式及其对性能的影响之前，先来看看为什么有的开发者会使用 CSS-in-JS，有的不会使用。&lt;/p&gt;
+&lt;h4&gt;好处&lt;/h4&gt;
+&lt;p&gt;1.局部作用域的样式。在写普通的CSS时，很容易不小心将样式应用到其它文件中。例如，假设我们正在写一个列表，每一行都应该有一些 &lt;code&gt;padding&lt;/code&gt; 和 &lt;code&gt;border&lt;/code&gt; 。我们可能会这样写：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;   .row {
+     padding: 0.5rem;
+     border: 1px solid #ddd;
+   }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;几个月后，当我们完全忘记了这个列表时，又创建了一个列表。然后也设置了 &lt;code&gt;className="row"&lt;/code&gt;。现在，新组件的行有一个难看的边框，而我们却不知道为什么! 虽然这类问题可以通过使用较长的类名或更具体的选择器来解决，但作为开发者还是要确保没有类名冲突。&lt;/p&gt;
+&lt;p&gt;CSS-in-JS 完全解决了这一问题，它使样式默认为本地作用域。如果把上面的样式写成这样：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div css={{ padding: '0.5rem', border: '1px solid #ddd' }}&amp;gt;...&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样 &lt;code&gt;padding&lt;/code&gt; 和  &lt;code&gt;border&lt;/code&gt; 就不可能应用到其它元素了。&lt;/p&gt;
+&lt;p&gt;2.托管。如果使用普通的CSS，则可以将所有&lt;code&gt;.css&lt;/code&gt;文件放在 &lt;code&gt;src/styles&lt;/code&gt; 目录中，而所有的React组件都在 &lt;code&gt;src/components&lt;/code&gt; 中。随着应用程序的大小的增长，很难判断每个组件使用哪些样式。很多时候，你的CSS中会出现死代码，因为没有简单的方法可以说出这些样式没有使用。&lt;/p&gt;
+&lt;p&gt;一个更好的组织代码的方法是将所有与单个组件相关的东西放在同一个地方。这种做法被称为colocation (托管)。&lt;/p&gt;
+&lt;p&gt;问题是，在使用普通的CSS时，很难实现 &lt;strong&gt;colocation&lt;/strong&gt;，因为CSS和JavaScript必须放在单独的文件中，而且无论&lt;code&gt;.css&lt;/code&gt;文件在哪里，你的样式都会全局应用。另一方面，如果使用CSS-in-JS，可以直接在使用它们的React组件中编写样式 如果操作得当，这将极大地提高应用程序的可维护性。&lt;/p&gt;
+&lt;p&gt;3.&lt;strong&gt;可以在样式中使用JavaScript变量&lt;/strong&gt;。CSS-in-JS 可以在样式规则中引用JavaScript变量，例如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// colors.ts
+export const colors = {
+  primary: '#0d6efd',
+  border: '#ddd',
+  /* ... */
+};
+
+// MyComponent.tsx
+function MyComponent({ fontSize }) {
+  return (
+    &amp;lt;p
+      css={{
+        color: colors.primary,
+        fontSize,
+        border: `1px solid ${colors.border}`,
+      }}
+    &amp;gt;
+      ...
+    &amp;lt;/p&amp;gt;
+  );
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如本示例所示，可以在CSS-in-JS样式中同时使用 JS 常量（例如 &lt;code&gt;colors&lt;/code&gt;）和 &lt;code&gt;React Props/state&lt;/code&gt; （例如 &lt;code&gt;fontSize&lt;/code&gt;）。&lt;/p&gt;
+&lt;p&gt;在样式中使用 JS 常量的能力在某些情况下可以降低重复，因为同一个常量不需要同时定义为CSS变量和 JS 常量。&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;props&lt;/code&gt; 和 &lt;code&gt;state&lt;/code&gt;  的能力可以创建具有高度可定制的样式的组件，而无需使用内联样式。(当相同的样式应用于许多元素时，内联样式的性能并不理想）。&lt;/p&gt;
+&lt;h2&gt;中立&lt;/h2&gt;
+&lt;p&gt;这是一项热门的新技术。许多Web开发者，包括我自己，一般会社区中最热门的新趋势。部分原因是这样的，因为在很多情况下，新的库和框架已经被证明比它们的前辈有巨大的改进（想想React比早期的库如jQuery提高了多少生产力就知道了）。&lt;/p&gt;
+&lt;p&gt;另一方面，我们对新工具的痴迷是害怕错过下一个大事件，在决定采用一个新的库或框架时，我们可能忽略了真正的缺点。我认为这肯定是CSS-in-JS被广泛采用的一个因素--至少对我来说是这样。&lt;/p&gt;
+&lt;h2&gt;不好&lt;/h2&gt;
+&lt;p&gt;1.&lt;strong&gt;CSS-in-JS增加了运行时的开销&lt;/strong&gt;。当组件渲染时，CSS-in-JS库必须将样式 "序列化"为可以插入到文档中的普通CSS。很明显，这需要占用额外的CPU周期，但这是否足以对应用程序的性能产生明显的影响？我们在下一节中深入研究这个问题。&lt;/p&gt;
+&lt;p&gt;2 &lt;strong&gt;CSS-in-JS增加的包的大小&lt;/strong&gt;。这是一个明显的问题--每个访问你网站的用户都必须下载CSS-in-JS库的JavaScript。Emotion 的最小压缩量是&lt;code&gt;7.9 kB&lt;/code&gt;，styled-components 是&lt;code&gt;12.7 kB&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;3.&lt;strong&gt;CSS-in-JS会打乱React DevTools&lt;/strong&gt;。对于每个使用css prop 的元素，Emotion会渲染&lt;code&gt;&amp;lt;EmotionCssPropInternal&amp;gt;&lt;/code&gt;和&lt;code&gt;&amp;lt;Insertion&amp;gt;&lt;/code&gt;组件。如果你在许多元素上使用css prop，Emotion 的内部组件会使React DevTools变得非常混乱，如图所示。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b6387a6214714899ad40e3d460db0769~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;丑&lt;/h2&gt;
+&lt;p&gt;1.&lt;strong&gt;频繁插入CSS规则迫使浏览器做很多额外的工作&lt;/strong&gt;。React核心团队成员、React Hooks的最初设计师Sebastian Markbåge在React 18工作组中写了一篇非常有见地的讨论，内容是关于CSS-in-JS库需要如何改变才能与React 18一起工作，以及总体上关于运行时CSS-in-JS的未来。特别是，他说:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在并发渲染中，React可以在渲染之间向浏览器让步。如果在一个组件中插入一个新的规则，如果React 让步了，那么浏览器就必须看看这些规则是否适用于现有的树。所以它会重新计算样式规则。然后React渲染下一个组件，然后该组件发现了一个新的规则，再次发生。
+引用
+这有效地导致在React渲染时，每一帧都要针对所有DOM节点重新计算所有CSS规则。这是很慢的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这个问题最糟糕的地方在于，它不是一个可修复的问题（在运行时CSS-in-JS的上下文中）。运行时CSS-in-JS库通过在组件渲染时插入新的样式规则来工作，这在基本层面上不利于性能。&lt;/p&gt;
+&lt;p&gt;2.对于CSS-in-JS，可能出错的地方还有很多，尤其是在使用SSR或组件库的时候。在Emotion的GitHub仓库里，我们收到了大量这样的问题。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我正在使用Emotion与服务器端渲染和MUI/Mantine/(另一个Emotion驱动的组件库)，它不能工作，因为...&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;虽然每个问题的根本原因各不相同，但有一些共同的原因：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Emotion的多个实例被同时加载。即使多个实例都是同一版本的Emotion，这也会导致问题。&lt;a href="https://github.com/emotion-js/emotion/issues/2639"&gt;(issue&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;组件库通常不能完全控制插入样式的顺序。(&lt;a href="https://github.com/emotion-js/emotion/issues/2803"&gt;issue&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Emotion的SSR支持在React 17和React 18之间的工作方式不同。为了与React 18的流式SSR兼容，这是必要的。(&lt;a href="https://github.com/emotion-js/emotion/issues/2725"&gt;issue&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这些复杂性只是冰山一角。&lt;/p&gt;
+&lt;h2&gt;性能&lt;/h2&gt;
+&lt;p&gt;运行时 CSS-in-JS既有明显的优点也有明显的缺点。为了理解我们的团队为什么要放弃这项技术，我们需要探索CSS-in-JS的实际性能影响。&lt;/p&gt;
+&lt;p&gt;本节重点介绍Emotion 对性能的影响，因为它被用于 Spot 代码库。因此，如果认为下给出的性能数据也适用于你的代码库，那就错了--有很多方法可以使用Emotion，而且每一种方法都有自己的性能特点。&lt;/p&gt;
+&lt;h4&gt;渲染内的序列化与渲染外的序列化&lt;/h4&gt;
+&lt;p&gt;样式序列化是指Emotion将CSS字符串或对象样式转换为可以插入文档的普通CSS字符串的过程。在序列化过程中，Emotion也会计算出一个普通CSS的哈希值--这个哈希值就是你在生成的类名中看到的，例如&lt;code&gt;css-15nl2r3&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;虽然我没有测量过这一点，但我相信影响Emotion如何执行的最重要因素之一是样式序列化是在React渲染循环内部还是外部执行的。&lt;/p&gt;
+&lt;p&gt;Emotion文档中的例子是在&lt;code&gt;render&lt;/code&gt;里面进行序列化的，像这样。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function MyComponent() {
+  return (
+    &amp;lt;div
+      css={{
+        backgroundColor: 'blue',
+        width: 100,
+        height: 100,
+      }}
+    /&amp;gt;
+  );
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;每次&lt;code&gt;MyComponent&lt;/code&gt;渲染的时候，对象的样式都会被再次序列化。如果&lt;code&gt;MyComponent&lt;/code&gt;频繁地渲染（例如每次按键），重复的序列化可能会有很高的性能代价。&lt;/p&gt;
+&lt;p&gt;一个更有效的方法是把样式移到组件之外，这样序列化就会在模块加载时一次性发生，而不是在每次渲染时。这可以通过@emotion/react的&lt;code&gt;css&lt;/code&gt;函数来实现：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const myCss = css({
+  backgroundColor: 'blue',
+  width: 100,
+  height: 100,
+});
+
+function MyComponent() {
+  return &amp;lt;div css={myCss} /&amp;gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;当然，这种方式就无法在样式中访问 props，所以错过了CSS-in-JS的主要卖点之一。&lt;/p&gt;
+&lt;p&gt;在Spot，我们在&lt;code&gt;render&lt;/code&gt;中进行了样式序列化，所以下面的性能分析将集中于这种情况。&lt;/p&gt;
+&lt;h4&gt;对Member Browser 进行基准测试&lt;/h4&gt;
+&lt;p&gt;现在通过对Spot的一个真正的组件进行分析来使事情具体化。我们将使用 Member Browser，这是一个相当简单的列表视图，可以显示你的团队中的所有用户。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/87037f59de9b4ddcad1e8d72c01b931a~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;为了测试:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Member Browser 显示20个用户&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;React.memo&lt;/code&gt; 周围的列表项目将被删除，并且强制最上面的&lt;code&gt;&amp;lt;BrowseMembers&amp;gt;&lt;/code&gt;组件每秒钟渲染一次，并记录前10次渲染的时间。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;React严格模式是关闭的。(它可以效地让我们在分析器中看到的渲染时间翻倍）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我使用React DevTools对该页面进行了分析，前&lt;code&gt;10&lt;/code&gt;次渲染时间的平均值为&lt;code&gt;54.3ms&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;我个人的经验是，一个React组件的渲染时间应该在&lt;code&gt;16&lt;/code&gt;毫秒以内，因为每秒60帧的1帧是&lt;code&gt;16.67&lt;/code&gt;毫秒。Member Browser 目前是这个数字的3倍多，所以它是一个相当重量级的组件。&lt;/p&gt;
+&lt;p&gt;这个测试是在M1 Max CPU上进行的，它比普通用户的速度要快很多。我得到的&lt;code&gt;54.3&lt;/code&gt;毫秒的渲染时间在性能较差的机器上可能很容易达到&lt;code&gt;200&lt;/code&gt;毫秒。&lt;/p&gt;
+&lt;h2&gt;使用火焰图(FlameGraph)分析程序性能&lt;/h2&gt;
+&lt;p&gt;下面是上述测试中单个列表项的火焰图：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5dbd1324ffd04a4184706bb081199079~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;正如你所看到的，有大量的&lt;code&gt;&amp;lt;Box&amp;gt;&lt;/code&gt;和&lt;code&gt;&amp;lt;Flex&amp;gt;&lt;/code&gt;组件被渲染--这些是我们的 "tyle primitives"，使用css prop。虽然每&lt;code&gt;个&amp;lt;Box&amp;gt;&lt;/code&gt;只需要0.1-0.2毫秒的渲染时间，但由于&lt;code&gt;&amp;lt;Box&amp;gt;&lt;/code&gt;组件的总数非常大，所以这就增加了。&lt;/p&gt;
+&lt;h4&gt;不使用 Emotion，对 Member Browser 进行测试&lt;/h4&gt;
+&lt;p&gt;为了了解这种昂贵的渲染有多少是由&lt;code&gt;Emotion&lt;/code&gt;造成的，我使用Sass Modules而不是Emotion重写了Member Browser 的样式。(Sass模块在构建时被编译成普通的CSS，所以使用它们几乎没有性能损失)。&lt;/p&gt;
+&lt;p&gt;我重复了上述同样的测试，前10次渲染的平均时间为&lt;code&gt;27.7ms&lt;/code&gt;。这比原来的时间减少了48%!&lt;/p&gt;
+&lt;p&gt;所以，这就是我们与CSS-in-JS 说拜拜的原因：运行时的性能成本实在是太高了。&lt;/p&gt;
+&lt;p&gt;重复我上面的免责声明：这个结果只直接适用于Spot代码库和我们使用Emotion的方式。如果你的代码库以一种更有效的方式使用Emotion（例如在render之外的样式序列化），你可能会看到从方程中移除CSS-in-JS后的更小好处。&lt;/p&gt;
+&lt;p&gt;下面是一些数据，供那些好奇的人参考：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f967f134a56b467dbcc3c42b3a38ec39~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;我们新的样式系统&lt;/h2&gt;
+&lt;p&gt;在我们下定决心不再使用CSS-in-JS之后，一个新的问题就会出现：我们应该用什么来代替？理想情况下，我们希望样式系统的性能与普通CSS类似，同时尽可能多地保留CSS-in-JS的优点:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;局部作用域&lt;/li&gt;
+&lt;li&gt;样式与它们所应用的组件放在同个地方&lt;/li&gt;
+&lt;li&gt;可以在样式中使用 JS 变量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你仔细看了那一节，你会记得我说过，CSS Module 还提供了局部作用域的样式和同位。而且，CSS Module 可以编译成普通的CSS文件，所以使用它们没有运行时的性能成本。&lt;/p&gt;
+&lt;p&gt;在我看来，CSS模块的主要缺点是，说到底，它们仍然是普通的CSS--而普通的CSS缺乏改善DX和减少代码重复的功能。虽然嵌套选择器即将出现在CSS中，但它们还没有出现，而这个功能对我们来说是一个巨大开发质量的提升。&lt;/p&gt;
+&lt;p&gt;幸运的是，这个问题有一个简单的解决方案--&lt;strong&gt;Sass模块&lt;/strong&gt;，它只是用Sass编写的CSS模块。你可以得到CSS模块的局部范围的样式和Sass强大的构建时间功能，而且基本上没有运行时间成本。这就是为什么Sass模块将成为我们未来的通用样式解决方案。&lt;/p&gt;
+&lt;h2&gt;实用类&lt;/h2&gt;
+&lt;p&gt;对于从Emotion切换到Sass Modules，团队的一个担心是，应用极其常见的样式，如&lt;code&gt;display: flex&lt;/code&gt;，会不太方便。以前，我们会写。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;FlexH alignItems="center"&amp;gt;...&amp;lt;/FlexH&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;为了只使用Sass模块做到这一点，我们必须打开.module。SCSS文件并创建一个应用样式display: flex和align-items: center的类。虽然不是世界末日，但确实不那么方便了。&lt;/p&gt;
+&lt;p&gt;如果只使用Sass模块，我们不得在新建&lt;code&gt;.module.scss&lt;/code&gt;文件，并创建一个类，应用样式&lt;code&gt;display: flex &lt;/code&gt;和 &lt;code&gt;align-items: center&lt;/code&gt;。这并不是灾难，但肯定不那么方便。&lt;/p&gt;
+&lt;p&gt;为了改进DX，我们决定引入一个实用类系统。实用类就是是在元素上设置一个单一的CSS属性的CSS类。通常情况下，结合多个实用类来获得所需的样式。对于上面的例子，可以这样写。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div className="d-flex align-items-center"&amp;gt;...&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Bootstrap和Tailwind是提供实用程序类的最流行的CSS框架。这些库在其实用程序系统中投入了大量的设计工作，所以采用其中一个而不是推出我们自己的实用程序是最有意义的。我已经使用Bootstrap多年了，所以我们选择了Bootstrap。虽然你可以把Bootstrap的实用类作为一个预建的CSS文件，但我们需要定制这些类来适应我们现有的样式系统，所以我把Bootstrap源代码的相关部分复制到我们的项目中。&lt;/p&gt;
+&lt;p&gt;我们使用Sass模块和实用类的新组件已经有几个星期了，对它相当满意。DX与Emotion相似，而运行时的性能则大大优于Emotion。&lt;/p&gt;
+&lt;h2&gt;关于编译时CSS-in-JS的说明&lt;/h2&gt;
+&lt;p&gt;本文主要介绍运行时的CSS-in-JS库，如 Emotion 和s tyled-components。最近，我们看到越来越多的CSS-in-JS库在编译时将样式转换为普通CSS。这些库包括：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://compiledcssinjs.com/"&gt;Compiled&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://vanilla-extract.style/"&gt;Vanilla Extract&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://linaria.dev/"&gt;Linaria&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这些库旨在提供类似于运行时CSS-in-JS的好处，而没有性能成本。&lt;/p&gt;
+&lt;p&gt;虽然我自己没有使用过任何编译时的CSS-in-JS库，但我仍然认为它们与Sass模块相比有缺点。以下是我在观察&lt;code&gt;Compiled&lt;/code&gt;时看到的缺点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;样式仍然是在组件第一次挂载时插入的，这迫使浏览器在每个DOM节点上重新计算样式。(这个缺点已经在 "丑"一节中讨论过了）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;像本例中的 color prop 这样的动态样式不能在构建时提取，所以Compiled使用 style prop（又称内联样式）将该值添加为CSS变量。众所周知，当应用许多元素时，内联样式会导致次优的性能&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;该库仍然将模板组件插入你的React树中，如图所示。这将使React DevTools变得混乱，就像运行时的CSS-in-JS一样。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;任何技术一样，它有其优点和缺点。归根结底，作为一个开发者，你应该评估这些优点和缺点，然后就该技术是否适合你的使用情况做出一个明智的决定。对于我们Spot公司来说，Emotion的运行时性能成本远远超过了DX的好处，特别是当你考虑到Sass模块+实用类的替代方案仍然有一个很好的DX，同时提供巨大的性能。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;来源：https://dev.to/srmagura/why-were-breaking-up-wiht-css-in-js-4g9b&lt;/p&gt;
+&lt;h3&gt;交流&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
+&lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
+&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Mon, 14 Nov 2022 06:30:39 GMT</pubDate></item><item><title>开发人员面临的10个最常见的JavaScript问题</title><link>https://juejin.cn/post/7161959592967012366</link><description>&lt;blockquote&gt;
 &lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
 本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7585,70 +7802,7 @@ watch: {
 &lt;blockquote&gt;
 &lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
 &lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Sun, 18 Sep 2022 16:41:07 GMT</pubDate></item><item><title>为什么说：JavaScript 模块中的默认导出很糟糕</title><link>https://juejin.cn/post/7143396454366314527</link><description>&lt;blockquote&gt;
-&lt;p&gt;本文首发于微信公众号：大迁世界, 我的微信：qq449245884，我会第一时间和你分享前端行业趋势，学习途径等等。
-更多开源作品请看 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; ，包含一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;我们知道，JavaScript 模块有两种方法来定义导出：默认导出和命名导出。在本节中，我们来看下为什么默认导出是一种糟糕的做法，会导致不好的开发体验。&lt;/p&gt;
-&lt;p&gt;下面，我们看下例子，假设，我们有一个模块，它同时包含命名导出和默认导出，如下所示：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;export const add = (a, b) =&amp;gt; a + b;
-
-export default subtract = (a, b) =&amp;gt; a - b;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在导入使用之前，这里有一个问题，它可能会影响到我们的开发体验。为什么 &lt;strong&gt;subtract&lt;/strong&gt;  是默认的，而 &lt;strong&gt;add&lt;/strong&gt;  是一个命名的导出？&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;ps：我举的例子，可能有点刻意，但随着模块的复杂，类似这种情况有常有的&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;考虑到开发人员使用一个他们不熟悉且复杂的模块。他们可能不知道默认导出的是什么方法，甚至可能也不确定是否有默认导出。这导致开发者需要花更多的时间来阅读文档或源码。如果模块只有命名导出，那么使用起来就更加的方便，可读性也会更好。&lt;/p&gt;
-&lt;p&gt;有了命名导出，使用IDE，我们可以很方便的知道一个模块有哪些方法。那么，这个下面的列表中没有展示什么呢？没错，就是默认导出。记住，默认导出不是命名的导出，所以 IDE 不知道改默认导出是干嘛的，也就不会在提示的列表中显示出来：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/37277fa48c574e0e8acf74badb2b52c2~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;默认导出的开发体验类似于 Node 中的 CommonJS，它的开发体验也不太友好。判断代码是否使用 CommonJS 的一个简单方法，就是看有没有使用 &lt;code&gt;require&lt;/code&gt; 和 &lt;code&gt;module.exports&lt;/code&gt; 。&lt;/p&gt;
-&lt;p&gt;下面我们再介绍一下，默认导出的一些用法(槽点)：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;默认导出的名称可以随便我们取名。也就是说，减法函数你可以命名成乘法。这会导致混乱，特别是随着代码复杂度的增加。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;import multiply from './math.js';
-const result = multiply(2, 2);  // results is now 0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;由于默认导出可以用任何名字，并且每个开发者的命名习惯不一样，名称就不一样，这样就没有一致性了。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;默认导出也不利于重构。在命名导出中，如果哪天我们的方法名改了，那么IDE 会提示我们对应的方法不存在，我们可以更好的重构。对于默认导出，IDE 是没有反馈的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;到这里，大家可能有一个问题，如果来自不同模块的两个命名导出具有相同的名称，该怎么办？&lt;/p&gt;
-&lt;p&gt;我们可以使用重命名的方式来解决这个问题：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import { Article } from './types';
-import { Article as ArticleComponent } from 'my-design-system';
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;虽然这种方式仍然需要为别名想一个名称，但这比为默认导出想一个名称要好得多，因为有命名导出作为参考。&lt;/p&gt;
-&lt;p&gt;最后，你可能也在想，"我使用的框架或工具几乎要求我们默认导出一个函数或组件"。如果组件很多，我们可以通过使用 "index.js" 来解决这个问题。就是在目录的根部创建一个&lt;code&gt;index.js&lt;/code&gt;或&lt;code&gt;index.ts&lt;/code&gt;文件，然后使用命名导出这些组件。&lt;/p&gt;
-&lt;p&gt;比如我们有一个文件 &lt;code&gt;components&lt;/code&gt;，该文件主要放置我们封装的组件：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;src/ 
-  components/
-   com1/
-     index.vue
-   com2/
-     index.vue
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;那么我们可以在 &lt;code&gt;components&lt;/code&gt; 创建一个 &lt;code&gt;index.js&lt;/code&gt; 文件，内容如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;export { default as Com1 } from './com1'
-xport { default as Com2 } from './com2'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这样我们在其它文件中使用命名导出的方式引入使用：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import { Com1, Com2 } from '@/components'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果在写一个模块，无论是代码库还是开源库，尽量少使用默认导出。&lt;/p&gt;
-&lt;p&gt;就这。&lt;/p&gt;
-&lt;p&gt;来源：https://www.lloydatkinson.net/posts/2022/default-exports-in-javascript-modules-are-terrible/&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;交流&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
-&lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Wed, 14 Sep 2022 16:28:37 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
+&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Sun, 18 Sep 2022 16:41:07 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: awesome-green
 highlight: a11y-light&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://juejin.cn/post/7095547569777934367"&gt;13.5W 播放量的 TS 动画版进阶教程合集来了！&lt;/a&gt;，通过形象生动的动画，让你轻松搞懂 TypeScript 的难点和核心知识点！&lt;/p&gt;
