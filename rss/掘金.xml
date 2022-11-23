@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Tue, 22 Nov 2022 22:44:45 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 60 期：TypeScript 4.9、Ant Design 5.0、用 vanilla-extract 编写高性能的 CSS、Node.j</title><link>https://juejin.cn/post/7168433475404922910</link><description>&lt;hr /&gt;
+<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Wed, 23 Nov 2022 22:43:32 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 60 期：TypeScript 4.9、Ant Design 5.0、用 vanilla-extract 编写高性能的 CSS、Node.j</title><link>https://juejin.cn/post/7168433475404922910</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: fancy
 highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
@@ -3191,7 +3191,354 @@ S 仅由数字和字母组成。&lt;/p&gt;
 &lt;ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; font-size: 15px; color: #595959;"&gt;
 &lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6872115031501340679" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」一张脑图带你看动态规划算法之美&lt;/a&gt;（370+👍）&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6861376131615227912" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」DFS和BFS算法之美&lt;/a&gt;(240+👍)&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6856546833025237006" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」梳理6大排序算法&lt;/a&gt;(220+👍)&lt;/section&gt;&lt;/li&gt;&lt;li&gt;&lt;section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; font-size: 14px; font-weight: normal; color: #595959;"&gt;&lt;a href="https://juejin.cn/post/6874708801208254478" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;「算法与数据结构」带你看哈希算法之美(210+👍)&lt;/a&gt;&lt;/section&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;/section&gt;&lt;/li&gt;&lt;/ol&gt;
-&lt;p class="nice-suffix-juejin-container" id="nice-suffix-juejin-container" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; margin-top: 20px !important;"&gt;本文使用 &lt;a href="https://mdnice.com/?from=juejin" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;mdnice&lt;/a&gt; 排版&lt;/p&gt;&lt;/section&gt;</description><author>TianTianUp</author><pubDate>Sun, 11 Oct 2020 08:11:57 GMT</pubDate></item><item><title>Git 是如何工作的</title><link>https://juejin.cn/post/7166416369943068679</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p class="nice-suffix-juejin-container" id="nice-suffix-juejin-container" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #2b2b2b; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; margin-top: 20px !important;"&gt;本文使用 &lt;a href="https://mdnice.com/?from=juejin" style="text-decoration: none; color: #40B8FA; font-weight: normal;"&gt;mdnice&lt;/a&gt; 排版&lt;/p&gt;&lt;/section&gt;</description><author>TianTianUp</author><pubDate>Sun, 11 Oct 2020 08:11:57 GMT</pubDate></item><item><title>Rollup 与 Webpack 的 Tree-shaking</title><link>https://juejin.cn/post/7169004126469914654</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="清音.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1dea02686df0430ab66fd4e7091549a5~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是第 166 篇不掺水的原创，想获取更多原创好文，请搜索公众号关注我们吧~ 本文首发于政采云前端博客：&lt;a href="http://zoo.zhengcaiyun.cn/blog/article/tree-shaking"&gt;Rollup 与 Webpack 的 Tree-shaking&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Rollup 和 Webpack 是目前项目中使用较为广泛的两种打包工具，去年发布的 Vite 中打包所依赖的也是 Rollup；在对界面加载效率要求越来越高的今天，打包工具最终产出的包体积也影响着开发人员对工具的选择，所以对 Tree-shaking 的支持程度和配置的便捷性、有效性就尤为重要了。本文就来简单分析下两者 Tree-shaking 的流程和效果差异。&lt;/p&gt;
+&lt;h4&gt;Tree-shaking 的目的&lt;/h4&gt;
+&lt;p&gt;Tree-shaking 的目标只有一个，去除无用代码，缩小最终的包体积，至于什么算是无用代码呢？主要分为三类：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;代码不会被执行，不可到达&lt;/li&gt;
+&lt;li&gt;代码执行的结果不会被用到&lt;/li&gt;
+&lt;li&gt;代码只会影响死变量（只写不读）
+Tree-shaking 的目的就是将这三类代码在最终包中剔除，做到按需引入。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;为什么 Tree-shaking 需要依赖 ES6 module&lt;/h4&gt;
+&lt;p&gt;ES6 module 特点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;只能作为模块顶层的语句出现&lt;/li&gt;
+&lt;li&gt;import 的模块名只能是字符串常量&lt;/li&gt;
+&lt;li&gt;import 之后是不可修改的
+例如，在使用 CommonJS 时，&lt;em&gt;必须导入完整的工具 (tool) 或库 (library) 对象&lt;/em&gt;，且可带有条件判断来决定是否导入。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class="language-plain"&gt;// 使用 CommonJS 导入完整的 utils 对象
+if (hasRequest) {
+ &amp;nbsp;const utils = require( 'utils' );
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;但是在使用 ES6 模块时，无需导入整个 &lt;code&gt;utils&lt;/code&gt; 对象，我们可以只导入我们所需使用的 &lt;code&gt;request&lt;/code&gt; 函数，但此处的 import 是不能在任何条件语句下进行的，否则就会报错。&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-plain"&gt;// 使用 ES6 import 语句导入 request 函数
+import { request } from 'utils';
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ES6 模块依赖关系是确定的，和运行时的状态无关，因此可以进行可靠的静态分析，这就是 Tree-shaking 的基础。&lt;/p&gt;
+&lt;p&gt;静态分析就是不执行代码，直接对代码进行分析；在 ES6 之前的模块化，比如上面提到的 CommonJS ，我们可以动态 require 一个模块，只有执行后才知道引用的什么模块，这就使得我们不能直接静态的进行分析。&lt;/p&gt;
+&lt;h3&gt;Wepack5.x Tree-shaking 机制&lt;/h3&gt;
+&lt;p&gt;Webpack 2 正式版本内置支持 ES2015 模块（也叫做 &lt;em&gt;harmony modules&lt;/em&gt;）和未使用模块检测能力。Webpack 4 正式版本扩展了此检测能力，通过 &lt;code&gt;package.json&lt;/code&gt; 的  &lt;code&gt;"sideEffects"&lt;/code&gt;  属性作为标记，向 compiler 提供提示，表明项目中的哪些文件是 "pure (纯正 ES2015 模块)"，由此可以安全地删除文件中未使用的部分。Webpack 5 中内置了 terser-webpack-plugin 插件用于 JS 代码压缩，相较于 Webpack 4 来说，无需再额外下载安装，但如果开发者需要增加自定义配置项，那还是需要安装。&lt;/p&gt;
+&lt;p&gt;Wepack 自身在编译过程中，会根据模块的 &lt;code&gt;import&lt;/code&gt; 与 &lt;code&gt;export&lt;/code&gt; 依赖分析对代码块进行打标。&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-javascript"&gt;/**
+   * @param {Context} context context
+   * @returns {string|Source} the source code that will be included as initialization code
+   */
+  getContent({ runtimeTemplate, runtimeRequirements }) {
+    runtimeRequirements.add(RuntimeGlobals.exports);
+    runtimeRequirements.add(RuntimeGlobals.definePropertyGetters);
+​    // 未使用的模块, 在代码块前增加 unused harmony exports 注释标记
+    const unusedPart =
+      this.unusedExports.size &amp;gt; 1
+        ? `/* unused harmony exports ${joinIterableWithComma(
+            this.unusedExports
+          )} */\n`
+        : this.unusedExports.size &amp;gt; 0
+        ? `/* unused harmony export ${first(this.unusedExports)} */\n`
+        : "";
+    const definitions = [];
+    const orderedExportMap = Array.from(this.exportMap).sort(([a], [b]) =&amp;gt;
+      a &amp;lt; b ? -1 : 1
+    );
+    // 对 harmony export 进行打标
+    for (const [key, value] of orderedExportMap) {
+      definitions.push(
+        `\n/* harmony export */ &amp;nbsp; ${JSON.stringify(
+          key
+        )}: ${runtimeTemplate.returningFunction(value)}`
+      );
+    }
+    
+    // 对 harmony export 进行打标
+    const definePart =
+      this.exportMap.size &amp;gt; 0
+        ? `/* harmony export */ ${RuntimeGlobals.definePropertyGetters}(${
+            this.exportsArgument
+         &amp;nbsp;}, {${definitions.join(",")}\n/* harmony export */ });\n`
+        : "";
+    return `${definePart}${unusedPart}`;
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上面是从 Webpack 中截取的打标代码，可以看到主要会有两类标记，&lt;code&gt;harmony export&lt;/code&gt; 和 &lt;code&gt;unused harmony export&lt;/code&gt; 分别代表了有用与无用。标记完成后打包时 Teser 会将无用的模块去除。&lt;/p&gt;
+&lt;h3&gt;&lt;a href="https://www.rollupjs.com/guide/introduction#tree-shaking"&gt;Rollup Tree-shaking &lt;/a&gt;机制&lt;/h3&gt;
+&lt;p&gt;以下是 &lt;code&gt;rollup 2.77.2&lt;/code&gt; 版本的 package.json 文件，我们可以看下它的主要依赖；&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-plain"&gt;{
+ &amp;nbsp;"name": "rollup",
+ &amp;nbsp;"version": "2.77.2",
+ &amp;nbsp;"description": "Next-generation ES module bundler",
+ &amp;nbsp;"main": "dist/rollup.js",
+ &amp;nbsp;"module": "dist/es/rollup.js",
+ &amp;nbsp;"typings": "dist/rollup.d.ts",
+ &amp;nbsp;"bin": {
+ &amp;nbsp; &amp;nbsp;"rollup": "dist/bin/rollup"
+  },
+ &amp;nbsp;"devDependencies": {
+ &amp;nbsp; &amp;nbsp;"@rollup/plugin-alias": "^3.1.9",
+ &amp;nbsp; &amp;nbsp;"@rollup/plugin-buble": "^0.21.3",
+ &amp;nbsp; &amp;nbsp;"@rollup/plugin-commonjs": "^22.0.1",
+ &amp;nbsp; &amp;nbsp;"@rollup/plugin-json": "^4.1.0",
+ &amp;nbsp; &amp;nbsp;"@rollup/plugin-node-resolve": "^13.3.0",
+ &amp;nbsp; &amp;nbsp;"@rollup/plugin-replace": "^4.0.0",
+ &amp;nbsp; &amp;nbsp;"@rollup/plugin-typescript": "^8.3.3",
+ &amp;nbsp; &amp;nbsp;"@rollup/pluginutils": "^4.2.1",
+ &amp;nbsp; &amp;nbsp;"acorn": "^8.7.1", // 生成 AST 语法树
+ &amp;nbsp; &amp;nbsp;"acorn-jsx": "^5.3.2", // 针对 jsx 语法分析
+ &amp;nbsp; &amp;nbsp;"acorn-walk": "^8.2.0", // 递归生成对象
+ &amp;nbsp; &amp;nbsp;"magic-string": "^0.26.2", // 语句的替换
+ &amp;nbsp; &amp;nbsp;......,
+  },
+......
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;想要详细了解Acorn：A tiny, fast JavaScript parser, written completely in JavaScript.可&lt;a href="https://github.com/acornjs/acorn"&gt;查看&lt;/a&gt;，Magic-string，可&lt;a href="https://github.com/rich-harris/magic-string#readme"&gt;查看&lt;/a&gt; 。rollup源码中各个模块的执行顺序大致如下图，这也基本表明了它的分析流程。
+&lt;img alt="image (5).png" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9325286cf1c54ae38210ebfadd39192d~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;
+&lt;p&gt;与 Webpack 不同的是，Rollup 不仅仅针对模块进行依赖分析，它的分析流程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;从入口文件开始，组织依赖关系，并按文件生成 Module&lt;/li&gt;
+&lt;li&gt;生成抽象语法树（Acorn），建立语句间的关联关系&lt;/li&gt;
+&lt;li&gt;为每个节点打标，标记是否被使用&lt;/li&gt;
+&lt;li&gt;生成代码（MagicString+ position）去除无用代码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Rollup 的优势&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;它支持导出 ES 模块的包。&lt;/li&gt;
+&lt;li&gt;它支持程序流分析，能更加正确的判断项目本身的代码是否有副作用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;两个 Case&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;案例 1：
+Import  但未调用，不可消除&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class="language-plain"&gt;import pkgjson from '../package.json';
+
+export function getMeta (version: string) {
+ &amp;nbsp;return {
+ &amp;nbsp; &amp;nbsp;lver: version || pkgjson.version,
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编译后整个 package.json 都被打了进来，代码块如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-javascript"&gt;var name = "@zcy/xxxxx-sdk";
+var version$1 = "0.0.1-beta";
+var description = "";
+var main = "lib/index.es.js";
+var module$1 = "lib/index.cjs.js";
+var browser = "lib/index.umd.js";
+var types = "lib/index.d.ts";
+var scripts = {
+  test: "jest --color  --coverage=true",
+  doc: "rm -rf doc &amp;amp;&amp;amp; typedoc --out doc ./src",
+  .....
+};
+var repository = {
+  type: "git",
+  url: "......"
+};
+var author = "";
+var license = "ISC";
+var devDependencies = {
+  "@babel/core": "^7.15.5",
+  "@babel/preset-env": "^7.15.4",
+  "@babel/runtime-corejs3": "^7.11.2",
+  "@types/jest": "^24.9.1",
+  "@typescript-eslint/eslint-plugin": "^2.34.0",
+  "@typescript-eslint/parser": "^2.34.0",
+  "babel-loader": "^8.2.2",
+  eslint: "^6.8.0",
+  "eslint-config-alloy": "^3.7.2",
+  jest: "^24.9.0",
+  "lodash.camelcase": "^4.3.0",
+  path: "^0.12.7",
+  prettier: "^1.19.1",
+  rollup: "^1.32.1",
+  ...
+.  
+};
+var dependencies = {
+  "@babel/plugin-transform-runtime": "^7.10.5",
+  "@rollup/plugin-json": "^4.1.0",
+  "core-js": "^3.6.5"
+};
+var sideEffects = false;
+var pkgjson = {
+  name: name,
+  version: version$1,
+  description: description,
+  main: main,
+  module: module$1,
+  browser: browser,
+  types: types,
+  scripts: scripts,
+  repository: repository,
+  author: author,
+  license: license,
+  devDependencies: devDependencies,
+  dependencies: dependencies,
+  sideEffects: sideEffects,
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;未 import 的部分可消除&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-plain"&gt;import { version } from '../package.json';
+​
+export function getMeta (ver: string) {
+ &amp;nbsp;return {
+ &amp;nbsp; &amp;nbsp;lver: ver || version,
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编译后可以发现，version 作为一个常量被单独打包进来；代码块如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-javascript"&gt;var version$1 = "0.0.1-beta";
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;案例 2：
+&lt;strong&gt;变量影响了全局变量&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class="language-plain"&gt;window.utm = 'a.b.c';
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;即使 &lt;code&gt;utm&lt;/code&gt; 没有任何地方被使用到，在编译打包的过程中，上述代码也不能被去除。
+因此我们可以得出结论：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 import 三方工具库、组件库时不要全量 import。&lt;/li&gt;
+&lt;li&gt;设置或改动全局变量需谨慎。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Vue3 针对 Tree-shaking 所做的优化&lt;/h4&gt;
+&lt;p&gt;在 Vue2.x 中，你一定见过以下引入方式：&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-javascript"&gt;import Vue from 'vue'
+​
+Vue.nextTick(() =&amp;gt; {
+ &amp;nbsp;// 一些和 DOM 有关的东西
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;很可惜的是，像 &lt;code&gt;Vue.nextTick()&lt;/code&gt; 这样的全局 API 是不支持 Tree-shaking 的，因为它并没有被单独 &lt;code&gt;export&lt;/code&gt;；无论 &lt;code&gt;nextTick&lt;/code&gt; 方法是否被实际调用，都会被包含在最终的打包产物中。
+但在 Vue3，针对全局和内部 API 进行了改造。如果你想更详细的了解 Vue3.x 全局 API Tree-shaking 带来的改动，可以查看&lt;a href="https://v3.cn.vuejs.org/guide/migration/global-api-treeshaking.html"&gt;这里&lt;/a&gt;，里面详细列出了不再兼容的 API，以及在内部帮助器及插件中的使用变化。&lt;/p&gt;
+&lt;p&gt;有了这些能力之后，我们可以不再过于关注框架总体的体积了，因为按需打包使得我们只需要关注那些我们已经使用到的功能和代码。&lt;/p&gt;
+&lt;h4&gt;最终效果对比&lt;/h4&gt;
+&lt;p&gt;先分别来看下两种打包工具的配置；&lt;/p&gt;
+&lt;p&gt;webpack.config.js :&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-javascript"&gt;const webpack = require('webpack');
+const path = require('path');
+// 删除 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+​
+module.exports = {
+ &amp;nbsp;entry: path.join(__dirname, 'src/index.ts'),
+ &amp;nbsp;output: {filename: 'webpack.bundle.js'},
+ &amp;nbsp;module: {
+ &amp;nbsp; &amp;nbsp;rules: [
+ &amp;nbsp; &amp;nbsp;  {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;test: /\.(js|ts|tsx)$/,
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;exclude: /(node_modules|bower_components|lib)/,
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;use: {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;loader: 'babel-loader',
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;options: {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;presets: ['@babel/preset-env']
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  }
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;  }
+ &amp;nbsp; &amp;nbsp;  },
+ &amp;nbsp; &amp;nbsp;  {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;test: /\.tsx?$/,
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;use: 'ts-loader',
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;exclude: /(node_modules|lib)/,
+ &amp;nbsp; &amp;nbsp;  },
+ &amp;nbsp;  ]
+  },
+ &amp;nbsp;resolve: {
+ &amp;nbsp; &amp;nbsp;extensions: ['.tsx', '.ts', '.js'],
+  },
+ &amp;nbsp;optimization: { // tree-shaking 优化配置
+ &amp;nbsp; &amp;nbsp;usedExports: true,
+  },
+ &amp;nbsp;plugins: [
+ &amp;nbsp; &amp;nbsp;new webpack.optimize.ModuleConcatenationPlugin()
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;rollup.config.js :&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-javascript"&gt;import resolve from "rollup-plugin-node-resolve";
+import commonjs from "rollup-plugin-commonjs";
+import typescript from "rollup-plugin-typescript2";
+import babel from "rollup-plugin-babel";
+import json from "rollup-plugin-json";
+import { uglify } from 'rollup-plugin-uglify'
+​
+export default {
+ &amp;nbsp;input: "src/index.ts",
+ &amp;nbsp;output: [
+ &amp;nbsp;  { file: "lib/index.cjs.js", format: "cjs" },
+  ],
+ &amp;nbsp;treeshake: true, // treeshake 开关
+ &amp;nbsp;plugins: [
+ &amp;nbsp; &amp;nbsp;json(),
+ &amp;nbsp; &amp;nbsp;typescript(),
+ &amp;nbsp; &amp;nbsp;resolve(),
+ &amp;nbsp; &amp;nbsp;commonjs(),
+ &amp;nbsp; &amp;nbsp;babel(
+ &amp;nbsp; &amp;nbsp;  {
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;exclude: "node_modules/**",
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;runtimeHelpers: true,
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;sourceMap: true,
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;extensions: [".js", ".jsx", ".es6", ".es", ".mjs", ".ts", ".json"],
+ &amp;nbsp; &amp;nbsp;  }
+ &amp;nbsp;  ),
+ &amp;nbsp; &amp;nbsp;uglify(),
+  ],
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;最后来看下打包结果的对比。结果发现，本项目在配置  &lt;code&gt;sideEffects：false&lt;/code&gt;  前后时长和体积没有明显变化。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left;"&gt;对比&lt;/th&gt;
+&lt;th style="text-align: left;"&gt;Tree-Shaking 前体积&lt;/th&gt;
+&lt;th style="text-align: left;"&gt;Tree-Shaking 后体积&lt;/th&gt;
+&lt;th style="text-align: left;"&gt;打包时长&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;webpack（5.52.0）&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;46kb&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;44kb&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;4.8s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;rollup（1.32.1）&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;24kb&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;18kb&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;3.7s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;另，上述打包效果中的项目是 sdk 工具包。&lt;/p&gt;
+&lt;h3&gt;结束语&lt;/h3&gt;
+&lt;p&gt;你如果想了解 Rollup 会打包更快的原因，可以查看我之前发布的文章（&lt;a href="https://www.zoo.team/article/about-vite"&gt;《Vite 特性和部分源码解析》&lt;/a&gt;）。关于 Tree-shaking 的问题也欢迎你在下面留言讨论。&lt;/p&gt;
+&lt;h3&gt;推荐阅读&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7021115814870810660"&gt;《Rollup源码解析》&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;推荐阅读&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7166416369943068679"&gt;Git 是如何工作的&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7163801933612843016"&gt;大数据前端团队生存指南&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7153410606673395725"&gt;所见即所得 —— HTML转图片组件开发&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7145604963593355277"&gt;探索组件在线预览和调试&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.cn/post/7143025612267978760"&gt;规范升级 NPM 包&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;开源作品&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;政采云前端小报&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="http://zoo.zhengcaiyun.cn/"&gt;www.zoo.team/openweekly/&lt;/a&gt;&lt;/strong&gt; (小报官网首页有微信交流群)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;商品选择 sku 插件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://github.com/zcy-inc/skuPathFinder-back"&gt;https://github.com/zcy-inc/skuPathFinder-back/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;招贤纳士&lt;/h2&gt;
+&lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
+&lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 22 Nov 2022 16:38:06 GMT</pubDate></item><item><title>Git 是如何工作的</title><link>https://juejin.cn/post/7166416369943068679</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="三秋.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e8ba0b56767e416da4d685edf403f8c7~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;这是第 165 篇不掺水的原创，想获取更多原创好文，请搜索公众号关注我们吧~ 本文首发于政采云前端博客：&lt;a href="http://zoo.zhengcaiyun.cn/blog/article/git-work"&gt;# Git 是如何工作的&lt;/a&gt;&lt;/p&gt;
@@ -5787,297 +6134,7 @@ export default {
 &lt;h2&gt;招贤纳士&lt;/h2&gt;
 &lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
 &lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 23 Aug 2022 15:28:44 GMT</pubDate></item><item><title>厉害！这篇正则表达式竟写的如此详尽</title><link>https://juejin.cn/post/7132628898453880840</link><description>&lt;p&gt;&lt;img alt="政采云技术团队.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfefad3ee3474e3a8a461251aaddceb4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="伟豪.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/70253e0ef87045d29397163c2220f829~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这是第 156 篇不掺水的原创，想获取更多原创好文，请搜索公众号关注我们吧~ 本文首发于政采云前端博客：&lt;a href="https://www.zoo.team/article/regexp"&gt;厉害！这篇正则表达式竟写的如此详尽&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;前言&lt;/h2&gt;
-&lt;h3&gt;为什么要学正则表达式？&lt;/h3&gt;
-&lt;p&gt;作为一个菜鸟程序员，遇到复杂的正则时往往会求助&lt;strong&gt;搜索引擎&lt;/strong&gt;。虽然能够解决燃眉之急，但往往会有&lt;a href="https://blog.csdn.net/weixin_33994444/article/details/93408973"&gt;边界值&lt;/a&gt;和团队正则不统一的问题。而这种问题往往会被细测测出来，造成不必要的麻烦。对于这种情况，最好的解决方式就是去吃透它，最终能将它手写出来。所谓知其然，也要知其所以然。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="RegEx.jpeg" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b714067b4b6d46fdb57c76c98be5b87e~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;h3&gt;什么是正则表达式？&lt;/h3&gt;
-&lt;p&gt;1951年,一位名叫史蒂芬·克林（Stephen Kleene）的数学科学家，发表了一篇名叫《神经网事件的表示法》的论文。论文中引入了&lt;code&gt;正则表达式&lt;/code&gt;的概念。直至七十多年后的今天，&lt;code&gt;正则表达式&lt;/code&gt;仍然影响着我们互联网生活的方方面面。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="创建密码：.jpg" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b167206d89e242f9a661cc59c93ad426~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;比如需要填入&lt;strong&gt;符合特定规则&lt;/strong&gt;的密码、手机号、邮箱等。
-&lt;img alt="9f78f90f4fc7eea055079baf1e0b608d.jpg" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/25e9d40b63f24cd9b212307eb61e0470~tplv-k3u1fbpfcp-watermark.image" /&gt;
-&lt;img alt="" src="https://www.zoo.team/images/upload/upload_9fbf19e559132e6fca267dfc8d7d18cf.png" /&gt;&lt;/p&gt;
-&lt;p&gt;又比如我们需要对输入框加一个中文、英文或价格等&lt;strong&gt;输入限制&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;不过在我们学习正则表达式之前，我们需要先熟悉下它的&lt;strong&gt;调试工具&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2&gt;怎么检测我的正则对不对呢？&lt;/h2&gt;
-&lt;h3&gt;编辑器内置的搜索工具&lt;/h3&gt;
-&lt;p&gt;我们可以使用&lt;a href="https://code.visualstudio.com/"&gt;Vscode&lt;/a&gt;提供的正则的搜索方法，来使用正则匹配我们需要搜索的内容。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="2bd784719bc5b6978b666890e9f11b50.jpg" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/876967e4bafc402c8bff29f5bcfa53bc~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;h3&gt;函数调用&lt;/h3&gt;
-&lt;p&gt;也可以在自己熟悉的编程语言中调用函数去测试。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="eba976de552d2f27a5fa4488610a6fd4.jpg" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e0f190be786b46dfb88707b7295a4232~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;h3&gt;在线测试网站&lt;/h3&gt;
-&lt;p&gt;亦或是使用我这边推荐的一个&lt;a href="https://c.runoob.com/front-end/854/"&gt;在线测试网站&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="9bc0825470062a225ba48862618cef84.jpg" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c13d65c761147c5853c768b9f04d61b~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;了解了调试工具后我们开始从&lt;strong&gt;基础&lt;/strong&gt;学习吧。&lt;/p&gt;
-&lt;h2&gt;基础&lt;/h2&gt;
-&lt;h3&gt;限定符(Quantifiers)&lt;/h3&gt;
-&lt;h4&gt;?&lt;/h4&gt;
-&lt;p&gt;&lt;img alt="782b5df53d9f928c3665e4ad921432d1.jpg" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c1b3cd91275b4a5286cf7b8a4011362f~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;“?”表示前面的字符可以出现&lt;strong&gt;1次或者0次&lt;/strong&gt;。说简单点就是"co"中的"o"这个字母可有可无。&lt;/p&gt;
-&lt;h4&gt;+&lt;/h4&gt;
-&lt;p&gt;&lt;img alt="5f90add12862e68dac52415793a22110.jpg" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/14d0f357912546cc84875e3ead58dfd3~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;“+”表示前面的字符至少匹配&lt;strong&gt;1次或多次&lt;/strong&gt;。比如上列中”poverty“、“poor”得到了匹配。“premier”却没有匹配。&lt;/p&gt;
-&lt;h4&gt;*&lt;/h4&gt;
-&lt;p&gt;&lt;img alt="729092bb5629b191be2acc9a44d14cf7.jpg" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/78bd71544370478786636c99b6e41e24~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;“*”可以匹配&lt;strong&gt;0个或者多个字符&lt;/strong&gt;。可以看到出现 0 次的“pr”和 2 次的“poor”得到了匹配。我们如何匹配&lt;strong&gt;固定次数&lt;/strong&gt;或&lt;strong&gt;一定范围&lt;/strong&gt;的字符呢？&lt;/p&gt;
-&lt;h4&gt;{...}&lt;/h4&gt;
-&lt;p&gt;&lt;img alt="39a63a55e7025e5452963a83ce2aafed.jpg" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f53c57710857488ca85a605edce12172~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;“{...}”可以用来匹配&lt;strong&gt;固定数量&lt;/strong&gt;的字符或&lt;strong&gt;某个范围&lt;/strong&gt;内的字符。&lt;/p&gt;
-&lt;p&gt;如上图所示：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;“{2}”当只有一个参数时，只匹配固定数量。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;“{2,3}”当有两个参数时，匹配范围内的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;“{2,}”当后面的参数为空时，匹配n个及以上。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;(...)&lt;/h4&gt;
-&lt;p&gt;以上都讲的是匹配单个字符，当我们想匹配&lt;strong&gt;多个字符&lt;/strong&gt;该怎么办呢？&lt;/p&gt;
-&lt;p&gt;&lt;img alt="104f053573d0205258cc98118a8b2619.jpg" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fca190b218074c41b87664584c161f7e~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;我们可以将我们需要匹配的字符用“(...)”括起来，可以看到“(...)”搭配我们上文所学的“+“成功匹配了”banana“和”anna“。&lt;/p&gt;
-&lt;h3&gt;或运算符(OR Operator)&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="c5dae76af93356ac4ed278c7815e1f59.jpg" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c76abd55b57e45afab60ff7dd3fda25d~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;当我们需要匹配&lt;strong&gt;两个或多个条件&lt;/strong&gt;时我们就需要使用"|"(或运算符)。图中我们匹配了拥有“an”或“na”的单词。值得注意的是这里的“｜”最外层的"()"是必不可少的。&lt;/p&gt;
-&lt;h3&gt;字符类(Character class)&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="1458bf56eb5d965823ace88ef27a91ec.jpg" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bb2fdedc07fb495c91e9db088db355cf~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;比如我们要匹配&lt;strong&gt;拥有“123”中任意字符&lt;/strong&gt;的字符串则需要使用“[...]”,需要匹配的字符只能取自方括号中的内容。另外我们也可以使用字符类去匹配指定范围，如[a-z]、[0-9]、[\u4e00-\u9fa5]等。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="708c3df8641ef81355556e12cceae373.jpg" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/87b18c140cf94e26a80dfaa65ff6b7bf~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;另外我们也可以在前面加”^“用来匹配&lt;strong&gt;非此范围&lt;/strong&gt;的字符串，如上我们就匹配了非英文的字符串。&lt;/p&gt;
-&lt;p&gt;另外正则表达式也提供了很多&lt;code&gt;元字符&lt;/code&gt;可以让我们简写我们的正则表达式。&lt;/p&gt;
-&lt;h3&gt;元字符(Meta character)&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="b7f5812a8a3593cb255f3540f0f372bf.jpg" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7b5339b063a94173acbdf72a7c5be3d7~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;我们可以使用“\d”代替我们之前的“[0-9]”,这里还有两个特殊字符“^”会匹配&lt;strong&gt;开始&lt;/strong&gt;(这里要注意与我们前面讲到的&lt;code&gt;字符类&lt;/code&gt;中的运用要区分)，“$“会匹配结束。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;\d,\w,\s - 匹配数字、字符、空格(分别代表着：digit、word、space)。&lt;/li&gt;
-&lt;li&gt;\D,\W,\S - 匹配非数字、非字符、非空格。&lt;/li&gt;
-&lt;li&gt;. - 除换行符以外的所有字符(句号句子的结束符)。&lt;/li&gt;
-&lt;li&gt;^ - 字符串开头。&lt;/li&gt;
-&lt;li&gt;$ - 字符串结尾。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;接下来我们来学习一下正则表达式的&lt;strong&gt;高级概念&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2&gt;高级概念&lt;/h2&gt;
-&lt;h3&gt;懒惰匹配和贪婪匹配(Lazy and Greed)&lt;/h3&gt;
-&lt;p&gt;当我们想要匹配文本中的HTML时我们会写下如下正则表达式。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="b75cdf169ee888acb769c77838b8dd80.jpg" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/65ddfa578cd241bf8608aaff781c342d~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;根据前面的知识我们知道，此正则将会匹配&amp;lt;开头&amp;gt;结尾中间可以有至少1个任意字符。但结果是匹配了“&amp;lt;”和“&amp;gt;” 标签包含的所有内容。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="cc5d409da9aa40792ba90e5b537ebb35.jpg" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e3e6d077fc2b41c18c50e2c5f7c154b3~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;我们可以在正则表达式中加“?”来开启&lt;code&gt;懒惰匹配&lt;/code&gt;。开启懒惰匹配后，正则会&lt;strong&gt;尽可能少的匹配&lt;/strong&gt;。所以当匹配的时候发现标签 “ &amp;lt;div&amp;gt; ”已经是符合要求的，所以会匹配&amp;lt;div&amp;gt;标签，然后继续向下匹配，发现&amp;lt;/div&amp;gt;标签也是符合要求的，继续向下匹配，发现文字不符合要求，继续向下，发现&amp;lt;span&amp;gt;和&amp;lt;/span&amp;gt;标签都是符合要求的，所以最后会匹配 &amp;lt;div&amp;gt;, &amp;lt;/div&amp;gt;, &amp;lt;span&amp;gt;, &amp;lt;/span&amp;gt;四个标签。&lt;/p&gt;
-&lt;h3&gt;分组(Group)&lt;/h3&gt;
-&lt;p&gt;前面我们认识了“(...)”的用法，将其结合我们后面所学的知识就是正则的&lt;code&gt;分组&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="a7392ff6dd264803a4452a4df3e8f920.jpg" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/36f87aae91f14a2fade79b94a66e7ca8~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;如上图所示第一个分组中我们匹配 4 个数字，第二个分组中我们匹配 7 个数字。中间使用“-”进行连接，便很容易匹配到了文本中出现的座机电话号。&lt;/p&gt;
-&lt;h3&gt;非捕获分组(Non-capture Group)&lt;/h3&gt;
-&lt;p&gt;非捕获分组：&lt;code&gt;(?:表达式)&lt;/code&gt;，分组匹配之后，不需要的用“?: ”语法过滤子表达式内容。也就是代码匹配，但是不保存。&lt;/p&gt;
-&lt;p&gt;在使用非捕获前:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="bd7414a425996817887ea8ff34768dec.jpg" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/57a0d0e49c2d4e8f9f4b25638ecca651~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;在使用非捕获后:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="29711c018bc8d6c196613e0ed930e554.jpg" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c95603ad5fd04ac49c0f0f4418ed666a~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;通过&lt;code&gt;.exec&lt;/code&gt;方法并没有捕获到月份。&lt;/p&gt;
-&lt;h3&gt;回溯(Flash Back)&lt;/h3&gt;
-&lt;p&gt;当我们想匹配一个正确的HTML标签时，使用"&amp;lt;[\w]+&amp;gt;.*&amp;lt;\/[\w]+&amp;gt;"。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="d974356d2305441e19234b3de6a402e0.jpg" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f03bd385d1374e40bcffde5d39f2a619~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;可以看到虽然可以匹配HTML开始和结束标签，但是&lt;strong&gt;却不能校验前后的一致性&lt;/strong&gt;。如“&amp;lt;/span&amp;gt;”并不是“&amp;lt;div&amp;gt;”的结束标签。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="38a9b1c3218a7a0642d44772f0e63d90.jpg" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c45f27b04bf34b2c8569910a08793ea3~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;我们可以把后面的部分改成“&amp;lt;\/\1&amp;gt;”其中“\1”就是引用第一个&lt;code&gt;分组&lt;/code&gt;。这样一来我们就可以匹配正确的HTML标签了。&lt;/p&gt;
-&lt;h3&gt;断言(Assertion)&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;断言&lt;/strong&gt;有些地方也叫&lt;a href="https://blog.csdn.net/lxcnn/article/details/4304754"&gt;环视(Lookaround)&lt;/a&gt;，它只进行子表达式的匹配，不占有字符，匹配到的内容不保存到最终的匹配结果。&lt;/p&gt;
-&lt;h4&gt;正向先行断言&lt;/h4&gt;
-&lt;p&gt;正向先行断言：&lt;code&gt;(?=表达式)&lt;/code&gt;，指在某个位置往右看，所在的位置右侧必须匹配&lt;code&gt;表达式&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="c16a1e3118f7225c9c5b109c4a1df01f.jpg" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c2f48fef68a94b02a31e54ed9dd7012a~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;我们可以看到“/喜欢(?=你)”正确匹配到了“你”前面有“喜欢”的文本。&lt;/p&gt;
-&lt;h5&gt;实现一个密码强度校验&lt;/h5&gt;
-&lt;blockquote&gt;
-&lt;p&gt;至少有一个大写字母。
-至少有一个小写字母。
-至少有一个数字。
-至少有8个字符。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="3b6d35aa5cefc456ebc5ef02b412f44a.jpg" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f1f1b58d921a4d889f1f48210cf355b3~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;h4&gt;反向先行断言&lt;/h4&gt;
-&lt;p&gt;反向先行断言：&lt;code&gt;(?!表达式)&lt;/code&gt;，指在某个位置往右看，不能存在&lt;code&gt;表达式&lt;/code&gt;中的内容。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="f324acb154bd9b76c8f3e05f8167e23e.jpg" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f07f3125eca34d70ae9a38ec93296c19~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;如上就排除了“喜欢”后面有“你”的字符串。&lt;/p&gt;
-&lt;h4&gt;正向后行断言&lt;/h4&gt;
-&lt;p&gt;正向后行断言：&lt;code&gt;(?&amp;lt;=表达式)&lt;/code&gt;，指在某个位置往左看，存在&lt;code&gt;表达式&lt;/code&gt;中的内容。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="84cea0dfb73d0222db6baec62fbeb2be.jpg" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/280a1be38d1e4b3899bbf31ce39e0001~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;如上就匹配了“喜欢”前面有“我”的字符串。&lt;/p&gt;
-&lt;h4&gt;反向后行断言&lt;/h4&gt;
-&lt;p&gt;反向后行断言：&lt;code&gt;(?&amp;lt;!表达式)&lt;/code&gt;，指在某个位置往左看，不能存在&lt;code&gt;表达式&lt;/code&gt;中的内容。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="d853e7b39730aa7648879a717647ad66.jpg" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cd0d2ed15b1f4523893862c63d37dd44~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;如上就排除了“喜欢”前面有“我”的字符串。&lt;/p&gt;
-&lt;p&gt;至此正则表达式的&lt;strong&gt;高级部分&lt;/strong&gt;学完啦，接下来我们学习正则提供的&lt;strong&gt;方法&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2&gt;方法&lt;/h2&gt;
-&lt;p&gt;在JavaScript中，&lt;code&gt;RegExp&lt;/code&gt;对象是一个预定义了属性和方法的正则表达式对象。&lt;/p&gt;
-&lt;h3&gt;test()&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="640.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/67e6e27ea7ba445d9cef33dacc93dbc7~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;该方法用于检测一个字符串是否匹配某个正则表达式，&lt;strong&gt;匹配&lt;/strong&gt;返回 true，&lt;strong&gt;不匹配&lt;/strong&gt;返回 false。&lt;/p&gt;
-&lt;h3&gt;exec()&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="94254b2d0aa9579258f63de420322fd4.jpg" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a665ff5356584716808c7a87337a3253~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;该方法用于检测字符串中对正则表达式的匹配。&lt;/p&gt;
-&lt;p&gt;该函数返回一个&lt;strong&gt;数组&lt;/strong&gt;，其中存放匹配的结果。如果未找到匹配，则返回值为 null。&lt;/p&gt;
-&lt;p&gt;除了正则自身携带的方法，配合 &lt;strong&gt;String 对象&lt;/strong&gt;的方法一起使用也会有额外的效果。&lt;/p&gt;
-&lt;h2&gt;配合String提供的方法&lt;/h2&gt;
-&lt;h3&gt;match&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;match&lt;/strong&gt; 这个方法主要用来提取数据，它配合分组的（）一起使用，可以很方便的提取数据。&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;var str = '2022-04-22'
-var reg = /^(\d{4})-(\d{2})-(\d{2})$/
-console.log(str.match(reg));
-// &amp;nbsp;['2022-04-22', '2022', '04', '22', index: 0, input: '2022-04-22', groups: undefined]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;replace&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;replace&lt;/strong&gt;这个api主要用于替换数据，多用于字符串的处理和转义。&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;var str = '贾维斯：您今天共产生了8个BUG'
-var reg = /\w{3}/g
-console.log(str.replace(reg,"Beautiful Code"))
-// 贾维斯：您今天共产生了8个Beautiful Code
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;什么是 $1 $2&lt;/h4&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;let str = "前端1组-开发部";
-console.log(str.replace(/(.{4})-(.{3})/, "$2 $1"));
-// 开发部 前端1组
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;$1&lt;/strong&gt;,&lt;strong&gt;$2&lt;/strong&gt;上就是按顺序对应小括号里面的&lt;strong&gt;分组&lt;/strong&gt; 捕获到的内容。这里我们将 2组和1组进行内容替换，就得到了替换后的内容。&lt;/p&gt;
-&lt;h3&gt;split&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;split&lt;/strong&gt;主要用于来切分字符串为数组，它的第一个参数也可以为正则的形式。&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;const str1 = '2022-04-21'
-const str2 = '2022.04.22'
-const str3 = '2022/04/23'
-const regsSplit = /[\.\-\/]/
-console.log(str1.split(regsSplit))
-console.log(str2.split(regsSplit))
-console.log(str3.split(regsSplit))
-// ['2022', '04', '21']
-// ['2022', '04', '22']
-// ['2022', '04', '23']
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;了解完了结合String用法，我们再来了解一下&lt;strong&gt;兼容性问题&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2&gt;正则表达式兼容性调研&lt;/h2&gt;
-&lt;p&gt;在我们日常使用中，一定会遇到兼容性问题。这里主要对一些不完全兼容的方法进行调研。&lt;/p&gt;
-&lt;h3&gt;@@split&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;@@split&lt;/code&gt;  方法切割String对象为一个其子字符串的数组 。&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;var re = /-/g;
-var str = '2022-01-02';
-var result = re[Symbol.split](str);
-console.log(result);  // ["2022", "01", "02"]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;兼容性&lt;/p&gt;
-&lt;p&gt;&lt;img alt="5c998fd1bb7ed1f4f1edf47892b674bc.jpg" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ebb1364abb5d471ebefda975ba67da77~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;h3&gt;@@match&lt;/h3&gt;
-&lt;p&gt;对正则表达式匹配字符串时，&lt;code&gt;@@match&lt;/code&gt; 方法用于获取匹配结果。&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;var re = /[0-9]+/g;
-var str = '2022-01-02';
-var result = re[Symbol.match](str);
-console.log(result);  // ["2022", "01", "02"]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;兼容性&lt;/p&gt;
-&lt;p&gt;&lt;img alt="fb392fd5814bd1a403776ff6cd3947fe.jpg" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1ac9f44299564576bfd06a28e5931b78~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;h3&gt;@@search&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;@@search&lt;/code&gt; 方法执行了一个在给定字符串中的一个搜索以取得匹配正则模式的项。&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;var re = /-/g;
-var str = '2016-01-02';
-var result = re[Symbol.search](str);
-console.log(result);  // 4
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;兼容性&lt;/p&gt;
-&lt;p&gt;&lt;img alt="01a09f895f172c2492ec4c70901e20aa.jpg" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7f4ec4fecf114dbc88b9eb1c4baf1f6f~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;h3&gt;@@replace&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;@@replace&lt;/code&gt; 方法会在一个字符串中用给定的替换器，替换所有符合正则模式的匹配项，并返回替换后的新字符串结果。用来替换的参数可以是一个字符串或是一个针对每次匹配的回调函数。&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;var re = /-/g; 
-var str = '2016-01-01';
-var newstr = re[Symbol.replace](str, '.');
-console.log(newstr);  // 2016.01.01
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;兼容性&lt;/p&gt;
-&lt;p&gt;&lt;img alt="6529acfb1c3fd4665e0bf9ddfe2ce6b6.jpg" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4ef1f3c04c554a29b6d53e0d6c93f00e~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;h3&gt;flags&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;flags&lt;/code&gt; 属性返回一个字符串，由当前正则表达式对象的标志组成。&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;/foo/ig.flags;   // "gi"
-/bar/myu.flags;  // "muy"
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;兼容性&lt;/p&gt;
-&lt;p&gt;&lt;img alt="921a751282a73cda11768b842bbbd01b.jpg" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7928bf17b7ab49e9a616641128bb8db6~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;h3&gt;dotAll&lt;/h3&gt;
-&lt;p&gt;正则中的点匹配就是 &lt;code&gt;dotAll&lt;/code&gt; ，都是匹配任意字符，但是很多字符是无法匹配的。例如：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;四个字节的 &lt;code&gt;UTF-16&lt;/code&gt; 的字符&lt;/li&gt;
-&lt;li&gt;行终止符 &lt;code&gt;\n&lt;/code&gt; &lt;code&gt;\r&lt;/code&gt; 换行 回车&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;console.log(/foo.bar/.test('foo\nbar'))
-// false
-console.log(/foo.bar/.test('fooabar'))
-// true
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;加上 &lt;code&gt;s&lt;/code&gt; 可以匹配换行符&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;console.log(/foo.bar/s.test('foo\nbar'))
-// true
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;兼容性&lt;/p&gt;
-&lt;p&gt;&lt;img alt="cfda85f9c82bb1c904951d7744167fb6.jpg" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d182be57ac0d4d8d97bb02f953f57699~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;最后我们让来点&lt;strong&gt;干货&lt;/strong&gt;吧&lt;/p&gt;
-&lt;h2&gt;干货&lt;/h2&gt;
-&lt;h3&gt;保留两位小数的价格输入框&lt;/h3&gt;
-&lt;p&gt;具体代码如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-jsx"&gt;
-// 输入限制
-const changePiece = (e) =&amp;gt;{
-      e.target.value = e.target.value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1');
-  }
-  return (
-    &amp;lt;div&amp;gt;
-       &amp;lt;input type="text" onKeyUp={ (e) =&amp;gt; {changePiece(e)}} /&amp;gt; 
-    &amp;lt;/div&amp;gt;
-  );
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;常用正则表达式&lt;/h3&gt;
-&lt;pre&gt;&lt;code class="language-js"&gt;// 手机号码的校验
-const phoneReg = /^[1][3,4,5,6,7,8,9][0-9]{9}$/
-// 身份证的校验
-const idCardReg = /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/
-// URL的校验
-const urlReg = /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
-// 邮箱的校验
-const emailReg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
-// 日期 YYYY-MM-DD 校验
-const dateReg = /^\d{4}(\-)\d{1,2}\1\d{1,2}$/
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;以上&lt;strong&gt;干货&lt;/strong&gt;大家也可以通过上文所学的知识自己尝试实现，自己实践才会有更深刻的印象和更深度的认知。&lt;/p&gt;
-&lt;h3&gt;参考&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://caniuse.com/?search=RegExp"&gt;《Can I Use——正则表达式》&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7016871226899431431"&gt;《有了这25个正则表达式，代码效率提高80%》&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.bilibili.com/video/BV1da4y1p7iZ?spm_id_from=333.337.search-card.all.click"&gt;《10分钟快速掌握正则表达式》&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;推荐阅读&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://www.zoo.team/article/http-referer"&gt;学习 HTTP Referer&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7127440050937151525"&gt;浅谈低代码平台远程组件加载方案&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7124839474575441934"&gt;前端富文本基础及实现&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7122240814108901406"&gt;可视化搭建系统之数据源&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://juejin.cn/post/7119639489567260686"&gt;表单数据形式配置化设计&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;开源作品&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;政采云前端小报&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://www.zoo.team/openweekly/"&gt;www.zoo.team/openweekly/&lt;/a&gt;&lt;/strong&gt; (小报官网首页有微信交流群)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;商品选择 sku 插件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;开源地址 &lt;a href="https://github.com/zcy-inc/skuPathFinder-back"&gt;https://github.com/zcy-inc/skuPathFinder-back/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h2&gt;招贤纳士&lt;/h2&gt;
-&lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
-&lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 16 Aug 2022 16:03:02 GMT</pubDate></item><item><title>我服了，整理了 40 余种图片优化工具，论图片压缩，直接甩给他这个列表</title><link>https://juejin.cn/post/7166777437143957534</link><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 23 Aug 2022 15:28:44 GMT</pubDate></item><item><title>我服了，整理了 40 余种图片优化工具，论图片压缩，直接甩给他这个列表</title><link>https://juejin.cn/post/7166777437143957534</link><description>&lt;blockquote&gt;
 &lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
 本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
 &lt;/blockquote&gt;
