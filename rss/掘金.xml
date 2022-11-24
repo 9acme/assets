@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Wed, 23 Nov 2022 22:43:32 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 60 期：TypeScript 4.9、Ant Design 5.0、用 vanilla-extract 编写高性能的 CSS、Node.j</title><link>https://juejin.cn/post/7168433475404922910</link><description>&lt;hr /&gt;
+<rss version="2.0"><channel><title>掘金</title><link>https://juejin.cn/</link><description>代码不止,掘金不停</description><lastBuildDate>Thu, 24 Nov 2022 22:43:27 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>前端食堂技术周刊第 60 期：TypeScript 4.9、Ant Design 5.0、用 vanilla-extract 编写高性能的 CSS、Node.j</title><link>https://juejin.cn/post/7168433475404922910</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: fancy
 highlight: github-gist&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;美味值：🌟🌟🌟🌟🌟&lt;/strong&gt;&lt;/p&gt;
@@ -6134,7 +6134,246 @@ export default {
 &lt;h2&gt;招贤纳士&lt;/h2&gt;
 &lt;p&gt;政采云前端团队（ZooTeam），一个年轻富有激情和创造力的前端团队，隶属于政采云产品研发部，Base 在风景如画的杭州。团队现有 90 余个前端小伙伴，平均年龄 27 岁，近 4 成是全栈工程师，妥妥的青年风暴团。成员构成既有来自于阿里、网易的“老”兵，也有浙大、中科大、杭电等校的应届新人。团队在日常的业务对接之外，还在物料体系、工程平台、搭建平台、性能体验、云端应用、数据分析及可视化等方向进行技术探索和实战，推动并落地了一系列的内部技术产品，持续探索前端技术体系的新边界。&lt;/p&gt;
 &lt;p&gt;如果你想改变一直被事折腾，希望开始能折腾事；如果你想改变一直被告诫需要多些想法，却无从破局；如果你想改变你有能力去做成那个结果，却不需要你；如果你想改变你想做成的事需要一个团队去支撑，但没你带人的位置；如果你想改变既定的节奏，将会是“5 年工作时间 3 年工作经验”；如果你想改变本来悟性不错，但总是有那一层窗户纸的模糊… 如果你相信相信的力量，相信平凡人能成就非凡事，相信能遇到更好的自己。如果你希望参与到随着业务腾飞的过程，亲手推动一个有着深入的业务理解、完善的技术体系、技术创造价值、影响力外溢的前端团队的成长历程，我觉得我们该聊聊。任何时间，等着你写点什么，发给 &lt;code&gt;ZooTeam@cai-inc.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 23 Aug 2022 15:28:44 GMT</pubDate></item><item><title>我服了，整理了 40 余种图片优化工具，论图片压缩，直接甩给他这个列表</title><link>https://juejin.cn/post/7166777437143957534</link><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98d3aa3d1f8646a8bcda8cfd9e335a4b~tplv-k3u1fbpfcp-zoom-1.image" /&gt;&lt;/p&gt;</description><author>政采云前端团队</author><pubDate>Tue, 23 Aug 2022 15:28:44 GMT</pubDate></item><item><title>如何使用CSS创建高级动画，这个函数必须掌握</title><link>https://juejin.cn/post/7169375268321116196</link><description>&lt;blockquote&gt;
+&lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
+本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我们每天都在网上摸鱼，作为前端开发人员，网站上微妙的细节变化通过比别人会更关注。我一直注意到的一件事是网站上的动画的流畅性。动画对于用户体验来说是非常好的，有时我们可以一些有趣的动画来留住用户。&lt;/p&gt;
+&lt;p&gt;创建高级动画听起来是一个很难的话题，但好消息是，在CSS中，可以将多个简单的动画相互叠加，以创建一个更复杂的动画&lt;/p&gt;
+&lt;p&gt;在这节课中，我们会学习如下几点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;什么是贝塞尔曲线，以及如何用一行CSS来创建一个 "复杂"的动画&lt;/li&gt;
+&lt;li&gt;如何将动画相互叠加以创建一个高级动画&lt;/li&gt;
+&lt;li&gt;如何通过应用上面学到的两点来创建一个过山车动画&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;什么是贝塞尔曲线&lt;/h2&gt;
+&lt;p&gt;CSS中的 cubic-bezier 函数是一个缓动函数，可以让我们完全控制动画在时间上的表现。下面是官方的定义：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;贝塞尔缓动函数是一种由四个实数定义的缓和函数，指定了贝塞尔曲线的两个控制点&lt;code&gt;P1&lt;/code&gt;和&lt;code&gt;P2&lt;/code&gt;，其端点&lt;code&gt;P0&lt;/code&gt;和&lt;code&gt;P3&lt;/code&gt;分别固定在&lt;code&gt;（0, 0&lt;/code&gt;）和&lt;code&gt;（1, 1）&lt;/code&gt;。&lt;code&gt;P1&lt;/code&gt;和&lt;code&gt;P2&lt;/code&gt;的&lt;code&gt;x&lt;/code&gt;坐标被限制在&lt;code&gt;[0, 1]&lt;/code&gt;范围内。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ea1cb4a1b12b44b5b4c8eb7a3a2a5a1b~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h3&gt;什么是缓动函数？&lt;/h3&gt;
+&lt;h4&gt;线性曲线&lt;/h4&gt;
+&lt;p&gt;想象两个点&lt;code&gt;P0&lt;/code&gt;和&lt;code&gt;P1&lt;/code&gt;，其中&lt;code&gt;P0&lt;/code&gt;是动画的起点，&lt;code&gt;P1&lt;/code&gt;是结束点。现在想象另一个点在两点之间线性移动，如下所示&lt;/p&gt;
+&lt;p&gt;&lt;img alt="001.gif" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ab2988deff4d4d9db0bf0e9a2b7f7875~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;这就是所谓的线性曲线，也是最简单的动画。&lt;/p&gt;
+&lt;h4&gt;二次贝塞尔曲线&lt;/h4&gt;
+&lt;p&gt;如下图所示，有三个点。P0、P1和P2。我们想让动画从&lt;code&gt;P0&lt;/code&gt;移动到&lt;code&gt;P2&lt;/code&gt;。在这种情况下，&lt;code&gt;P1&lt;/code&gt;是一个控制点，控制动画的曲线。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/41f82ed640a44d45a6bf578d05c2842f~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;二次方贝塞尔概念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在P0和P1之间以及P1和P2之间（用灰线表示）连接虚线&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点Q0沿着P0和P1之间的直线移动。同时，点Q1沿着P1和P2之间的直线移动&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在Q0和Q1之间连接一条虚线（用绿线表示）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在Q0和Q1开始移动的同时，点B开始沿着绿线移动，B点所走的路径就是动画路径&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="002.gif" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5eff9d7a551841548c90c1b2db10d51d~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;请注意，Q0、Q1和B不以相同的速度移动。它们都必须在同一时间开始，并在同一时间完成它们的路径。因此，每一个点都是根据它所移动的线长以适当的速度移动的。&lt;/p&gt;
+&lt;h4&gt;三次贝塞尔曲线&lt;/h4&gt;
+&lt;p&gt;三次贝塞尔曲线由4个点组成。P0, P1, P2和P3。动画开始于P0，结束于P3。P1和P2是我们的控制点。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/27d993b060fe44c89c407254ff6ce703~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;三次贝赛尔的工作原理如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在（P0, P1）、（P1, P2）和（P2, P3）之间连接虚线，由灰线表示&lt;/li&gt;
+&lt;li&gt;点Q0、Q1和Q2分别沿直线（P0，P1）、（P1，P2）和（P2，P3）移动&lt;/li&gt;
+&lt;li&gt;在（Q0, Q1）和（Q1, Q2）之间连接虚线，它们由绿线表示。&lt;/li&gt;
+&lt;li&gt;点R0和R1分别沿直线（Q0, Q1）和（Q1, Q2）移动&lt;/li&gt;
+&lt;li&gt;连接R0和R1之间的线（用蓝线表示）&lt;/li&gt;
+&lt;li&gt;最后，B点沿着R0和R1之间的连接线移动，B点所走的路径就是动画路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="003.gif" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6c43855c899e4eb78c21f89e82dceea4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;如果你想更好地了解三次体贝塞尔的工作原理，建议你看看这个&lt;a href="https://www.desmos.com/calculator/7arefxmgfb?lang=zh-CN"&gt;desmos链接&lt;/a&gt;。玩玩控制点，看看动画如何随时间变化。(注意，链接中的动画是由黑线表示的）。&lt;/p&gt;
+&lt;h2&gt;叠加动画&lt;/h2&gt;
+&lt;p&gt;有很多步骤的大动画可以被分解成多个小动画。在 css 中，通过添加&lt;code&gt;animation-delay&lt;/code&gt;属性来实现这一点。计算延迟很简单，把你要计算动画延迟的那个动画之前的所有动画的时间加起来。&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;animation: movePointLeft 4s linear forwards, movePointDown 3s linear forwards;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里，我们有两个动画，&lt;code&gt;movePointLeft&lt;/code&gt;和&lt;code&gt;movePointDown&lt;/code&gt;。&lt;code&gt;movePointLeft&lt;/code&gt;的动画延迟是零，因为它是我们想先运行的动画。&lt;code&gt;movePointDown&lt;/code&gt;的动画延迟是&lt;code&gt;4&lt;/code&gt;秒，因为&lt;code&gt;movePointLeft&lt;/code&gt;将在这段时间后完成。&lt;/p&gt;
+&lt;p&gt;因此，&lt;code&gt;animation-delay&lt;/code&gt;属性：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;animation-delay: 0s, 4s;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注意，如果有两个或更多的动画同时开始，它们的动画延迟将是一样的。此外，当你计算即将开始的动画的延迟时，把它们视为一个动。例如 ：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;animation: x 4s linear forwards, y 4s linear forwards, jump 2s linear forwards;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;假设&lt;code&gt;x&lt;/code&gt;和&lt;code&gt;y&lt;/code&gt;同时开始。在这种情况下，&lt;code&gt;x&lt;/code&gt;和&lt;code&gt;y&lt;/code&gt;的动画延迟都将为零，而 &lt;code&gt;jump&lt;/code&gt; 动画的延迟将为4秒（而不是&lt;code&gt;8&lt;/code&gt;秒！）。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;animation-delay: 0s, 0s, 4s;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;创建过山车&lt;/h2&gt;
+&lt;p&gt;掌握了上面的知识，是时候应用一下了。&lt;/p&gt;
+&lt;h4&gt;了解动画&lt;/h4&gt;
+&lt;p&gt;过山车路径由三部分组成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;滑动部分&lt;/li&gt;
+&lt;li&gt;循环部分&lt;/li&gt;
+&lt;li&gt;还会有一些动画，在上面的两个动画之间创造水平空间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/de549ce62d97434fbe54de2199ff8c5a~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;p&gt;我们将首先创建一个简单的球，作为我们过山车的 "车"。&lt;/p&gt;
+&lt;p&gt;hmtl 部分：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div id="the-cart" class="cart"&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;css 部分：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.cart {
+  background-color: rgb(100, 210, 128);
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  border-radius: 50px;
+  position: absolute;
+  left: 10vw;
+  top: 30vh;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;滑动部分&lt;/h4&gt;
+&lt;p&gt;创建小球滑动的部分可以用&lt;code&gt;cubic-bezier&lt;/code&gt;函数来完成! 这个动画是由2个动画组成的，一个是沿&lt;code&gt;x&lt;/code&gt;轴的动画，另一个是沿&lt;code&gt;y&lt;/code&gt;轴的动画。&lt;code&gt;X&lt;/code&gt;轴动画是一个沿&lt;code&gt;X&lt;/code&gt;轴的普通线性动画。它的关键帧如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@keyframes x {
+  to {
+    left: 40vw;
+  }
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将其添加到球路径的 &lt;code&gt;animation&lt;/code&gt; 属性中，如下所示&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;animation: x 4s linear forwards
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;y轴动画是我们将使用cubic-bezier函数的部分。首先定义动画的关键帧。我们希望起始点和结束点之间的差异很小，以至于球达到的高度几乎相同。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@keyframes y {
+  to {
+    top: 29.99vh;
+  }
+}}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在让我们来思考一下cubic-bezier函数。我们希望我们的路径先向右缓慢移动，然后当它滑动时，它应该走得更快。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6fd213c24a7e4bb4865c001639a605d4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;向右缓慢移动意味着&lt;code&gt;$P1$&lt;/code&gt;将沿&lt;code&gt;x&lt;/code&gt;轴移动。所以，我们知道它是在（V，0）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我们需要选择一个合适的V，使我们的动画缓慢地向右移动，但又不能太多，以免占用整个空间。在这种情况下，我发现&lt;code&gt;0.55&lt;/code&gt;最适合。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;为了达到滑动效果，我们需要将&lt;code&gt;P2&lt;/code&gt;向&lt;code&gt;Y&lt;/code&gt;轴下移（负值），所以&lt;code&gt;P2=（X，-Y）&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Y应该是一个大值。在这种情况下，我选择 &lt;code&gt;Y=5000&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;为了得到&lt;code&gt;X&lt;/code&gt;，我们知道我们的动画速度在滑动时应该更快，在再次上升时应该更慢。所以，X越接近于零，动画在滑动时就越陡峭。在这种情况下，让&lt;code&gt;X = 0.8&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现在，我们得到了一个cubic-bezier函数：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cubic-bezier(0.55, 0, 0.2, -800).
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;为动画属性添加关键帧:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;animation: x 4s linear forwards,
+    y 4s cubic-bezier(0.55, 0, 0.2, -5000) forwards;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这是我们动画的第一部分，所以动画延迟为零。我们应该添加一个&lt;code&gt;animation-delay&lt;/code&gt;属性，因为从下面的动画开始，动画的开始时间将与第一个动画不同。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;animation-delay: 0s, 0s;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;地址：https://codepen.io/smashingmag/pen/VwxXBQb&lt;/p&gt;
+&lt;p&gt;&lt;img alt="004.gif" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bf44b894eebe47ddad3736bb11e309f1~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h4&gt;添加水平空间&lt;/h4&gt;
+&lt;p&gt;在做循环之前，球应该沿着&lt;code&gt;X&lt;/code&gt;轴移动一小会儿，所以两个动画之间有空间。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定义关键帧&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@keyframes x2 {
+  to {
+    left: 50vw;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;把它添加到 &lt;code&gt;animation&lt;/code&gt;  属性中:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;animation: x 4s linear forwards,
+    y 4s cubic-bezier(0.55, 0, 0.2, -5000) forwards, x2 0.5s linear forwards;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这个动画应该在滑动动画之后开始，而滑动动画需要4秒，因此，动画延迟将是4秒。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;animation-delay: 0s, 0s, 4s;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;地址：https://codepen.io/smashingmag/pen/dyemExY&lt;/p&gt;
+&lt;p&gt;&lt;img alt="005.gif" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b91e1772f342420cad7ebffc9f88eeec~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h4&gt;循环部分&lt;/h4&gt;
+&lt;p&gt;要在CSS中创建一个圆（循环），我们需要把圆移到循环的中心，然后从那里开始做动画。圆的半径是&lt;code&gt;100px&lt;/code&gt;，所以我们把圆的位置改为&lt;code&gt;top: 20vh&lt;/code&gt;（&lt;code&gt;30&lt;/code&gt;是期望的半径（这里是&lt;code&gt;10vh&lt;/code&gt;））。然而，这需要在滑动动画完成后发生，所以我们将创建另一个持续时间为&lt;code&gt;0秒&lt;/code&gt;的动画，并添加一个合适的动画延迟。&lt;/p&gt;
+&lt;p&gt;关键帧:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@keyframes pointOfCircle {
+  to {
+    top: 20vh;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加到 animation 动画中：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;animation: x 4s linear forwards,
+    y 4s cubic-bezier(0.55, 0, 0.2, -5000) forwards, x2 0.5s linear forwards,
+    pointOfCircle 0s linear forwards;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加动画延迟, &lt;code&gt;4.5s&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;animation-delay: 0s, 0s, 4s, 4.5s;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;循环本身&lt;/h4&gt;
+&lt;p&gt;创建一个循环动画:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;创建一个关键帧，将球移回原来的位置，然后旋转球。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;@keyframes loop {
+  from {
+    transform: rotate(0deg) translateY(10vh) rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg) translateY(10vh) rotate(360deg);
+  }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加到 animation 中:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;animation: x 4s linear forwards,
+    y 4s cubic-bezier(0.55, 0, 0.2, -5000) forwards, x2 0.5s linear forwards,
+    pointOfCircle 0s linear forwards, loop 3s linear forwards;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加动画延迟，这里是&lt;code&gt;4.5s&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;animation-delay: 0s, 0s, 4s, 4.5s, 4.5s;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;地址：https://codepen.io/smashingmag/pen/mdLxZdR&lt;/p&gt;
+&lt;p&gt;&lt;img alt="006.gif" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a6268ffc20504262b9b2d303886a47ba~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h4&gt;添加水平空间&lt;/h4&gt;
+&lt;p&gt;快完成了，最后 只需要在动画之后沿着&lt;code&gt;x&lt;/code&gt;轴移动球，这样球就不会像上图中那样在循环之后完全停止。&lt;/p&gt;
+&lt;p&gt;关键帧:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@keyframes x3 {
+  to {
+    left: 70vw;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加到 animation 中:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;animation: x 4s linear forwards,
+    y 4s cubic-bezier(0.55, 0, 0.2, -800) forwards, x2 0.5s linear forwards,
+    pointOfCircle 0s linear forwards, loop 3s linear forwards,
+    x3 2s linear forwards;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;加上适当的延迟，这里是&lt;code&gt;7.5s&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;animation-delay: 0s, 0s, 4s, 4.5s, 4.5s, 7.5s;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;地址：https://codepen.io/smashingmag/pen/wvjmLKp&lt;/p&gt;
+&lt;p&gt;&lt;img alt="007.gif" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7d776e57c9c1469bbb22f32e6e7e224a~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;在本节中，我们介绍了如何结合多个关键帧来创建一个复杂的动画路径。我们还介绍了贝塞尔以及如何使用它们来创建你自己的缓动函数。建议大家自己多多动手，才能更好的掌握 css 动画。&lt;/p&gt;
+&lt;p&gt;来源：https://www.smashingmagazine.com/2022/10/advanced-animations-css/&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;编辑中可能存在的bug没法实时知道，事后为了解决这些bug,花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;交流&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
+&lt;p&gt;本文 GitHub  https://github.com/qq449245884/xiaozhi 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
+&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Wed, 23 Nov 2022 16:38:10 GMT</pubDate></item><item><title>我服了，整理了 40 余种图片优化工具，论图片压缩，直接甩给他这个列表</title><link>https://juejin.cn/post/7166777437143957534</link><description>&lt;blockquote&gt;
 &lt;p&gt;微信搜索 【大迁世界】, 我会第一时间和你分享前端行业趋势，学习途径等等。
 本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7829,183 +8068,7 @@ jobs:
 &lt;blockquote&gt;
 &lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
 &lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Mon, 26 Sep 2022 16:28:28 GMT</pubDate></item><item><title>在 Vue 中，使用 $attrs 构建高级组件</title><link>https://juejin.cn/post/7145626573948469261</link><description>&lt;blockquote&gt;
-&lt;p&gt;本文首发于微信公众号：大迁世界, 我的微信：qq449245884，我会第一时间和你分享前端行业趋势，学习途径等等。
-更多开源作品请看 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; ，包含一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这节课，我们来看下 Vue3 中的 &lt;code&gt;$attrs&lt;/code&gt; 属性。首先，我们会介绍它的用途以及它的实现与 Vue2 有哪些不两同点，并通过事例来加深对它的理解。&lt;/p&gt;
-&lt;p&gt;真正理解了 &lt;code&gt;$attrs&lt;/code&gt; 属性有助于我们构建易于使用和可扩展的高级组件&lt;/p&gt;
-&lt;h2&gt;什么是 &lt;code&gt;$attrs&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;对 &lt;code&gt;$attrs&lt;/code&gt; 定义， Vue2 与 Vue3 是不一样的，这里我们主要来介绍 Vue3 的版本：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$attrs 对象包含了除组件所声明的 props 和 emits 之外的所有其他 attribute，例如 class，style，v-on 监听器等等。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;code&gt;$attrs &lt;/code&gt;也可以被看作是一个安全网，它可以捕获任何我们没有在组件中声明的东西。我们考虑一个只有一个属性和事件处理程序的组件，如下所示：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
-  &amp;lt;h1 @click="$emit('custom', '改变标题')"&amp;gt;{{ title }}&amp;lt;/h1&amp;gt;
-&amp;lt;/template&amp;gt;
-&amp;lt;script&amp;gt;
-export default {
-  name: 'Example',
-  props: ['title'],
-  emits: ['custom'],
-}
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果在父组件中像下面这样实例化上面的组件：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
-  &amp;lt;div id="app"&amp;gt;
-    &amp;lt;SimpleEvent
-      id="myId"
-      class="myClass"
-      data-cy="cypress-testing"
-      @blur="onBlur"
-      title="测试$attrs"
-      description="没有声明 props"
-      @custom="onCustom"
-    /&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/template&amp;gt;
-
-&amp;lt;script setup&amp;gt;
-import SimpleEvent from './components/Button.vue'
-
-const onBlur = () =&amp;gt; {
-  // todo
-}
-const onCustom = () =&amp;gt; {
-  // todo
-}
-
-&amp;lt;/script&amp;gt;
-
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果在组件中把 &lt;code&gt;$attrs&lt;/code&gt; 打印出来，我们会得到如下内容：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-  id: 'myId',
-  class: 'myClass',
-  'data-cy': 'cypress-testing',
-  description: '没有声明 props',
-  onBlur: () =&amp;gt; { // todo } 
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;上面这些信息，感觉没啥用，其实不然，我们下面会介绍如何利用这些信息。&lt;/p&gt;
-&lt;h2&gt;attrs V3 vs $attrs V2&lt;/h2&gt;
-&lt;p&gt;这小节，我们来看下 Vue2 与 Vue3 中的 &lt;code&gt;attrs&lt;/code&gt; 属性的区别，先来看张图：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4014a578b352477a81513941014ef3aa~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;与 Vue2 的区别主要有：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;自定义事件放在 &lt;code&gt;@listerner&lt;/code&gt; 对象中&lt;/li&gt;
-&lt;li&gt;不包含 &lt;code&gt;class&lt;/code&gt; 属性&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;而 Vue3 中的 &lt;code&gt;attrs&lt;/code&gt; 对象包含了除组件所声明的 &lt;code&gt;props&lt;/code&gt; 和 &lt;code&gt;emits&lt;/code&gt; 之外的所有其他 &lt;code&gt;attribute&lt;/code&gt;，这有利于我们方便使用这些属性。&lt;/p&gt;
-&lt;p&gt;下面我们来看些事例。&lt;/p&gt;
-&lt;h2&gt;事例&lt;/h2&gt;
-&lt;p&gt;事例地址：https://stackblitz.com/edit/vue-slider-listener-example?file=src/components/Slider.vue&lt;/p&gt;
-&lt;p&gt;首先我们创建一个 Slider 组件，内容如下所示：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
-  &amp;lt;input 
-    type="range"  
-    :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
-    class="slider__input" /&amp;gt;
-&amp;lt;/template&amp;gt;
-
-&amp;lt;script&amp;gt;
-export default {
-  name: "Slider-1",
-  props: {
-    modelValue: [Number, String],
-  }
-};
-&amp;lt;/script&amp;gt;
-&amp;lt;style lang="scss"&amp;gt;
-// 这里省略一堆样式，自行看事例
-&amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;上面代码我们创建一个 &lt;code&gt;slider&lt;/code&gt;，还实现了一个双向绑定。然后可以像下面这样使用该组件：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt; &amp;lt;Slider-1 v-model="value" /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a5a15c7252e34248bf58d852009bfe72~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;h4&gt;添加一些属性&lt;/h4&gt;
-&lt;p&gt;目前我们的 Slier 组件还很简单，不太符合实际情况。所以，我们添加几个属性（&lt;code&gt;min&lt;/code&gt;, &lt;code&gt;max&lt;/code&gt;, &lt;code&gt;class&lt;/code&gt;, &lt;code&gt;id&lt;/code&gt;, &lt;code&gt;data-cy&lt;/code&gt;, &lt;code&gt;@keydown&lt;/code&gt; 和 &lt;code&gt;aria-label&lt;/code&gt;）。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;  &amp;lt;Slider-1
-      v-model="value"
-      min="0"
-      max="50"
-      class="blue_slider"
-      id="special_id"
-      data-cy="cypress-slider"
-      @keydown="() =&amp;gt; true"
-      aria-label="Example slider"
-    /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;运行后，通过控制检查元素，我们可以看下，我们新加的属性都被添加到了 HTML 元素上了：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/968f923e8ec74f14a8222c720272371b~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;看到这里，大家可能有疑问了，既然所有的 "非属性/事件" 属性都已经自动应用于内部的HTML元素，为什么还要对 &lt;code&gt;$attrs&lt;/code&gt; 做这么大的介绍？&lt;/p&gt;
-&lt;h4&gt;添加标题和值&lt;/h4&gt;
-&lt;p&gt;新增需求：作为一个滑块的使用者，用户希望能够看到一个标题，以及它在屏幕上显示的数字形式的值。&lt;/p&gt;
-&lt;p&gt;我们在调整一下 Slider 组件，内容如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// Slider-2.vue
-
-&amp;lt;template&amp;gt;
-  &amp;lt;div class="slider"&amp;gt;
-    &amp;lt;h1&amp;gt;{{ title }}&amp;lt;/h1&amp;gt;
-    &amp;lt;input 
-      type="range" 
-      :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
-      class="slider__input" /&amp;gt;
-      &amp;lt;div&amp;gt;Value: {{ value }}&amp;lt;/div&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/template&amp;gt;
-
-&amp;lt;script&amp;gt;
-export default {
-  name: "Slider-2",
-  props: {
-    modelValue: [Number, String]
-    title: [String],
-    value: [Number, String],
-  }
-};
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f9798b8b735644dfa8bafce4f5ef04d4~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;乍一看，好像没啥问题，但如果我们仔细观察，可以看到有些东西是不对的&lt;/p&gt;
-&lt;p&gt;首先，Slider 不是蓝色的。第二，&lt;code&gt;value&lt;/code&gt; 远远超过了50，最后，检查一下HTML，会看到我们所有的额外属性（&lt;code&gt;min, max, data-cy&lt;/code&gt;）都被分配给了根元素，而不是我们的 &lt;code&gt;input&lt;/code&gt; 元素。&lt;/p&gt;
-&lt;p&gt;解决上述问题的最好方法是找到一种方法，将所有的属性、类、参数和事件直接 "应用" 到 input  字段上，而不需我们手动的一个个声明。这就是 &lt;code&gt;$attrs&lt;/code&gt; 出场的地方。&lt;/p&gt;
-&lt;h4&gt;$attrs 救场&lt;/h4&gt;
-&lt;p&gt;在本文的开头，我们介绍了 &lt;code&gt;$attrs&lt;/code&gt;。它是一个存放所有 "未声明"的属性和事件的地方，而这正是我们需要解决的问题。&lt;/p&gt;
-&lt;p&gt;要使用这个功能，我们只需将 &lt;code&gt;$attrs&lt;/code&gt; 属性应用于一个或多个HTML元素，使用 &lt;code&gt;v-bind&lt;/code&gt; 操作符。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
-  &amp;lt;div class="slider"&amp;gt;
-    &amp;lt;h1&amp;gt;{{ title }}&amp;lt;/h1&amp;gt;
-    &amp;lt;input 
-      type="range"  
-      v-bind="$attrs"
-      :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
-      class="slider__input" /&amp;gt;
-      &amp;lt;div&amp;gt;Value: {{ modelValue }}&amp;lt;/div&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/template&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在组件中，我们使用 &lt;code&gt;attrs&lt;/code&gt; 充当桥梁，将所有的属性（类、属性、属性和自定义事件）复制到一个或多个元素上。 Slider 组件又回到了正常模式上了。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4a5c586bdd144adaa9c0d6b567c9add6~tplv-k3u1fbpfcp-watermark.image" /&gt;&lt;/p&gt;
-&lt;p&gt;还有一个问题--我们添加的属性不仅被分配给了 &lt;code&gt;input&lt;/code&gt; 元素上，也分配给了 &lt;code&gt;root&lt;/code&gt;元素。&lt;/p&gt;
-&lt;p&gt;通常情况下，这可能对界面没啥影响，但有的属性确实会生产一些副作用，下面，我们来解决这个问题。&lt;/p&gt;
-&lt;h2&gt;inheritAttrs: false&lt;/h2&gt;
-&lt;p&gt;默认情况下，任何被传递给组件的额外参数都会自动应用于根元素（以及所有有 &lt;code&gt;$attrs&lt;/code&gt; 绑定的元素）。&lt;/p&gt;
-&lt;p&gt;为了关闭这个功能，并控制哪些元素可接受这个额外的属性，我们可以使用一个名为 &lt;code&gt;inheritAttrs&lt;/code&gt; 的标志，并将其设置为&lt;code&gt;false&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;经过这样的改变，我们的HTML就变得漂亮且干净了。所有的额外属性都只作用于 &lt;code&gt;input&lt;/code&gt; 元素。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;编辑中可能存在的bug没法实时知道，事后为了解决这些bug,花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 &lt;a href="https://www.fundebug.com/?utm_source=xiaozhi"&gt;Fundebug&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;交流&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;有梦想，有干货，微信搜索 &lt;strong&gt;【大迁世界】&lt;/strong&gt; 关注这个在凌晨还在刷碗的刷碗智。&lt;/p&gt;
-&lt;p&gt;本文 GitHub  &lt;a href="https://github.com/qq449245884/xiaozhi"&gt;https://github.com/qq449245884/xiaozhi&lt;/a&gt; 已收录，有一线大厂面试完整考点、资料以及我的系列文章。&lt;/p&gt;
-&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Tue, 20 Sep 2022 16:41:47 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
+&lt;/blockquote&gt;</description><author>王大冶</author><pubDate>Mon, 26 Sep 2022 16:28:28 GMT</pubDate></item><item><title>any 和 unknown 傻傻分不清楚？</title><link>https://juejin.cn/post/7108496183298883597</link><description>&lt;hr /&gt;
 &lt;h2&gt;theme: awesome-green
 highlight: a11y-light&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://juejin.cn/post/7095547569777934367"&gt;13.5W 播放量的 TS 动画版进阶教程合集来了！&lt;/a&gt;，通过形象生动的动画，让你轻松搞懂 TypeScript 的难点和核心知识点！&lt;/p&gt;
